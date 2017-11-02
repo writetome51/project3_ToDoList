@@ -1,0 +1,16 @@
+body, a, a:hover, a:visited{
+    color:black;
+    text-decoration-color: black;
+}
+
+#app-name{font-size: 28px;}
+
+#top-navbar{
+    border-bottom: 1px solid lightgrey;
+}
+
+.icon-bar{background-color: black;}
+
+#top-navbar-button{
+    border:1px solid black;
+}
