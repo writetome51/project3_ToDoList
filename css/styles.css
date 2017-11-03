@@ -1,29 +1,53 @@
+/*  Elements          */
+
 body, a, a:hover, a:visited{
     color:black;
     text-decoration: none;
 }
-#top-navbar-search-field{
-    display:inline-flex; position:relative; left:10px;
-    width:280px;
-    padding:0;  margin:0;
-}
 
-#top-navbar-search-field .input-group{
-    width:100%;  padding:0;  margin:0;
-}
 
-#top-navbar-search-field form{
-    width:100%;  padding-left:0; padding-right: 0;
-}
+/*  Classes          */
+
+.icon-bar{background-color: black;}
+
+
+/*  IDs          */
 
 #app-name{font-size: 28px;}
 
 #top-navbar{
     border-bottom: 1px solid lightgrey;
+    background-color:#dfdfdf;
 }
-
-.icon-bar{background-color: black;}
 
 #top-navbar-button{
-    border:1px solid black;
+    border:2px solid lightgrey;
 }
+
+#top-navbar-search-container{
+    display:inline-flex; position:relative;
+    width:40%;
+    padding:0;  margin:0;
+}
+
+#top-navbar-search-container form{
+    width:100%;  padding-left:0; padding-right: 0;
+}
+
+#top-navbar-search-container .input-group{
+    width:100%;  margin:0;   display:inline-flex;
+}
+
+
+#todos-body{font-size: 16px;}
+
+#todos-body .glyphicon{font-size: 18px;}
+
+#todos-body span.glyphicon-remove-circle {
+    position: relative; left:10px; top:4px;
+    opacity: 0.3;
+}
+
+
+
+
