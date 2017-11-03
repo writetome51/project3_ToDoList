@@ -1,6 +1,19 @@
 body, a, a:hover, a:visited{
     color:black;
-    text-decoration-color: black;
+    text-decoration: none;
+}
+#top-navbar-search-field{
+    display:inline-flex; position:relative; left:10px;
+    width:280px;
+    padding:0;  margin:0;
+}
+
+#top-navbar-search-field .input-group{
+    width:100%;  padding:0;  margin:0;
+}
+
+#top-navbar-search-field form{
+    width:100%;  padding-left:0; padding-right: 0;
 }
 
 #app-name{font-size: 28px;}
