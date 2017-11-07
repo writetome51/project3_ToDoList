@@ -1,15 +1,15 @@
 /*  Elements          */
 
+
 body, a, a:hover, a:visited{
     color:black;
     text-decoration: none;
 }
 
-a:hover, a:active, a:hover{background-color: inherit;}
+a:hover, a:active, a:hover{background-color: #abf2ae;}
 
 div{
     width: 100%;  height: 100%;
-border:1px solid black;
 }
 
 
@@ -20,9 +20,19 @@ border:1px solid black;
 
 /*  IDs          */
 
-#app-name{font-size: 36px;}
+
+
+#top-container{
+    max-width: 700px;
+    margin:auto;
+    font-family: Futura;
+}
+
+
+#app-name{font-size: 30px;}
 
 #app-name-and-categories{display:flex;float:left;}
+#app-name-container{width:240px; padding-right: 0;}
 
 .navbar-div{
     display: flex;
@@ -30,13 +40,27 @@ border:1px solid black;
     margin-right: 10px;
     float:left;
 
-
 }
 
+#dropdown-menus{
+    display:inline;position:relative;
+    top:7px; left:10px;
+}
+
+
+#dropdown-menus li.dropdown{position:relative; left:15px;}
+
+div.float-right{display:inline; width:auto;float:right;}
+
+.dropdown-menu{float:right;}
+
+
 #top-navbar{
-    border-bottom: 1px solid lightgrey;
-    background-color:#dfdfdf;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    background-color: #cfffd4;
     padding-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 #top-navbar-button{
@@ -44,7 +68,7 @@ border:1px solid black;
 }
 
 #top-navbar-search-container{
-    padding:0; padding-left: 15px;   display:flex;
+    padding:0; padding-left: 15px;   display:flex;  width:160%;
 
 }
 
@@ -59,8 +83,12 @@ border:1px solid black;
 
 #login-and-create-account{
       float:right; position: relative;
-    top:5px; width:auto;
+    top:5px;
 }
+#login-and-create-account div{
+    float:right; text-align: right;
+}
+#create-account{margin-bottom:5px; }
 
 
 #todos-body{font-size: 16px;}
@@ -72,6 +100,12 @@ border:1px solid black;
     opacity: 0.3;
 }
 
+.todo-list{list-style: none;}
 
+.todo-list-item{border:1px solid transparent;}
 
+.list-item-highlighted{ border:1px solid lawngreen;}
 
+.todo-checkbox{position:relative; right:10px;  bottom:2px;}
+
+.invisible{visibility: hidden;}

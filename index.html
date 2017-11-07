@@ -18,80 +18,113 @@
 
 <body>
 
-<!-- Navigation Toolbar -->
-<nav id="top-navbar">
-    <div class="container-fluid" id="top-container-in-navbar">
+<div id="top-container">
 
-        <div id="app-name-and-categories">
-            <div class="navbar-div">
-                <a id="app-name" class="navbar-brand" href="#">To-Do's</a>
-            </div>
 
-            <div class="navbar-div">
-                <ul class="nav">
-                    <li class="dropdown">
-                        <a class="" data-toggle="dropdown"
-                           href="#">Categories <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Show All</a></li>
-                            <li><a href="#">Category 2</a></li>
-                            <li><a href="#">Category 3</a></li>
+    <!-- Navigation Toolbar -->
+    <nav id="top-navbar">
+        <div class="container-fluid" id="top-container-in-navbar">
+
+            <div id="app-name-and-categories">
+                <div class="navbar-div" id="app-name-container">
+                    <a id="app-name" class="navbar-brand" href="#">To-Do's</a>
+                </div>
+
+                <div class="navbar-div" id="dropdown-menus">
+                    <div class="float-right">
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a class="" data-toggle="dropdown"
+                                   href="#">Lists <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- Fix CSS so when list drops down, items don't push to right. -->
+                                    <li><a href="#">Show All</a></li>
+                                    <li><a href="#">Groceries</a></li>
+                                    <li><a href="#">Places to visit in San Francisco</a></li>
+                                </ul>
+                            </li>
+
                         </ul>
-                    </li>
+                    </div>
+                    <div class="float-right">
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a class="" data-toggle="dropdown"
+                                   href="#">Actions <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">New List</a></li>
+                                    <li><a href="#">Edit Lists</a></li>
+                                    <li><a href="#">Delete Checked Items</a></li>
+                                </ul>
+                            </li>
 
-                </ul>
-            </div>
-        </div>
+                        </ul>
+                    </div>
 
-
-        <div id="search-and-create-and-login" class="navbar-div">
-            <div class="navbar-div" id="top-navbar-search-container">
-                <input type="text" id="navbar-search-input" class="form-control"
-                       placeholder="Search">
-            </div>
-
-            <div id="login-and-create-account" class="">
-                <div class="navbar-div">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-user"></span> Create Account
-                    </a>
-                </div>
-
-                <div class="navbar-div">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-log-in"></span> Login
-                    </a>
                 </div>
             </div>
 
 
+            <div id="search-and-create-and-login" class="navbar-div">
+                <div class="navbar-div" id="top-navbar-search-container">
+                    <input type="text" id="navbar-search-input" class="form-control"
+                           placeholder="Search">
+                </div>
+
+                <div id="login-and-create-account" class="">
+                    <div id="create-account">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user"></span> Create Account
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-log-in"></span> Login
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+
+
         </div>
+    </nav>
 
 
+    <!--  Main Body -->
+    <div id="todos-body" class="container-fluid">
+        <ul class="todo-list">
+
+            <li class="todo-list-item"><input type="checkbox" class="todo-checkbox">
+                Order shoes
+                <span class="glyphicon glyphicon-remove-circle invisible"></span>
+            </li>
+
+            <li class="todo-list-item"><input type="checkbox" class="todo-checkbox">
+                Order shoes
+                <span class="glyphicon glyphicon-remove-circle invisible"></span>
+            </li>
+
+            <li class="todo-list-item"><input type="checkbox" class="todo-checkbox">
+                Order shoes
+                <span class="glyphicon glyphicon-remove-circle invisible"></span>
+            </li>
+
+
+        </ul>
     </div>
-</nav>
 
 
-<!--  Main Body -->
-<div id="todos-body" class="container-fluid">
-    <ul id="the-list">
-        <li>Order shoes
-            <span class="glyphicon glyphicon-remove-circle"></span>
-        </li>
-        <li>Order shoes
-            <span class="glyphicon glyphicon-remove-circle"></span>
-        </li>
-        <li>Order shoes
-            <span class="glyphicon glyphicon-remove-circle"></span>
-        </li>
-
-    </ul>
 </div>
 
 
 <script src="js/vendor/jquery-3.2.1.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="jquery-event-configurations.js"></script>
 </body>
 </html>
