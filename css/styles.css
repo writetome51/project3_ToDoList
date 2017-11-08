@@ -104,7 +104,9 @@ div.float-right{display:inline; width:auto;float:right;}
 
 .todo-list-item{border:1px solid transparent;}
 
-.list-item-highlighted{ border:1px solid lawngreen;}
+.list-item-clicked{ border:1px solid lawngreen;}
+
+.list-item-hovered{ border:1px solid lightgrey;}
 
 .todo-checkbox{position:relative; right:10px;  bottom:2px;}
 
