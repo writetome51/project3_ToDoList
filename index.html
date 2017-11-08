@@ -35,11 +35,10 @@
                                 <a class="" data-toggle="dropdown"
                                    href="#">Lists <span class="caret"></span>
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <!-- Fix CSS so when list drops down, items don't push to right. -->
-                                    <li><a href="#">Show All</a></li>
-                                    <li><a href="#">Groceries</a></li>
-                                    <li><a href="#">Places to visit in San Francisco</a></li>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a>Show All</a></li>
+                                    <li><a>Groceries</a></li>
+                                    <li><a>Places to visit in San Francisco</a></li>
                                 </ul>
                             </li>
 
@@ -51,7 +50,7 @@
                                 <a class="" data-toggle="dropdown"
                                    href="#">Actions <span class="caret"></span>
                                 </a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu dropdown-menu-right">
                                     <li><a href="#">New List</a></li>
                                     <li><a href="#">Edit Lists</a></li>
                                     <li><a href="#">Delete Checked Items</a></li>
@@ -88,7 +87,6 @@
 
             </div>
 
-
         </div>
     </nav>
 
@@ -100,22 +98,28 @@
             <li class="todo-list-item">
                 <input type="checkbox" class="todo-checkbox"
                        title="Check box to perform action on item">
-                <span>Order shoes</span>
-                <span class="glyphicon  glyphicon-remove-circle  invisible"></span>
+                <span class="highlighted-area" title="Drag item up or down to change order">
+                    <span class="item-text">Order shoes</span>
+                    <span class="glyphicon  glyphicon-remove-circle  invisible"></span>
+                </span>
             </li>
 
             <li class="todo-list-item">
                 <input type="checkbox" class="todo-checkbox"
                        title="Check box to perform action on item">
-                <span>Order shoes</span>
-                <span class="glyphicon  glyphicon-remove-circle  invisible"></span>
+                <span class="highlighted-area" title="Drag item up or down to change order">
+                    <span class="item-text">Order shoes</span>
+                    <span class="glyphicon  glyphicon-remove-circle  invisible"></span>
+                </span>
             </li>
 
             <li class="todo-list-item">
                 <input type="checkbox" class="todo-checkbox"
                        title="Check box to perform action on item">
-                <span>Order shoes</span>
-                <span class="glyphicon  glyphicon-remove-circle  invisible"></span>
+                <span class="highlighted-area" title="Drag item up or down to change order">
+                    <span class="item-text">Order shoes</span>
+                    <span class="glyphicon  glyphicon-remove-circle  invisible"></span>
+                </span>
             </li>
 
         </ul>

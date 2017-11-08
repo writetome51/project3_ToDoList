@@ -11,23 +11,10 @@ var clickedItem = false;
 
 todoListItem.click(function(){
     if ( thisItemIsAlreadyClicked($(this)) ){
-        undoClickedItem($(this));
-    }
-    else if (thereIsAClickedItem()){
-        makeThisItemTheClickedItem($(this));
+        undoClickedItem();
     }
     else{
-        clickedItem = $(this);
-        clickedItem.removeClass(hoveredClass);
-        clickedItem.addClass(clickedClass);
-
-        /*******  May not be necessary:
-
-        // Remember that .children() only selects direct children:
-        if ( clickedItemCheckboxIsChecked() ){
-            clickedItem.children('span.glyphicon-remove-circle').addClass('invisible');
-        }
-         *******/
+         makeThisItemTheClickedItem($(this));
     }
 });
 
@@ -58,19 +45,37 @@ todoListItem.hover(
 
 // Below are utility functions used in the events above.
 
-function undoClickedItem(obj){
-    obj.removeClass(clickedClass);
+function undoClickedItem(){
+    if (thereIsAClickedItem()){
+        clickedItem.removeClass(clickedClass);
+    }
     clickedItem = false;
 }
+
+
+function makeThisItemTheClickedItem(obj){
+    undoClickedItem();
+    setClickedItem(obj);
+}
+
+
+function setClickedItem(obj){
+    clickedItem = obj;
+    removeHoverClassAndAddClickedClass(clickedItem);
+    makeRemoveGlyphVisible(clickedItem);
+}
+
 
 function thereIsAClickedItem(){
     if (clickedItem){ return true; }
     else { return false; }
 }
 
+
 function thisItemIsAlreadyClicked(obj){
-    return  obj.hasClass(clickedClass)
+    return  obj.hasClass(clickedClass);
 }
+
 
 function removeHoverClassAndAddClickedClass(obj){
     obj.addClass(clickedClass);
@@ -87,9 +92,3 @@ function removeListItem(item){
     item.remove();
 }
 
-
-function makeThisItemTheClickedItem(obj){
-    undoClickedItem(clickedItem);
-    clickedItem = obj;
-    removeHoverClassAndAddClickedClass(clickedItem);
-}

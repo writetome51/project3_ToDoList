@@ -13,13 +13,7 @@ div{
 }
 
 
-/*  Classes          */
-
 .icon-bar{background-color: black;}
-
-
-/*  IDs          */
-
 
 
 #top-container{
@@ -88,25 +82,39 @@ div.float-right{display:inline; width:auto;float:right;}
 #login-and-create-account div{
     float:right; text-align: right;
 }
+
 #create-account{margin-bottom:5px; }
 
 
-#todos-body{font-size: 16px;}
+#todos-body{
+    font-size: 16px;
+}
 
 #todos-body .glyphicon{font-size: 18px;}
 
 #todos-body span.glyphicon-remove-circle {
-    position: relative; left:10px; top:4px;
+    position: relative; left:10px; top:3px;
     opacity: 0.3;
 }
 
-.todo-list{list-style: none;}
+.todo-list{
+    list-style: none;
+    padding-left: 0;
+    margin-left: 10px;
+}
 
-.todo-list-item{border:1px solid transparent;}
+.todo-list-item{border:1px solid transparent;} /*  border will be invisible  */
 
-.list-item-clicked{ border:1px solid lawngreen;}
+.list-item-clicked{
+    background-color: #adffa7;
+    border:1px solid #797979;
+}
 
-.list-item-hovered{ border:1px solid lightgrey;}
+.list-item-hovered{ border:1px solid #e1e1e1;}
+
+.list-item-clicked, .list-item-hovered{
+    border-radius: 15px;
+}
 
 .todo-checkbox{position:relative; right:10px;  bottom:2px;}
 
