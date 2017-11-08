@@ -1,17 +1,13 @@
 var clickedItem = false;
 
 $(".todo-list-item").click(function(){
-    if ( $(this).hasClass('list-item-clicked') ){
-        $(this).removeClass('list-item-clicked');
-        clickedItem = false;
+    if ( thisItemIsAlreadyClicked($(this)) ){
+        removeClickedHighlightAndEraseClickedItem($(this));
     }
-    else if (clickedItem){
-        clickedItem.removeClass('list-item-clicked');
-        clickedItem = false;
-
+    else if (thereIsAClickedItem()){
+        removeClickedHighlightAndEraseClickedItem(clickedItem);
         clickedItem = $(this);
-        clickedItem.addClass('list-item-clicked');
-        clickedItem.removeClass('list-item-hovered');
+        removeHoverClassAndAddClickedClass(clickedItem);
     }
     else{
         clickedItem = $(this);
@@ -49,3 +45,23 @@ $(".todo-list-item").hover(
         $(this).removeClass('list-item-hovered');
     }
 );
+
+
+function removeClickedHighlightAndEraseClickedItem(obj){
+    obj.removeClass('list-item-clicked');
+    clickedItem = false;
+}
+
+function thereIsAClickedItem(){
+    if (clickedItem){ return true; }
+    else { return false; }
+}
+
+function thisItemIsAlreadyClicked(obj){
+    return  obj.hasClass('list-item-clicked')
+}
+
+function removeHoverClassAndAddClickedClass(obj){
+    obj.addClass('list-item-clicked');
+    obj.removeClass('list-item-hovered');
+}
