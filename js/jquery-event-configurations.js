@@ -1,54 +1,65 @@
+
+var clickedClass = 'list-item-clicked';
+var hoveredClass = 'list-item-hovered';
+var listItemClass = 'todo-list-item';
+var itemCheckboxClass = 'todo-checkbox';
+var invisibleClass = 'invisible';
+var todoListItem = $('.' + listItemClass);
+var todoCheckbox = $('.' + itemCheckboxClass);
 var clickedItem = false;
 
-$(".todo-list-item").click(function(){
+
+todoListItem.click(function(){
     if ( thisItemIsAlreadyClicked($(this)) ){
-        removeClickedHighlightAndEraseClickedItem($(this));
+        undoClickedItem($(this));
     }
     else if (thereIsAClickedItem()){
-        removeClickedHighlightAndEraseClickedItem(clickedItem);
-        clickedItem = $(this);
-        removeHoverClassAndAddClickedClass(clickedItem);
+        makeThisItemTheClickedItem($(this));
     }
     else{
         clickedItem = $(this);
-        clickedItem.removeClass('list-item-hovered');
-        clickedItem.addClass('list-item-clicked');
-        if ( clickedItem.children('.todo-checkbox').prop('checked')){
+        clickedItem.removeClass(hoveredClass);
+        clickedItem.addClass(clickedClass);
+
+        /*******  May not be necessary:
+
+        // Remember that .children() only selects direct children:
+        if ( clickedItemCheckboxIsChecked() ){
             clickedItem.children('span.glyphicon-remove-circle').addClass('invisible');
         }
+         *******/
     }
 });
 
 
-
-
-$(".todo-checkbox").click(function(){
+todoCheckbox.click(function(){
     var deleteButton = $(this).siblings('span.glyphicon-remove-circle');
     if ($(this).prop('checked')){
-        deleteButton.removeClass('invisible');
+        deleteButton.removeClass(invisibleClass);
     }
     else{
-        deleteButton.addClass('invisible');
+        deleteButton.addClass(invisibleClass);
     }
 });
 
 
-$(".todo-list-item").hover(
-    function toggleHovered(){
-
-        if ( !$(this).hasClass('list-item-clicked') ){
-            $(this).addClass('list-item-hovered');
+todoListItem.hover(
+    function onMouseOver(){
+        if ( !$(this).hasClass(clickedClass) ){
+            $(this).addClass(hoveredClass);
         }
-
     },
     function onMouseOut(){
-        $(this).removeClass('list-item-hovered');
+        $(this).removeClass(hoveredClass);
     }
 );
 
 
-function removeClickedHighlightAndEraseClickedItem(obj){
-    obj.removeClass('list-item-clicked');
+
+// Below are utility functions used in the events above.
+
+function undoClickedItem(obj){
+    obj.removeClass(clickedClass);
     clickedItem = false;
 }
 
@@ -58,10 +69,27 @@ function thereIsAClickedItem(){
 }
 
 function thisItemIsAlreadyClicked(obj){
-    return  obj.hasClass('list-item-clicked')
+    return  obj.hasClass(clickedClass)
 }
 
 function removeHoverClassAndAddClickedClass(obj){
-    obj.addClass('list-item-clicked');
-    obj.removeClass('list-item-hovered');
+    obj.addClass(clickedClass);
+    obj.removeClass(hoveredClass);
+}
+
+
+function clickedItemCheckboxIsChecked(){
+    return clickedItem.children('.' + itemCheckboxClass).prop('checked');
+}
+
+
+function removeListItem(item){
+    item.remove();
+}
+
+
+function makeThisItemTheClickedItem(obj){
+    undoClickedItem(clickedItem);
+    clickedItem = obj;
+    removeHoverClassAndAddClickedClass(clickedItem);
 }
