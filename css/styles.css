@@ -99,11 +99,27 @@ div.float-right{display:inline; width:auto;float:right;}
 
 .todo-list{
     list-style: none;
+    width:100%;
     padding-left: 0;
     margin-left: 10px;
 }
 
-.todo-list-item{border:1px solid transparent;} /*  border will be invisible  */
+.todo-list-item{
+    display: block;
+    width:100%;
+    padding:2px 0px;
+}
+
+
+.highlight-area{
+    display: inline;
+    padding: 0px 12px;
+    margin:0;
+    border:1px solid transparent; /*  border will be invisible  */
+    width:100%;
+    position:relative;
+    right:8px;
+}
 
 .list-item-clicked{
     background-color: #adffa7;
@@ -115,6 +131,8 @@ div.float-right{display:inline; width:auto;float:right;}
 .list-item-clicked, .list-item-hovered{
     border-radius: 15px;
 }
+
+.item-text{margin-right:10px;}
 
 .todo-checkbox{position:relative; right:10px;  bottom:2px;}
 

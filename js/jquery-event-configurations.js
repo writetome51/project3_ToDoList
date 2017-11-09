@@ -1,10 +1,10 @@
 
 var clickedClass = 'list-item-clicked';
 var hoveredClass = 'list-item-hovered';
-var listItemClass = 'todo-list-item';
+var highlightClass = 'highlight-area';
 var itemCheckboxClass = 'todo-checkbox';
 var invisibleClass = 'invisible';
-var todoListItem = $('.' + listItemClass);
+var todoListItem = $('.' + highlightClass);
 var todoCheckbox = $('.' + itemCheckboxClass);
 var clickedItem = false;
 
@@ -48,6 +48,7 @@ todoListItem.hover(
 function undoClickedItem(){
     if (thereIsAClickedItem()){
         clickedItem.removeClass(clickedClass);
+        makeRemoveGlyphInvisible(clickedItem);
     }
     clickedItem = false;
 }
@@ -63,6 +64,15 @@ function setClickedItem(obj){
     clickedItem = obj;
     removeHoverClassAndAddClickedClass(clickedItem);
     makeRemoveGlyphVisible(clickedItem);
+}
+
+
+function makeRemoveGlyphVisible(obj){
+    obj.find('.glyphicon-remove-circle').removeClass(invisibleClass);
+}
+
+function makeRemoveGlyphInvisible(obj){
+    obj.find('.glyphicon-remove-circle').addClass(invisibleClass);
 }
 
 
