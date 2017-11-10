@@ -132,7 +132,7 @@ div.float-right{display:inline; width:auto;float:right;}
     border-radius: 15px;
 }
 
-.item-text{margin-right:10px;}
+.item-text{margin-right:15px;}
 
 .todo-checkbox{position:relative; right:10px;  bottom:2px;}
 
