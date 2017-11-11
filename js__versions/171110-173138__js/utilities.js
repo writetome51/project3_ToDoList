@@ -1,7 +1,6 @@
 
 var clickedClass = 'list-item-clicked';
 var hoveredClass = 'list-item-hovered';
-var listItemClass = 'todo-list-item';
 var highlightClass = 'highlight-area';
 var itemTextClass = 'item-text';
 var removeGlyphiconClass = 'glyphicon-remove-circle';
@@ -9,7 +8,7 @@ var pencilGlyphiconClass = 'glyphicon-pencil';
 var itemCheckboxClass = 'todo-checkbox';
 var invisibleClass = 'invisible';
 var itemText = $('.' + itemTextClass);
-var itemToHighlight = '';
+var todoListItem = '';
 var todoCheckbox = $('.' + itemCheckboxClass);
 var removeGlyph = $('.' + removeGlyphiconClass);
 var clickedItem = false;
@@ -18,7 +17,8 @@ var clickedItem = false;
 function undoClickedItem(){
     if (thereIsAClickedItem()){
         clickedItem.removeClass(clickedClass);
-        makeGlyphsInvisible();
+        makeRemoveGlyphInvisible(clickedItem);
+        makePencilGlyphInvisible(clickedItem);
         makeItemNotEditable(clickedItem);
     }
     clickedItem = false;
@@ -26,16 +26,16 @@ function undoClickedItem(){
 
 
 function makeThisItemTheClickedItem(obj){
-    itemToHighlight = obj.parent('.' + highlightClass);
+    todoListItem = obj.parent('.' + highlightClass);
     undoClickedItem();
-    setClickedItem(itemToHighlight);
+    setClickedItem(todoListItem);
 }
 
 
 function setClickedItem(obj){
     clickedItem = obj;
     removeHoverClassAndAddClickedClass(clickedItem);
-    makeGlyphsVisible();
+    makeGlyphsVisible(clickedItem);
     makeItemEditable(clickedItem);
 }
 
@@ -43,12 +43,6 @@ function setClickedItem(obj){
 function makeGlyphsVisible(){
     makeRemoveGlyphVisible(clickedItem);
     makePencilGlyphVisible(clickedItem);
-}
-
-
-function makeGlyphsInvisible(){
-    makeRemoveGlyphInvisible(clickedItem);
-    makePencilGlyphInvisible(clickedItem);
 }
 
 
@@ -88,8 +82,8 @@ function thereIsAClickedItem(){
 
 
 function listItemIsAlreadyClicked(obj){
-    itemToHighlight = obj.parent('.' + highlightClass);
-    return thisItemIsAlreadyClicked(itemToHighlight);
+    todoListItem = obj.parent('.' + highlightClass);
+    return thisItemIsAlreadyClicked(todoListItem);
 }
 
 
@@ -110,14 +104,14 @@ function removeHoverClassAndAddClickedClass(obj){
 
 
 function addHoveredClassToListItem(obj){
-    itemToHighlight = obj.parent('.' + highlightClass);
-    itemToHighlight.addClass(hoveredClass);
+    todoListItem = obj.parent('.' + highlightClass);
+    todoListItem.addClass(hoveredClass);
 }
 
 
 function removeHoveredClassFromListItem(obj){
-    itemToHighlight = obj.parent('.' + highlightClass);
-    itemToHighlight.removeClass(hoveredClass);
+    todoListItem = obj.parent('.' + highlightClass);
+    todoListItem.removeClass(hoveredClass);
 }
 
 
@@ -129,7 +123,7 @@ function clickedItemCheckboxIsChecked(){
 
 
 function removeListItem(item){
-    item.parents('.' + listItemClass).remove();
+    item.parent('.' + highlightClass).remove();
 }
 
 
