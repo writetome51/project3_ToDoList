@@ -19,6 +19,13 @@ itemText.hover(
 );
 
 
+itemText.dblclick(function(){
+    if (listItemIsAlreadyClicked($(this))){
+        undoClickedItem();
+    }
+});
+
+
 removeGlyph.click(function(){
     removeListItem($(this));
 });
