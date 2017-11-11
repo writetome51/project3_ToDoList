@@ -23,7 +23,7 @@ div{
 }
 
 
-#app-name{font-size: 30px;}
+#app-name, #page-name{font-size: 30px;}
 
 #app-name-and-categories{display:flex;float:left;}
 #app-name-container{width:240px; padding-right: 0;}
@@ -61,12 +61,12 @@ div.float-right{display:inline; width:auto;float:right;}
     border:2px solid lightgrey;
 }
 
-#top-navbar-search-container{
+.top-navbar-search-container{
     padding:0; padding-left: 15px;   display:flex;  width:160%;
 
 }
 
-#top-navbar-search-container input{
+.top-navbar-search-container input{
     display:flex;  width: 100%; float:left;
 }
 
@@ -137,3 +137,6 @@ div.float-right{display:inline; width:auto;float:right;}
 .todo-checkbox{position:relative; right:10px;  bottom:2px;}
 
 .invisible{visibility: hidden;}
+
+
+.form-submit{width:auto;}

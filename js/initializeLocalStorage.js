@@ -1,6 +1,8 @@
+var appName = 'todoList';
+var appData = '';
 
-if (localStorage.getItem('todoList') == null){
-    localStorage.setItem('todoList',
+if (localStorage.getItem(appName) == null){
+    localStorage.setItem(appName,
         JSON.stringify(
             {
                 users:[
@@ -44,3 +46,11 @@ if (localStorage.getItem('todoList') == null){
         )
     );
 }
+
+loadInitialPageData();
+
+
+function loadInitialPageData(){
+    appData = JSON.parse(localStorage.getItem(appName));
+}
+

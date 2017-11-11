@@ -133,7 +133,9 @@ function removeListItem(item){
 }
 
 
-function createAccount(){}
+function createAccount(){
+    appData.users.push(inputVal);
+}
 
 
 function login(){}
