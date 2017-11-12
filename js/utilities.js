@@ -14,6 +14,7 @@ var todoCheckbox = $('.' + itemCheckboxClass);
 var removeGlyph = $('.' + removeGlyphiconClass);
 var clickedItem = false;
 var newListAction = $('#new-list-action');
+var createAccountSubmit = $('#create-account-submit');
 
 
 function undoClickedItem(){
@@ -134,7 +135,7 @@ function removeListItem(item){
 }
 
 
-function createAccount(){
+function createAccount(username, password){
     appData.users.push(inputVal);
 }
 

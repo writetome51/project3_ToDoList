@@ -48,3 +48,10 @@ newListAction.click(function(){
     $('#the-todo-list').remove();
     $('#new-list-form').removeClass('invisible-and-collapsed');
 });
+
+
+createAccountSubmit.click(function(){
+    var username = $('#create-account-username').val();
+    var password = $('#create-account-password').val();
+    createAccount(username, password);
+});
