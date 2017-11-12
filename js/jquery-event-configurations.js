@@ -58,3 +58,18 @@ createAccountSubmit.click(function(){
     $('#create-account-form').remove();
     $('#account-creation-success').removeClass('invisible-and-collapsed');
 });
+
+
+loginLink.click(function(){
+    $('#main-home-navbar').addClass('invisible-and-collapsed');
+});
+
+
+loginSubmit.click(function(){
+    var username = $('#login-username').val();
+    var password = $('#login-password').val();
+    login(username, password);
+
+    $('#login-form').remove();
+    $('#').removeClass('invisible-and-collapsed');
+});

@@ -15,6 +15,9 @@ var removeGlyph = $('.' + removeGlyphiconClass);
 var clickedItem = false;
 var newListAction = $('#new-list-action');
 var createAccountSubmit = $('#create-account-submit');
+var loginSubmit = $('#login-submit');
+var sessionData = '';
+var loginLink = $('#login-link');
 
 
 function undoClickedItem(){
@@ -145,7 +148,10 @@ function createAccount(username, password){
 }
 
 
-function login(){}
+function login(username, password){
+    var obj = JSON.stringify({loggedInUser:username});
+    sessionData = sessionStorage.setItem(appName, obj);
+}
 
 
 function newList(){}
@@ -158,5 +164,19 @@ function saveListItem(){}
 
 
 function notLoggedIn(){
-    sessionStorage
+    return (!loggedIn());
+}
+
+
+function loggedIn(){
+   var sessionData = sessionStorage.getItem(appName);
+
+   if (sessionData == null){ return false;}
+
+   sessionData = JSON.parse(sessionData);
+
+   if (sessionData.loggedInUser){
+       return true;
+   }
+   else return false;
 }
