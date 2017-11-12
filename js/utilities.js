@@ -136,7 +136,12 @@ function removeListItem(item){
 
 
 function createAccount(username, password){
-    appData.users.push(inputVal);
+    appData.users[username] = {
+        password:password,
+        lists:[]
+    };
+
+    localStorage.setItem(appName, JSON.stringify(appData));
 }
 
 
@@ -150,3 +155,8 @@ function editLists(){}
 
 
 function saveListItem(){}
+
+
+function notLoggedIn(){
+    sessionStorage
+}

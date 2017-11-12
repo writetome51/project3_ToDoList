@@ -54,4 +54,7 @@ createAccountSubmit.click(function(){
     var username = $('#create-account-username').val();
     var password = $('#create-account-password').val();
     createAccount(username, password);
+
+    $('#create-account-form').remove();
+    $('#account-creation-success').removeClass('invisible-and-collapsed');
 });
