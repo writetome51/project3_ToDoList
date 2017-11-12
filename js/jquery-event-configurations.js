@@ -62,6 +62,14 @@ createAccountSubmit.click(function(){
 
 loginLink.click(function(){
     $('#main-home-navbar').addClass('invisible-and-collapsed');
+    $('#todos-body').addClass('invisible-and-collapsed');
+    $('#login-section').removeClass('invisible-and-collapsed');
+});
+
+
+logoutLink.click(function(){
+    logout();
+    setAppearance();
 });
 
 
@@ -70,6 +78,9 @@ loginSubmit.click(function(){
     var password = $('#login-password').val();
     login(username, password);
 
-    $('#login-form').remove();
-    $('#').removeClass('invisible-and-collapsed');
+    $('#login-section').remove();
+    $('#main-home-navbar').removeClass('invisible-and-collapsed');
+    $('#todos-body').removeClass('invisible-and-collapsed');
+
+    setAppearance();
 });

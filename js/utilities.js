@@ -16,8 +16,11 @@ var clickedItem = false;
 var newListAction = $('#new-list-action');
 var createAccountSubmit = $('#create-account-submit');
 var loginSubmit = $('#login-submit');
-var sessionData = '';
+var sessionData = false;
 var loginLink = $('#login-link');
+var logoutLink = $('#logout-link');
+
+setAppearance();
 
 
 function undoClickedItem(){
@@ -154,6 +157,12 @@ function login(username, password){
 }
 
 
+function logout(){
+    sessionStorage.removeItem(appName);
+    sessionData = false;
+}
+
+
 function newList(){}
 
 
@@ -179,4 +188,20 @@ function loggedIn(){
        return true;
    }
    else return false;
+}
+
+
+function setAppearance(){
+    if (notLoggedIn()){
+        $('#dropdown-menus').addClass('invisible');
+        $('#login-and-create-account').removeClass('invisible-and-collapsed');
+        $('#logout-link-container').addClass('invisible-and-collapsed');
+    }
+
+    if (loggedIn()){
+        $('#login-and-create-account').addClass('invisible-and-collapsed');
+        $('#logout-link-container').removeClass('invisible-and-collapsed');
+        $('#dropdown-menus').removeClass('invisible');
+    }
+
 }

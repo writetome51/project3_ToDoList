@@ -75,13 +75,15 @@ div.float-right{display:inline; width:auto;float:right;}
     float:left;
 }
 
-#login-and-create-account{
+#login-and-create-account, #logout-link-container{
       float:right; position: relative;
     top:5px;
 }
-#login-and-create-account div{
+#login-and-create-account div, #logout-link-container div{
     float:right; text-align: right;
 }
+
+#logout-link-container{top:25px;}
 
 #create-account{margin-bottom:5px; }
 

@@ -68,7 +68,7 @@
                            placeholder="Search">
                 </div>
 
-                <div id="login-and-create-account" class="">
+                <div id="login-and-create-account">
                     <div id="create-account">
                         <a href="create-account.html">
                             <span class="glyphicon glyphicon-user"></span> Create Account
@@ -78,6 +78,14 @@
                     <div>
                         <a id="login-link">
                             <span class="glyphicon glyphicon-log-in"></span> Login
+                        </a>
+                    </div>
+                </div>
+
+                <div id="logout-link-container" class="invisible-and-collapsed">
+                    <div>
+                        <a id="logout-link">
+                            <span class="glyphicon glyphicon-log-out"></span> Logout
                         </a>
                     </div>
                 </div>
@@ -96,7 +104,7 @@
             <li class="todo-list-item" draggable="true">
                 <input type="checkbox" class="todo-checkbox"
                        title="Check box to mark item done, or to perform action on item">
-                <span class="highlight-area" title="Drag item up or down to change order">
+                <span class="highlight-area" >
                     <span class="item-text">Order shoes</span>
                     <span class="glyphicon  glyphicon-remove-circle  invisible"></span>
                 </span>
@@ -105,7 +113,7 @@
             <li class="todo-list-item" draggable="true">
                 <input type="checkbox" class="todo-checkbox"
                        title="Check box to mark item done, or to perform action on item">
-                <span class="highlight-area" title="Drag item up or down to change order">
+                <span class="highlight-area" >
                     <span class="item-text">Order shoes</span>
                     <span class="glyphicon  glyphicon-remove-circle  invisible"></span>
                 </span>
@@ -114,7 +122,7 @@
             <li class="todo-list-item" draggable="true">
                 <input type="checkbox" class="todo-checkbox"
                        title="Check box to mark item done, or to perform action on item">
-                <span class="highlight-area" title="Drag item up or down to change order">
+                <span class="highlight-area" >
                     <span class="item-text">Order shoes</span>
                     <span class="glyphicon  glyphicon-remove-circle  invisible"></span>
                 </span>
@@ -142,7 +150,7 @@
     </div>
 
 
-    <nav class="top-navbar" id="login-section">
+    <nav id="login-section" class="top-navbar invisible-and-collapsed">
         <div class="container-fluid top-container-in-navbar">
 
             <div class="app-name-and-categories">
@@ -195,6 +203,5 @@
 <script src="js/initializeLocalStorage.js"></script>
 <script src="js/utilities.js"></script>
 <script src="js/jquery-event-configurations.js"></script>
-<script src="js/set-appearance.js"></script>
 </body>
 </html>
