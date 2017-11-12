@@ -43,3 +43,8 @@ todoCheckbox.click(function(){
 
 
 
+
+newListAction.click(function(){
+    $('#the-todo-list').remove();
+    $('#new-list-form').removeClass('invisible-and-collapsed');
+});

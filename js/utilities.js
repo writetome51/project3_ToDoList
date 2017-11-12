@@ -13,6 +13,7 @@ var itemToHighlight = '';
 var todoCheckbox = $('.' + itemCheckboxClass);
 var removeGlyph = $('.' + removeGlyphiconClass);
 var clickedItem = false;
+var newListAction = $('#new-list-action');
 
 
 function undoClickedItem(){

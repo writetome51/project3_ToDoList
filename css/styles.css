@@ -148,3 +148,7 @@ div.float-right{display:inline; width:auto;float:right;}
 #back-to-main{width:170px; text-align:left; position: relative;
     top:28px; font-size: 14px;
 }
+
+.invisible-and-collapsed{
+    display:none;
+}
