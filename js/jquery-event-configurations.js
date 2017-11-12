@@ -1,3 +1,8 @@
+addButton.click(function(){
+    $('.todo-list').append(
+    "<li class='todo-list-item' draggable='true'><input type='checkbox' class='todo-checkbox' title='Check box to mark item done, or to perform action on item'><span class='highlight-area'> <span class='item-text'>" + "</span><span class='glyphicon glyphicon-remove-circle  invisible'></span></span></li>"
+    );
+});
 
 
 itemText.click(function(){
@@ -51,11 +56,7 @@ todoCheckbox.click(function(){
 
 
 listMenuItem.click(function(){
-    var activeList = $(this).text();
-    var sessionData = JSON.parse(sessionStorage.getItem(appName));
-    sessionData.activeList = activeList;
-    sessionData = JSON.stringify(sessionData);
-    sessionStorage.setItem(appName, sessionData);
+    activeList = $(this).text();
 });
 
 

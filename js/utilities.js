@@ -22,6 +22,8 @@ var logoutLink = $('#logout-link');
 var listMenuItem = $('.list-menu-item');
 var loggedInUser = '';
 var textBeingEdited = '';
+var activeList = '';
+var addButton = $('#add-button');
 
 setAppearance();
 
@@ -199,10 +201,17 @@ function saveListItem(itemText, list){
 function removeItemFromSavedList(text){
     var data = JSON.parse(localStorage.getItem(appName));
     var user = data.users[loggedInUser];
-    var list = user.lists[list];
+    var list = user.lists[activeList];
     var theIndex = list.indexOf(text);
 
+    var arr = list.splice(theIndex);
+    arr.shift();
 
+    var newArr = list.concat(arr);
+    user.lists[activeList] = newArr;
+    data.users[loggedInUser] = user;
+    data = JSON.stringify(data);
+    localStorage.setItem(appName, data);
 }
 
 
