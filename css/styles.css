@@ -140,3 +140,11 @@ div.float-right{display:inline; width:auto;float:right;}
 
 
 .form-submit{width:auto;}
+.form-submit input{
+    border:2px solid rgb(192,192,192);
+    border-radius: 5px; background-color: white;
+}
+
+#back-to-main{width:170px; text-align:left; position: relative;
+    top:28px; font-size: 14px;
+}

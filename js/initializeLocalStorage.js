@@ -5,9 +5,8 @@ if (localStorage.getItem(appName) == null){
     localStorage.setItem(appName,
         JSON.stringify(
             {
-                users:[
-                    {
-                        name:'fakeUser',
+                users:{
+                    'fakeUser':{
                         password:'Blah1234',
                         lists:[
                             {
@@ -41,7 +40,8 @@ if (localStorage.getItem(appName) == null){
                         ]
                     }
 
-                ]
+                }
+
             }
         )
     );
