@@ -8,36 +8,31 @@ if (localStorage.getItem(appName) == null){
                 users:{
                     'fakeUser':{
                         password:'Blah1234',
-                        lists:[
+                        lists:
                             {
-                                name:'Things to do in San Francisco',
-                                items:[
+                                'Things to do in San Francisco': [
                                     'buy fancy shoes',
                                     'drive on lombard street',
                                     'eat at harry chu\'s',
                                     'slap a liberal',
                                     'attend opera',
                                     'giants game'
-                                ]
-                            },
-                            {
-                                name:'Grocery List',
-                                items:[
+                                ],
+
+                                'Grocery List':[
                                     'milk',
                                     'cookies',
                                     'bread',
                                     'soup'
-                                ]
-                            },
-                            {
-                                name:'Cars to test-drive',
-                                items:[
+                                ],
+
+                                'Cars to test-drive':[
                                     'Dodge Charger',
                                     'Chevy Malibu',
                                     'Ford Gran Torino'
                                 ]
                             }
-                        ]
+
                     }
 
                 }

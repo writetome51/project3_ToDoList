@@ -7,6 +7,14 @@ itemText.click(function(){
 });
 
 
+itemText.blur(function(){
+    var textToSave = $(this).text();
+    var list = JSON.parse(sessionStorage.getItem(appName));
+    list = list.activeList;
+    saveListItem(textToSave, list);
+});
+
+
 itemText.hover(
     function onMouseOver(){
         if (listItemIsNotClicked($(this))){
@@ -39,6 +47,15 @@ todoCheckbox.click(function(){
     else{
         deleteButton.addClass(invisibleClass);
     }
+});
+
+
+listMenuItem.click(function(){
+    var activeList = $(this).text();
+    var sessionData = JSON.parse(sessionStorage.getItem(appName));
+    sessionData.activeList = activeList;
+    sessionData = JSON.stringify(sessionData);
+    sessionStorage.setItem(appName, sessionData);
 });
 
 

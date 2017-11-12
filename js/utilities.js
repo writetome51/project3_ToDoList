@@ -19,6 +19,9 @@ var loginSubmit = $('#login-submit');
 var sessionData = false;
 var loginLink = $('#login-link');
 var logoutLink = $('#logout-link');
+var listMenuItem = $('.list-menu-item');
+var loggedInUser = '';
+var textBeingEdited = '';
 
 setAppearance();
 
@@ -80,7 +83,10 @@ function makePencilGlyphVisible(obj){
 
 
 function makeItemEditable(obj){
-    obj.children('.' + itemTextClass).attr("contenteditable", "true");
+    var currentItemText = obj.children('.' + itemTextClass);
+    currentItemText.attr("contenteditable", "true");
+
+    textBeingEdited = currentItemText.text();
 }
 
 
@@ -144,7 +150,7 @@ function removeListItem(item){
 function createAccount(username, password){
     appData.users[username] = {
         password:password,
-        lists:[]
+        lists:{}
     };
 
     localStorage.setItem(appName, JSON.stringify(appData));
@@ -153,6 +159,7 @@ function createAccount(username, password){
 
 function login(username, password){
     var obj = JSON.stringify({loggedInUser:username});
+    loggedInUser = username;
     sessionData = sessionStorage.setItem(appName, obj);
 }
 
@@ -169,7 +176,37 @@ function newList(){}
 function editLists(){}
 
 
-function saveListItem(){}
+
+
+function saveListItem(itemText, list){
+    if (itemText !== textBeingEdited){
+        removeItemFromSavedList(textBeingEdited);
+    }
+
+    var data = JSON.parse(localStorage.getItem(appName));
+    var user = data.users[loggedInUser];
+    var listToAddTo = user.lists[list];
+    listToAddTo.push(itemText);
+
+    user.lists[list] = listToAddTo;
+    data.users[loggedInUser] = user;
+
+    data = JSON.stringify(data);
+    localStorage.setItem(appName, data);
+}
+
+
+function removeItemFromSavedList(text){
+    var data = JSON.parse(localStorage.getItem(appName));
+    var user = data.users[loggedInUser];
+    var list = user.lists[list];
+    var theIndex = list.indexOf(text);
+
+
+}
+
+
+
 
 
 function notLoggedIn(){
