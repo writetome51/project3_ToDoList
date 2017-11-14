@@ -7,6 +7,8 @@ addButton.click(function(){
 });
 
 
+
+
 itemText.click(function(){
     if (listItemIsNotClicked($(this))){
         makeThisItemTheClickedItem($(this));
@@ -103,4 +105,9 @@ loginForm.submit(function(){
     $('#todos-body').removeClass('invisible-and-collapsed');
 
     setAppearance();
+});
+
+
+newListItemForm.submit(function(){
+
 });

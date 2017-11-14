@@ -1,5 +1,6 @@
 
-var appName = 'todoList';
+var appName = 'todosApp';
+var appNameForDisplay = 'To-Do\'s';
 var appData = '';
 var clickedClass = 'list-item-clicked';
 var hoveredClass = 'list-item-hovered';
@@ -10,6 +11,7 @@ var removeGlyphiconClass = 'glyphicon-remove-circle';
 var pencilGlyphiconClass = 'glyphicon-pencil';
 var itemCheckboxClass = 'todo-checkbox';
 var invisibleClass = 'invisible';
+var invisibleCollapsedClass = 'invisible-and-collapsed';
 var itemText = $('.' + itemTextClass);
 var itemToHighlight = '';
 var todoCheckbox = $('.' + itemCheckboxClass);
@@ -28,6 +30,9 @@ var textBeingEdited = '';
 var activeList = '';
 var addButton = $('#add-button');
 var loginForm = $('#login-form');
+var newListItemForm = $('#new-list-item-form');
+var navbarSearchContainer = $('#navbar-search-container');
+var appNameHolder = $('#app-name-holder');
 
 setAppearance();
 
@@ -243,15 +248,22 @@ function loggedIn(){
 
 function setAppearance(){
     if (notLoggedIn()){
-        $('#dropdown-menus').addClass('invisible');
-        $('#login-and-create-account').removeClass('invisible-and-collapsed');
-        $('#logout-link-container').addClass('invisible-and-collapsed');
+        $('#login-and-create-account').removeClass(invisibleCollapsedClass);
+        $('#dropdown-menus').addClass(invisibleClass);
+        $('#logout-link-container').addClass(invisibleCollapsedClass);
+        newListItemForm.addClass(invisibleCollapsedClass);
+        navbarSearchContainer.addClass(invisibleCollapsedClass);
+        appNameHolder.addClass('welcome-to-app-name');
+        $('#app-name').text('Welcome to ' + appNameForDisplay);
     }
 
     if (loggedIn()){
-        $('#login-and-create-account').addClass('invisible-and-collapsed');
-        $('#logout-link-container').removeClass('invisible-and-collapsed');
-        $('#dropdown-menus').removeClass('invisible');
+        $('#login-and-create-account').addClass(invisibleCollapsedClass);
+        $('#logout-link-container').removeClass(invisibleCollapsedClass);
+        $('#dropdown-menus').removeClass(invisibleClass);
+        newListItemForm.removeClass(invisibleCollapsedClass);
+        appNameHolder.removeClass('welcome-to-app-name');
+        $('#app-name').text(appNameForDisplay);
     }
 
 }

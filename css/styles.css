@@ -23,10 +23,15 @@ div{
 }
 
 
-#app-name, #page-name{font-size: 30px;}
+#app-name, #page-name{font-size: 30px; width: 100%;  line-height: 1em;}
+
+
 
 .app-name-and-categories{display:flex;float:left;}
-#app-name-container{width:240px; padding-right: 0;}
+.app-name-container{width:240px; padding-right: 0;}
+
+.welcome-to-app-name{width:1200px;}
+.welcome-to-app-name #app-name{ font-size: 40px;}
 
 .navbar-div{
     display: flex;

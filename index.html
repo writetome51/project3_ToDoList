@@ -24,7 +24,7 @@
         <div class="container-fluid top-container-in-navbar">
 
             <div class="app-name-and-categories">
-                <div class="navbar-div" id="app-name-container">
+                <div class="navbar-div app-name-container" id="app-name-holder">
                     <a id="app-name" class="navbar-brand" href="#">To-Do's</a>
                 </div>
 
@@ -63,7 +63,8 @@
 
 
             <div id="search-and-create-and-login" class="navbar-div">
-                <div class="navbar-div top-navbar-search-container">
+                <div class="navbar-div top-navbar-search-container"
+                     id="navbar-search-container">
                     <input type="text" id="navbar-search-input" class="form-control"
                            placeholder="Search">
                 </div>
@@ -102,7 +103,7 @@
         <ul class="todo-list" id="the-todo-list">
 
         </ul>
-        <form>
+        <form id="new-list-item-form">
             <div class="navbar-div">
                 <div class="navbar-div top-navbar-search-container">
                     <input type="text"  class="form-control"
