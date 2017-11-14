@@ -157,3 +157,9 @@ div.float-right{display:inline; width:auto;float:right;}
 
 
 #account-creation-success.invisible-and-collapsed{display: none;}
+
+.add-item-button{
+    position: relative;  height:34px;
+}
+
+.add-item-button input{width:100%; height:100%;}

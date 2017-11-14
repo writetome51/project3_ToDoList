@@ -1,5 +1,4 @@
-var appName = 'todoList';
-var appData = '';
+
 
 if (localStorage.getItem(appName) == null){
     localStorage.setItem(appName,
@@ -42,10 +41,4 @@ if (localStorage.getItem(appName) == null){
     );
 }
 
-loadInitialPageData();
-
-
-function loadInitialPageData(){
-    appData = JSON.parse(localStorage.getItem(appName));
-}
 

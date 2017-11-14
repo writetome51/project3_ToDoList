@@ -1,6 +1,8 @@
 addButton.click(function(){
     $('.todo-list').append(
-    "<li class='todo-list-item' draggable='true'><input type='checkbox' class='todo-checkbox' title='Check box to mark item done, or to perform action on item'><span class='highlight-area'> <span class='item-text'>" + "</span><span class='glyphicon glyphicon-remove-circle  invisible'></span></span></li>"
+    "<li class='todo-list-item' draggable='true'><input type='checkbox' class='todo-checkbox' title='Check box to mark item done, or to perform action on item'><span class='highlight-area'> <span class='item-text'>"
+        + newItem +
+        "</span><span class='glyphicon glyphicon-remove-circle  invisible'></span></span></li>"
     );
 });
 
@@ -68,7 +70,7 @@ newListAction.click(function(){
 });
 
 
-createAccountSubmit.click(function(){
+createAccountForm.submit(function(){
     var username = $('#create-account-username').val();
     var password = $('#create-account-password').val();
     createAccount(username, password);
@@ -91,12 +93,12 @@ logoutLink.click(function(){
 });
 
 
-loginSubmit.click(function(){
+loginForm.submit(function(){
     var username = $('#login-username').val();
     var password = $('#login-password').val();
     login(username, password);
 
-    $('#login-section').remove();
+    $('#login-section').addClass('invisible-and-collapsed');
     $('#main-home-navbar').removeClass('invisible-and-collapsed');
     $('#todos-body').removeClass('invisible-and-collapsed');
 

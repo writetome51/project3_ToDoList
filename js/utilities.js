@@ -1,4 +1,6 @@
 
+var appName = 'todoList';
+var appData = '';
 var clickedClass = 'list-item-clicked';
 var hoveredClass = 'list-item-hovered';
 var listItemClass = 'todo-list-item';
@@ -15,6 +17,7 @@ var removeGlyph = $('.' + removeGlyphiconClass);
 var clickedItem = false;
 var newListAction = $('#new-list-action');
 var createAccountSubmit = $('#create-account-submit');
+var createAccountForm = $('#create-account-form');
 var loginSubmit = $('#login-submit');
 var sessionData = false;
 var loginLink = $('#login-link');
@@ -24,6 +27,7 @@ var loggedInUser = '';
 var textBeingEdited = '';
 var activeList = '';
 var addButton = $('#add-button');
+var loginForm = $('#login-form');
 
 setAppearance();
 
@@ -224,7 +228,7 @@ function notLoggedIn(){
 
 
 function loggedIn(){
-   var sessionData = sessionStorage.getItem(appName);
+   var sessionData = sessionStorage.getItem(appName + '_loggedInUser');
 
    if (sessionData == null){ return false;}
 

@@ -102,15 +102,20 @@
         <ul class="todo-list" id="the-todo-list">
 
         </ul>
+        <form>
+            <div class="navbar-div">
+                <div class="navbar-div top-navbar-search-container">
+                    <input type="text"  class="form-control"
+                           placeholder="Add item"
+                           required minlength="1" >
+                </div>
+                <div class="form-submit navbar-div add-item-button">
+                    <input type="submit" value="Add">
+                </div>
 
-        <div class="navbar-div">
-            <div class="navbar-div top-navbar-search-container">
-                <input type="text"  class="form-control" id="create-account-username"
-                       placeholder="Add item"
-                       required minlength="8" maxlength="16">
             </div>
-            <button id="add-button">Add Item</button>
-        </div>
+
+        </form>
 
 
 
@@ -140,11 +145,14 @@
                 <div class="navbar-div" id="page-name-container">
                     <a id="page-name" class="navbar-brand" href="#">Log In</a>
                 </div>
-
+                <div class="float-right" id="back-to-main">
+                    <a href="index.html">
+                        <span class="glyphicon glyphicon-arrow-left"></span> Back To Main</a>
+                </div>
 
             </div>
 
-            <form>
+            <form id="login-form">
                 <div class="navbar-div">
                     <div class="navbar-div top-navbar-search-container">
                         <input type="text"  class="form-control" id="login-username"
@@ -183,8 +191,9 @@
 <script src="js/vendor/jquery-3.2.1.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-<script src="js/initializeLocalStorage.js"></script>
 <script src="js/utilities.js"></script>
+<script src="js/initializeLocalStorage.js"></script>
 <script src="js/jquery-event-configurations.js"></script>
+<script src="js/my_js_library/browser_storage.js"></script>
 </body>
 </html>
