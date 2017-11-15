@@ -72,14 +72,20 @@ newListAction.click(function(){
 });
 
 
-createAccountForm.submit(function(){
-    var username = $('#create-account-username').val();
-    var password = $('#create-account-password').val();
-    createAccount(username, password);
 
-    $('#create-account-form').remove();
-    $('#account-creation-success').removeClass('invisible-and-collapsed');
+createAccountForm.submit(function(event){
+    event.preventDefault();
+
+    if (newUserValid()){
+        createAccount(newUsernameInput.val(), newPasswordInput.val());
+        location.replace('index.html');
+    }
+    else{
+        accountCreationUnsuccessful.removeClass('invisible-and-collapsed');
+    }
 });
+
+
 
 
 loginLink.click(function(){

@@ -5,6 +5,7 @@ var appNameHolder = $('#app-name-holder');
 var appData = '';
 var activeList = false;
 var addButton = $('#add-button');
+var accountCreationUnsuccessful = $('#account-creation-unsuccessful');
 var clickedClass = 'list-item-clicked';
 var clickedItem = false;
 var createAccountSubmit = $('#create-account-submit');
@@ -24,6 +25,9 @@ var loginLink = $('#login-link');
 var logoutLink = $('#logout-link');
 var listMenuItem = $('.list-menu-item');
 var loggedInUser = false;
+var newUsernameInput = $('#create-account-username');
+var newPasswordInput = $('#create-account-password');
+var newPassword2Input = $('#create-account-password-2');
 var newListItemForm = $('#new-list-item-form');
 var navbarSearchContainer = $('#navbar-search-container');
 var newListAction = $('#new-list-action');
@@ -36,6 +40,7 @@ var localKeyUserPrefix = appName + '_user_'; // Each user gets its own key, prec
 var sessionData = false;
 var textBeingEdited = false;
 var todoCheckbox = $('.' + itemCheckboxClass);
+
 
 
 setAppearance();
@@ -249,30 +254,73 @@ function notLoggedIn(){
 
 function loggedIn(){
    var sessionData = sessionStorage.getItem(sessionKeyLoggedInUser);
-
    if (sessionData == null){ return false;}
    else return true;
 }
 
 
 function setAppearance(){
+
     if (notLoggedIn()){
-        $('#login-and-create-account').removeClass(invisibleCollapsedClass);
-        $('#dropdown-menus').addClass(invisibleClass);
-        $('#logout-link-container').addClass(invisibleCollapsedClass);
-        newListItemForm.addClass(invisibleCollapsedClass);
-        navbarSearchContainer.addClass(invisibleCollapsedClass);
-        appNameHolder.addClass('welcome-to-app-name');
-        $('#app-name').text('Welcome to ' + appNameForDisplay);
+        showNecessaryItemsWhenLoggedOut();
+        removeUnnecessaryItemsWhenLoggedOut();
+        setLoggedOutHeader();
     }
 
-    if (loggedIn()){
-        $('#login-and-create-account').addClass(invisibleCollapsedClass);
-        $('#logout-link-container').removeClass(invisibleCollapsedClass);
-        $('#dropdown-menus').removeClass(invisibleClass);
-        newListItemForm.removeClass(invisibleCollapsedClass);
-        appNameHolder.removeClass('welcome-to-app-name');
-        $('#app-name').text(appNameForDisplay);
+    else if (loggedIn()){
+        showNecessaryItemsWhenLoggedIn();
+        removeUnnecessaryItemsWhenLoggedIn();
+        setLoggedInHeader();
     }
+}
 
+
+function showNecessaryItemsWhenLoggedIn(){
+    $('#logout-link-container').removeClass(invisibleCollapsedClass);
+    $('#dropdown-menus').removeClass(invisibleClass);
+    newListItemForm.removeClass(invisibleCollapsedClass);
+    navbarSearchContainer.removeClass(invisibleCollapsedClass);
+}
+
+
+function showNecessaryItemsWhenLoggedOut(){
+    $('#login-and-create-account').removeClass(invisibleCollapsedClass);
+}
+
+
+function removeUnnecessaryItemsWhenLoggedIn(){
+    $('#login-and-create-account').addClass(invisibleCollapsedClass);
+}
+
+
+function removeUnnecessaryItemsWhenLoggedOut(){
+    $('#logout-link-container').addClass(invisibleCollapsedClass);
+    $('#dropdown-menus').addClass(invisibleClass);
+    newListItemForm.addClass(invisibleCollapsedClass);
+    navbarSearchContainer.addClass(invisibleCollapsedClass);
+}
+
+
+function setLoggedOutHeader(){
+    appNameHolder.addClass('welcome-to-app-name');
+    $('#app-name').text('Welcome to ' + appNameForDisplay);
+}
+
+
+function setLoggedInHeader(){
+    appNameHolder.removeClass('welcome-to-app-name');
+    $('#app-name').text(appNameForDisplay);
+}
+
+
+function redirectToHome(){
+    var url = location.href;
+}
+
+
+function newUserValid(){
+    var username = newUsernameInput.val();
+    var password1 = newPasswordInput.val();
+    var password2 = newPassword2Input.val();
+    return (newAccountInfoValid(username, password1, password2));
 }

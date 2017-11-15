@@ -53,7 +53,7 @@
 
                 <div class="navbar-div">
                     <div class="navbar-div top-navbar-search-container">
-                        <input type="password"  class="form-control"
+                        <input type="password"  class="form-control" id="create-account-password-2"
                                placeholder="Password again"
                                required minlength="8" maxlength="16">
                     </div>
@@ -69,9 +69,9 @@
 
             </form>
 
-            <div id="account-creation-success" class="navbar-div invisible-and-collapsed" >
-               <p>Congratulations, you've created an account.</p>
-                <p>You may begin making lists (and checking them twice).</p>
+            <div id="account-creation-unsuccessful" class="navbar-div invisible-and-collapsed" >
+               <p>Sorry, your info didn't meet requirements.</p>
+                <p>Usernames and passwords must be at least 8 characters and not more than 16.  Both passwords must match.</p>
             </div>
 
         </div>
@@ -85,6 +85,9 @@
 <script src="js/vendor/jquery-3.2.1.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/my_js_library/essentials.js"></script>
+<script src="js/my_js_library/browser_storage.js"></script>
+<script src="js/validation.js"></script>
 <script src="js/utilities.js"></script>
 <script src="js/initializeLocalStorage.js"></script>
 <script src="js/jquery-event-configurations.js"></script>
