@@ -1,39 +1,42 @@
 
 var appName = 'todosApp';
 var appNameForDisplay = 'To-Do\'s';
+var appNameHolder = $('#app-name-holder');
 var appData = '';
-var sessionKeyLoggedInUser = appName + '_loggedInUser';
+var activeList = false;
+var addButton = $('#add-button');
 var clickedClass = 'list-item-clicked';
+var clickedItem = false;
+var createAccountSubmit = $('#create-account-submit');
+var createAccountForm = $('#create-account-form');
 var hoveredClass = 'list-item-hovered';
-var listItemClass = 'todo-list-item';
 var highlightClass = 'highlight-area';
-var itemTextClass = 'item-text';
-var removeGlyphiconClass = 'glyphicon-remove-circle';
-var pencilGlyphiconClass = 'glyphicon-pencil';
 var itemCheckboxClass = 'todo-checkbox';
 var invisibleClass = 'invisible';
 var invisibleCollapsedClass = 'invisible-and-collapsed';
+var itemTextClass = 'item-text';
 var itemText = $('.' + itemTextClass);
 var itemToHighlight = '';
-var todoCheckbox = $('.' + itemCheckboxClass);
-var removeGlyph = $('.' + removeGlyphiconClass);
-var clickedItem = false;
-var newListAction = $('#new-list-action');
-var createAccountSubmit = $('#create-account-submit');
-var createAccountForm = $('#create-account-form');
+var listItemClass = 'todo-list-item';
+var loginForm = $('#login-form');
 var loginSubmit = $('#login-submit');
-var sessionData = false;
 var loginLink = $('#login-link');
 var logoutLink = $('#logout-link');
 var listMenuItem = $('.list-menu-item');
-var loggedInUser = '';
-var textBeingEdited = '';
-var activeList = '';
-var addButton = $('#add-button');
-var loginForm = $('#login-form');
+var loggedInUser = false;
 var newListItemForm = $('#new-list-item-form');
 var navbarSearchContainer = $('#navbar-search-container');
-var appNameHolder = $('#app-name-holder');
+var newListAction = $('#new-list-action');
+var pencilGlyphiconClass = 'glyphicon-pencil';
+var removeGlyphiconClass = 'glyphicon-remove-circle';
+var removeGlyph = $('.' + removeGlyphiconClass);
+var sessionKeyLoggedInUser = appName + '_loggedInUser';
+var sessionKeyActiveList = appName + '_activeList';
+var localKeyUserPrefix = appName + '_user_'; // Each user gets its own key, preceded by this prefix.
+var sessionData = false;
+var textBeingEdited = false;
+var todoCheckbox = $('.' + itemCheckboxClass);
+
 
 setAppearance();
 
@@ -159,13 +162,13 @@ function removeListItem(item){
 }
 
 
-function createAccount(username, password){
-    appData.users[username] = {
-        password:password,
-        lists:{}
-    };
 
-    localStorage.setItem(appName, JSON.stringify(appData));
+
+function createAccount(username, password){
+    var data = {password:password, lists:{}};
+    var userKey = localKeyUserPrefix + username;
+
+    localStorage.setItem(userKey, JSON.stringify(data));
 }
 
 
@@ -176,15 +179,27 @@ function login(username, password){
 
 
 function logout(){
-    sessionStorage.removeItem(appName);
+    sessionStorage.removeItem(sessionKeyLoggedInUser);
     sessionData = false;
 }
 
 
-function newList(){}
+function createNewList(username, listName){
+    var userKey = localKeyUserPrefix + username;
+    var listsBeingModified = getUsersLists(userKey);
+    listsBeingModified[listName] = [];
+    modifyLocalStorage(userKey, {lists:listsBeingModified});
+}
 
 
 function editLists(){}
+
+
+
+function getUsersLists(userKey){
+    var userData = getLocalStorageJSON(userKey);
+    return userData.lists;
+}
 
 
 
@@ -236,13 +251,7 @@ function loggedIn(){
    var sessionData = sessionStorage.getItem(sessionKeyLoggedInUser);
 
    if (sessionData == null){ return false;}
-
-   sessionData = JSON.parse(sessionData);
-
-   if (sessionData.loggedInUser){
-       return true;
-   }
-   else return false;
+   else return true;
 }
 
 

@@ -5,7 +5,7 @@ function modifyLocalStorage(key, propertiesToModifyAndTheirNewValues){
 	var obj = getLocalStorageJSON(key);
 	obj = modifyObject(obj, propertiesToModifyAndTheirNewValues);
 
-	returnToLocalStorageAsJSON(key, obj);
+	addToLocalStorageAsJSON(key, obj);
 }
 
 
@@ -13,7 +13,7 @@ function modifySessionStorage(key, propertiesToModifyAndTheirNewValues){
 	var obj = getSessionStorageJSON(key);
 	obj = modifyObject(obj, propertiesToModifyAndTheirNewValues);
 
-	returnToSessionStorageAsJSON(key, obj);
+	addToSessionStorageAsJSON(key, obj);
 }
 
 
@@ -33,13 +33,13 @@ function getBrowserStorage(localOrSession, key){
 }
 
 
-function returnToLocalStorageAsJSON(key, value){
+function addToLocalStorageAsJSON(key, value){
 	value = JSON.stringify(value);
 	setBrowserStorage(localStorage, {key:key, value:value});
 }
 
 
-function returnToSessionStorageAsJSON(key, value){
+function addToSessionStorageAsJSON(key, value){
 	value = JSON.stringify(value);
 	setBrowserStorage(sessionStorage, {key:key, value:value});
 }
