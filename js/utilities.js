@@ -2,6 +2,7 @@
 var appName = 'todosApp';
 var appNameForDisplay = 'To-Do\'s';
 var appData = '';
+var sessionKeyLoggedInUser = appName + '_loggedInUser';
 var clickedClass = 'list-item-clicked';
 var hoveredClass = 'list-item-hovered';
 var listItemClass = 'todo-list-item';
@@ -169,9 +170,8 @@ function createAccount(username, password){
 
 
 function login(username, password){
-    var obj = JSON.stringify({loggedInUser:username});
     loggedInUser = username;
-    sessionData = sessionStorage.setItem(appName, obj);
+    sessionStorage.setItem(sessionKeyLoggedInUser, loggedInUser);
 }
 
 
@@ -233,7 +233,7 @@ function notLoggedIn(){
 
 
 function loggedIn(){
-   var sessionData = sessionStorage.getItem(appName + '_loggedInUser');
+   var sessionData = sessionStorage.getItem(sessionKeyLoggedInUser);
 
    if (sessionData == null){ return false;}
 

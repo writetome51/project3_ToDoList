@@ -1,4 +1,4 @@
-
+if (sessionStorage.getItem(appName + '_loggedInUser'))
 
 if (localStorage.getItem(appName) == null){
     localStorage.setItem(appName,
