@@ -1,25 +1,15 @@
 
 var appName = 'todosApp';
-var appNameForDisplay = 'To-Do\'s';
-var appNameHolder = $('#app-name-holder');
+
+
 var appData = '';
 var activeList = false;
-var addButton = $('#add-button');
-var accountCreationUnsuccessful = $('#account-creation-unsuccessful');
-var clickedClass = 'list-item-clicked';
+
 var clickedItem = false;
-var createAccountSubmit = $('#create-account-submit');
-var createAccountForm = $('#create-account-form');
-var hoveredClass = 'list-item-hovered';
-var highlightClass = 'highlight-area';
-var itemCheckboxClass = 'todo-checkbox';
-var invisibleClass = 'invisible';
-var invisibleCollapsedClass = 'invisible-and-collapsed';
-var itemTextClass = 'item-text';
-var itemText = $('.' + itemTextClass);
-var itemToHighlight = '';
-var listItemClass = 'todo-list-item';
-var localKeyUserPrefix = appName + '_user_'; // Each user gets its own key, preceded by this prefix.
+
+
+// Each user gets its own localStorage key, which begins with this prefix:
+var localKeyUserPrefix = appName + '_user_';
 var loginForm = $('#login-form');
 var loginSubmit = $('#login-submit');
 var loginLink = $('#login-link');
@@ -42,8 +32,6 @@ var textBeingEdited = false;
 var todoCheckbox = $('.' + itemCheckboxClass);
 
 
-
-setAppearance();
 
 
 function undoClickedItem(){
