@@ -324,3 +324,10 @@ function newUserValid(){
     var password2 = newPassword2Input.val();
     return (newAccountInfoValid(username, password1, password2));
 }
+
+
+function createAccountLoginAndRedirectToHomePage(){
+    createAccount(newUsernameInput.val(), newPasswordInput.val());
+    login();
+    location.replace('index.html');
+}

@@ -64,28 +64,22 @@ listMenuItem.click(function(){
 });
 
 
-
-
 newListAction.click(function(){
     $('#the-todo-list').remove();
     $('#new-list-form').removeClass('invisible-and-collapsed');
 });
 
 
-
 createAccountForm.submit(function(event){
     event.preventDefault();
 
     if (newUserValid()){
-        createAccount(newUsernameInput.val(), newPasswordInput.val());
-        location.replace('index.html');
+        createAccountLoginAndRedirectToHomePage();
     }
     else{
         accountCreationUnsuccessful.removeClass('invisible-and-collapsed');
     }
 });
-
-
 
 
 loginLink.click(function(){
