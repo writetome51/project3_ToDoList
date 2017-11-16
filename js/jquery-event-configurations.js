@@ -18,7 +18,7 @@ itemText.click(function(){
 
 itemText.blur(function(){
     var textToSave = $(this).text();
-    var list = JSON.parse(sessionStorage.getItem(appName));
+    var list = getSessionStorageJSON(appName);
     list = list.activeList;
     saveListItem(textToSave, list);
 });

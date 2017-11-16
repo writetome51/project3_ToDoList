@@ -156,15 +156,21 @@ div.float-right{display:inline; width:auto;float:right;}
     top:28px; font-size: 14px;
 }
 
-.invisible-and-collapsed{display: none;}
+
+#account-creation-unsuccessful{display:block;}
 
 #account-creation-success{display:block;padding-left: 15px; margin-top: 20px;}
 
+.invisible-and-collapsed{display: none;}
 
-#account-creation-success.invisible-and-collapsed{display: none;}
+
+#account-creation-success.invisible-and-collapsed,
+#account-creation-unsuccessful.invisible-and-collapsed{display: none;}
+
 
 .add-item-button{
     position: relative;  height:34px;
 }
 
 .add-item-button input{width:100%; height:100%;}
+

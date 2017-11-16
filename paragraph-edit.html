@@ -6,10 +6,12 @@
 </head>
 <body>
 
-<p contenteditable="true">You can rewrite this line.</p>
 
-<ul>
-    <li contenteditable="true" onblur="alert('you changed something')">rewrite this line</li>
-</ul>
+
+<script src="js/my_js_library/browser_storage.js"></script>
+<script>
+    var result = getLocalStorageJSON('anotherTest');
+    document.write(result);
+</script>
 </body>
 </html>
