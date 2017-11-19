@@ -1,6 +1,8 @@
 
 // Additions to the Array prototype:
 
+
+// For removing non-adjacent items.
 Array.prototype.removeItems = function(items){
 	for (var i=0; i<items.length;  ++i){
 		this.removeItem(items[i]);

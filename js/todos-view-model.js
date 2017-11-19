@@ -2,162 +2,162 @@
 
 function TodosViewModel(){
 
-    var appNameForDisplay = 'To-Do\'s';
-    var appNameHolder = $('#app-name-holder');
-    var addButton = $('#add-button');
-    var accountCreationUnsuccessful = $('#account-creation-unsuccessful');
-    var clickedItem = false;
-    var clickedClass = 'list-item-clicked';
-    var createAccountSubmit = $('#create-account-submit');
-    var createAccountForm = $('#create-account-form');
-    var hoveredClass = 'list-item-hovered';
-    var highlightClass = 'highlight-area';
-    var itemCheckboxClass = 'todo-checkbox';
-    var invisibleClass = 'invisible';
-    var invisibleCollapsedClass = 'invisible-and-collapsed';
-    var itemTextClass = 'item-text';
-    var itemText = $('.' + itemTextClass);
-    var itemToHighlight = '';
-    var listItemClass = 'todo-list-item';
-    var loginForm = $('#login-form');
-    var loginSubmit = $('#login-submit');
-    var loginLink = $('#login-link');
-    var logoutLink = $('#logout-link');
-    var listMenuItem = $('.list-menu-item');
-    var newUsernameInput = $('#create-account-username');
-    var newPasswordInput = $('#create-account-password');
-    var newPassword2Input = $('#create-account-password-2');
-    var newListItemForm = $('#new-list-item-form');
-    var navbarSearchContainer = $('#navbar-search-container');
-    var newListAction = $('#new-list-action');
-    var pencilGlyphiconClass = 'glyphicon-pencil';
-    var removeGlyphiconClass = 'glyphicon-remove-circle';
-    var removeGlyph = $('.' + removeGlyphiconClass);
-    var todoCheckbox = $('.' + itemCheckboxClass);
+    this.appNameForDisplay = 'To-Do\'s';
+    this.appNameHolder = $('#app-name-holder');
+    this.addButton = $('#add-button');
+    this.accountCreationUnsuccessful = $('#account-creation-unsuccessful');
+    this.clickedItem = false;
+    this.clickedClass = 'list-item-clicked';
+    this.createAccountSubmit = $('#create-account-submit');
+    this.createAccountForm = $('#create-account-form');
+    this.hoveredClass = 'list-item-hovered';
+    this.highlightClass = 'highlight-area';
+    this.itemCheckboxClass = 'todo-checkbox';
+    this.invisibleClass = 'invisible';
+    this.invisibleCollapsedClass = 'invisible-and-collapsed';
+    this.itemTextClass = 'item-text';
+    this.itemText = $('.' + this.itemTextClass);
+    this.itemToHighlight = '';
+    this.listItemClass = 'todo-list-item';
+    this.loginForm = $('#login-form');
+    this.loginSubmit = $('#login-submit');
+    this.loginLink = $('#login-link');
+    this.logoutLink = $('#logout-link');
+    this.listMenuItem = $('.list-menu-item');
+    this.newUsernameInput = $('#create-account-username');
+    this.newPasswordInput = $('#create-account-password');
+    this.newPassword2Input = $('#create-account-password-2');
+    this.newListItemForm = $('#new-list-item-form');
+    this.navbarSearchContainer = $('#navbar-search-container');
+    this.newListAction = $('#new-list-action');
+    this.pencilGlyphiconClass = 'glyphicon-pencil';
+    this.removeGlyphiconClass = 'glyphicon-remove-circle';
+    this.removeGlyph = $('.' + this.removeGlyphiconClass);
+    this.todoCheckbox = $('.' + this.itemCheckboxClass);
 
 
-    function undoClickedItem(){
-        if (thereIsAClickedItem()){
-            clickedItem.removeClass(clickedClass);
-            makeGlyphsInvisible();
-            makeItemNotEditable(clickedItem);
+    this.undoClickedItem = function(){
+        if (this.thereIsAClickedItem()){
+            this.clickedItem.removeClass(this.clickedClass);
+            this.makeGlyphsInvisible();
+            this.makeItemNotEditable(this.clickedItem);
         }
-        clickedItem = false;
-    }
+        this.clickedItem = false;
+    };
 
 
 
-    function makeThisItemTheClickedItem(obj){
-        itemToHighlight = obj.parent('.' + highlightClass);
-        undoClickedItem();
-        setClickedItem(itemToHighlight);
-    }
+    this.makeThisItemTheClickedItem = function(obj){
+        this.itemToHighlight = obj.parent('.' + this.highlightClass);
+        this.undoClickedItem();
+        this.setClickedItem(this.itemToHighlight);
+    };
 
 
-    function setClickedItem(obj){
-        clickedItem = obj;
-        removeHoverClassAndAddClickedClass(clickedItem);
-        makeGlyphsVisible();
-        makeItemEditable(clickedItem);
-    }
+    this.setClickedItem = function(obj){
+        this.clickedItem = obj;
+        this.removeHoverClassAndAddClickedClass(this.clickedItem);
+        this.makeGlyphsVisible();
+        this.makeItemEditable(this.clickedItem);
+    };
 
 
-    function listItemIsAlreadyClicked(obj){
-        itemToHighlight = obj.parent('.' + highlightClass);
-        return thisItemIsAlreadyClicked(itemToHighlight);
-    }
+    this.listItemIsAlreadyClicked = function(obj){
+        this.itemToHighlight = obj.parent('.' + this.highlightClass);
+        return this.thisItemIsAlreadyClicked(this.itemToHighlight);
+    };
 
 
-    function listItemIsNotClicked(obj){
-        return  ( ! listItemIsAlreadyClicked(obj));
-    }
+    this.listItemIsNotClicked = function(obj){
+        return  ( ! this.listItemIsAlreadyClicked(obj));
+    };
 
 
-    function thisItemIsAlreadyClicked(obj){
-        return  obj.hasClass(clickedClass);
-    }
+    this.thisItemIsAlreadyClicked = function(obj){
+        return  obj.hasClass(this.clickedClass);
+    };
 
 
-    function makeGlyphsVisible(){
-        makeRemoveGlyphVisible(clickedItem);
-        makePencilGlyphVisible(clickedItem);
-    }
+    this.makeGlyphsVisible = function(){
+        this.makeRemoveGlyphVisible(this.clickedItem);
+        this.makePencilGlyphVisible(this.clickedItem);
+    };
 
 
-    function makeGlyphsInvisible(){
-        makeRemoveGlyphInvisible(clickedItem);
-        makePencilGlyphInvisible(clickedItem);
-    }
+    this.makeGlyphsInvisible = function(){
+        makeRemoveGlyphInvisible(this.clickedItem);
+        makePencilGlyphInvisible(this.clickedItem);
+    };
 
 
-    function makeRemoveGlyphVisible(obj){
-        obj.find('.' + removeGlyphiconClass).removeClass(invisibleClass);
-    }
+    this.makeRemoveGlyphVisible = function(obj){
+        obj.find('.' + removeGlyphiconClass).removeClass(this.invisibleClass);
+    };
 
 
-    function makeRemoveGlyphInvisible(obj){
-        obj.find('.' + removeGlyphiconClass).addClass(invisibleClass);
-    }
+    this.makeRemoveGlyphInvisible = function(obj){
+        obj.find('.' + removeGlyphiconClass).addClass(this.invisibleClass);
+    };
 
 
-    function makePencilGlyphInvisible(obj){
-        obj.find('.' + pencilGlyphiconClass).addClass(invisibleClass);
-    }
+    this.makePencilGlyphInvisible = function(obj){
+        obj.find('.' + pencilGlyphiconClass).addClass(this.invisibleClass);
+    };
 
 
-    function makePencilGlyphVisible(obj){
-        obj.find('.' + pencilGlyphiconClass).removeClass(invisibleClass);
-    }
+    this.makePencilGlyphVisible = function(obj){
+        obj.find('.' + pencilGlyphiconClass).removeClass(this.invisibleClass);
+    };
 
 
-    function makeItemEditable(obj){
+    this.makeItemEditable = function(obj){
         var currentItemText = obj.children('.' + itemTextClass);
         currentItemText.attr("contenteditable", "true");
 
         textBeingEdited = currentItemText.text();
-    }
+    };
 
 
-    function makeItemNotEditable(obj){
+    this.makeItemNotEditable = function(obj){
         obj.children('.' + itemTextClass).removeAttr('contenteditable');
-    }
+    };
 
 
-    function thereIsAClickedItem(){
-        if (clickedItem){ return true; }
+    this.thereIsAClickedItem = function(){
+        if (this.clickedItem){ return true; }
         else { return false; }
-    }
+    };
 
 
-    function removeHoverClassAndAddClickedClass(obj){
-        obj.addClass(clickedClass);
-        obj.removeClass(hoveredClass);
-    }
+    this.removeHoverClassAndAddClickedClass = function(obj){
+        obj.addClass(this.clickedClass);
+        obj.removeClass(this.hoveredClass);
+    };
 
 
-    function addHoveredClassToListItem(obj){
-        itemToHighlight = obj.parent('.' + highlightClass);
-        itemToHighlight.addClass(hoveredClass);
-    }
+    this.addHoveredClassToListItem = function(obj){
+        itemToHighlight = obj.parent('.' + this.highlightClass);
+        itemToHighlight.addClass(this.hoveredClass);
+    };
 
 
-    function removeHoveredClassFromListItem(obj){
-        itemToHighlight = obj.parent('.' + highlightClass);
-        itemToHighlight.removeClass(hoveredClass);
-    }
+    this.removeHoveredClassFromListItem = function(obj){
+        itemToHighlight = obj.parent('.' + this.highlightClass);
+        itemToHighlight.removeClass(this.hoveredClass);
+    };
 
 
-    function clickedItemCheckboxIsChecked(){
-        return clickedItem.children('.' + itemCheckboxClass).prop('checked');
-    }
+    this.clickedItemCheckboxIsChecked = function(){
+        return this.clickedItem.children('.' + this.itemCheckboxClass).prop('checked');
+    };
 
 
-    function removeListItem(item){
+    this.removeListItem = function(item){
         item.parents('.' + listItemClass).remove();
-    }
+    };
 
 
-    function setAppearance(){
+    this.setAppearance = function(){
 
         if (notLoggedIn()){
             showNecessaryItemsWhenLoggedOut();
@@ -170,45 +170,45 @@ function TodosViewModel(){
             removeUnnecessaryItemsWhenLoggedIn();
             setLoggedInHeader();
         }
-    }
+    };
 
 
-    function showNecessaryItemsWhenLoggedIn(){
-        $('#logout-link-container').removeClass(invisibleCollapsedClass);
-        $('#dropdown-menus').removeClass(invisibleClass);
-        newListItemForm.removeClass(invisibleCollapsedClass);
-        navbarSearchContainer.removeClass(invisibleCollapsedClass);
-    }
+    this.showNecessaryItemsWhenLoggedIn = function(){
+        $('#logout-link-container').removeClass(this.invisibleCollapsedClass);
+        $('#dropdown-menus').removeClass(this.invisibleClass);
+        newListItemForm.removeClass(this.invisibleCollapsedClass);
+        navbarSearchContainer.removeClass(this.invisibleCollapsedClass);
+    };
 
 
-    function showNecessaryItemsWhenLoggedOut(){
-        $('#login-and-create-account').removeClass(invisibleCollapsedClass);
-    }
+    this.showNecessaryItemsWhenLoggedOut = function(){
+        $('#login-and-create-account').removeClass(this.invisibleCollapsedClass);
+    };
 
 
-    function removeUnnecessaryItemsWhenLoggedIn(){
-        $('#login-and-create-account').addClass(invisibleCollapsedClass);
-    }
+    this.removeUnnecessaryItemsWhenLoggedIn = function(){
+        $('#login-and-create-account').addClass(this.invisibleCollapsedClass);
+    };
 
 
-    function removeUnnecessaryItemsWhenLoggedOut(){
-        $('#logout-link-container').addClass(invisibleCollapsedClass);
-        $('#dropdown-menus').addClass(invisibleClass);
-        newListItemForm.addClass(invisibleCollapsedClass);
-        navbarSearchContainer.addClass(invisibleCollapsedClass);
-    }
+    this.removeUnnecessaryItemsWhenLoggedOut = function(){
+        $('#logout-link-container').addClass(this.invisibleCollapsedClass);
+        $('#dropdown-menus').addClass(this.invisibleClass);
+        newListItemForm.addClass(this.invisibleCollapsedClass);
+        navbarSearchContainer.addClass(this.invisibleCollapsedClass);
+    };
 
 
-    function setLoggedOutHeader(){
-        appNameHolder.addClass('welcome-to-app-name');
-        $('#app-name').text('Welcome to ' + appNameForDisplay);
-    }
+    this.setLoggedOutHeader = function(){
+        this.appNameHolder.addClass('welcome-to-app-name');
+        $('#app-name').text('Welcome to ' + this.appNameForDisplay);
+    };
 
 
-    function setLoggedInHeader(){
-        appNameHolder.removeClass('welcome-to-app-name');
-        $('#app-name').text(appNameForDisplay);
-    }
+    this.setLoggedInHeader = function(){
+        this.appNameHolder.removeClass('welcome-to-app-name');
+        $('#app-name').text(this.appNameForDisplay);
+    };
 
 
 }

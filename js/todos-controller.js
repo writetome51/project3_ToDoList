@@ -1,11 +1,17 @@
 
 (function(){
 
-    $(document).ready(setAppearance);
+    var bs = new BrowserStorage();
+    var model = new TodosModel();
+    var vm = new TodosViewModel();
+
+    $(document).ready(function(){
+        setAppearance();
+    });
 
 
 
-    addButton.click(function(){
+    vm.addButton.click(function(){
         $('.todo-list').append(
             "<li class='todo-list-item' draggable='true'><input type='checkbox' class='todo-checkbox' title='Check box to mark item done, or to perform action on item'><span class='highlight-area'> <span class='item-text'>"
             + newItem +
