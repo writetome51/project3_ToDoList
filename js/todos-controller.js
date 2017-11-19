@@ -2,16 +2,17 @@
 (function(){
 
     var bs = new BrowserStorage();
+    var ui = new TodosUI();
     var model = new TodosModel();
-    var vm = new TodosViewModel();
+    var vm = new TodosViewManipulator(ui, model);
 
     $(document).ready(function(){
-        setAppearance();
+        vm.setAppearance();
     });
 
 
 
-    vm.addButton.click(function(){
+    ui.addButton.click(function(){
         $('.todo-list').append(
             "<li class='todo-list-item' draggable='true'><input type='checkbox' class='todo-checkbox' title='Check box to mark item done, or to perform action on item'><span class='highlight-area'> <span class='item-text'>"
             + newItem +
@@ -22,14 +23,14 @@
 
 
 
-    itemText.click(function(){
+    ui.itemText.click(function(){
         if (listItemIsNotClicked($(this))){
             makeThisItemTheClickedItem($(this));
         }
     });
 
 
-    itemText.blur(function(){
+    ui.itemText.blur(function(){
         var textToSave = $(this).text();
         var list = getSessionStorageJSON(appName);
         list = list.activeList;
@@ -37,7 +38,7 @@
     });
 
 
-    itemText.hover(
+    ui.itemText.hover(
         function onMouseOver(){
             if (listItemIsNotClicked($(this))){
                 addHoveredClassToListItem($(this));
@@ -49,19 +50,19 @@
     );
 
 
-    itemText.dblclick(function(){
+    ui.itemText.dblclick(function(){
         if (listItemIsAlreadyClicked($(this))){
             undoClickedItem();
         }
     });
 
 
-    removeGlyph.click(function(){
+    ui.removeGlyph.click(function(){
         removeListItem($(this));
     });
 
 
-    todoCheckbox.click(function(){
+    ui.todoCheckbox.click(function(){
         var deleteButton = $(this).siblings('span.' + removeGlyphiconClass);
         if ($(this).prop('checked')){
             deleteButton.removeClass(invisibleClass);
@@ -72,7 +73,7 @@
     });
 
 
-    listMenuItem.click(function(){
+    ui.listMenuItem.click(function(){
         activeList = $(this).text();
     });
 

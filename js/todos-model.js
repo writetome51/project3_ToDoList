@@ -2,18 +2,18 @@
 
 function TodosModel(){
 
-    var appName = 'todosApp';
-    var appData = '';
-    var activeList = false;
+    this.appName = 'todosApp';
+    this.appData = '';
+    this.activeList = false;
 
     // Each user gets its own localStorage key, which begins with this prefix:
-    var localKeyUserPrefix = appName + '_user_';
-    var loggedInUser = false;
+    this.localKeyUserPrefix = this.appName + '_user_';
+    this.loggedInUser = false;
 
-    var sessionKeyLoggedInUser = appName + '_loggedInUser';
-    var sessionKeyActiveList = appName + '_activeList';
-    var sessionData = false;
-    var textBeingEdited = false;
+    this.sessionKeyLoggedInUser = this.appName + '_loggedInUser';
+    this.sessionKeyActiveList = this.appName + '_activeList';
+    this.sessionData = false;
+    this.textBeingEdited = false;
 
 
 
@@ -93,9 +93,9 @@ function TodosModel(){
 
 
 
-    function notLoggedIn(){
+    this.notLoggedIn = function(){
         return (!loggedIn());
-    }
+    };
 
 
     function loggedIn(){
@@ -149,7 +149,8 @@ function TodosModel(){
 
     function usernameIsRegistered(username){
         var userKey = localKeyUserPrefix + username;
-        return (localStorage[userKey] != null);
+        return (typeof localStorage[userKey] !== 'null' &&
+            typeof localStorage[userKey] !== 'undefined');
     }
 
 
