@@ -17,47 +17,47 @@ function TodosModel(){
 
 
 
-    function createAccount(username, password){
+    this.createAccount = function(username, password){
         var data = {password:password, lists:{}};
         var userKey = localKeyUserPrefix + username;
 
         localStorage.setItem(userKey, JSON.stringify(data));
-    }
+    };
 
 
-    function login(username, password){
+    this.login = function(username, password){
         loggedInUser = username;
         sessionStorage.setItem(sessionKeyLoggedInUser, loggedInUser);
-    }
+    };
 
 
-    function logout(){
+    this.logout = function(){
         sessionStorage.removeItem(sessionKeyLoggedInUser);
         sessionData = false;
-    }
+    };
 
 
-    function createNewList(username, listName){
+    this.createNewList = function(username, listName){
         var userKey = localKeyUserPrefix + username;
         var listsBeingModified = getUsersLists(userKey);
         listsBeingModified[listName] = [];
         modifyLocalStorage(userKey, {lists:listsBeingModified});
-    }
+    };
 
 
-    function editLists(){}
+    this.editLists = function(){};
 
 
 
-    function getUsersLists(userKey){
+    this.getUsersLists = function(userKey){
         var userData = getLocalStorageJSON(userKey);
         return userData.lists;
-    }
+    };
 
 
 
 
-    function saveListItem(itemText, list){
+    this.saveListItem = function(itemText, list){
         if (itemText !== textBeingEdited){
             removeItemFromSavedList(textBeingEdited);
         }
@@ -72,10 +72,10 @@ function TodosModel(){
 
         data = JSON.stringify(data);
         localStorage.setItem(appName, data);
-    }
+    };
 
 
-    function removeItemFromSavedList(text){
+    this.removeItemFromSavedList = function(text){
         var data = JSON.parse(localStorage.getItem(appName));
         var user = data.users[loggedInUser];
         var list = user.lists[activeList];
@@ -89,7 +89,7 @@ function TodosModel(){
         data.users[loggedInUser] = user;
         data = JSON.stringify(data);
         localStorage.setItem(appName, data);
-    }
+    };
 
 
 
@@ -98,34 +98,34 @@ function TodosModel(){
     };
 
 
-    function loggedIn(){
+    this.loggedIn = function(){
         var sessionData = sessionStorage.getItem(sessionKeyLoggedInUser);
         if (sessionData == null){ return false;}
         else return true;
-    }
+    };
 
 
-    function redirectToHome(){
+    this.redirectToHome = function(){
         location.replace('index.html');
-    }
+    };
 
 
-    function createAccountLoginAndRedirectToHomePage(username, password){
+    this.createAccountLoginAndRedirectToHomePage = function(username, password){
         createAccount(username, password);
         login(username, password);
         redirectToHome();
-    }
+    };
 
 
-    function newUserValid(){
+    this.newUserValid = function(){
         var username = newUsernameInput.val();
         var password1 = newPasswordInput.val();
         var password2 = newPassword2Input.val();
         return (newAccountInfoValid(username, password1, password2));
-    }
+    };
 
 
-    function loginValid(username, password){
+    this.loginValid = function(username, password){
         if (usernameIsProperLength(username) &&
             passwordIsProperLength(password) &&
             usernameIsRegistered(username) &&
@@ -134,54 +134,54 @@ function TodosModel(){
             return true;
         }
         else return false;
-    }
+    };
 
 
-    function passwordGoesWithUsername(password, username){
+    this.passwordGoesWithUsername = function(password, username){
         var userKey = localKeyUserPrefix + username;
         var usernameFound = getLocalStorageJSON(userKey);
         if (usernameFound){
             return (usernameFound.password === password);
         }
         else return false;
-    }
+    };
 
 
-    function usernameIsRegistered(username){
+    this.usernameIsRegistered = function(username){
         var userKey = localKeyUserPrefix + username;
         return (typeof localStorage[userKey] !== 'null' &&
             typeof localStorage[userKey] !== 'undefined');
-    }
+    };
 
 
 
-    function newAccountInfoValid(username, password1, password2){
+    this.newAccountInfoValid = function(username, password1, password2){
         return (usernameIsProperLength(username) &&
             passwordPasses(password1, password2)
         );
-    }
+    };
 
 
-    function passwordIsProperLength(password){
+    this.passwordIsProperLength = function(password){
         return (password.length >= 8 && password.length <= 16);
-    }
+    };
 
 
-    function usernameIsProperLength(username) {
+    this.usernameIsProperLength = function(username) {
         return (username.length >= 8 && username.length <= 16);
-    }
+    };
 
 
-    function passwordPasses(password1, password2){
+    this.passwordPasses = function(password1, password2){
         return (twoEnteredPasswordsMatch(password1, password2) &&
             password1.length >= 8 && password1.length <= 16
         );
-    }
+    };
 
 
-    function twoEnteredPasswordsMatch(password1, password2){
+    this.twoEnteredPasswordsMatch = function(password1, password2){
         return (password1 === password2);
-    }
+    };
 
 
 }

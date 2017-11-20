@@ -33,5 +33,13 @@ function TodosUI(){
     this.removeGlyph = $('.' + this.removeGlyphiconClass);
     this.todoCheckbox = $('.' + this.itemCheckboxClass);
 
+    this.newListItem = "<li class='" + this.listItemClass + "'  draggable='true'>" +
+        "<input type='checkbox' class='" + this.itemCheckboxClass + "'  " +
+        "title='Check box to mark item done, or to perform action on item'>" +
+        "<span class='" + this.highlightClass + "'> <span class='" +
+        this.itemTextClass + "'>" + newItem + "</span><span " +
+        "class='glyphicon " + this.removeGlyphiconClass + "  " +
+        this.invisibleClass + "'></span></span></li>";
+
 
 }

@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f957c906-a96b-4c9a-b610-f2fbc0875dc9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/todos-ui.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/todos-view-model.js" afterPath="$PROJECT_DIR$/js/todos-view-manipulator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create-account.html" afterPath="$PROJECT_DIR$/create-account.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/todos-controller.js" afterPath="$PROJECT_DIR$/js/todos-controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/todos-model.js" afterPath="$PROJECT_DIR$/js/todos-model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/todos-ui.js" afterPath="$PROJECT_DIR$/js/todos-ui.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="todos-controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="todos-controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/todos-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="56" column="7" lean-forward="true" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
+            <state relative-caret-position="199">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -34,8 +32,8 @@
       <file leaf-file-name="todos-model.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/todos-model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="97" column="6" lean-forward="false" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="6" />
+            <state relative-caret-position="2805">
+              <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,18 +42,18 @@
       <file leaf-file-name="todos-view-manipulator.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/todos-view-manipulator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="104" column="50" lean-forward="false" selection-start-line="104" selection-start-column="50" selection-end-line="104" selection-end-column="50" />
+            <state relative-caret-position="-2142">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todos-ui.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="todos-ui.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/todos-ui.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+            <state relative-caret-position="543">
+              <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -169,11 +167,11 @@
         <option value="$PROJECT_DIR$/js/my_js_library/essentials.js" />
         <option value="$PROJECT_DIR$/js/my_js_library/array_methods.js" />
         <option value="$PROJECT_DIR$/js/my_js_library/browser-storage.js" />
-        <option value="$PROJECT_DIR$/js/todos-ui.js" />
         <option value="$PROJECT_DIR$/js/todos-view-model.js" />
         <option value="$PROJECT_DIR$/js/todos-view-manipulator.js" />
-        <option value="$PROJECT_DIR$/js/todos-model.js" />
         <option value="$PROJECT_DIR$/js/todos-controller.js" />
+        <option value="$PROJECT_DIR$/js/todos-model.js" />
+        <option value="$PROJECT_DIR$/js/todos-ui.js" />
       </list>
     </option>
   </component>
@@ -183,10 +181,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="x" value="5" />
     <option name="y" value="23" />
-    <option name="width" value="936" />
+    <option name="width" value="1204" />
     <option name="height" value="730" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -221,6 +219,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -249,7 +248,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -346,26 +344,27 @@
       <workItem from="1510851371076" duration="393000" />
       <workItem from="1510856611933" duration="6602000" />
       <workItem from="1510930670453" duration="8000" />
-      <workItem from="1511063121615" duration="6227000" />
+      <workItem from="1511063121615" duration="6292000" />
+      <workItem from="1511157378667" duration="2101000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152082000" />
+    <option name="totallyTimeSpent" value="154248000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="5" y="23" width="1204" height="730" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16918188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18005072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32283464" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3218707" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -500,13 +499,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js" />
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4099">
@@ -589,13 +582,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getLocalStorageJSON-test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/getLocalStorageJSON-test.html" />
     <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -629,7 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -637,38 +623,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
           <caret line="91" column="40" lean-forward="false" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/todos-model.js">
+    <entry file="file://$PROJECT_DIR$/js/todos-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="97" column="6" lean-forward="false" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="6" />
+        <state relative-caret-position="199">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/todos-view-manipulator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="104" column="50" lean-forward="false" selection-start-line="104" selection-start-column="50" selection-end-line="104" selection-end-column="50" />
+        <state relative-caret-position="-2142">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/todos-model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2805">
+          <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/todos-ui.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/todos-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="56" column="7" lean-forward="true" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
+        <state relative-caret-position="543">
+          <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
           <folding />
         </state>
       </provider>

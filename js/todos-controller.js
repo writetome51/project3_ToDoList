@@ -13,19 +13,15 @@
 
 
     ui.addButton.click(function(){
-        $('.todo-list').append(
-            "<li class='todo-list-item' draggable='true'><input type='checkbox' class='todo-checkbox' title='Check box to mark item done, or to perform action on item'><span class='highlight-area'> <span class='item-text'>"
-            + newItem +
-            "</span><span class='glyphicon glyphicon-remove-circle  invisible'></span></span></li>"
-        );
+        $('.todo-list').append(ui.newListItem);
     });
 
 
 
 
     ui.itemText.click(function(){
-        if (listItemIsNotClicked($(this))){
-            makeThisItemTheClickedItem($(this));
+        if (vm.listItemIsNotClicked($(this))){
+            vm.makeThisItemTheClickedItem($(this));
         }
     });
 
