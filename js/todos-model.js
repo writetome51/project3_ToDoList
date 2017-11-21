@@ -74,6 +74,12 @@ function TodosModel(){
     };
 
 
+    this.setActiveList = function(txt){
+        this.activeList = txt;
+        sessionStorage.setItem(this.sessionKeyActiveList, txt);
+    };
+
+
     this.indexOfItemBeingModified = function(){
         return this.activeList.indexOf(this.textBeingEdited);
     };
@@ -130,10 +136,10 @@ function TodosModel(){
 
 
     this.loginValid = function(username, password){
-        if (usernameIsProperLength(username) &&
-            passwordIsProperLength(password) &&
-            usernameIsRegistered(username) &&
-            passwordGoesWithUsername(password, username)){
+        if (this.usernameIsProperLength(username) &&
+            this.passwordIsProperLength(password) &&
+            this.usernameIsRegistered(username) &&
+            this.passwordGoesWithUsername(password, username)){
 
             return true;
         }
@@ -142,8 +148,8 @@ function TodosModel(){
 
 
     this.passwordGoesWithUsername = function(password, username){
-        var userKey = localKeyUserPrefix + username;
-        var usernameFound = getLocalStorageJSON(userKey);
+        var userKey = this.userKey(username);
+        var usernameFound = bs.getLocalStorageJSON(userKey);
         if (usernameFound){
             return (usernameFound.password === password);
         }
@@ -152,7 +158,7 @@ function TodosModel(){
 
 
     this.usernameIsRegistered = function(username){
-        var userKey = localKeyUserPrefix + username;
+        var userKey = this.userKey(username);
         return (typeof localStorage[userKey] !== 'null' &&
             typeof localStorage[userKey] !== 'undefined');
     };
@@ -160,8 +166,8 @@ function TodosModel(){
 
 
     this.newAccountInfoValid = function(username, password1, password2){
-        return (usernameIsProperLength(username) &&
-            passwordPasses(password1, password2)
+        return (this.usernameIsProperLength(username) &&
+            this.passwordPasses(password1, password2)
         );
     };
 

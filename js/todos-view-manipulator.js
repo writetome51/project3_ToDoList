@@ -15,10 +15,20 @@ function TodosViewManipulator(ui, model){
 
 
     this.makeThisItemTheClickedItem = function(obj){
-        ui.itemToHighlight = obj.parent('.' + ui.highlightClass);
-        this.undoClickedItem();
-        this.setClickedItem(ui.itemToHighlight);
+        if (this.listItemIsNotClicked(obj)){
+            ui.itemToHighlight = obj.parent('.' + ui.highlightClass);
+            this.undoClickedItem();
+            this.setClickedItem(ui.itemToHighlight);
+        }
     };
+
+
+    this.addHoveredClassIfNotClicked = function(obj){
+        if (this.listItemIsNotClicked(obj)){
+            this.addHoveredClassToListItem(obj);
+        }
+    };
+
 
 
     this.setClickedItem = function(obj){

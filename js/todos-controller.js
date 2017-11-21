@@ -11,40 +11,34 @@
     });
 
 
-
     ui.addButton.click(function(){
         $('.todo-list').append(ui.newListItem);
     });
 
 
     ui.itemText.click(function(){
-        if (vm.listItemIsNotClicked($(this))){
-            vm.makeThisItemTheClickedItem($(this));
-        }
+        vm.makeThisItemTheClickedItem($(this));
     });
 
 
     ui.itemText.blur(function(){
-        var listItem = $(this).text();
-        model.saveListItem(listItem);
+        model.saveListItem( $(this).text() );
     });
 
 
     ui.itemText.hover(
         function onMouseOver(){
-            if (listItemIsNotClicked($(this))){
-                addHoveredClassToListItem($(this));
-            }
+            vm.addHoveredClassIfNotClicked($(this))
         },
         function onMouseOut(){
-            removeHoveredClassFromListItem($(this))
+            vm.removeHoveredClassFromListItem($(this))
         }
     );
 
 
     ui.itemText.dblclick(function(){
-        if (listItemIsAlreadyClicked($(this))){
-            undoClickedItem();
+        if (vm.listItemIsAlreadyClicked($(this))){
+            vm.undoClickedItem();
         }
     });
 
@@ -66,11 +60,11 @@
 
 
     ui.listMenuItem.click(function(){
-        activeList = $(this).text();
+        model.setActiveList($(this).text());
     });
 
 
-    newListAction.click(function(){
+    ui.newListAction.click(function(){
         $('#the-todo-list').remove();
         $('#new-list-form').removeClass('invisible-and-collapsed');
     });
