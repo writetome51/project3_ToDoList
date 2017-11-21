@@ -1,7 +1,7 @@
 
 (function(){
 
-    var bs = new BrowserStorage();
+
     var ui = new TodosUI();
     var model = new TodosModel();
     var vm = new TodosViewManipulator(ui, model);

@@ -12,36 +12,33 @@ function TodosModel(){
 
     this.sessionKeyLoggedInUser = this.appName + '_loggedInUser';
     this.sessionKeyActiveList = this.appName + '_activeList';
-    this.sessionData = false;
     this.textBeingEdited = false;
 
+    var bs = new BrowserStorage();
 
 
     this.createAccount = function(username, password){
-        var data = {password:password, lists:{}};
-        var userKey = localKeyUserPrefix + username;
-
-        localStorage.setItem(userKey, JSON.stringify(data));
+        var newUser = this.userKey(username);
+        bs.addToLocalStorageAsJSON(newUser, initialUserData(password));
     };
 
 
     this.login = function(username, password){
-        loggedInUser = username;
-        sessionStorage.setItem(sessionKeyLoggedInUser, loggedInUser);
+        this.loggedInUser = username;
+        sessionStorage.setItem(this.sessionKeyLoggedInUser, this.loggedInUser);
     };
 
 
     this.logout = function(){
-        sessionStorage.removeItem(sessionKeyLoggedInUser);
-        sessionData = false;
+        sessionStorage.removeItem(this.sessionKeyLoggedInUser);
+        this.loggedInUser = false;
     };
 
 
-    this.createNewList = function(username, listName){
-        var userKey = localKeyUserPrefix + username;
-        var listsBeingModified = getUsersLists(userKey);
+    this.createNewList = function(listName){
+        var listsBeingModified = this.getUsersLists();
         listsBeingModified[listName] = [];
-        modifyLocalStorage(userKey, {lists:listsBeingModified});
+        this.saveLists({lists:listsBeingModified});
     };
 
 
@@ -49,9 +46,14 @@ function TodosModel(){
 
 
 
-    this.getUsersLists = function(userKey){
-        var userData = getLocalStorageJSON(userKey);
-        return userData.lists;
+    this.getUsersLists = function(){
+        var user = bs.getLocalStorageJSON(this.loggedInUserKey());
+        return user.lists;
+    };
+
+
+    this.saveLists = function(lists){
+        bs.modifyLocalStorageJSON(this.loggedInUserKey(), lists);
     };
 
 
@@ -62,8 +64,8 @@ function TodosModel(){
             removeItemFromSavedList(textBeingEdited);
         }
 
-        var data = JSON.parse(localStorage.getItem(appName));
-        var user = data.users[loggedInUser];
+        var data = JSON.parse(localStorage.getItem(this.appName));
+        var user = data.users[this.loggedInUser];
         var listToAddTo = user.lists[list];
         listToAddTo.push(itemText);
 
@@ -94,12 +96,12 @@ function TodosModel(){
 
 
     this.notLoggedIn = function(){
-        return (!loggedIn());
+        return (!this.loggedIn());
     };
 
 
     this.loggedIn = function(){
-        var sessionData = sessionStorage.getItem(sessionKeyLoggedInUser);
+        var sessionData = sessionStorage.getItem(this.sessionKeyLoggedInUser);
         if (sessionData == null){ return false;}
         else return true;
     };
@@ -113,7 +115,7 @@ function TodosModel(){
     this.createAccountLoginAndRedirectToHomePage = function(username, password){
         createAccount(username, password);
         login(username, password);
-        redirectToHome();
+        this.redirectToHome();
     };
 
 
@@ -182,6 +184,21 @@ function TodosModel(){
     this.twoEnteredPasswordsMatch = function(password1, password2){
         return (password1 === password2);
     };
+
+
+    this.userKey = function(username){
+        return (this.localKeyUserPrefix + username);
+    };
+
+
+    this.loggedInUserKey = function(){
+        return (this.localKeyUserPrefix + this.loggedInUser);
+    };
+
+
+    function initialUserData(password){
+       return  {password:password, lists:{}};
+    }
 
 
 }

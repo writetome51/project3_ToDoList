@@ -30,8 +30,8 @@ function TodosViewManipulator(ui, model){
 
 
     this.listItemIsAlreadyClicked = function(obj){
-        this.itemToHighlight = obj.parent('.' + this.highlightClass);
-        return this.thisItemIsAlreadyClicked(this.itemToHighlight);
+        ui.itemToHighlight = obj.parent('.' + ui.highlightClass);
+        return this.thisItemIsAlreadyClicked(ui.itemToHighlight);
     };
 
 
@@ -41,50 +41,40 @@ function TodosViewManipulator(ui, model){
 
 
     this.thisItemIsAlreadyClicked = function(obj){
-        return  obj.hasClass(this.clickedClass);
+        return  obj.hasClass(ui.clickedClass);
     };
 
 
     this.makeGlyphsVisible = function(){
-        this.makeRemoveGlyphVisible(this.clickedItem);
-        this.makePencilGlyphVisible(this.clickedItem);
+        this.makeRemoveGlyphVisible(ui.clickedItem);
+        this.makePencilGlyphVisible(ui.clickedItem);
     };
 
 
     this.makeGlyphsInvisible = function(){
-        this.makeRemoveGlyphInvisible(this.clickedItem);
-        this.makePencilGlyphInvisible(this.clickedItem);
+        this.makeRemoveGlyphInvisible(ui.clickedItem);
+        this.makePencilGlyphInvisible(ui.clickedItem);
     };
 
 
     this.makeRemoveGlyphVisible = function(obj){
-        obj.find('.' + this.removeGlyphiconClass).removeClass(this.invisibleClass);
+        obj.find('.' + ui.removeGlyphiconClass).removeClass(ui.invisibleClass);
     };
 
 
     this.makeRemoveGlyphInvisible = function(obj){
-        obj.find('.' + this.removeGlyphiconClass).addClass(this.invisibleClass);
-    };
-
-
-    this.makePencilGlyphInvisible = function(obj){
-        obj.find('.' + this.pencilGlyphiconClass).addClass(this.invisibleClass);
-    };
-
-
-    this.makePencilGlyphVisible = function(obj){
-        obj.find('.' + this.pencilGlyphiconClass).removeClass(this.invisibleClass);
+        obj.find('.' + ui.removeGlyphiconClass).addClass(ui.invisibleClass);
     };
 
 
     this.makeItemEditable = function(obj){
-        var currentItemText = obj.children('.' + this.itemTextClass);
+        var currentItemText = obj.children('.' + ui.itemTextClass);
         currentItemText.attr("contenteditable", "true");
     };
 
 
     this.makeItemNotEditable = function(obj){
-        obj.children('.' + this.itemTextClass).removeAttr('contenteditable');
+        obj.children('.' + ui.itemTextClass).removeAttr('contenteditable');
     };
 
 
@@ -95,30 +85,30 @@ function TodosViewManipulator(ui, model){
 
 
     this.removeHoverClassAndAddClickedClass = function(obj){
-        obj.addClass(this.clickedClass);
-        obj.removeClass(this.hoveredClass);
+        obj.addClass(ui.clickedClass);
+        obj.removeClass(ui.hoveredClass);
     };
 
 
     this.addHoveredClassToListItem = function(obj){
-        this.itemToHighlight = obj.parent('.' + this.highlightClass);
-        this.itemToHighlight.addClass(this.hoveredClass);
+        ui.itemToHighlight = obj.parent('.' + ui.highlightClass);
+        ui.itemToHighlight.addClass(ui.hoveredClass);
     };
 
 
     this.removeHoveredClassFromListItem = function(obj){
-        this.itemToHighlight = obj.parent('.' + this.highlightClass);
-        this.itemToHighlight.removeClass(this.hoveredClass);
+        ui.itemToHighlight = obj.parent('.' + ui.highlightClass);
+        ui.itemToHighlight.removeClass(ui.hoveredClass);
     };
 
 
     this.clickedItemCheckboxIsChecked = function(){
-        return this.clickedItem.children('.' + this.itemCheckboxClass).prop('checked');
+        return ui.clickedItem.children('.' + ui.itemCheckboxClass).prop('checked');
     };
 
 
     this.removeListItem = function(item){
-        item.parents('.' + this.listItemClass).remove();
+        item.parents('.' + ui.listItemClass).remove();
     };
 
 
@@ -139,40 +129,40 @@ function TodosViewManipulator(ui, model){
 
 
     this.showNecessaryItemsWhenLoggedIn = function(){
-        $('#logout-link-container').removeClass(this.invisibleCollapsedClass);
-        $('#dropdown-menus').removeClass(this.invisibleClass);
-        this.newListItemForm.removeClass(this.invisibleCollapsedClass);
-        this.navbarSearchContainer.removeClass(this.invisibleCollapsedClass);
+        $('#logout-link-container').removeClass(ui.invisibleCollapsedClass);
+        $('#dropdown-menus').removeClass(ui.invisibleClass);
+        ui.newListItemForm.removeClass(ui.invisibleCollapsedClass);
+        ui.navbarSearchContainer.removeClass(ui.invisibleCollapsedClass);
     };
 
 
     this.showNecessaryItemsWhenLoggedOut = function(){
-        $('#login-and-create-account').removeClass(this.invisibleCollapsedClass);
+        $('#login-and-create-account').removeClass(ui.invisibleCollapsedClass);
     };
 
 
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
-        $('#login-and-create-account').addClass(this.invisibleCollapsedClass);
+        $('#login-and-create-account').addClass(ui.invisibleCollapsedClass);
     };
 
 
     this.removeUnnecessaryItemsWhenLoggedOut = function(){
-        $('#logout-link-container').addClass(this.invisibleCollapsedClass);
-        $('#dropdown-menus').addClass(this.invisibleClass);
-        this.newListItemForm.addClass(this.invisibleCollapsedClass);
-        this.navbarSearchContainer.addClass(this.invisibleCollapsedClass);
+        $('#logout-link-container').addClass(ui.invisibleCollapsedClass);
+        $('#dropdown-menus').addClass(ui.invisibleClass);
+        ui.newListItemForm.addClass(ui.invisibleCollapsedClass);
+        ui.navbarSearchContainer.addClass(ui.invisibleCollapsedClass);
     };
 
 
     this.setLoggedOutHeader = function(){
-        this.appNameHolder.addClass('welcome-to-app-name');
-        $('#app-name').text('Welcome to ' + this.appNameForDisplay);
+        ui.appNameHolder.addClass('welcome-to-app-name');
+        $('#app-name').text('Welcome to ' + ui.appNameForDisplay);
     };
 
 
     this.setLoggedInHeader = function(){
-        this.appNameHolder.removeClass('welcome-to-app-name');
-        $('#app-name').text(this.appNameForDisplay);
+        ui.appNameHolder.removeClass('welcome-to-app-name');
+        $('#app-name').text(ui.appNameForDisplay);
     };
 
 
