@@ -38,7 +38,7 @@ function TodosModel(){
     this.createNewList = function(listName){
         var listsBeingModified = this.getUsersLists();
         listsBeingModified[listName] = [];
-        this.saveLists({lists:listsBeingModified});
+        this.saveLists(listsBeingModified);
     };
 
 
@@ -53,27 +53,29 @@ function TodosModel(){
 
 
     this.saveLists = function(lists){
-        bs.modifyLocalStorageJSON(this.loggedInUserKey(), lists);
+        bs.modifyLocalStorageJSON(this.loggedInUserKey(), {lists:lists});
     };
 
 
-
-
     this.saveListItem = function(itemText, list){
-        if (itemText !== textBeingEdited){
-            removeItemFromSavedList(textBeingEdited);
+        if (itemText !== this.textBeingEdited){
+            this.removeItemFromSavedList(this.textBeingEdited);
         }
 
-        var data = JSON.parse(localStorage.getItem(this.appName));
-        var user = data.users[this.loggedInUser];
-        var listToAddTo = user.lists[list];
-        listToAddTo.push(itemText);
+        var listsBeingModified = this.getUsersLists();
+        var listBeingModified = listsBeingModified[list];
+        var i = this.indexOfItemBeingModified();
+        listBeingModified[i] = itemText;
+    };
 
-        user.lists[list] = listToAddTo;
-        data.users[loggedInUser] = user;
 
-        data = JSON.stringify(data);
-        localStorage.setItem(appName, data);
+    this.getActiveList = function(){
+        return sessionStorage.getItem(this.sessionKeyActiveList);
+    };
+
+
+    this.indexOfItemBeingModified = function(){
+        return this.activeList.indexOf(this.textBeingEdited);
     };
 
 

@@ -17,8 +17,6 @@
     });
 
 
-
-
     ui.itemText.click(function(){
         if (vm.listItemIsNotClicked($(this))){
             vm.makeThisItemTheClickedItem($(this));
@@ -27,10 +25,8 @@
 
 
     ui.itemText.blur(function(){
-        var textToSave = $(this).text();
-        var list = getSessionStorageJSON(appName);
-        list = list.activeList;
-        saveListItem(textToSave, list);
+        var listItem = $(this).text();
+        model.saveListItem(listItem);
     });
 
 

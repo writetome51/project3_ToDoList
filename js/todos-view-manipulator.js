@@ -115,9 +115,9 @@ function TodosViewManipulator(ui, model){
     this.setAppearance = function(){
 
         if (model.notLoggedIn()){
-            showNecessaryItemsWhenLoggedOut();
-            removeUnnecessaryItemsWhenLoggedOut();
-            setLoggedOutHeader();
+            this.showNecessaryItemsWhenLoggedOut();
+            this.removeUnnecessaryItemsWhenLoggedOut();
+            this.setLoggedOutHeader();
         }
 
         else if (model.loggedIn()){
