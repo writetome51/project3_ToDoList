@@ -70,32 +70,32 @@
     });
 
 
-    createAccountForm.submit(function(event){
+    ui.createAccountForm.submit(function(event){
         event.preventDefault();
 
-        if (newUserValid()){
-            createAccountLoginAndRedirectToHomePage();
+        if (vm.newUserInputsValidated()){
+            vm.createAccountLoginAndRedirectToHome();
         }
         else{
-            accountCreationUnsuccessful.removeClass('invisible-and-collapsed');
+            ui.accountCreationUnsuccessful.removeClass('invisible-and-collapsed');
         }
     });
 
 
-    loginLink.click(function(){
+    ui.loginLink.click(function(){
         $('#main-home-navbar').addClass('invisible-and-collapsed');
         $('#todos-body').addClass('invisible-and-collapsed');
         $('#login-section').removeClass('invisible-and-collapsed');
     });
 
 
-    logoutLink.click(function(){
+    ui.logoutLink.click(function(){
         logout();
-        setAppearance();
+        vm.setAppearance();
     });
 
 
-    loginForm.submit(function(){
+    ui.loginForm.submit(function(){
         var username = $('#login-username').val();
         var password = $('#login-password').val();
         login(username, password);
@@ -104,11 +104,11 @@
         $('#main-home-navbar').removeClass('invisible-and-collapsed');
         $('#todos-body').removeClass('invisible-and-collapsed');
 
-        setAppearance();
+        vm.setAppearance();
     });
 
 
-    newListItemForm.submit(function(){
+    ui.newListItemForm.submit(function(){
 
     });
 

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f957c906-a96b-4c9a-b610-f2fbc0875dc9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create-account.html" afterPath="$PROJECT_DIR$/create-account.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/todos-controller.js" afterPath="$PROJECT_DIR$/js/todos-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/todos-model.js" afterPath="$PROJECT_DIR$/js/todos-model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/todos-ui.js" afterPath="$PROJECT_DIR$/js/todos-ui.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/todos-view-manipulator.js" afterPath="$PROJECT_DIR$/js/todos-view-manipulator.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +22,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="todos-ui.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/todos-ui.js">
+      <file leaf-file-name="todos-view-manipulator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/todos-view-manipulator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+            <state relative-caret-position="-741">
+              <caret line="131" column="28" lean-forward="true" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="39" column="84" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="84" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="todos-model.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/todos-model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="50" column="45" lean-forward="false" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="todos-controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/todos-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="868">
+              <caret line="75" column="39" lean-forward="false" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -38,22 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>itemToHighlight</find>
-      <find>listItemClass</find>
-      <find>loginForm</find>
-      <find>loginSubmit</find>
-      <find>loginLink</find>
-      <find>logoutLink</find>
-      <find>listMenuItem</find>
-      <find>newUsernameInput</find>
-      <find>newPasswordInput</find>
-      <find>newPassword</find>
-      <find>newListItemForm</find>
-      <find>navbarSearchContainer</find>
-      <find>newListAction</find>
-      <find>pencilGlyphiconClass</find>
-      <find>removeGlyphiconClass</find>
-      <find>removeGlyph</find>
       <find>todoCheckbox</find>
       <find>textB</find>
       <find>setapp</find>
@@ -68,6 +88,22 @@
       <find>get</find>
       <find>active</find>
       <find>savelist</find>
+      <find>model</find>
+      <find>addhovered</find>
+      <find>list-menu-item</find>
+      <find>activelist</find>
+      <find>accountcre</find>
+      <find>accountcreation</find>
+      <find>account</find>
+      <find>newaccount</find>
+      <find>makethisitem</find>
+      <find>valid</find>
+      <find>loginvalid</find>
+      <find>login(</find>
+      <find>redir</find>
+      <find>createaccountloginand</find>
+      <find>newuser</find>
+      <find>getusers</find>
     </findStrings>
     <replaceStrings>
       <replace>sessionKeyLoggedInUser</replace>
@@ -125,20 +161,20 @@
         <option value="$PROJECT_DIR$/paragraph-edit.html" />
         <option value="$PROJECT_DIR$/js/jquery-event-configurations.js" />
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/create-account.html" />
         <option value="$PROJECT_DIR$/js/view-model.js" />
         <option value="$PROJECT_DIR$/js/utilities.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/validation.js" />
         <option value="$PROJECT_DIR$/js/my_js_library/browser_storage.js" />
         <option value="$PROJECT_DIR$/js/my_js_library/essentials.js" />
         <option value="$PROJECT_DIR$/js/my_js_library/array_methods.js" />
         <option value="$PROJECT_DIR$/js/my_js_library/browser-storage.js" />
         <option value="$PROJECT_DIR$/js/todos-view-model.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/todos-ui.js" />
+        <option value="$PROJECT_DIR$/create-account.html" />
         <option value="$PROJECT_DIR$/js/todos-view-manipulator.js" />
-        <option value="$PROJECT_DIR$/js/todos-model.js" />
         <option value="$PROJECT_DIR$/js/todos-controller.js" />
+        <option value="$PROJECT_DIR$/js/todos-model.js" />
       </list>
     </option>
   </component>
@@ -149,9 +185,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="5" />
     <option name="y" value="23" />
-    <option name="width" value="975" />
+    <option name="width" value="878" />
     <option name="height" value="733" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -203,6 +238,12 @@
               <item name="project3_ToDoList" type="b2602c69:ProjectViewProjectNode" />
               <item name="project3_ToDoList" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project3_ToDoList" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project3_ToDoList" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="my_js_library" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -313,31 +354,34 @@
       <workItem from="1511240913617" duration="1315000" />
       <workItem from="1511275405763" duration="2050000" />
       <workItem from="1511293314645" duration="2495000" />
+      <workItem from="1511304358208" duration="4328000" />
+      <workItem from="1511325914792" duration="918000" />
+      <workItem from="1511391289486" duration="3718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163973000" />
+    <option name="totallyTimeSpent" value="172937000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="23" width="975" height="733" extended-state="0" />
+    <frame x="0" y="23" width="878" height="733" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22327045" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2252042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32081378" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3197492" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -415,26 +459,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/vendor/jquery-3.2.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/favicon.ico">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/robots.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/plugins.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -535,13 +565,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/set-appearance.js" />
-    <entry file="file://$PROJECT_DIR$/js/initializeLocalStorage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -551,13 +574,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getLocalStorageJSON-test.html" />
     <entry file="file://$PROJECT_DIR$/login.html" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/validation.js" />
     <entry file="file://$PROJECT_DIR$/js/my_js_library/essentials.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -573,49 +589,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create-account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="91" column="40" lean-forward="false" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/my_js_library/browser-storage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="562">
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/todos-view-manipulator.js">
+    <entry file="file://$PROJECT_DIR$/js/vendor/jquery-3.2.1.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="90">
+          <caret line="1" column="633" lean-forward="true" selection-start-line="1" selection-start-column="633" selection-end-line="1" selection-end-column="633" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/todos-controller.js">
+    <entry file="file://$PROJECT_DIR$/js/plugins.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/todos-model.js">
+    <entry file="file://$PROJECT_DIR$/create-account.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state relative-caret-position="501">
+          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/todos-ui.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        <state relative-caret-position="642">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/initializeLocalStorage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="39" column="84" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/todos-model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="50" column="45" lean-forward="false" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/todos-view-manipulator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-741">
+          <caret line="131" column="28" lean-forward="true" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/todos-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="75" column="39" lean-forward="false" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
           <folding />
         </state>
       </provider>

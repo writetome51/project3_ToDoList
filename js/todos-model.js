@@ -24,8 +24,10 @@ function TodosModel(){
 
 
     this.login = function(username, password){
-        this.loggedInUser = username;
-        sessionStorage.setItem(this.sessionKeyLoggedInUser, this.loggedInUser);
+        if (this.loginValid(username, password)){
+            this.loggedInUser = username;
+            sessionStorage.setItem(this.sessionKeyLoggedInUser, this.loggedInUser);
+        }
     };
 
 
@@ -44,6 +46,23 @@ function TodosModel(){
 
     this.editLists = function(){};
 
+
+    this.getAllListMenuItems = function(){
+        var items = this.getUsersListNames();
+        for (var item=0, html='';  item < items.length;  ++item){
+            html += '<li><a class="list-menu-item">' + items[item]  + '</a></li>';
+        }
+    };
+
+
+    this.getUsersListNames = function(){
+        var usersLists = this.getUsersLists();
+        var listNames = [];
+        for (var name in usersLists){
+            listNames.push(name);
+        }
+        return listNames;
+    };
 
 
     this.getUsersLists = function(){
@@ -115,24 +134,7 @@ function TodosModel(){
     };
 
 
-    this.redirectToHome = function(){
-        location.replace('index.html');
-    };
 
-
-    this.createAccountLoginAndRedirectToHomePage = function(username, password){
-        createAccount(username, password);
-        login(username, password);
-        this.redirectToHome();
-    };
-
-
-    this.newUserValid = function(){
-        var username = newUsernameInput.val();
-        var password1 = newPasswordInput.val();
-        var password2 = newPassword2Input.val();
-        return (newAccountInfoValid(username, password1, password2));
-    };
 
 
     this.loginValid = function(username, password){

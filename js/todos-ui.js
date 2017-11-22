@@ -22,6 +22,7 @@ function TodosUI(){
     this.loginLink = $('#login-link');
     this.logoutLink = $('#logout-link');
     this.listMenuItem = $('.list-menu-item');
+    this.newItem = '';
     this.newUsernameInput = $('#create-account-username');
     this.newPasswordInput = $('#create-account-password');
     this.newPassword2Input = $('#create-account-password-2');
@@ -37,7 +38,7 @@ function TodosUI(){
         "<input type='checkbox' class='" + this.itemCheckboxClass + "'  " +
         "title='Check box to mark item done, or to perform action on item'>" +
         "<span class='" + this.highlightClass + "'> <span class='" +
-        this.itemTextClass + "'>" + newItem + "</span><span " +
+        this.itemTextClass + "'>" + this.newItem + "</span><span " +
         "class='glyphicon " + this.removeGlyphiconClass + "  " +
         this.invisibleClass + "'></span></span></li>";
 

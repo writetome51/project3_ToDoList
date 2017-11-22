@@ -3,24 +3,33 @@
 function TodosViewManipulator(ui, model){
 
 
-    this.undoClickedItem = function(){
-        if (this.thereIsAClickedItem()){
-            ui.clickedItem.removeClass(ui.clickedClass);
-            this.makeGlyphsInvisible();
-            this.makeItemNotEditable(ui.clickedItem);
-        }
-        ui.clickedItem = false;
-    };
-
-
-
     this.makeThisItemTheClickedItem = function(obj){
         if (this.listItemIsNotClicked(obj)){
-            ui.itemToHighlight = obj.parent('.' + ui.highlightClass);
             this.undoClickedItem();
-            this.setClickedItem(ui.itemToHighlight);
+            this.setClickedItem(obj);
         }
     };
+
+
+ 	this.undoClickedItem = function(){
+        if (this.thereIsAClickedItem()){
+			this.turnOffClickedBehavior();
+ 		}
+		ui.clickedItem = false;
+ 	};
+
+
+	this.turnOffClickedBehavior = function(){
+		this.removeClickedClass();
+ 		this.makeGlyphsInvisible();
+ 		this.makeItemNotEditable();
+	};
+
+
+	this.removeClickedClass = function(){
+		ui.clickedItem.removeClass(ui.clickedClass);
+	};
+
 
 
     this.addHoveredClassIfNotClicked = function(obj){
@@ -32,7 +41,8 @@ function TodosViewManipulator(ui, model){
 
 
     this.setClickedItem = function(obj){
-        ui.clickedItem = obj;
+        ui.itemToHighlight = obj.parent('.' + ui.highlightClass);
+        ui.clickedItem = ui.itemToHighlight;
         this.removeHoverClassAndAddClickedClass(ui.clickedItem);
         this.makeGlyphsVisible();
         this.makeItemEditable(ui.clickedItem);
@@ -83,8 +93,9 @@ function TodosViewManipulator(ui, model){
     };
 
 
-    this.makeItemNotEditable = function(obj){
-        obj.children('.' + ui.itemTextClass).removeAttr('contenteditable');
+    this.makeItemNotEditable = function(){
+        ui.clickedItem.children('.' + ui.itemTextClass)
+        .removeAttr('contenteditable');
     };
 
 
@@ -138,6 +149,19 @@ function TodosViewManipulator(ui, model){
     };
 
 
+    this.createAccountLoginAndRedirectToHome = function(username, password){
+        model.createAccount(username, password);
+        model.login(username, password);
+        this.redirectToHome();
+    };
+
+
+    this.redirectToHome = function(){
+        location.replace('index.html');
+    };
+
+
+
     this.showNecessaryItemsWhenLoggedIn = function(){
         $('#logout-link-container').removeClass(ui.invisibleCollapsedClass);
         $('#dropdown-menus').removeClass(ui.invisibleClass);
@@ -174,6 +198,15 @@ function TodosViewManipulator(ui, model){
         ui.appNameHolder.removeClass('welcome-to-app-name');
         $('#app-name').text(ui.appNameForDisplay);
     };
+
+
+    this.newUserInputsValidated = function(){
+        var username = ui.newUsernameInput.val();
+        var password1 = ui.newPasswordInput.val();
+        var password2 = ui.newPassword2Input.val();
+        return (model.newAccountInfoValid(username, password1, password2));
+    };
+
 
 
 }
