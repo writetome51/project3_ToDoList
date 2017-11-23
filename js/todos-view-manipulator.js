@@ -3,7 +3,13 @@
 function TodosViewManipulator(ui, model){
 
 
-    this.makeThisItemTheClickedItem = function(obj){
+    this.fillListsMenuWithItems = function(){
+       var innerHTML =  model.getAllListsMenuItems();
+       ui.listMenuItems.html(innerHTML);
+    };
+
+
+    this.makeClickedItem = function(obj){
         if (this.listItemIsNotClicked(obj)){
             this.undoClickedItem();
             this.setClickedItem(obj);
@@ -134,18 +140,26 @@ function TodosViewManipulator(ui, model){
 
 
     this.setAppearance = function(){
-
         if (model.notLoggedIn()){
-            this.showNecessaryItemsWhenLoggedOut();
-            this.removeUnnecessaryItemsWhenLoggedOut();
-            this.setLoggedOutHeader();
+           this.showLoggedOutContent();
         }
-
         else if (model.loggedIn()){
-            this.showNecessaryItemsWhenLoggedIn();
-            this.removeUnnecessaryItemsWhenLoggedIn();
-            this.setLoggedInHeader();
+           this.showLoggedInContent();
         }
+    };
+
+
+    this.showLoggedOutContent = function(){
+        this.removeUnnecessaryItemsWhenLoggedOut();
+        this.showNecessaryItemsWhenLoggedOut();
+        this.setLoggedOutHeader();
+    };
+
+
+    this.showLoggedInContent = function(){
+        this.showNecessaryItemsWhenLoggedIn();
+        this.removeUnnecessaryItemsWhenLoggedIn();
+        this.setLoggedInHeader();
     };
 
 

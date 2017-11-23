@@ -17,7 +17,7 @@
 
 
     ui.itemText.click(function(){
-        vm.makeThisItemTheClickedItem($(this));
+        vm.makeClickedItem($(this));
     });
 
 
@@ -59,6 +59,9 @@
     });
 
 
+    ui.listsMenu.click(vm.fillListsMenuWithItems);
+
+
     ui.listMenuItem.click(function(){
         model.setActiveList($(this).text());
     });
@@ -90,7 +93,7 @@
 
 
     ui.logoutLink.click(function(){
-        logout();
+        model.logout();
         vm.setAppearance();
     });
 
@@ -98,7 +101,7 @@
     ui.loginForm.submit(function(){
         var username = $('#login-username').val();
         var password = $('#login-password').val();
-        login(username, password);
+        model.login(username, password);
 
         $('#login-section').addClass('invisible-and-collapsed');
         $('#main-home-navbar').removeClass('invisible-and-collapsed');

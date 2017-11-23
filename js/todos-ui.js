@@ -6,7 +6,6 @@ function TodosUI(){
     this.accountCreationUnsuccessful = $('#account-creation-unsuccessful');
     this.clickedItem = false;
     this.clickedClass = 'list-item-clicked';
-    this.createAccountSubmit = $('#create-account-submit');
     this.createAccountForm = $('#create-account-form');
     this.hoveredClass = 'list-item-hovered';
     this.highlightClass = 'highlight-area';
@@ -18,9 +17,10 @@ function TodosUI(){
     this.itemToHighlight = '';
     this.listItemClass = 'todo-list-item';
     this.loginForm = $('#login-form');
-    this.loginSubmit = $('#login-submit');
     this.loginLink = $('#login-link');
     this.logoutLink = $('#logout-link');
+    this.listsMenu = $('#lists-menu');
+    this.listMenuItems = $('#list-names');
     this.listMenuItem = $('.list-menu-item');
     this.newItem = '';
     this.newUsernameInput = $('#create-account-username');
@@ -29,7 +29,6 @@ function TodosUI(){
     this.newListItemForm = $('#new-list-item-form');
     this.navbarSearchContainer = $('#navbar-search-container');
     this.newListAction = $('#new-list-action');
-    this.pencilGlyphiconClass = 'glyphicon-pencil';
     this.removeGlyphiconClass = 'glyphicon-remove-circle';
     this.removeGlyph = $('.' + this.removeGlyphiconClass);
     this.todoCheckbox = $('.' + this.itemCheckboxClass);

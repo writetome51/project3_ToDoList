@@ -47,11 +47,12 @@ function TodosModel(){
     this.editLists = function(){};
 
 
-    this.getAllListMenuItems = function(){
+    this.getAllListsMenuItems = function(){
         var items = this.getUsersListNames();
         for (var item=0, html='';  item < items.length;  ++item){
             html += '<li><a class="list-menu-item">' + items[item]  + '</a></li>';
         }
+        return html;
     };
 
 
@@ -185,7 +186,7 @@ function TodosModel(){
 
 
     this.passwordPasses = function(password1, password2){
-        return (twoEnteredPasswordsMatch(password1, password2) &&
+        return (this.twoEnteredPasswordsMatch(password1, password2) &&
             password1.length >= 8 && password1.length <= 16
         );
     };
