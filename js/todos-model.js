@@ -13,6 +13,7 @@ function TodosModel(){
     this.sessionKeyLoggedInUser = this.appName + '_loggedInUser';
     this.sessionKeyActiveList = this.appName + '_activeList';
     this.textBeingEdited = false;
+    this.noListsFound = 'No Lists';
 
     var bs = new BrowserStorage();
 
@@ -49,6 +50,9 @@ function TodosModel(){
 
     this.getAllListsMenuItems = function(){
         var items = this.getUsersListNames();
+        if (items === this.noListsFound){
+            return '<li id="no-lists-found">' + this.noListsFound  + '</li>';
+        }
         for (var item=0, html='';  item < items.length;  ++item){
             html += '<li><a class="list-menu-item">' + items[item]  + '</a></li>';
         }
@@ -58,10 +62,10 @@ function TodosModel(){
 
     this.getUsersListNames = function(){
         var usersLists = this.getUsersLists();
-        var listNames = [];
-        for (var name in usersLists){
-            listNames.push(name);
+        if (objectEmpty(usersLists)){
+            return this.noListsFound;
         }
+        var listNames = Object.keys(usersLists);
         return listNames;
     };
 
@@ -69,6 +73,12 @@ function TodosModel(){
     this.getUsersLists = function(){
         var user = bs.getLocalStorageJSON(this.loggedInUserKey());
         return user.lists;
+    };
+
+
+    this.userHasNoLists = function(){
+        var lists = this.getUsersLists();
+        return objectEmpty(lists);
     };
 
 
@@ -133,9 +143,6 @@ function TodosModel(){
         if (sessionData == null){ return false;}
         else return true;
     };
-
-
-
 
 
     this.loginValid = function(username, password){
@@ -203,6 +210,9 @@ function TodosModel(){
 
 
     this.loggedInUserKey = function(){
+        if (this.loggedInUser === false){
+            this.loggedInUser = sessionStorage.getItem(this.sessionKeyLoggedInUser);
+        }
         return (this.localKeyUserPrefix + this.loggedInUser);
     };
 

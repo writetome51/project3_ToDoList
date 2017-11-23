@@ -73,13 +73,11 @@ function TodosViewManipulator(ui, model){
 
     this.makeGlyphsVisible = function(){
         this.makeRemoveGlyphVisible(ui.clickedItem);
-        this.makePencilGlyphVisible(ui.clickedItem);
     };
 
 
     this.makeGlyphsInvisible = function(){
         this.makeRemoveGlyphInvisible(ui.clickedItem);
-        this.makePencilGlyphInvisible(ui.clickedItem);
     };
 
 
@@ -177,10 +175,38 @@ function TodosViewManipulator(ui, model){
 
 
     this.showNecessaryItemsWhenLoggedIn = function(){
+        $('#main-home-navbar').removeClass(ui.invisibleCollapsedClass);
+        $('#todos-body').removeClass(ui.invisibleCollapsedClass);
         $('#logout-link-container').removeClass(ui.invisibleCollapsedClass);
-        $('#dropdown-menus').removeClass(ui.invisibleClass);
-        ui.newListItemForm.removeClass(ui.invisibleCollapsedClass);
+        ui.dropdownMenus.removeClass(ui.invisibleClass);
+
+        /*** Only show this if there is an active list:
+        if (){
+            ui.newListItemForm.removeClass(ui.invisibleCollapsedClass);
+        }
+        ***/
+        this.ifUserHasNoListsShowListCreateForm();
         ui.navbarSearchContainer.removeClass(ui.invisibleCollapsedClass);
+    };
+
+
+    this.ifUserHasNoListsShowListCreateForm = function(){
+        if (model.userHasNoLists()){
+            this.showNecessaryItemsWhenCreatingList();
+            this.removeUnnecessaryItemsWhenCreatingList();
+        }
+    };
+
+
+    this.showNecessaryItemsWhenCreatingList = function(){
+        $('.show-when-creating-list')
+            .removeClass(ui.invisibleCollapsedClass + ' ' + ui.invisibleClass );
+    };
+
+
+    this.removeUnnecessaryItemsWhenCreatingList = function(){
+        $('.remove-when-creating-list')
+            .addClass(ui.invisibleCollapsedClass);
     };
 
 
@@ -190,13 +216,14 @@ function TodosViewManipulator(ui, model){
 
 
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
+        $('#login-section').addClass(ui.invisibleCollapsedClass);
         $('#login-and-create-account').addClass(ui.invisibleCollapsedClass);
     };
 
 
     this.removeUnnecessaryItemsWhenLoggedOut = function(){
         $('#logout-link-container').addClass(ui.invisibleCollapsedClass);
-        $('#dropdown-menus').addClass(ui.invisibleClass);
+        ui.dropdownMenus.addClass(ui.invisibleClass);
         ui.newListItemForm.addClass(ui.invisibleCollapsedClass);
         ui.navbarSearchContainer.addClass(ui.invisibleCollapsedClass);
     };
@@ -204,13 +231,13 @@ function TodosViewManipulator(ui, model){
 
     this.setLoggedOutHeader = function(){
         ui.appNameHolder.addClass('welcome-to-app-name');
-        $('#app-name').text('Welcome to ' + ui.appNameForDisplay);
+        ui.appNameHeader.text('Welcome to ' + ui.appNameForDisplay);
     };
 
 
     this.setLoggedInHeader = function(){
         ui.appNameHolder.removeClass('welcome-to-app-name');
-        $('#app-name').text(ui.appNameForDisplay);
+        ui.appNameHeader.text(ui.appNameForDisplay);
     };
 
 

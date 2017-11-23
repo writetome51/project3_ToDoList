@@ -59,7 +59,9 @@
     });
 
 
-    ui.listsMenu.click(vm.fillListsMenuWithItems);
+    ui.listsMenu.click(function() {
+        vm.fillListsMenuWithItems();
+    });
 
 
     ui.listMenuItem.click(function(){
@@ -102,11 +104,6 @@
         var username = $('#login-username').val();
         var password = $('#login-password').val();
         model.login(username, password);
-
-        $('#login-section').addClass('invisible-and-collapsed');
-        $('#main-home-navbar').removeClass('invisible-and-collapsed');
-        $('#todos-body').removeClass('invisible-and-collapsed');
-
         vm.setAppearance();
     });
 

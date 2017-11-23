@@ -33,8 +33,9 @@
                     <div class="float-right">
                         <ul class="nav">
                             <li class="dropdown">
-                                <a class=""  id="lists-menu"  data-toggle="dropdown"
-                                   href="#">Lists <span class="caret"></span>
+                                <a  id="lists-menu"  data-toggle="dropdown"
+                                    href>
+                                    Lists <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right"
                                     id="list-names">
@@ -105,7 +106,8 @@
         <ul class="todo-list" id="the-todo-list">
 
         </ul>
-        <form id="new-list-item-form" class="remove-when-logged-out">
+        <form id="new-list-item-form"
+              class="remove-when-logged-out remove-when-creating-list">
             <div class="navbar-div">
                 <div class="navbar-div top-navbar-search-container">
                     <input type="text"  class="form-control"
@@ -122,11 +124,13 @@
 
 
 
-        <form class="invisible-and-collapsed" id="new-list-form">
+        <form id="new-list-form"
+              class="invisible-and-collapsed remove-when-logged-out
+              show-when-creating-list">
 
             <div class="navbar-div">
                 <input type="text"  class="form-control"
-                       placeholder="Name the List"
+                       placeholder="Name new list..."
                        required minlength="8" maxlength="16">
             </div>
 

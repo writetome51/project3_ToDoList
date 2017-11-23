@@ -1,12 +1,14 @@
 function TodosUI(){
 
     this.appNameForDisplay = 'To-Do\'s';
+    this.appNameHeader = $('#app-name');
     this.appNameHolder = $('#app-name-holder');
     this.addButton = $('#add-button');
     this.accountCreationUnsuccessful = $('#account-creation-unsuccessful');
     this.clickedItem = false;
     this.clickedClass = 'list-item-clicked';
     this.createAccountForm = $('#create-account-form');
+    this.dropdownMenus = $('#dropdown-menus');
     this.hoveredClass = 'list-item-hovered';
     this.highlightClass = 'highlight-area';
     this.itemCheckboxClass = 'todo-checkbox';
@@ -27,6 +29,7 @@ function TodosUI(){
     this.newPasswordInput = $('#create-account-password');
     this.newPassword2Input = $('#create-account-password-2');
     this.newListItemForm = $('#new-list-item-form');
+    this.newListForm = $('#new-list-form');
     this.navbarSearchContainer = $('#navbar-search-container');
     this.newListAction = $('#new-list-action');
     this.removeGlyphiconClass = 'glyphicon-remove-circle';

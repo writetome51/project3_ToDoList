@@ -33,7 +33,8 @@ function modifyObject(obj, propertiesAndValuesToModify){
 // Preferable to simply calling JSON.parse() because JSON.parse() doesn't
 // tell you if the passed argument is not in JSON format.
 function convertToObject(jsonString){
-    if (jsonString == false){
+    if (typeof jsonString === 'undefined' ||
+        jsonString === null){
         throw new Error('Item not found.');
     }
     try {
@@ -42,4 +43,9 @@ function convertToObject(jsonString){
     catch (error){
         throw new Error('Item found is not in JSON format.')
     }
+}
+
+
+function objectEmpty(obj){
+    return (! Object.keys(obj).length);
 }
