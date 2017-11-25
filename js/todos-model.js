@@ -16,7 +16,7 @@ function TodosModel(){
     this.noListsFound = 'No Lists';
 
     var bs = new BrowserStorage();
-
+    var validator = new TodosModelValidator(bs);
 
     this.createAccount = function(username, password){
         var newUser = this.userKey(username);
@@ -25,7 +25,7 @@ function TodosModel(){
 
 
     this.login = function(username, password){
-        if (this.loginValid(username, password)){
+        if (validator.loginValid(username, this.userKey(username), password)){
             this.loggedInUser = username;
             sessionStorage.setItem(this.sessionKeyLoggedInUser, this.loggedInUser);
         }
@@ -130,78 +130,7 @@ function TodosModel(){
         data = JSON.stringify(data);
         localStorage.setItem(appName, data);
     };
-
-
-
-    this.notLoggedIn = function(){
-        return (!this.loggedIn());
-    };
-
-
-    this.loggedIn = function(){
-        var sessionData = sessionStorage.getItem(this.sessionKeyLoggedInUser);
-        if (sessionData == null){ return false;}
-        else return true;
-    };
-
-
-    this.loginValid = function(username, password){
-        if (this.usernameIsProperLength(username) &&
-            this.passwordIsProperLength(password) &&
-            this.usernameIsRegistered(username) &&
-            this.passwordGoesWithUsername(password, username)){
-
-            return true;
-        }
-        else return false;
-    };
-
-
-    this.passwordGoesWithUsername = function(password, username){
-        var userKey = this.userKey(username);
-        var usernameFound = bs.getLocalStorageJSON(userKey);
-        if (usernameFound){
-            return (usernameFound.password === password);
-        }
-        else return false;
-    };
-
-
-    this.usernameIsRegistered = function(username){
-        var userKey = this.userKey(username);
-        return (typeof localStorage[userKey] !== 'null' &&
-            typeof localStorage[userKey] !== 'undefined');
-    };
-
-
-
-    this.newAccountInfoValid = function(username, password1, password2){
-        return (this.usernameIsProperLength(username) &&
-            this.passwordPasses(password1, password2)
-        );
-    };
-
-
-    this.passwordIsProperLength = function(password){
-        return (password.length >= 8 && password.length <= 16);
-    };
-
-
-    this.usernameIsProperLength = function(username) {
-        return (username.length >= 8 && username.length <= 16);
-    };
-
-
-    this.passwordPasses = function(password1, password2){
-        return (this.twoEnteredPasswordsMatch(password1, password2) &&
-            password1.length >= 8 && password1.length <= 16
-        );
-    };
-
-
-    this.twoEnteredPasswordsMatch = function(password1, password2){
-        return (password1 === password2);
-    };
+  
 
 
     this.userKey = function(username){
