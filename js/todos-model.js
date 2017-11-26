@@ -94,6 +94,14 @@ function TodosModel(){
     };
 
 
+    this.getSingleListAsObject = function(listName){
+        var lists = this.getUsersLists();
+        var list = {};
+        list[listName] = lists[listName];
+        return list;
+    };
+
+
     this.userHasNoLists = function(){
         var lists = this.getUsersLists();
         return objectEmpty(lists);
@@ -122,9 +130,9 @@ function TodosModel(){
     };
 
 
-    this.setActiveList = function(txt){
-        this.activeList = txt;
-        sessionStorage.setItem(this.sessionKeyActiveList, txt);
+    this.setActiveList = function(listName){
+        this.activeList = this.getSingleListAsObject(listName);
+        sessionStorage.setItem(this.sessionKeyActiveList, this.activeList);
     };
 
 
@@ -133,22 +141,22 @@ function TodosModel(){
     };
 
 
-    this.removeItemFromSavedList = function(text){
-        var data = JSON.parse(localStorage.getItem(appName));
-        var user = data.users[loggedInUser];
-        var list = user.lists[activeList];
-        var theIndex = list.indexOf(text);
-
-        var arr = list.splice(theIndex);
-        arr.shift();
-
-        var newArr = list.concat(arr);
-        user.lists[activeList] = newArr;
-        data.users[loggedInUser] = user;
-        data = JSON.stringify(data);
-        localStorage.setItem(appName, data);
+    this.removeItemFromSavedList = function(itemText){
+        var listItems = this.extractListItemArray();
+        var index = listItems.indexOf(itemText);
+        listItems.splice(index, 1);
+        return listItems;
     };
 
+
+    this.extractListItemArray = function(){
+        var list = this.getActiveList();
+        var listItems;
+        for (var prop in list){
+            listItems = list[prop];
+        }
+        return listItems;
+    };
 
 
     this.userKey = function(username){

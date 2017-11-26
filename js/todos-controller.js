@@ -6,33 +6,37 @@
     var model = new TodosModel();
     var vm = new TodosViewManipulator(ui, model);
 
-    $(document).ready( vm.setAppearance );
+    $(document).ready(function onReadyHandler(){
+        vm.setAppearance();
+    });
 
 
-    ui.addButton.click( vm.addNewListItem );
+    ui.addButton.click(function addButtonHandler(){
+        vm.addNewListItem();
+    });
 
 
-    ui.itemText.click(function(){
+    ui.itemText.click(function clickItemHandler(){
         vm.makeClickedItem($(this));
     });
 
 
-    ui.itemText.blur(function(){
+    ui.itemText.blur(function itemBlurHandler(){
        vm.saveListItem($(this));
     });
 
 
     ui.itemText.hover(
-        function onMouseOver(){
+        function mouseOverHandler(){
             vm.addHoveredClassIfNotClicked($(this))
         },
-        function onMouseOut(){
+        function mouseOutHandler(){
             vm.removeHoveredClassFromListItem($(this))
         }
     );
 
 
-    ui.itemText.dblclick(function(){
+    ui.itemText.dblclick(function doubleClickHandler(){
         if (vm.listItemIsAlreadyClicked($(this))){
             vm.undoClickedItem();
         }
@@ -55,7 +59,9 @@
     });
 
 
-    ui.listsMenu.click( vm.fillListsMenuWithItems );
+    ui.listsMenu.click(function(){
+        vm.fillListsMenuWithItems();
+    });
 
 
     ui.listMenuItem.click(function(){
@@ -71,8 +77,6 @@
 
     ui.createAccountForm.submit(function(event){
         event.preventDefault();
-
-
     });
 
 
@@ -83,10 +87,14 @@
     });
 
 
-    ui.logoutLink.click( vm.handleLogout );
+    ui.logoutLink.click(function(){
+        vm.handleLogout();
+    });
 
 
-    ui.loginForm.submit( vm.handleLogin );
+    ui.loginForm.submit(function(){
+        vm.handleLogin();
+    });
 
 
     ui.newListItemForm.submit(function(){

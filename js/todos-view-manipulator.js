@@ -166,12 +166,22 @@ function TodosViewManipulator(ui, model){
     };
 
 
-    this.removeListItem = function(item){
-        item.closest('.' + ui.listItemClass).remove();
+    this.removeListItem = function(removeGlyph){
+        var listItem = this.getEntireListItem(removeGlyph);
+        var itemText = this.getItemText(listItem);
+        listItem.remove();
+        model.removeItemFromSavedList(itemText);
     };
 
 
+    this.getEntireListItem = function(removeGlyph){
+        return removeGlyph.closest('.' + ui.listItemClass);
+    };
 
+
+    this.getItemText = function(listItem){
+        return listItem.find('.' + ui.itemTextClass).text();
+    };
 
 
     this.showLoggedOutContent = function(){
