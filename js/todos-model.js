@@ -18,6 +18,12 @@ function TodosModel(){
     var bs = new BrowserStorage();
     var validator = new TodosModelValidator(bs);
 
+
+    this.newAccountInfoValid = function(username, password1, password2){
+        return validator.newAccountInfoValid(username, password1, password2);
+    };
+
+
     this.createAccount = function(username, password){
         var newUser = this.userKey(username);
         bs.addToLocalStorageAsJSON(newUser, initialUserData(password));
@@ -35,6 +41,18 @@ function TodosModel(){
     this.logout = function(){
         sessionStorage.removeItem(this.sessionKeyLoggedInUser);
         this.loggedInUser = false;
+    };
+
+
+    this.loggedOut = function(){
+        return (!this.loggedIn());
+    };
+
+
+    this.loggedIn = function(){
+        var sessionData = sessionStorage.getItem(this.sessionKeyLoggedInUser);
+        if ( ! sessionData){ return false;}
+        else return true;
     };
 
 
@@ -130,7 +148,7 @@ function TodosModel(){
         data = JSON.stringify(data);
         localStorage.setItem(appName, data);
     };
-  
+
 
 
     this.userKey = function(username){

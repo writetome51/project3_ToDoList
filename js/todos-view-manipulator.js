@@ -9,6 +9,40 @@ function TodosViewManipulator(ui, model){
     };
 
 
+    this.handleAccountCreation = function(){
+        if (this.newUserInputsValidated()){
+            this.createAccountLoginAndRedirectToHome();
+        }
+        else{
+            ui.accountCreationUnsuccessful.removeClass('invisible-and-collapsed');
+        }
+    };
+
+
+    this.handleLogin = function(){
+        var username = ui.loginUsername.val();
+        var password = ui.loginPassword.val();
+        model.login(username, password);
+        this.setAppearance();
+    };
+
+
+    this.handleLogout = function(){
+        model.logout();
+        this.setAppearance();
+    };
+
+
+    this.saveListItem = function(obj){
+        model.saveListItem(obj.text());
+    };
+
+
+    this.addNewListItem = function(){
+        $('.todo-list').append(ui.newListItem);
+    };
+
+
     this.makeClickedItem = function(obj){
         if (this.listItemIsNotClicked(obj)){
             this.undoClickedItem();
@@ -133,18 +167,11 @@ function TodosViewManipulator(ui, model){
 
 
     this.removeListItem = function(item){
-        item.parents('.' + ui.listItemClass).remove();
+        item.closest('.' + ui.listItemClass).remove();
     };
 
 
-    this.setAppearance = function(){
-        if (model.notLoggedIn()){
-           this.showLoggedOutContent();
-        }
-        else if (model.loggedIn()){
-           this.showLoggedInContent();
-        }
-    };
+
 
 
     this.showLoggedOutContent = function(){
@@ -242,12 +269,21 @@ function TodosViewManipulator(ui, model){
 
 
     this.newUserInputsValidated = function(){
-        var username = ui.newUsernameInput.val();
-        var password1 = ui.newPasswordInput.val();
-        var password2 = ui.newPassword2Input.val();
-        return (model.newAccountInfoValid(username, password1, password2));
+        var u = ui.newUsernameInput.val();
+        var p1 = ui.newPasswordInput.val();
+        var p2 = ui.newPassword2Input.val();
+        return (model.newAccountInfoValid(u, p1, p2));
     };
 
+
+    this.setAppearance = function(){
+        if (model.loggedOut()){
+            this.showLoggedOutContent();
+        }
+        else if (model.loggedIn()){
+            this.showLoggedInContent();
+        }
+    };
 
 
 }

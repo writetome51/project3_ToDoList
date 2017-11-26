@@ -46,29 +46,14 @@ function TodosModelValidator(browserStorage){
 
 
     this.userKeyIsRegistered = function(userKey){
-        return (typeof localStorage[userKey] !== 'null' &&
+        return (localStorage[userKey] !== null &&
             typeof localStorage[userKey] !== 'undefined');
     };
- 
+
 
     this.passwordIsProperLength = function(password){
         return (password.length >= 8 && password.length <= 16);
     };
 
 
-    this.notLoggedIn = function(){
-        return (!this.loggedIn());
-    };
-
-
-    this.loggedIn = function(){
-        var sessionData = sessionStorage.getItem(this.sessionKeyLoggedInUser);
-        if ( ! sessionData){ return false;}
-        else return true;
-    };
-
-
 }
-
-
- 

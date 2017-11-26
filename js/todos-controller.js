@@ -6,14 +6,10 @@
     var model = new TodosModel();
     var vm = new TodosViewManipulator(ui, model);
 
-    $(document).ready(function(){
-        vm.setAppearance();
-    });
+    $(document).ready( vm.setAppearance );
 
 
-    ui.addButton.click(function(){
-        $('.todo-list').append(ui.newListItem);
-    });
+    ui.addButton.click( vm.addNewListItem );
 
 
     ui.itemText.click(function(){
@@ -22,7 +18,7 @@
 
 
     ui.itemText.blur(function(){
-        model.saveListItem( $(this).text() );
+       vm.saveListItem($(this));
     });
 
 
@@ -44,7 +40,7 @@
 
 
     ui.removeGlyph.click(function(){
-        removeListItem($(this));
+        vm.removeListItem($(this));
     });
 
 
@@ -59,9 +55,7 @@
     });
 
 
-    ui.listsMenu.click(function() {
-        vm.fillListsMenuWithItems();
-    });
+    ui.listsMenu.click( vm.fillListsMenuWithItems );
 
 
     ui.listMenuItem.click(function(){
@@ -78,12 +72,7 @@
     ui.createAccountForm.submit(function(event){
         event.preventDefault();
 
-        if (vm.newUserInputsValidated()){
-            vm.createAccountLoginAndRedirectToHome();
-        }
-        else{
-            ui.accountCreationUnsuccessful.removeClass('invisible-and-collapsed');
-        }
+
     });
 
 
@@ -94,18 +83,10 @@
     });
 
 
-    ui.logoutLink.click(function(){
-        model.logout();
-        vm.setAppearance();
-    });
+    ui.logoutLink.click( vm.handleLogout );
 
 
-    ui.loginForm.submit(function(){
-        var username = $('#login-username').val();
-        var password = $('#login-password').val();
-        model.login(username, password);
-        vm.setAppearance();
-    });
+    ui.loginForm.submit( vm.handleLogin );
 
 
     ui.newListItemForm.submit(function(){
