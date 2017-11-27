@@ -43,12 +43,12 @@
     });
 
 
-    ui.removeGlyph.click(function(){
+    ui.removeGlyph.click(function removeListItemHandler(){
         uim.removeListItem($(this));
     });
 
 
-    ui.todoCheckbox.click(function(){
+    ui.todoCheckbox.click(function checkboxClickHandler(){
         var deleteButton = $(this).siblings('span.' + removeGlyphiconClass);
         if ($(this).prop('checked')){
             deleteButton.removeClass(invisibleClass);
@@ -59,46 +59,47 @@
     });
 
 
-    ui.listsMenu.click(function(){
+    ui.listsMenu.click(function listsMenuClickHandler(){
         uim.fillListsMenuWithItems();
     });
 
 
-    ui.listMenuItem.click(function(){
+    ui.listMenuItem.click(function listsMenuItemClickHandler(){
         model.setActiveList($(this).text());
     });
 
 
-    ui.newListAction.click(function(){
-        $('#the-todo-list').remove();
-        $('#new-list-form').removeClass('invisible-and-collapsed');
+    ui.newListAction.click(function newListActionClickHandler(){
+       uim.showNewListForm();
     });
 
 
-    ui.createAccountForm.submit(function(event){
+    ui.createAccountForm.submit(function createAccountSubmitHandler(event){
         event.preventDefault();
         uim.handleAccountCreation();
     });
 
 
-    ui.loginForm.submit(function(event){
+    ui.loginForm.submit(function loginSubmitHandler(event){
         event.preventDefault();
         uim.handleLogin();
     });
 
 
-    ui.logoutLink.click(function(){
+    ui.logoutLink.click(function logoutLinkHandler(){
         uim.handleLogout();
     });
 
 
-    ui.newListForm.submit(function newListSubmitHandler(){
-
+    ui.newListForm.submit(function newListSubmitHandler(event){
+        event.preventDefault();
+        uim.saveNewList($(this));
     });
 
 
-    ui.newListItemForm.submit(function(){
-
+    ui.newListItemForm.submit(function newListItemSubmitHandler(event){
+        event.preventDefault();
+        uim.saveListItem($(this));
     });
 
 

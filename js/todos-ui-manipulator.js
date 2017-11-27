@@ -38,6 +38,11 @@ function TodosUIManipulator(ui, model){
     };
 
 
+    this.saveNewList = function(obj){
+
+    };
+
+
     this.addNewListItem = function(){
         $('.todo-list').append(ui.newListItem);
     };
@@ -234,9 +239,14 @@ function TodosUIManipulator(ui, model){
 
     this.ifUserHasNoListsShowListCreateForm = function(){
         if (model.userHasNoLists()){
-            this.showNecessaryItemsWhenCreatingList();
-            this.removeUnnecessaryItemsWhenCreatingList();
+           this.showNewListForm();
         }
+    };
+
+
+    this.showNewListForm = function(){
+        this.showNecessaryItemsWhenCreatingList();
+        this.removeUnnecessaryItemsWhenCreatingList();
     };
 
 

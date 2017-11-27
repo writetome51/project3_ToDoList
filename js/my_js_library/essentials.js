@@ -49,3 +49,34 @@ function convertToObject(jsonString){
 function objectEmpty(obj){
     return (! Object.keys(obj).length);
 }
+
+
+function generateRandomIntegers(howMany, range){
+    var parts = getRandomIntegerFormulaParts(range);
+    var min = parts[1];
+    var maxMinusMinPlusOne = parts[0];
+
+	for (var i=0, arr=[]; i < howMany; ++i){
+		arr.push( Math.floor(Math.random() * maxMinusMinPlusOne + min) );
+	}
+	return arr;
+}
+
+
+function generateRandomInteger(range){
+    var parts = getRandomIntegerFormulaParts(range);
+    var min = parts[1];
+    var maxMinusMinPlusOne = parts[0];
+
+    return  Math.floor(Math.random() * maxMinusMinPlusOne + min);
+}
+
+
+function getRandomIntegerFormulaParts(range){
+    var min = range[0];
+    var max = range[1];
+
+    var maxMinusMinPlusOne = max - min + 1;
+
+    return [maxMinusMinPlusOne, min];
+}
