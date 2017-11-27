@@ -1,6 +1,6 @@
 
 
-function TodosViewManipulator(ui, model){
+function TodosUIManipulator(ui, model){
 
 
     this.fillListsMenuWithItems = function(){
@@ -14,7 +14,7 @@ function TodosViewManipulator(ui, model){
             this.createAccountLoginAndRedirectToHome();
         }
         else{
-            ui.accountCreationUnsuccessful.removeClass('invisible-and-collapsed');
+            ui.accountCreationUnsuccessful.removeClass(ui.invisibleCollapsedClass);
         }
     };
 
@@ -247,7 +247,7 @@ function TodosViewManipulator(ui, model){
 
 
     this.removeUnnecessaryItemsWhenCreatingList = function(){
-        $('.remove-when-creating-list')
+        $('.collapse-when-creating-list')
             .addClass(ui.invisibleCollapsedClass);
     };
 

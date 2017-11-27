@@ -4,47 +4,47 @@
 
     var ui = new TodosUI();
     var model = new TodosModel();
-    var vm = new TodosViewManipulator(ui, model);
+    var uim = new TodosUIManipulator(ui, model);
 
     $(document).ready(function onReadyHandler(){
-        vm.setAppearance();
+        uim.setAppearance();
     });
 
 
     ui.addButton.click(function addButtonHandler(){
-        vm.addNewListItem();
+        uim.addNewListItem();
     });
 
 
     ui.itemText.click(function clickItemHandler(){
-        vm.makeClickedItem($(this));
+        uim.makeClickedItem($(this));
     });
 
 
     ui.itemText.blur(function itemBlurHandler(){
-       vm.saveListItem($(this));
+       uim.saveListItem($(this));
     });
 
 
     ui.itemText.hover(
         function mouseOverHandler(){
-            vm.addHoveredClassIfNotClicked($(this))
+            uim.addHoveredClassIfNotClicked($(this))
         },
         function mouseOutHandler(){
-            vm.removeHoveredClassFromListItem($(this))
+            uim.removeHoveredClassFromListItem($(this))
         }
     );
 
 
     ui.itemText.dblclick(function doubleClickHandler(){
-        if (vm.listItemIsAlreadyClicked($(this))){
-            vm.undoClickedItem();
+        if (uim.listItemIsAlreadyClicked($(this))){
+            uim.undoClickedItem();
         }
     });
 
 
     ui.removeGlyph.click(function(){
-        vm.removeListItem($(this));
+        uim.removeListItem($(this));
     });
 
 
@@ -60,7 +60,7 @@
 
 
     ui.listsMenu.click(function(){
-        vm.fillListsMenuWithItems();
+        uim.fillListsMenuWithItems();
     });
 
 
@@ -77,17 +77,23 @@
 
     ui.createAccountForm.submit(function(event){
         event.preventDefault();
-    });
-
-
-    ui.logoutLink.click(function(){
-        vm.handleLogout();
+        uim.handleAccountCreation();
     });
 
 
     ui.loginForm.submit(function(event){
         event.preventDefault();
-        vm.handleLogin();
+        uim.handleLogin();
+    });
+
+
+    ui.logoutLink.click(function(){
+        uim.handleLogout();
+    });
+
+
+    ui.newListForm.submit(function newListSubmitHandler(){
+
     });
 
 
