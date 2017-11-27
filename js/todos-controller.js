@@ -80,15 +80,13 @@
     });
 
 
-
-
-
     ui.logoutLink.click(function(){
         vm.handleLogout();
     });
 
 
-    ui.loginForm.submit(function(){
+    ui.loginForm.submit(function(event){
+        event.preventDefault();
         vm.handleLogin();
     });
 

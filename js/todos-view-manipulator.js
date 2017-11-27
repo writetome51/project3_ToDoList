@@ -23,7 +23,7 @@ function TodosViewManipulator(ui, model){
         var username = ui.loginUsername.val();
         var password = ui.loginPassword.val();
         model.login(username, password);
-        this.setAppearance();
+        this.redirectToHome();
     };
 
 
@@ -253,13 +253,12 @@ function TodosViewManipulator(ui, model){
 
 
     this.showNecessaryItemsWhenLoggedOut = function(){
-        $('#login-and-create-account').removeClass(ui.invisibleCollapsedClass);
+        ui.loginAndCreateAccountLinks.removeClass(ui.invisibleCollapsedClass);
     };
 
 
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
-        $('#login-section').addClass(ui.invisibleCollapsedClass);
-        $('#login-and-create-account').addClass(ui.invisibleCollapsedClass);
+        ui.loginAndCreateAccountLinks.addClass(ui.invisibleCollapsedClass);
     };
 
 

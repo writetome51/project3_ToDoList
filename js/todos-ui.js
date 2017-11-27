@@ -19,6 +19,7 @@ function TodosUI(){
     this.itemText = $('.' + this.itemTextClass);
     this.itemToHighlight = '';
     this.listItemClass = 'todo-list-item';
+    this.loginAndCreateAccountLinks = $('#login-and-create-account');
     this.loginForm = $('#login-form');
     this.loginUsername = $('#login-username');
     this.loginPassword = $('#login-password');
