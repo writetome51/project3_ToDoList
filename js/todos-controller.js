@@ -80,11 +80,7 @@
     });
 
 
-    ui.loginLink.click(function(){
-        $('#main-home-navbar').addClass('invisible-and-collapsed');
-        $('#todos-body').addClass('invisible-and-collapsed');
-        $('#login-section').removeClass('invisible-and-collapsed');
-    });
+
 
 
     ui.logoutLink.click(function(){

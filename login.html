@@ -6,7 +6,7 @@
     <meta name="description" content="To-Do List Application for productivity">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>To-Do's | Create Account</title>
+    <title>To-Do's</title>
     <link rel="manifest" href="site.webmanifest">
 
     <link rel="stylesheet" href="css/vendor/bootstrap/css/bootstrap.min.css">
@@ -19,24 +19,25 @@
 <div id="top-container">
 
 
-    <!-- Navigation Toolbar -->
-    <nav class="top-navbar">
+    <nav id="login-section" class="top-navbar">
         <div class="container-fluid top-container-in-navbar">
 
             <div class="app-name-and-categories">
                 <div class="navbar-div" id="page-name-container">
-                    <header id="page-name" class="navbar-brand">Create Account</header>
+                    <header id="page-name" class="navbar-brand">Log In</header>
                 </div>
                 <div class="float-right" id="back-to-main">
                     <a href="index.html">
-                        <span class="glyphicon glyphicon-arrow-left"></span> Back To Main</a>
+                        <span class="glyphicon glyphicon-arrow-left"></span> Back To Main
+                    </a>
                 </div>
+
             </div>
 
-            <form id="create-account-form">
+            <form id="login-form">
                 <div class="navbar-div">
                     <div class="navbar-div top-navbar-search-container">
-                        <input type="text"  class="form-control" id="create-account-username"
+                        <input type="text"  class="form-control" id="login-username"
                                placeholder="Username"
                                required minlength="8" maxlength="16">
                     </div>
@@ -44,8 +45,7 @@
                 </div>
                 <div  class="navbar-div">
                     <div class="navbar-div top-navbar-search-container">
-                        <input type="password"  class="form-control"
-                               id="create-account-password"
+                        <input type="password"  class="form-control" id="login-password"
                                placeholder="Password"
                                required minlength="8" maxlength="16">
                     </div>
@@ -53,32 +53,17 @@
                 </div>
 
                 <div class="navbar-div">
-                    <div class="navbar-div top-navbar-search-container">
-                        <input type="password"  class="form-control"
-                               id="create-account-password-2" placeholder="Password again"
-                               required minlength="8" maxlength="16">
-                    </div>
-
-                </div>
-
-                <div class="navbar-div">
                     <div class="navbar-div top-navbar-search-container form-submit">
-                        <input type="submit" id="create-account-submit">
+                        <input type="submit" id="login-submit">
                     </div>
 
                 </div>
 
             </form>
 
-            <div id="account-creation-unsuccessful"
-                 class="navbar-div invisible-and-collapsed" >
-               <p>Sorry, your info didn't meet requirements.</p>
-                <p>Usernames and passwords must be at least 8 characters and not more than 16.  Both passwords must match.</p>
-            </div>
 
         </div>
     </nav>
-
 
 
 </div>

@@ -169,6 +169,11 @@ function TodosViewManipulator(ui, model){
     this.removeListItem = function(removeGlyph){
         var listItem = this.getEntireListItem(removeGlyph);
         var itemText = this.getItemText(listItem);
+        this.removeBoth(listItem, itemText);
+    };
+
+
+    this.removeBoth = function(listItem, itemText){
         listItem.remove();
         model.removeItemFromSavedList(itemText);
     };
@@ -259,10 +264,8 @@ function TodosViewManipulator(ui, model){
 
 
     this.removeUnnecessaryItemsWhenLoggedOut = function(){
-        $('#logout-link-container').addClass(ui.invisibleCollapsedClass);
-        ui.dropdownMenus.addClass(ui.invisibleClass);
-        ui.newListItemForm.addClass(ui.invisibleCollapsedClass);
-        ui.navbarSearchContainer.addClass(ui.invisibleCollapsedClass);
+        $('.collapse-when-logged-out').addClass(ui.invisibleCollapsedClass);
+        $('.invisible-when-logged-out').addClass(ui.invisibleClass);
     };
 
 

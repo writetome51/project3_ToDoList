@@ -5,6 +5,7 @@ function TodosUI(){
     this.appNameHolder = $('#app-name-holder');
     this.addButton = $('#add-button');
     this.accountCreationUnsuccessful = $('#account-creation-unsuccessful');
+    this.atLoginSection = false;
     this.clickedItem = false;
     this.clickedClass = 'list-item-clicked';
     this.createAccountForm = $('#create-account-form');
