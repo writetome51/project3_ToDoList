@@ -93,7 +93,7 @@
 
     ui.newListForm.submit(function newListSubmitHandler(event){
         event.preventDefault();
-        uim.saveNewList($(this));
+        uim.handleNewListCreation();
     });
 
 

@@ -105,6 +105,8 @@
 
     <!--  Main Body -->
     <div id="todos-body" class="container-fluid">
+
+        <header id="list-name-header">List Name</header>
         <ul class="todo-list" id="the-todo-list">
             <!--  The list items go here  -->
         </ul>
@@ -128,10 +130,10 @@
 
 
         <form id="new-list-form"
-              class="collapse-when-logged-out  show-when-creating-list">
+           class="invisible-and-collapsed  collapse-when-logged-out  show-when-creating-list">
 
             <div class="navbar-div">
-                <input type="text"  class="form-control"
+                <input type="text"  id="new-list-name"  class="form-control"
                        placeholder="Name new list..."
                        required minlength="8" maxlength="16">
             </div>

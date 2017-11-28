@@ -2,6 +2,8 @@
 
 function TodosUIManipulator(ui, model){
 
+    this.creatingNewList = false;
+
 
     this.fillListsMenuWithItems = function(){
        var innerHTML =  model.getAllListsMenuItems();
@@ -35,11 +37,20 @@ function TodosUIManipulator(ui, model){
 
     this.saveListItem = function(obj){
         model.saveListItem(obj.text());
+        this.setAppearance();
     };
 
 
-    this.saveNewList = function(obj){
+    this.saveNewList = function(){
+        var newListName =  ui.newListName.val();
+        model.createNewList(newListName);
+    };
 
+
+    this.handleNewListCreation = function(){
+        this.saveNewList();
+        this.creatingNewList = false;
+        this.setAppearance();
     };
 
 
@@ -222,6 +233,9 @@ function TodosUIManipulator(ui, model){
 
 
     this.showNecessaryItemsWhenLoggedIn = function(){
+        if (this.creatingNewList){
+            this.showNecessaryItemsWhenCreatingList();
+        }
         $('#main-home-navbar').removeClass(ui.invisibleCollapsedClass);
         $('#todos-body').removeClass(ui.invisibleCollapsedClass);
         $('#logout-link-container').removeClass(ui.invisibleCollapsedClass);
@@ -239,20 +253,36 @@ function TodosUIManipulator(ui, model){
 
     this.ifUserHasNoListsShowListCreateForm = function(){
         if (model.userHasNoLists()){
-           this.showNewListForm();
+            this.showNewListForm();
         }
     };
 
 
     this.showNewListForm = function(){
+        this.creatingNewList = true;
         this.showNecessaryItemsWhenCreatingList();
         this.removeUnnecessaryItemsWhenCreatingList();
     };
 
 
+    this.removeUnnecessaryItemsWhenNotCreatingList = function(){
+        if ( ! this.creatingNewList){
+            $('.show-when-creating-list').addClass(ui.invisibleCollapsedClass);
+        }
+    };
+
+
+    this.showNecessaryItemsWhenNotCreatingList = function(){
+        $('.collapse-when-creating-list')
+         .removeClass(ui.invisibleCollapsedClass);
+    };
+
+
     this.showNecessaryItemsWhenCreatingList = function(){
-        $('.show-when-creating-list')
-            .removeClass(ui.invisibleCollapsedClass + ' ' + ui.invisibleClass );
+        if (this.creatingNewList){
+            $('.show-when-creating-list')
+             .removeClass(ui.invisibleCollapsedClass + ' ' + ui.invisibleClass );
+        }
     };
 
 
@@ -269,6 +299,12 @@ function TodosUIManipulator(ui, model){
 
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
         ui.loginAndCreateAccountLinks.addClass(ui.invisibleCollapsedClass);
+        if ( ! this.creatingNewList){
+            this.removeUnnecessaryItemsWhenNotCreatingList();
+        }
+        else{
+           this.removeUnnecessaryItemsWhenCreatingList();
+        }
     };
 
 

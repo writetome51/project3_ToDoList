@@ -34,6 +34,7 @@ function TodosUI(){
     this.newPassword2Input = $('#create-account-password-2');
     this.newListItemForm = $('#new-list-item-form');
     this.newListForm = $('#new-list-form');
+    this.newListName = $('#new-list-name');
     this.navbarSearchContainer = $('#navbar-search-container');
     this.newListAction = $('#new-list-action');
     this.removeGlyphiconClass = 'glyphicon-remove-circle';
