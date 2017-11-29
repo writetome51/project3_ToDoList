@@ -28,7 +28,7 @@
                     <header id="app-name" class="navbar-brand" href="#">To-Do's</header>
                 </div>
 
-                <div class="navbar-div  invisible-when-logged-out"
+                <div class="navbar-div invisible  invisible-when-logged-out"
                      id="dropdown-menus">
                     <div class="float-right">
                         <ul class="nav">
@@ -67,13 +67,14 @@
             <div id="search-and-create-and-login" class="navbar-div">
 
                 <div
-                   class="navbar-div top-navbar-search-container collapse-when-logged-out"
+                   class="navbar-div top-navbar-search-container invisible-and-collapsed
+                   collapse-when-logged-out"
                      id="navbar-search-container">
                     <input type="text" id="navbar-search-input" class="form-control"
                            placeholder="Search">
                 </div>
 
-                <div id="login-and-create-account" class="collapse-when-logged-in">
+                <div id="login-and-create-account" class="invisible-and-collapsed collapse-when-logged-in">
                     <div id="create-account">
                         <a href="create-account.html">
                             <span class="glyphicon glyphicon-user"></span> Create Account
@@ -106,17 +107,17 @@
     <!--  Main Body -->
     <div id="todos-body" class="container-fluid">
 
-        <header id="list-name-header">List Name</header>
+        <header id="list-name-header"></header>
         <ul class="todo-list" id="the-todo-list">
             <!--  The list items go here  -->
         </ul>
 
         <form id="new-list-item-form"
-              class="collapse-when-logged-out  collapse-when-creating-list">
+              class="invisible-and-collapsed  collapse-when-logged-out  collapse-when-creating-list">
             <div class="navbar-div">
                 <div class="navbar-div top-navbar-search-container">
                     <input type="text"  class="form-control"
-                           placeholder="Add item"
+                           placeholder="Add item to list"
                            required minlength="1" >
                 </div>
                 <div class="form-submit  navbar-div  add-item-button">

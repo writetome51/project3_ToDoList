@@ -60,6 +60,7 @@ function TodosModel(){
         var listsBeingModified = this.getUsersLists();
         listsBeingModified[listName] = [];
         this.saveLists(listsBeingModified);
+        this.setActiveList(listName);
     };
 
 
@@ -122,6 +123,13 @@ function TodosModel(){
         var listBeingModified = listsBeingModified[list];
         var i = this.indexOfItemBeingModified();
         listBeingModified[i] = itemText;
+    };
+
+
+    this.getActiveListName = function(){
+        var obj = this.getActiveList();
+        var name = Object.keys(obj);
+        return name[0];
     };
 
 

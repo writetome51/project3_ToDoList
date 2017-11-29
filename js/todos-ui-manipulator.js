@@ -12,8 +12,12 @@ function TodosUIManipulator(ui, model){
 
 
     this.handleAccountCreation = function(){
-        if (this.newUserInputsValidated()){
-            this.createAccountLoginAndRedirectToHome();
+        var u = ui.newUsernameInput.val();
+        var p1 = ui.newPasswordInput.val();
+        var p2 = ui.newPassword2Input.val();
+        if (this.newUserInputsValidated(u, p1, p2)){
+                console.log(true);
+            this.createAccountLoginAndRedirectToHome(u, p1, p2);
         }
         else{
             ui.accountCreationUnsuccessful.removeClass(ui.invisibleCollapsedClass);
@@ -326,10 +330,7 @@ function TodosUIManipulator(ui, model){
     };
 
 
-    this.newUserInputsValidated = function(){
-        var u = ui.newUsernameInput.val();
-        var p1 = ui.newPasswordInput.val();
-        var p2 = ui.newPassword2Input.val();
+    this.newUserInputsValidated = function(u, p1, p2){
         return (model.newAccountInfoValid(u, p1, p2));
     };
 

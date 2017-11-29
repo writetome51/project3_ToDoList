@@ -27,6 +27,7 @@ div{
 
 #app-name, #page-name{font-size: 30px; width: 100%;  line-height: 1em;}
 
+#list-name-header{font-size: 22px;  text-align: center;}
 
 
 .app-name-and-categories{display:flex;float:left;}
@@ -179,4 +180,4 @@ div.float-right{display:inline; width:auto;float:right;}
 #no-lists-found{padding-left: 20px;}
 
 
-#list-name-header{text-align: center;}
+
