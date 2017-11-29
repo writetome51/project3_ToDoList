@@ -287,6 +287,7 @@ function TodosUIManipulator(ui, model){
             $('.show-when-creating-list')
              .removeClass(ui.invisibleCollapsedClass + ' ' + ui.invisibleClass );
         }
+        emptyNewListNameInput();
     };
 
 
@@ -344,5 +345,9 @@ function TodosUIManipulator(ui, model){
         }
     };
 
+
+    function emptyNewListNameInput(){
+        ui.newListName.val('');
+    }
 
 }

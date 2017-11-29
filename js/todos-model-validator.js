@@ -46,8 +46,10 @@ function TodosModelValidator(browserStorage){
 
 
     this.userKeyIsRegistered = function(userKey){
-        return (localStorage[userKey] !== null &&
-            typeof localStorage[userKey] !== 'undefined');
+        if ( localStorage[userKey] ){
+            return true;
+        }
+        else return false;
     };
 
 

@@ -15,6 +15,8 @@ div{
 }
 
 
+
+
 .icon-bar{background-color: black;}
 
 
@@ -180,4 +182,4 @@ div.float-right{display:inline; width:auto;float:right;}
 #no-lists-found{padding-left: 20px;}
 
 
-
+#no-script-message-container{padding-left:15px; }
