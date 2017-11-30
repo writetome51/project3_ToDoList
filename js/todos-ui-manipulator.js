@@ -16,7 +16,6 @@ function TodosUIManipulator(ui, model){
         var p1 = ui.newPasswordInput.val();
         var p2 = ui.newPassword2Input.val();
         if (this.newUserInputsValidated(u, p1, p2)){
-                console.log(true);
             this.createAccountLoginAndRedirectToHome(u, p1, p2);
         }
         else{
@@ -217,6 +216,8 @@ function TodosUIManipulator(ui, model){
 
 
     this.showLoggedInContent = function(){
+        this.fillListsMenuWithItems();
+        this.setListMenuItems();
         this.showNecessaryItemsWhenLoggedIn();
         this.removeUnnecessaryItemsWhenLoggedIn();
         this.setLoggedInHeader();
@@ -240,18 +241,18 @@ function TodosUIManipulator(ui, model){
         if (this.creatingNewList){
             this.showNecessaryItemsWhenCreatingList();
         }
+        this.ifUserHasNoListsShowListCreateForm();
         $('#main-home-navbar').removeClass(ui.invisibleCollapsedClass);
-        $('#todos-body').removeClass(ui.invisibleCollapsedClass);
         $('#logout-link-container').removeClass(ui.invisibleCollapsedClass);
         ui.dropdownMenus.removeClass(ui.invisibleClass);
+        ui.navbarSearchContainer.removeClass(ui.invisibleCollapsedClass);
+        $('#todos-body').removeClass(ui.invisibleCollapsedClass);
 
         /*** Only show this if there is an active list:
         if (){
             ui.newListItemForm.removeClass(ui.invisibleCollapsedClass);
         }
         ***/
-        this.ifUserHasNoListsShowListCreateForm();
-        ui.navbarSearchContainer.removeClass(ui.invisibleCollapsedClass);
     };
 
 
@@ -266,6 +267,11 @@ function TodosUIManipulator(ui, model){
         this.creatingNewList = true;
         this.showNecessaryItemsWhenCreatingList();
         this.removeUnnecessaryItemsWhenCreatingList();
+    };
+
+
+    this.showListsMenuItems = function(){
+        ui.listMenuItem.removeClass(ui.invisibleCollapsedClass);
     };
 
 
@@ -343,6 +349,11 @@ function TodosUIManipulator(ui, model){
         else if (model.loggedIn()){
             this.showLoggedInContent();
         }
+    };
+
+
+    this.setListMenuItems = function(){
+        ui.listMenuItem = $('.list-menu-item');
     };
 
 

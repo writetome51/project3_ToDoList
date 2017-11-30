@@ -8,6 +8,7 @@
 
     $(document).ready(function onReadyHandler(){
         uim.setAppearance();
+        setlistsMenuItemClickHandler();
     });
 
 
@@ -59,16 +60,6 @@
     });
 
 
-    ui.listsMenu.click(function listsMenuClickHandler(){
-        uim.fillListsMenuWithItems();
-    });
-
-
-    ui.listMenuItem.click(function listsMenuItemClickHandler(){
-        model.setActiveList($(this).text());
-    });
-
-
     ui.newListAction.click(function newListActionClickHandler(){
        uim.showNewListForm();
     });
@@ -101,6 +92,13 @@
         event.preventDefault();
         uim.saveListItem($(this));
     });
+
+
+    function setlistsMenuItemClickHandler(){
+        ui.listMenuItem.click(function(){
+            model.setActiveList($(this).text());
+        });
+    }
 
 
 })();

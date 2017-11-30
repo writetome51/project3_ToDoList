@@ -140,7 +140,7 @@ function TodosModel(){
 
     this.setActiveList = function(listName){
         this.activeList = this.getSingleListAsObject(listName);
-        sessionStorage.setItem(this.sessionKeyActiveList, this.activeList);
+        bs.addToSessionStorageAsJSON(this.sessionKeyActiveList, this.activeList);
     };
 
 
