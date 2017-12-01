@@ -40,8 +40,9 @@ function TodosModel(){
 
 
     this.logout = function(){
-        sessionStorage.removeItem(this.sessionKeyLoggedInUser);
+        sessionStorage.clear();
         this.loggedInUser = false;
+        this.activeList = false;
     };
 
 

@@ -8,7 +8,7 @@
 
     $(document).ready(function onReadyHandler(){
         uim.setAppearance();
-        uim.setlistsMenuItemClickHandler(uim);
+       // uim.setlistsMenuItemClickHandler(uim);
     });
 
 

@@ -373,7 +373,7 @@ function TodosUIManipulator(ui, model){
 
     this.handleViewingSelectedList = function(listName){
         model.setActiveList(listName);
-        this.setListNameHeader();
+        this.setAppearance();
     };
 
 
@@ -381,8 +381,6 @@ function TodosUIManipulator(ui, model){
     function emptyNewListNameInput(){
         ui.newListName.val('');
     }
-
-
 
 
 
