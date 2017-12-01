@@ -5,9 +5,28 @@ function TodosUIManipulator(ui, model){
     this.creatingNewList = false;
 
 
-    this.fillListsMenuWithItems = function(){
-       var innerHTML =  model.getAllListsMenuItems();
-       ui.listMenuItems.html(innerHTML);
+    this.refreshListsMenu = function(){
+        this.refreshListsMenuContent();
+        this.refreshListsMenuBehavior();
+    };
+
+
+    this.refreshListsMenuContent = function(){
+        var innerHTML =  model.getAllListsMenuItems();
+        ui.listMenuItems.html(innerHTML);
+        ui.listMenuItem = $('.' + ui.listMenuItemClass);
+    };
+
+
+    this.refreshListsMenuBehavior = function(){
+        this.setlistsMenuItemClickHandler(this);
+    };
+
+
+    this.setlistsMenuItemClickHandler = function(me){
+        ui.listMenuItem.click(function(){
+            me.handleViewingSelectedList( $(this).text() );
+        });
     };
 
 
@@ -208,20 +227,7 @@ function TodosUIManipulator(ui, model){
     };
 
 
-    this.showLoggedOutContent = function(){
-        this.removeUnnecessaryItemsWhenLoggedOut();
-        this.showNecessaryItemsWhenLoggedOut();
-        this.setLoggedOutHeader();
-    };
 
-
-    this.showLoggedInContent = function(){
-        this.fillListsMenuWithItems();
-        this.setListMenuItems();
-        this.showNecessaryItemsWhenLoggedIn();
-        this.removeUnnecessaryItemsWhenLoggedIn();
-        this.setLoggedInHeader();
-    };
 
 
     this.createAccountLoginAndRedirectToHome = function(username, password){
@@ -238,28 +244,20 @@ function TodosUIManipulator(ui, model){
 
 
     this.showNecessaryItemsWhenLoggedIn = function(){
-        if (this.creatingNewList){
-            this.showNecessaryItemsWhenCreatingList();
-        }
-        this.ifUserHasNoListsShowListCreateForm();
-        $('#main-home-navbar').removeClass(ui.invisibleCollapsedClass);
-        $('#logout-link-container').removeClass(ui.invisibleCollapsedClass);
-        ui.dropdownMenus.removeClass(ui.invisibleClass);
-        ui.navbarSearchContainer.removeClass(ui.invisibleCollapsedClass);
-        $('#todos-body').removeClass(ui.invisibleCollapsedClass);
+        this.setLoggedInHeader();
+        this.showContentCollapsedOrInvisibleWhenLoggedOut();
+        this.refreshListsMenu();
+        this.setListNameHeader();
 
-        /*** Only show this if there is an active list:
-        if (){
-            ui.newListItemForm.removeClass(ui.invisibleCollapsedClass);
+        if (this.creatingNewList || model.userHasNoLists()){
+            this.showNewListForm();
         }
-        ***/
     };
 
 
-    this.ifUserHasNoListsShowListCreateForm = function(){
-        if (model.userHasNoLists()){
-            this.showNewListForm();
-        }
+    this.showContentCollapsedOrInvisibleWhenLoggedOut = function(){
+        $('.collapse-when-logged-out').removeClass(ui.invisibleCollapsedClass);
+        $('.invisible-when-logged-out').removeClass(ui.invisibleClass);
     };
 
 
@@ -309,7 +307,8 @@ function TodosUIManipulator(ui, model){
 
 
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
-        ui.loginAndCreateAccountLinks.addClass(ui.invisibleCollapsedClass);
+       $('.collapse-when-logged-in').addClass(ui.invisibleCollapsedClass);
+       $('.invisible-when-logged-in').addClass(ui.invisibleClass);
         if ( ! this.creatingNewList){
             this.removeUnnecessaryItemsWhenNotCreatingList();
         }
@@ -337,6 +336,13 @@ function TodosUIManipulator(ui, model){
     };
 
 
+    this.setListNameHeader = function(){
+        var listName = model.getActiveListName();
+        if (!listName) listName = 'Choose a list from the Lists menu';
+        ui.listNameHeader.text(listName);
+    };
+
+
     this.newUserInputsValidated = function(u, p1, p2){
         return (model.newAccountInfoValid(u, p1, p2));
     };
@@ -352,13 +358,32 @@ function TodosUIManipulator(ui, model){
     };
 
 
-    this.setListMenuItems = function(){
-        ui.listMenuItem = $('.list-menu-item');
+    this.showLoggedOutContent = function(){
+        this.removeUnnecessaryItemsWhenLoggedOut();
+        this.showNecessaryItemsWhenLoggedOut();
+        this.setLoggedOutHeader();
     };
+
+
+    this.showLoggedInContent = function(){
+        this.showNecessaryItemsWhenLoggedIn();
+        this.removeUnnecessaryItemsWhenLoggedIn();
+    };
+
+
+    this.handleViewingSelectedList = function(listName){
+        model.setActiveList(listName);
+        this.setListNameHeader();
+    };
+
 
 
     function emptyNewListNameInput(){
         ui.newListName.val('');
     }
+
+
+
+
 
 }

@@ -12,6 +12,7 @@ function TodosModel(){
 
     this.sessionKeyLoggedInUser = this.appName + '_loggedInUser';
     this.sessionKeyActiveList = this.appName + '_activeList';
+    this.sessionKeyActiveListName= this.appName + '_activeListName';
     this.textBeingEdited = false;
     this.noListsFound = 'No Lists';
 
@@ -126,15 +127,26 @@ function TodosModel(){
     };
 
 
+    this.noActiveList = function(){
+        if ( ! this.getActiveList()){
+            return true;
+        }
+        else return false;
+    };
+
+
     this.getActiveListName = function(){
         var obj = this.getActiveList();
+        if (!obj){
+            return '';
+        }
         var name = Object.keys(obj);
         return name[0];
     };
 
 
     this.getActiveList = function(){
-        return sessionStorage.getItem(this.sessionKeyActiveList);
+        return bs.getSessionStorageJSON(this.sessionKeyActiveList);
     };
 
 

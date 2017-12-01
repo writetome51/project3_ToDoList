@@ -8,7 +8,7 @@
 
     $(document).ready(function onReadyHandler(){
         uim.setAppearance();
-        setlistsMenuItemClickHandler();
+        uim.setlistsMenuItemClickHandler(uim);
     });
 
 
@@ -94,11 +94,7 @@
     });
 
 
-    function setlistsMenuItemClickHandler(){
-        ui.listMenuItem.click(function(){
-            model.setActiveList($(this).text());
-        });
-    }
+
 
 
 })();

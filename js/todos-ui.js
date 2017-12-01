@@ -26,8 +26,10 @@ function TodosUI(){
     this.loginLink = $('#login-link');
     this.logoutLink = $('#logout-link');
     this.listsMenu = $('#lists-menu');
+    this.listMenuItemClass = 'list-menu-item';
     this.listMenuItems = $('#list-names');
-    this.listMenuItem = $('.list-menu-item'); // at page load, they can't be accessed.
+    this.listMenuItem = false; // at page load, they can't be accessed.
+    this.listNameHeader = $('#list-name-header');
     this.newItem = '';
     this.newUsernameInput = $('#create-account-username');
     this.newPasswordInput = $('#create-account-password');
