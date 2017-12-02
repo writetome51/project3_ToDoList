@@ -2,7 +2,7 @@
 
 function TodosUIManipulator(ui, model){
 
-    var classes = new TodosCssClasses();
+    var classes = new TodosCSSClasses();
 
     this.creatingNewList = false;
 
@@ -16,7 +16,7 @@ function TodosUIManipulator(ui, model){
     this.refreshListsMenuContent = function(){
         var innerHTML =  model.getAllListsMenuItems();
         ui.listMenuItems.html(innerHTML);
-        ui.listMenuItem = $('.' + classes.listMenuItemClass);
+        ui.listMenuItem = $('.' + classes.listMenuItem);
     };
 
 
@@ -40,7 +40,7 @@ function TodosUIManipulator(ui, model){
             this.createAccountLoginAndRedirectToHome(u, p1, p2);
         }
         else{
-            ui.accountCreationUnsuccessful.removeClass(classes.invisibleCollapsedClass);
+            ui.accountCreationUnsuccessful.removeClass(classes.invisibleCollapsed);
         }
     };
 
@@ -107,7 +107,7 @@ function TodosUIManipulator(ui, model){
 
 
 	this.removeClickedClass = function(){
-		ui.clickedItem.removeClass(classes.clickedClass);
+		ui.clickedItem.removeClass(classes.clicked);
 	};
 
 
@@ -121,7 +121,7 @@ function TodosUIManipulator(ui, model){
 
 
     this.setClickedItem = function(obj){
-        ui.itemToHighlight = obj.parent('.' + classes.highlightClass);
+        ui.itemToHighlight = obj.parent('.' + classes.highlight);
         ui.clickedItem = ui.itemToHighlight;
         this.removeHoverClassAndAddClickedClass(ui.clickedItem);
         this.makeGlyphsVisible();
@@ -130,7 +130,7 @@ function TodosUIManipulator(ui, model){
 
 
     this.listItemIsAlreadyClicked = function(obj){
-        ui.itemToHighlight = obj.parent('.' + classes.highlightClass);
+        ui.itemToHighlight = obj.parent('.' + classes.highlight);
         return this.thisItemIsAlreadyClicked(ui.itemToHighlight);
     };
 
@@ -141,7 +141,7 @@ function TodosUIManipulator(ui, model){
 
 
     this.thisItemIsAlreadyClicked = function(obj){
-        return  obj.hasClass(classes.clickedClass);
+        return  obj.hasClass(classes.clicked);
     };
 
 
@@ -156,23 +156,23 @@ function TodosUIManipulator(ui, model){
 
 
     this.makeRemoveGlyphVisible = function(obj){
-        obj.find('.' + ui.removeGlyphiconClass).removeClass(classes.invisibleClass);
+        obj.find('.' + classes.removeGlyphicon).removeClass(classes.invisible);
     };
 
 
     this.makeRemoveGlyphInvisible = function(obj){
-        obj.find('.' + ui.removeGlyphiconClass).addClass(classes.invisibleClass);
+        obj.find('.' + classes.removeGlyphicon).addClass(classes.invisible);
     };
 
 
     this.makeItemEditable = function(obj){
-        var currentItemText = obj.children('.' + classes.itemTextClass);
+        var currentItemText = obj.children('.' + classes.itemText);
         currentItemText.attr("contenteditable", "true");
     };
 
 
     this.makeItemNotEditable = function(){
-        ui.clickedItem.children('.' + classes.itemTextClass)
+        ui.clickedItem.children('.' + classes.itemText)
         .removeAttr('contenteditable');
     };
 
@@ -184,25 +184,25 @@ function TodosUIManipulator(ui, model){
 
 
     this.removeHoverClassAndAddClickedClass = function(obj){
-        obj.addClass(classes.clickedClass);
-        obj.removeClass(classes.hoveredClass);
+        obj.addClass(classes.clicked);
+        obj.removeClass(classes.hovered);
     };
 
 
     this.addHoveredClassToListItem = function(obj){
-        ui.itemToHighlight = obj.parent('.' + classes.highlightClass);
-        ui.itemToHighlight.addClass(ui.hoveredClass);
+        ui.itemToHighlight = obj.parent('.' + classes.highlight);
+        ui.itemToHighlight.addClass(classes.hovered);
     };
 
 
     this.removeHoveredClassFromListItem = function(obj){
-        ui.itemToHighlight = obj.parent('.' + classes.highlightClass);
-        ui.itemToHighlight.removeClass(ui.hoveredClass);
+        ui.itemToHighlight = obj.parent('.' + classes.highlight);
+        ui.itemToHighlight.removeClass(classes.hovered);
     };
 
 
     this.clickedItemCheckboxIsChecked = function(){
-        return ui.clickedItem.children('.' + ui.itemCheckboxClass).prop('checked');
+        return ui.clickedItem.children('.' + classes.itemCheckbox).prop('checked');
     };
 
 
@@ -220,12 +220,12 @@ function TodosUIManipulator(ui, model){
 
 
     this.getEntireListItem = function(removeGlyph){
-        return removeGlyph.closest('.' + classes.listItemClass);
+        return removeGlyph.closest('.' + classes.listItem);
     };
 
 
     this.getItemText = function(listItem){
-        return listItem.find('.' + classes.itemTextClass).text();
+        return listItem.find('.' + classes.itemText).text();
     };
 
 
@@ -258,8 +258,8 @@ function TodosUIManipulator(ui, model){
 
 
     this.showContentCollapsedOrInvisibleWhenLoggedOut = function(){
-        $('.collapse-when-logged-out').removeClass(classes.invisibleCollapsedClass);
-        $('.invisible-when-logged-out').removeClass(classes.invisibleClass);
+        $('.collapse-when-logged-out').removeClass(classes.invisibleCollapsed);
+        $('.invisible-when-logged-out').removeClass(classes.invisible);
     };
 
 
@@ -271,27 +271,27 @@ function TodosUIManipulator(ui, model){
 
 
     this.showListsMenuItems = function(){
-        ui.listMenuItem.removeClass(classes.invisibleCollapsedClass);
+        ui.listMenuItem.removeClass(classes.invisibleCollapsed);
     };
 
 
     this.removeUnnecessaryItemsWhenNotCreatingList = function(){
         if ( ! this.creatingNewList){
-            $('.show-when-creating-list').addClass(classes.invisibleCollapsedClass);
+            $('.show-when-creating-list').addClass(classes.invisibleCollapsed);
         }
     };
 
 
     this.showNecessaryItemsWhenNotCreatingList = function(){
         $('.collapse-when-creating-list')
-         .removeClass(classes.invisibleCollapsedClass);
+         .removeClass(classes.invisibleCollapsed);
     };
 
 
     this.showNecessaryItemsWhenCreatingList = function(){
         if (this.creatingNewList){
             $('.show-when-creating-list')
-             .removeClass(classes.invisibleCollapsedClass + ' ' + classes.invisibleClass );
+             .removeClass(classes.invisibleCollapsed + ' ' + classes.invisible );
         }
         emptyNewListNameInput();
     };
@@ -299,18 +299,18 @@ function TodosUIManipulator(ui, model){
 
     this.removeUnnecessaryItemsWhenCreatingList = function(){
         $('.collapse-when-creating-list')
-            .addClass(classes.invisibleCollapsedClass);
+            .addClass(classes.invisibleCollapsed);
     };
 
 
     this.showNecessaryItemsWhenLoggedOut = function(){
-        ui.loginAndCreateAccountLinks.removeClass(classes.invisibleCollapsedClass);
+        ui.loginAndCreateAccountLinks.remove(classes.invisibleCollapsed);
     };
 
 
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
-       $('.collapse-when-logged-in').addClass(classes.invisibleCollapsedClass);
-       $('.invisible-when-logged-in').addClass(classes.invisibleClass);
+       $('.collapse-when-logged-in').addClass(classes.invisibleCollapsed);
+       $('.invisible-when-logged-in').addClass(classes.invisible);
         if ( ! this.creatingNewList){
             this.removeUnnecessaryItemsWhenNotCreatingList();
         }
@@ -321,8 +321,8 @@ function TodosUIManipulator(ui, model){
 
 
     this.removeUnnecessaryItemsWhenLoggedOut = function(){
-        $('.collapse-when-logged-out').addClass(classes.invisibleCollapsedClass);
-        $('.invisible-when-logged-out').addClass(classes.invisibleClass);
+        $('.collapse-when-logged-out').addClass(classes.invisibleCollapsed);
+        $('.invisible-when-logged-out').addClass(classes.invisible);
     };
 
 

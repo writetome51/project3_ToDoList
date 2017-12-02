@@ -8,7 +8,6 @@
 
     $(document).ready(function onReadyHandler(){
         uim.setAppearance();
-       // uim.setlistsMenuItemClickHandler(uim);
     });
 
 
@@ -92,8 +91,6 @@
         event.preventDefault();
         uim.saveListItem($(this));
     });
-
-
 
 
 

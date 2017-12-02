@@ -1,6 +1,6 @@
 function TodosUI(){
 
-    var classes = new TodosCssClasses();
+    var classes = new TodosCSSClasses();
     var ids = new TodosIDs();
 
     this.appNameForDisplay = 'To-Do\'s';
@@ -12,7 +12,7 @@ function TodosUI(){
     this.clickedItem = false;
     this.createAccountForm = $('#' + ids.createAccountForm);
     this.dropdownMenus = $('#' + ids.dropdownMenus);
-    this.itemText = $('.' + classes.itemTextClass);
+    this.itemText = $('.' + classes.itemText);
     this.itemToHighlight = '';
     this.loginAndCreateAccountLinks = $('#' + ids.loginAndCreateAccount);
     this.loginForm = $('#' + ids.loginForm);
@@ -33,16 +33,16 @@ function TodosUI(){
     this.newListName = $('#' + ids.newListName);
     this.navbarSearchContainer = $('#' + ids.navbarSearchContainer);
     this.newListAction = $('#' + ids.newListAction);
-    this.removeGlyph = $('.' + classes.removeGlyphiconClass);
-    this.todoCheckbox = $('.' + classes.itemCheckboxClass);
+    this.removeGlyph = $('.' + classes.removeGlyphicon);
+    this.todoCheckbox = $('.' + classes.itemCheckbox);
 
-    this.newListItem = "<li class='" + classes.listItemClass + "'  draggable='true'>" +
-        "<input type='checkbox' class='" + classes.itemCheckboxClass + "'  " +
+    this.newListItem = "<li class='" + classes.listItem + "'  draggable='true'>" +
+        "<input type='checkbox' class='" + classes.itemCheckbox + "'  " +
         "title='Check box to mark item done, or to perform action on item'>" +
-        "<span class='" + classes.highlightClass + "'> <span class='" +
-        classes.itemTextClass + "'>" + this.newItem + "</span><span " +
-        "class='glyphicon " + classes.removeGlyphiconClass + "  " +
-        classes.invisibleClass + "'></span></span></li>";
+        "<span class='" + classes.highlight + "'> <span class='" +
+        classes.itemText + "'>" + this.newItem + "</span><span " +
+        "class='glyphicon " + classes.removeGlyphicon + "  " +
+        classes.invisible + "'></span></span></li>";
 
 
 }
