@@ -1,35 +1,38 @@
-function TodosUI(classes){
+function TodosUI(){
+
+    var classes = new TodosCssClasses();
+    var ids = new TodosIDs();
 
     this.appNameForDisplay = 'To-Do\'s';
-    this.appNameHeader = $('#app-name');
-    this.appNameHolder = $('#app-name-holder');
-    this.addButton = $('#add-button');
-    this.accountCreationUnsuccessful = $('#account-creation-unsuccessful');
+    this.appNameHeader = $('#' + ids.appNameHeader);
+    this.appNameHolder = $('#' + ids.appNameHolder);
+    this.addButton = $('#' + ids.addButton);
+    this.accountCreationUnsuccessful = $('#' + ids.creationUnsuccessful);
     this.atLoginSection = false;
     this.clickedItem = false;
-    this.createAccountForm = $('#create-account-form');
-    this.dropdownMenus = $('#dropdown-menus');
+    this.createAccountForm = $('#' + ids.createAccountForm);
+    this.dropdownMenus = $('#' + ids.dropdownMenus);
     this.itemText = $('.' + classes.itemTextClass);
     this.itemToHighlight = '';
-    this.loginAndCreateAccountLinks = $('#login-and-create-account');
-    this.loginForm = $('#login-form');
-    this.loginUsername = $('#login-username');
-    this.loginPassword = $('#login-password');
-    this.loginLink = $('#login-link');
-    this.logoutLink = $('#logout-link');
-    this.listsMenu = $('#lists-menu');
-    this.listMenuItems = $('#list-names');
+    this.loginAndCreateAccountLinks = $('#' + ids.loginAndCreateAccount);
+    this.loginForm = $('#' + ids.loginForm);
+    this.loginUsername = $('#' + ids.loginUsername);
+    this.loginPassword = $('#' + ids.loginPassword);
+    this.loginLink = $('#' + ids.loginLink);
+    this.logoutLink = $('#' + ids.logoutLink);
+    this.listsMenu = $('#' + ids.listsMenu);
+    this.listMenuItems = $('#' + ids.listNames);
     this.listMenuItem = false; // at page load, they can't be accessed.
-    this.listNameHeader = $('#list-name-header');
+    this.listNameHeader = $('#' + ids.listNameHeader);
     this.newItem = '';
-    this.newUsernameInput = $('#create-account-username');
-    this.newPasswordInput = $('#create-account-password');
-    this.newPassword2Input = $('#create-account-password-2');
-    this.newListItemForm = $('#new-list-item-form');
-    this.newListForm = $('#new-list-form');
-    this.newListName = $('#new-list-name');
-    this.navbarSearchContainer = $('#navbar-search-container');
-    this.newListAction = $('#new-list-action');
+    this.newUsernameInput = $('#' + ids.newUsernameInput);
+    this.newPasswordInput = $('#' + ids.createAccountPassword);
+    this.newPassword2Input = $('#' + ids.createAccountPassword2);
+    this.newListItemForm = $('#' + ids.newListItemForm);
+    this.newListForm = $('#' + ids.newListForm);
+    this.newListName = $('#' + ids.newListName);
+    this.navbarSearchContainer = $('#' + ids.navbarSearchContainer);
+    this.newListAction = $('#' + ids.newListAction);
     this.removeGlyph = $('.' + classes.removeGlyphiconClass);
     this.todoCheckbox = $('.' + classes.itemCheckboxClass);
 
