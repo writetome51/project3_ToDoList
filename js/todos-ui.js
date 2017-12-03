@@ -21,10 +21,17 @@ function TodosUI(){
     this.loginLink = $('#' + ids.loginLink);
     this.logoutLink = $('#' + ids.logoutLink);
     this.listsMenu = $('#' + ids.listsMenu);
-    this.listMenuItems = $('#' + ids.listNames);
-    this.listMenuItem = false; // at page load, they can't be accessed.
+    this.listsMenuItems = $('#' + ids.listNames);
+    this.listsMenuItem = false; // at page load, they can't be accessed.
+    this.setListsMenuItem = function(){
+        this.listsMenuItem = $('.' + classes.listsMenuItem);
+    };
     this.listNameHeader = $('#' + ids.listNameHeader);
-    this.newItem = '';
+    this.newItemText = '';
+    this.newListItemTextInput = $('#' + ids.newItemTextInput);
+    this.setNewItemText = function(){
+        this.newItemText = this.newListItemTextInput.val();
+    };
     this.newUsernameInput = $('#' + ids.newUsernameInput);
     this.newPasswordInput = $('#' + ids.createAccountPassword);
     this.newPassword2Input = $('#' + ids.createAccountPassword2);
@@ -35,14 +42,19 @@ function TodosUI(){
     this.newListAction = $('#' + ids.newListAction);
     this.removeGlyph = $('.' + classes.removeGlyphicon);
     this.todoCheckbox = $('.' + classes.itemCheckbox);
+    this.todoList = $('.' + classes.todoList);
+    this.newListItem = '';
+    this.setNewListItem = function(){
+        this.setNewItemText();
+        this.newListItem = "<li class='" + classes.listItem + "'  draggable='true'>" +
+            "<input type='checkbox' class='" + classes.itemCheckbox + "'  " +
+            "title='Check box to mark item done, or to perform action on item'>" +
+            "<span class='" + classes.highlight + "'> <span class='" +
+            classes.itemText + "'>" + this.newItemText + "</span><span " +
+            "class='glyphicon " + classes.removeGlyphicon + "  " +
+            classes.invisible + "'></span></span></li>";
+    };
 
-    this.newListItem = "<li class='" + classes.listItem + "'  draggable='true'>" +
-        "<input type='checkbox' class='" + classes.itemCheckbox + "'  " +
-        "title='Check box to mark item done, or to perform action on item'>" +
-        "<span class='" + classes.highlight + "'> <span class='" +
-        classes.itemText + "'>" + this.newItem + "</span><span " +
-        "class='glyphicon " + classes.removeGlyphicon + "  " +
-        classes.invisible + "'></span></span></li>";
 
 
 }

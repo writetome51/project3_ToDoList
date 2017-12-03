@@ -15,8 +15,8 @@ function TodosUIManipulator(ui, model){
 
     this.refreshListsMenuContent = function(){
         var innerHTML =  model.getAllListsMenuItems();
-        ui.listMenuItems.html(innerHTML);
-        ui.listMenuItem = $('.' + classes.listMenuItem);
+        ui.listsMenuItems.html(innerHTML);
+        ui.setListsMenuItem();
     };
 
 
@@ -26,7 +26,7 @@ function TodosUIManipulator(ui, model){
 
 
     this.setlistsMenuItemClickHandler = function(me){
-        ui.listMenuItem.click(function(){
+        ui.listsMenuItem.click(function(){
             me.handleViewingSelectedList( $(this).text() );
         });
     };
@@ -59,8 +59,10 @@ function TodosUIManipulator(ui, model){
     };
 
 
-    this.saveListItem = function(obj){
-        model.saveListItem(obj.text());
+
+    this.handleNewListCreation = function(){
+        this.saveNewList();
+        this.creatingNewList = false;
         this.setAppearance();
     };
 
@@ -71,24 +73,18 @@ function TodosUIManipulator(ui, model){
     };
 
 
-    this.handleNewListCreation = function(){
-        this.saveNewList();
-        this.creatingNewList = false;
+    this.handleNewListItemAddition = function(){
+        ui.setNewListItem();
+        this.addToListOnscreenAndInDatabase();
         this.setAppearance();
     };
 
 
-    this.addNewListItem = function(){
-        $('.todo-list').append(ui.newListItem);
+    this.addToListOnscreenAndInDatabase = function(){
+        ui.todoList.append(ui.newListItem);
+        model.saveListItem(ui.newListItem);
     };
 
-
-    this.makeClickedItem = function(obj){
-        if (this.listItemIsNotClicked(obj)){
-            this.undoClickedItem();
-            this.setClickedItem(obj);
-        }
-    };
 
 
  	this.undoClickedItem = function(){
@@ -111,12 +107,6 @@ function TodosUIManipulator(ui, model){
 	};
 
 
-
-    this.addHoveredClassIfNotClicked = function(obj){
-        if (this.listItemIsNotClicked(obj)){
-            this.addHoveredClassToListItem(obj);
-        }
-    };
 
 
 
@@ -184,8 +174,28 @@ function TodosUIManipulator(ui, model){
 
 
     this.removeHoverClassAndAddClickedClass = function(obj){
-        obj.addClass(classes.clicked);
         obj.removeClass(classes.hovered);
+        obj.addClass(classes.clicked);
+    };
+
+
+    this.removeHoveredClassFromListItem = function(obj){
+        ui.itemToHighlight = obj.parent('.' + classes.highlight);
+        ui.itemToHighlight.removeClass(classes.hovered);
+    };
+
+
+    this.ifAlreadyHoveredRemoveHover = function(obj){
+        if (this.hasHoveredClass(obj)){
+            this.removeHoveredClassFromListItem(obj);
+        }
+    };
+
+
+    this.ifNotHoveredAndNotClickedAddHover = function(obj){
+        if (this.notHoveredAndNotClicked(obj)){
+            this.addHoveredClassToListItem(obj);
+        }
     };
 
 
@@ -195,10 +205,17 @@ function TodosUIManipulator(ui, model){
     };
 
 
-    this.removeHoveredClassFromListItem = function(obj){
-        ui.itemToHighlight = obj.parent('.' + classes.highlight);
-        ui.itemToHighlight.removeClass(classes.hovered);
+    this.hasHoveredClass = function(obj){
+        return (obj.hasClass(classes.hovered));
     };
+
+
+    this.notHoveredAndNotClicked = function(obj){
+        return ((! obj.hasClass(classes.hovered)) &&
+            (! obj.hasClass(classes.clicked)));
+    };
+
+
 
 
     this.clickedItemCheckboxIsChecked = function(){
@@ -258,8 +275,8 @@ function TodosUIManipulator(ui, model){
 
 
     this.showContentCollapsedOrInvisibleWhenLoggedOut = function(){
-        $('.collapse-when-logged-out').removeClass(classes.invisibleCollapsed);
-        $('.invisible-when-logged-out').removeClass(classes.invisible);
+        $('.' + classes.collapseWhenLoggedOut).removeClass(classes.invisibleCollapsed);
+        $('.' + classes.invisibleWhenLoggedOut).removeClass(classes.invisible);
     };
 
 
@@ -271,7 +288,7 @@ function TodosUIManipulator(ui, model){
 
 
     this.showListsMenuItems = function(){
-        ui.listMenuItem.removeClass(classes.invisibleCollapsed);
+        ui.listsMenuItem.removeClass(classes.invisibleCollapsed);
     };
 
 
@@ -304,13 +321,13 @@ function TodosUIManipulator(ui, model){
 
 
     this.showNecessaryItemsWhenLoggedOut = function(){
-        ui.loginAndCreateAccountLinks.remove(classes.invisibleCollapsed);
+        ui.loginAndCreateAccountLinks.removeClass(classes.invisibleCollapsed);
     };
 
 
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
-       $('.collapse-when-logged-in').addClass(classes.invisibleCollapsed);
-       $('.invisible-when-logged-in').addClass(classes.invisible);
+       $('.' + classes.collapseWhenLoggedIn).addClass(classes.invisibleCollapsed);
+       $('.' + classes.invisibleWhenLoggedIn).addClass(classes.invisible);
         if ( ! this.creatingNewList){
             this.removeUnnecessaryItemsWhenNotCreatingList();
         }
@@ -321,19 +338,19 @@ function TodosUIManipulator(ui, model){
 
 
     this.removeUnnecessaryItemsWhenLoggedOut = function(){
-        $('.collapse-when-logged-out').addClass(classes.invisibleCollapsed);
-        $('.invisible-when-logged-out').addClass(classes.invisible);
+        $('.' + classes.collapseWhenLoggedOut).addClass(classes.invisibleCollapsed);
+        $('.' + classes.invisibleWhenLoggedOut).addClass(classes.invisible);
     };
 
 
     this.setLoggedOutHeader = function(){
-        ui.appNameHolder.addClass('welcome-to-app-name');
+        ui.appNameHolder.addClass(classes.welcomeToAppName);
         ui.appNameHeader.text('Welcome to ' + ui.appNameForDisplay);
     };
 
 
     this.setLoggedInHeader = function(){
-        ui.appNameHolder.removeClass('welcome-to-app-name');
+        ui.appNameHolder.removeClass(classes.welcomeToAppName);
         ui.appNameHeader.text(ui.appNameForDisplay);
     };
 

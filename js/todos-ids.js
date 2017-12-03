@@ -24,5 +24,5 @@ function TodosIDs(){
     this.newListName = 'new-list-name';
     this.navbarSearchContainer = 'navbar-search-container';
     this.newListAction = 'new-list-action';
-
+    this.newItemTextInput = "new-item-text-input";
 }

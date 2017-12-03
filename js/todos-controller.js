@@ -3,21 +3,16 @@
 
 
     var ui = new TodosUI();
-    var model = new TodosModel();
     var uim = new TodosUIManipulator(ui, model);
+    var ctrh = new ControllerHelper(ui, uim);
 
     $(document).ready(function onReadyHandler(){
         uim.setAppearance();
     });
 
 
-    ui.addButton.click(function addButtonHandler(){
-        uim.addNewListItem();
-    });
-
-
     ui.itemText.click(function clickItemHandler(){
-        uim.makeClickedItem($(this));
+        ctrh.makeClickedItem($(this));
     });
 
 
@@ -26,20 +21,13 @@
     });
 
 
-    ui.itemText.hover(
-        function mouseOverHandler(){
-            uim.addHoveredClassIfNotClicked($(this))
-        },
-        function mouseOutHandler(){
-            uim.removeHoveredClassFromListItem($(this))
-        }
-    );
+    ui.itemText.hover(function hoverHandler(){
+        ctrh.toggleHover($(this));
+    });
 
 
     ui.itemText.dblclick(function doubleClickHandler(){
-        if (uim.listItemIsAlreadyClicked($(this))){
-            uim.undoClickedItem();
-        }
+       ctrh.handleItemDoubleClick();
     });
 
 
@@ -89,7 +77,7 @@
 
     ui.newListItemForm.submit(function newListItemSubmitHandler(event){
         event.preventDefault();
-        uim.saveListItem($(this));
+        uim.handleNewListItemAddition();
     });
 
 
