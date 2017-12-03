@@ -3,8 +3,10 @@
 
 
     var ui = new TodosUI();
-    var uim = new TodosUIManipulator(ui, model);
-    var ctrh = new ControllerHelper(ui, uim);
+    var model = new TodosModel();
+    var uim = new TodosUIManipulator(ui);
+    var ctrh = new ControllerHelper(uim, model);
+
 
     $(document).ready(function onReadyHandler(){
         uim.setAppearance();
@@ -32,7 +34,7 @@
 
 
     ui.removeGlyph.click(function removeListItemHandler(){
-        uim.removeListItem($(this));
+        ctrh.removeListItem($(this));
     });
 
 
@@ -48,38 +50,37 @@
 
 
     ui.newListAction.click(function newListActionClickHandler(){
-       uim.showNewListForm();
+        ctrh.handleNewListAction();
     });
 
 
     ui.createAccountForm.submit(function createAccountSubmitHandler(event){
         event.preventDefault();
-        uim.handleAccountCreation();
+        ctrh.handleAccountCreation();
     });
 
 
     ui.loginForm.submit(function loginSubmitHandler(event){
         event.preventDefault();
-        uim.handleLogin();
+        ctrh.handleLogin();
     });
 
 
     ui.logoutLink.click(function logoutLinkHandler(){
-        uim.handleLogout();
+        ctrh.handleLogout();
     });
 
 
     ui.newListForm.submit(function newListSubmitHandler(event){
         event.preventDefault();
-        uim.handleNewListCreation();
+        ctrh.handleNewListCreation();
     });
 
 
     ui.newListItemForm.submit(function newListItemSubmitHandler(event){
         event.preventDefault();
-        uim.handleNewListItemAddition();
+        ctrh.handleNewListItemAddition();
     });
-
 
 
 })();

@@ -1,8 +1,9 @@
 
 
-function TodosUIManipulator(ui, model){
+function TodosUIManipulator(ui){
 
     var classes = new TodosCSSClasses();
+    var model = new TodosModel();
 
     this.creatingNewList = false;
 
@@ -33,11 +34,14 @@ function TodosUIManipulator(ui, model){
 
 
     this.handleAccountCreation = function(){
-        var u = ui.newUsernameInput.val();
-        var p1 = ui.newPasswordInput.val();
-        var p2 = ui.newPassword2Input.val();
-        if (this.newUserInputsValidated(u, p1, p2)){
-            this.createAccountLoginAndRedirectToHome(u, p1, p2);
+        var values = ui.getNewAccountValues();
+        if (model.newAccountInfoValid(
+                values.username, values.password1, values.password2
+            ))
+        {
+            this.createAccountLoginAndRedirectToHome(
+                values.username, values.password1, values.password2
+            );
         }
         else{
             ui.accountCreationUnsuccessful.removeClass(classes.invisibleCollapsed);
@@ -45,19 +49,15 @@ function TodosUIManipulator(ui, model){
     };
 
 
-    this.handleLogin = function(){
-        var username = ui.loginUsername.val();
-        var password = ui.loginPassword.val();
-        model.login(username, password);
-        this.redirectToHome();
+
+
+
+    this.getLoginValues = function(){
+        var values = {};
+        values.username = ui.loginUsername.val();
+        values.password = ui.loginPassword.val();
+        return values;
     };
-
-
-    this.handleLogout = function(){
-        model.logout();
-        this.setAppearance();
-    };
-
 
 
     this.handleNewListCreation = function(){
@@ -105,9 +105,6 @@ function TodosUIManipulator(ui, model){
 	this.removeClickedClass = function(){
 		ui.clickedItem.removeClass(classes.clicked);
 	};
-
-
-
 
 
     this.setClickedItem = function(obj){
@@ -185,20 +182,6 @@ function TodosUIManipulator(ui, model){
     };
 
 
-    this.ifAlreadyHoveredRemoveHover = function(obj){
-        if (this.hasHoveredClass(obj)){
-            this.removeHoveredClassFromListItem(obj);
-        }
-    };
-
-
-    this.ifNotHoveredAndNotClickedAddHover = function(obj){
-        if (this.notHoveredAndNotClicked(obj)){
-            this.addHoveredClassToListItem(obj);
-        }
-    };
-
-
     this.addHoveredClassToListItem = function(obj){
         ui.itemToHighlight = obj.parent('.' + classes.highlight);
         ui.itemToHighlight.addClass(classes.hovered);
@@ -216,18 +199,10 @@ function TodosUIManipulator(ui, model){
     };
 
 
-
-
     this.clickedItemCheckboxIsChecked = function(){
         return ui.clickedItem.children('.' + classes.itemCheckbox).prop('checked');
     };
 
-
-    this.removeListItem = function(removeGlyph){
-        var listItem = this.getEntireListItem(removeGlyph);
-        var itemText = this.getItemText(listItem);
-        this.removeBoth(listItem, itemText);
-    };
 
 
     this.removeBoth = function(listItem, itemText){

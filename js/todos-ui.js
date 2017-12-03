@@ -56,5 +56,14 @@ function TodosUI(){
     };
 
 
+    this.getNewAccountValues = function(){
+        var values = {};
+        values.username = this.newUsernameInput.val();
+        values.password1 = this.newPasswordInput.val();
+        values.password2 = this.newPassword2Input.val();
+        return values;
+    };
+
+
 
 }
