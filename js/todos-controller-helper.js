@@ -26,11 +26,14 @@ function ControllerHelper(uim, model){
     };
 
 
+
     this.removeListItem = function(removeGlyph){
         var listItem = uim.getEntireListItem(removeGlyph);
-        var itemText = uim.getItemText(listItem);
-        uim.removeBoth(listItem, itemText);
+        model.removeItemFromSavedList( uim.getItemText(listItem) );
+        uim.removeItem(listItem);
     };
+
+
 
 
     this.handleNewListAction = function(){
@@ -38,18 +41,39 @@ function ControllerHelper(uim, model){
     };
 
 
+
+
     this.handleNewListCreation = function(){
-        uim.handleNewListCreation();
+        var newListName = uim.getNewListName();
+        model.createNewList(newListName);
+        uim.creatingNewList = false;
+        uim.setAppearance();
     };
 
 
+
+
+
     this.handleNewListItemAddition = function(){
-        uim.handleNewListItemAddition();
+        uim.addNewItemToListOnscreen();
+        model.saveListItem(ui.newListItem);
+        uim.setAppearance(model.loggedOut());
     };
 
 
     this.handleAccountCreation = function(){
-        uim.handleAccountCreation();
+        var values = uim.getNewAccountValues();
+        if (model.newAccountInfoValid(
+            values.username, values.password1, values.password2
+            ))
+        {
+            this.createAccountLoginAndRedirectToHome(
+                values.username, values.password1, values.password2
+            );
+        }
+        else{
+            uim.showAccountCreationUnsuccessful();
+        }
     };
 
 
@@ -62,13 +86,33 @@ function ControllerHelper(uim, model){
 
     this.handleLogout = function() {
         model.logout();
-        uim.setAppearance();
+        uim.setAppearance(true); // true means logged out.
+    };
+
+
+
+    this.createAccountLoginAndRedirectToHome = function(username, password){
+        model.createAccount(username, password);
+        model.login(username, password);
+        this.redirectToHome();
     };
 
 
     this.redirectToHome = function(){
         location.replace('index.html');
     };
+
+
+
+    this.setAppearance = function(loggedOut){
+        if (loggedOut){ //loggedOut value should be obtained from model.
+            uim.showLoggedOutContent();
+        }
+        else{
+            uim.showLoggedInContent();
+        }
+    };
+
 
 
 }

@@ -27,11 +27,9 @@ function TodosUI(){
         this.listsMenuItem = $('.' + classes.listsMenuItem);
     };
     this.listNameHeader = $('#' + ids.listNameHeader);
+    this.newListItem = '';
     this.newItemText = '';
     this.newListItemTextInput = $('#' + ids.newItemTextInput);
-    this.setNewItemText = function(){
-        this.newItemText = this.newListItemTextInput.val();
-    };
     this.newUsernameInput = $('#' + ids.newUsernameInput);
     this.newPasswordInput = $('#' + ids.createAccountPassword);
     this.newPassword2Input = $('#' + ids.createAccountPassword2);
@@ -43,27 +41,15 @@ function TodosUI(){
     this.removeGlyph = $('.' + classes.removeGlyphicon);
     this.todoCheckbox = $('.' + classes.itemCheckbox);
     this.todoList = $('.' + classes.todoList);
-    this.newListItem = '';
-    this.setNewListItem = function(){
-        this.setNewItemText();
-        this.newListItem = "<li class='" + classes.listItem + "'  draggable='true'>" +
-            "<input type='checkbox' class='" + classes.itemCheckbox + "'  " +
-            "title='Check box to mark item done, or to perform action on item'>" +
-            "<span class='" + classes.highlight + "'> <span class='" +
-            classes.itemText + "'>" + this.newItemText + "</span><span " +
-            "class='glyphicon " + classes.removeGlyphicon + "  " +
-            classes.invisible + "'></span></span></li>";
-    };
 
 
-    this.getNewAccountValues = function(){
-        var values = {};
-        values.username = this.newUsernameInput.val();
-        values.password1 = this.newPasswordInput.val();
-        values.password2 = this.newPassword2Input.val();
-        return values;
-    };
-
+    this.newListItem = "<li class='" + classes.listItem + "'  draggable='true'>" +
+        "<input type='checkbox' class='" + classes.itemCheckbox + "'  " +
+        "title='Check box to mark item done, or to perform action on item'>" +
+        "<span class='" + classes.highlight + "'> <span class='" +
+        classes.itemText + "'>" + this.newItemText + "</span><span " +
+        "class='glyphicon " + classes.removeGlyphicon + "  " +
+        classes.invisible + "'></span></span></li>";
 
 
 }

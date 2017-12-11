@@ -68,9 +68,8 @@ function TodosModel(){
 
     this.editLists = function(){};
 
-
-    this.getAllListsMenuItems = function(){
-        var items = this.getUsersListNames();
+    //to get parameter items, call model.getUsersListNames();
+    uim.getAllListsMenuItems = function(items){
         if (items === this.noListsFound){
             return '<li id="no-lists-found">' + this.noListsFound  + '</li>';
         }

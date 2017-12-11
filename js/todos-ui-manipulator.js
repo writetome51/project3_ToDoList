@@ -33,23 +33,9 @@ function TodosUIManipulator(ui){
     };
 
 
-    this.handleAccountCreation = function(){
-        var values = ui.getNewAccountValues();
-        if (model.newAccountInfoValid(
-                values.username, values.password1, values.password2
-            ))
-        {
-            this.createAccountLoginAndRedirectToHome(
-                values.username, values.password1, values.password2
-            );
-        }
-        else{
-            ui.accountCreationUnsuccessful.removeClass(classes.invisibleCollapsed);
-        }
+    this.showAccountCreationUnsuccessful = function(){
+        ui.accountCreationUnsuccessful.removeClass(classes.invisibleCollapsed);
     };
-
-
-
 
 
     this.getLoginValues = function(){
@@ -60,31 +46,25 @@ function TodosUIManipulator(ui){
     };
 
 
-    this.handleNewListCreation = function(){
-        this.saveNewList();
-        this.creatingNewList = false;
-        this.setAppearance();
+
+    this.getNewListName = function(){
+        return ui.newListName.val();
     };
 
 
-    this.saveNewList = function(){
-        var newListName =  ui.newListName.val();
-        model.createNewList(newListName);
+    this.addNewItemToListOnscreen = function(){
+        this.setNewItemText();
+        this.displayNewItemInList();
     };
 
 
-    this.handleNewListItemAddition = function(){
-        ui.setNewListItem();
-        this.addToListOnscreenAndInDatabase();
-        this.setAppearance();
+    this.setNewItemText = function(){
+        ui.newItemText = ui.newListItemTextInput.val();
     };
 
-
-    this.addToListOnscreenAndInDatabase = function(){
+    this.displayNewItemInList = function(){
         ui.todoList.append(ui.newListItem);
-        model.saveListItem(ui.newListItem);
     };
-
 
 
  	this.undoClickedItem = function(){
@@ -205,12 +185,6 @@ function TodosUIManipulator(ui){
 
 
 
-    this.removeBoth = function(listItem, itemText){
-        listItem.remove();
-        model.removeItemFromSavedList(itemText);
-    };
-
-
     this.getEntireListItem = function(removeGlyph){
         return removeGlyph.closest('.' + classes.listItem);
     };
@@ -221,20 +195,13 @@ function TodosUIManipulator(ui){
     };
 
 
-
-
-
-    this.createAccountLoginAndRedirectToHome = function(username, password){
-        model.createAccount(username, password);
-        model.login(username, password);
-        this.redirectToHome();
+    this.getNewAccountValues = function(){
+        var values = {};
+        values.username = ui.newUsernameInput.val();
+        values.password1 = ui.newPasswordInput.val();
+        values.password2 = ui.newPassword2Input.val();
+        return values;
     };
-
-
-    this.redirectToHome = function(){
-        location.replace('index.html');
-    };
-
 
 
     this.showNecessaryItemsWhenLoggedIn = function(){
@@ -337,19 +304,7 @@ function TodosUIManipulator(ui){
     };
 
 
-    this.newUserInputsValidated = function(u, p1, p2){
-        return (model.newAccountInfoValid(u, p1, p2));
-    };
 
-
-    this.setAppearance = function(){
-        if (model.loggedOut()){
-            this.showLoggedOutContent();
-        }
-        else if (model.loggedIn()){
-            this.showLoggedInContent();
-        }
-    };
 
 
     this.showLoggedOutContent = function(){
@@ -368,6 +323,11 @@ function TodosUIManipulator(ui){
     this.handleViewingSelectedList = function(listName){
         model.setActiveList(listName);
         this.setAppearance();
+    };
+
+
+    this.removeItem = function(obj){
+        obj.remove();
     };
 
 
