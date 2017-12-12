@@ -65,8 +65,8 @@ function generateRandomIntegers(howMany, range){
 
 function generateRandomInteger(range){
     var parts = getRandomIntegerFormulaParts(range);
-    var maxMinusMinPlusOne = parts[0];
     var min = parts[1];
+    var maxMinusMinPlusOne = parts[0];
 
     return  Math.floor(Math.random() * maxMinusMinPlusOne + min);
 }
