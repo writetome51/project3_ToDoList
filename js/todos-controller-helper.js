@@ -3,6 +3,13 @@ function ControllerHelper(uim, model){
 
     var apm = new AppearanceManager(uim, model);
 
+
+
+    this.load = function(){
+        apm.setAppearance();
+    };
+
+
     this.makeClickedItem = function(obj){
         if (uim.listItemIsNotClicked(obj)){
             uim.undoClickedItem();
@@ -77,13 +84,13 @@ function ControllerHelper(uim, model){
     this.handleLogin = function() {
         var values = uim.getLoginValues();
         model.login(values.username, values.password);
-        this.redirectToHome();
+        redirectToHome();
     };
 
 
     this.handleLogout = function() {
         model.logout();
-        apm.setAppearance(); // true means logged out.
+        apm.setAppearance();
     };
 
 
@@ -91,18 +98,44 @@ function ControllerHelper(uim, model){
     this.createAccountLoginAndRedirectToHome = function(username, password){
         model.createAccount(username, password);
         model.login(username, password);
-        this.redirectToHome();
+        redirectToHome();
     };
 
 
-    this.redirectToHome = function(){
+    this.handleViewingSelectedList = function(listName){
+        model.setActiveList(listName);
+        this.setAppearance();
+    };
+
+
+    this.setlistsMenuItemClickHandler = function(me){
+        ui.listsMenuItem.click(function(){
+            me.handleViewingSelectedList( $(this).text() );
+        });
+    };
+
+
+    this.refreshListsMenu = function(){
+        this.refreshListsMenuContent();
+        this.refreshListsMenuBehavior();
+    };
+
+
+    this.refreshListsMenuContent = function(){
+        var items = model.getUsersListNames();
+        uim.createListsMenuItems(items);
+        uim.setListsMenuItem();
+    };
+
+
+    this.refreshListsMenuBehavior = function(){
+        this.setlistsMenuItemClickHandler(this);
+    };
+
+
+    function redirectToHome(){
         location.replace('index.html');
-    };
-
-
-    this.load = function(){
-        apm.setAppearance();
-    };
+    }
 
 
 

@@ -8,8 +8,8 @@ function TodosUIManipulator(ui){
 
 
     this.createListsMenuItems = function(items){
-        var html = this.createListsMenuItemsHTML(items);
-        ui.listsMenuItems.html(html);
+        var listItemsHTML = this.createListsMenuItemsHTML(items);
+        ui.listsMenuItems.html(listItemsHTML);
     };
 
 
@@ -209,8 +209,18 @@ function TodosUIManipulator(ui){
     };
 
 
+    this.setListNameHeader = function(listName){
+        ui.listNameHeader.text(listName);
+    };
+
+
     this.collapseItemsShownWhenCreatingList = function(){
         this.collapse($('.show-when-creating-list'));
+    };
+
+
+    this.makeInvisibleItemsVisibleWhenCreatingList = function(){
+
     };
 
 

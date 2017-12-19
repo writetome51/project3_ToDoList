@@ -27,18 +27,6 @@ function AppearanceManager(uim, model){
     };
 
 
-    this.removeUnnecessaryItemsWhenLoggedOut = function(){
-        uim.collapseItemsToBeCollapsedWhenLoggedOut();
-        uim.makeInvisibleItemsToBeInvisibleWhenLoggedOut();
-    };
-
-
-    this.showNecessaryItemsWhenLoggedOut = function(){
-        uim.unCollapseLoginAndCreateAccountLinks();
-        uim.setLoggedOutHeader();
-    };
-
-
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
         uim.removeUnnecessaryItemsWhenLoggedIn();
 
@@ -63,49 +51,29 @@ function AppearanceManager(uim, model){
     };
 
 
-
-    this.refreshListsMenu = function(){
-        this.refreshListsMenuContent();
-        this.refreshListsMenuBehavior();
+    this.removeUnnecessaryItemsWhenLoggedOut = function(){
+        uim.collapseItemsToBeCollapsedWhenLoggedOut();
+        uim.makeInvisibleItemsToBeInvisibleWhenLoggedOut();
     };
 
 
-    this.refreshListsMenuContent = function(){
-        var items = model.getUsersListNames();
-        uim.createListsMenuItems(items);
-        uim.setListsMenuItem();
+    this.showNecessaryItemsWhenLoggedOut = function(){
+        uim.unCollapseLoginAndCreateAccountLinks();
+        uim.setLoggedOutHeader();
     };
-
-
-    this.refreshListsMenuBehavior = function(){
-        this.setlistsMenuItemClickHandler(this);
-    };
-
-
-    this.setlistsMenuItemClickHandler = function(me){
-        ui.listsMenuItem.click(function(){
-            me.handleViewingSelectedList( $(this).text() );
-        });
-    };
-
 
 
     this.setListNameHeader = function(){
         var listName = model.getActiveListName();
         if (!listName) listName = 'Choose a list from the Lists menu';
-        ui.listNameHeader.text(listName);
+        uim.setListNameHeader(listName);
     };
 
 
 
-    this.handleViewingSelectedList = function(listName){
-        model.setActiveList(listName);
-        this.setAppearance();
-    };
-
-
-    this.collapseUnnecessaryItemsWhenNotCreatingList = function(){
+    this.removeUnnecessaryItemsWhenNotCreatingList = function(){
         uim.collapseItemsShownWhenCreatingList();
+        uim.makeInvisibleItemsVisibleWhenCreatingList();
     };
 
 
