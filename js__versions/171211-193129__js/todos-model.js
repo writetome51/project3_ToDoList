@@ -14,7 +14,7 @@ function TodosModel(){
     this.sessionKeyActiveList = this.appName + '_activeList';
     this.sessionKeyActiveListName= this.appName + '_activeListName';
     this.textBeingEdited = false;
-
+    this.noListsFound = 'No Lists';
 
     var bs = new BrowserStorage();
     var validator = new TodosModelValidator(bs);
@@ -74,7 +74,7 @@ function TodosModel(){
     this.getUsersListNames = function(){
         var usersLists = this.getUsersLists();
         if (objectEmpty(usersLists)){
-            return [];
+            return this.noListsFound;
         }
         var listNames = Object.keys(usersLists);
         return listNames;

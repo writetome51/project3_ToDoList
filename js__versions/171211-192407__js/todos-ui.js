@@ -8,6 +8,7 @@ function TodosUI(){
     this.appNameHolder = $('#' + ids.appNameHolder);
     this.addButton = $('#' + ids.addButton);
     this.accountCreationUnsuccessful = $('#' + ids.creationUnsuccessful);
+    this.atLoginSection = false;
     this.clickedItem = false;
     this.createAccountForm = $('#' + ids.createAccountForm);
     this.dropdownMenus = $('#' + ids.dropdownMenus);
@@ -22,6 +23,9 @@ function TodosUI(){
     this.listsMenu = $('#' + ids.listsMenu);
     this.listsMenuItems = $('#' + ids.listNames);
     this.listsMenuItem = false; // at page load, they can't be accessed.
+    this.setListsMenuItem = function(){
+        this.listsMenuItem = $('.' + classes.listsMenuItem);
+    };
     this.listNameHeader = $('#' + ids.listNameHeader);
     this.newListItem = '';
     this.newItemText = '';

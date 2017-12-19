@@ -6,9 +6,9 @@ body, a, a:hover, a:visited{
     text-decoration: none;
 }
 
-a:hover, a:active, a:hover{background-color: #abf2ae;}
+a:hover, a:active {background-color: #abf2ae;}
 
-a{cursor: pointer;}
+a {cursor: pointer;}
 
 div{
     width: 100%;  height: 100%;
