@@ -1,5 +1,5 @@
 
-function ContentManagerHelper(){
+function ListsMenuController(model){
 
 
     this.refreshListsMenu = function(){

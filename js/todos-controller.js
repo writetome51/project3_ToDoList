@@ -5,6 +5,7 @@
     var ui = new TodosUI();
     var uim = new TodosUIManipulator(ui);
     var ctrh = new ControllerHelper(uim);
+    var cm = new ContentManager();
 
 
     $(document).ready(function onReadyHandler(){

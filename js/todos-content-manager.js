@@ -1,7 +1,7 @@
 
 function ContentManager(uim, model){
 
-    var cmh = new ContentManagerHelper();
+    var lmc = new ListsMenuController();
 
     this.creatingNewList = false;
     this.creatingNewListItem = false;

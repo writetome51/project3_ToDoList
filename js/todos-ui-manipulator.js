@@ -2,9 +2,10 @@
 
 function TodosUIManipulator(ui){
 
-    var classes = new TodosCSSClasses();
-    this.noListsFound = 'No Lists';
-
+    var classes = new TodosCSSClasses();	
+    
+    this.rr = new ElementRemoverRevealer(ui, classes);
+    this.eGetterSetter = new ElementTextGetterSetter(ui, classes);
 
 
     this.createListsMenuItems = function(items){
@@ -13,62 +14,28 @@ function TodosUIManipulator(ui){
     };
 
 
-    this.createListsMenuItemsHTML = function(items){
-        if (items === []){
-            return '<li id="no-lists-found">' + this.noListsFound  + '</li>';
-        }
-        for (var item=0, html='';  item < items.length;  ++item){
-            html += '<li><a class="list-menu-item">' + items[item]  + '</a></li>';
-        }
-        return html;
-    };
-
-
     this.showAccountCreationUnsuccessful = function(){
-        this.unCollapse(ui.accountCreationUnsuccessful);
+        this.rr.unCollapse(ui.accountCreationUnsuccessful);
     };
 
-
-    this.getLoginValues = function(){
-        var values = {};
-        values.username = ui.loginUsername.val();
-        values.password = ui.loginPassword.val();
-        return values;
-    };
-
-
-    this.getNewListName = function(){
-        return ui.newListName.val();
-    };
-
-
+  
     this.addNewItemToListOnscreen = function(){
         this.setNewItemText();
         this.displayNewItemInList();
     };
 
-
-    this.setNewItemText = function(){
-        ui.newItemText = ui.newListItemTextInput.val();
-    };
-
-
-    this.getNewItemText = function(){
-        return ui.newItemText;
-    };
-
-
+  
     this.displayNewItemInList = function(){
         ui.todoList.append(ui.newListItem);
     };
 
 
- 	this.undoClickedItem = function(){
+    this.undoClickedItem = function(){
         if (this.thereIsAClickedItem()){
-			this.turnOffClickedBehavior();
- 		}
-		ui.clickedItem = false;
- 	};
+	    this.turnOffClickedBehavior();
+ 	}
+	ui.clickedItem = false;
+    };
 
 
 	this.turnOffClickedBehavior = function(){
@@ -108,26 +75,7 @@ function TodosUIManipulator(ui){
     };
 
 
-    this.makeGlyphsVisible = function(){
-        this.makeRemoveGlyphVisible(ui.clickedItem);
-    };
-
-
-    this.makeGlyphsInvisible = function(){
-        this.makeRemoveGlyphInvisible(ui.clickedItem);
-    };
-
-
-    this.makeRemoveGlyphVisible = function(obj){
-        this.makeVisible( obj.find('.' + classes.removeGlyphicon) );
-    };
-
-
-    this.makeRemoveGlyphInvisible = function(obj){
-        this.makeInvisible( obj.find('.' + classes.removeGlyphicon) );
-    };
-
-
+  
     this.makeItemEditable = function(obj){
         var currentItemText = obj.children('.' + classes.itemText);
         currentItemText.attr("contenteditable", "true");
@@ -185,28 +133,14 @@ function TodosUIManipulator(ui){
     };
 
 
-    this.getItemText = function(listItem){
-        return listItem.find('.' + classes.itemText).text();
-    };
-
-
-    this.getNewAccountValues = function(){
-        var values = {};
-        values.username = ui.newUsernameInput.val();
-        values.password1 = ui.newPasswordInput.val();
-        values.password2 = ui.newPassword2Input.val();
-        return values;
-    };
-
-
     this.showContentNotSeenWhenLoggedOut = function(){
-        this.unCollapse( $('.' + classes.collapseWhenLoggedOut) );
-        this.makeVisible( $('.' + classes.invisibleWhenLoggedOut) );
+        this.rr.unCollapse( $('.' + classes.collapseWhenLoggedOut) );
+        this.rr.makeVisible( $('.' + classes.invisibleWhenLoggedOut) );
     };
 
 
     this.showListsMenuItems = function(){
-        this.unCollapse( ui.listsMenuItem);
+        this.rr.unCollapse( ui.listsMenuItem);
     };
 
 
@@ -215,13 +149,8 @@ function TodosUIManipulator(ui){
     };
 
 
-    this.setListNameHeader = function(listName){
-        ui.listNameHeader.text(listName);
-    };
-
-
     this.collapseItemsShownWhenCreatingList = function(){
-        this.collapse($('.show-when-creating-list'));
+        this.rr.collapse($('.show-when-creating-list'));
     };
 
 
@@ -229,54 +158,28 @@ function TodosUIManipulator(ui){
 
     };
 
-
-    this.collapse = function(obj){
-        obj.addClass(classes.invisibleCollapsed);
-    };
-
-
-    this.unCollapse = function(obj){
-        obj.removeClass(classes.invisibleCollapsed);
-    };
-
-
-    this.makeInvisible = function(obj){
-        obj.addClass(classes.invisible);
-    };
-
-
-    this.makeVisible = function(obj){
-        obj.removeClass(classes.invisible);
-    };
-
-
+  
     this.showNecessaryItemsWhenNotCreatingList = function(){
-        this.unCollapse( $('.collapse-when-creating-list') );
-        this.makeVisible( $('.invisible-when-creating-list') );
+        this.rr.unCollapse( $('.collapse-when-creating-list') );
+        this.rr.makeVisible( $('.invisible-when-creating-list') );
     };
 
 
     this.showNecessaryItemsWhenCreatingList = function () {
-        this.unCollapse( $('.show-when-creating-list') );
-        this.makeVisible(  $('.show-when-creating-list') );
+        this.rr.unCollapse( $('.show-when-creating-list') );
+        this.rr.makeVisible(  $('.show-when-creating-list') );
         this.emptyNewListNameInput();
     };
 
 
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
-        this.collapse( $('.' + classes.collapseWhenLoggedIn) );
-        this.makeInvisible( $('.' + classes.invisibleWhenLoggedIn) );
+        this.rr.collapse( $('.' + classes.collapseWhenLoggedIn) );
+        this.rr.makeInvisible( $('.' + classes.invisibleWhenLoggedIn) );
     };
-
 
 
     this.collapseUnnecessaryItemsWhenCreatingList = function(){
-        this.collapse( $('.collapse-when-creating-list') );
-    };
-
-
-    this.unCollapseLoginAndCreateAccountLinks = function(){
-        this.unCollapse(ui.loginAndCreateAccountLinks);
+        this.rr.collapse( $('.collapse-when-creating-list') );
     };
 
 
@@ -285,13 +188,18 @@ function TodosUIManipulator(ui){
     };
 
 
+    this.unCollapseLoginAndCreateAccountLinks = function(){
+        this.rr.unCollapse(ui.loginAndCreateAccountLinks);
+    };
+
+
     this.collapseItemsToBeCollapsedWhenLoggedOut = function(){
-        this.collapse($('.' + classes.collapseWhenLoggedOut));
+        this.rr.collapse($('.' + classes.collapseWhenLoggedOut));
     };
 
 
     this.makeInvisibleItemsToBeInvisibleWhenLoggedOut = function(){
-        this.makeInvisible($('.' + classes.invisibleWhenLoggedOut));
+        this.rr.makeInvisible($('.' + classes.invisibleWhenLoggedOut));
     };
 
 
@@ -308,17 +216,12 @@ function TodosUIManipulator(ui){
 
     this.setLoggedInHeader = function(){
         ui.appNameHolder.removeClass(classes.welcomeToAppName);
-        ui.appNameHeader.text(ui.appNameForDisplay);
+        this.eGetterSetter.setAppNameHeader();
     };
 
 
     this.removeItem = function(obj){
         obj.remove();
-    };
-
-
-    this.emptyNewListNameInput = function(){
-        ui.newListName.val('');
     };
 
 
