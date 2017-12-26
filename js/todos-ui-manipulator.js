@@ -274,6 +274,11 @@ function TodosUIManipulator(ui){
     };
 
 
+    this.unCollapseItemsToBeUncollapsedWhenLoggedOut =  function(){
+        this.unCollapseLoginAndCreateAccountLinks();
+    };
+
+
     this.collapseItemsToBeCollapsedWhenLoggedOut = function(){
         this.collapse($('.' + classes.collapseWhenLoggedOut));
     };
@@ -281,6 +286,11 @@ function TodosUIManipulator(ui){
 
     this.makeInvisibleItemsToBeInvisibleWhenLoggedOut = function(){
         this.makeInvisible($('.' + classes.invisibleWhenLoggedOut));
+    };
+
+
+    this.makeVisibleItemsToBeVisibleWhenLoggedOut = function(){
+
     };
 
 
@@ -303,8 +313,26 @@ function TodosUIManipulator(ui){
 
     this.emptyNewListNameInput = function(){
         ui.newListName.val('');
-    }
+    };
 
+
+    this.removeUnnecessaryItemsWhenLoggedOut = function(){
+        this.collapseItemsToBeCollapsedWhenLoggedOut();
+        this.makeInvisibleItemsToBeInvisibleWhenLoggedOut();
+    };
+
+
+    this.showNecessaryItemsWhenLoggedOut = function(){
+        this.unCollapseItemsToBeUncollapsedWhenLoggedOut();
+        this.makeVisibleItemsToBeVisibleWhenLoggedOut();
+        this.setLoggedOutHeader();
+    };
+
+
+    this.showLoggedOutContent = function(){
+        this.removeUnnecessaryItemsWhenLoggedOut();
+        this.showNecessaryItemsWhenLoggedOut();
+    };
 
 
 }

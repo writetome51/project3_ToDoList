@@ -7,18 +7,13 @@ function AppearanceManager(uim, model){
 
     this.setAppearance = function(){
         if (model.loggedOut()){
-            this.showLoggedOutContent();
+            uim.showLoggedOutContent();
         }
         else{
             this.showLoggedInContent();
         }
     };
 
-
-    this.showLoggedOutContent = function(){
-        this.removeUnnecessaryItemsWhenLoggedOut();
-        this.showNecessaryItemsWhenLoggedOut();
-    };
 
 
     this.showLoggedInContent = function(){
@@ -51,24 +46,11 @@ function AppearanceManager(uim, model){
     };
 
 
-    this.removeUnnecessaryItemsWhenLoggedOut = function(){
-        uim.collapseItemsToBeCollapsedWhenLoggedOut();
-        uim.makeInvisibleItemsToBeInvisibleWhenLoggedOut();
-    };
-
-
-    this.showNecessaryItemsWhenLoggedOut = function(){
-        uim.unCollapseLoginAndCreateAccountLinks();
-        uim.setLoggedOutHeader();
-    };
-
-
     this.setListNameHeader = function(){
         var listName = model.getActiveListName();
         if (!listName) listName = 'Choose a list from the Lists menu';
         uim.setListNameHeader(listName);
     };
-
 
 
     this.removeUnnecessaryItemsWhenNotCreatingList = function(){
