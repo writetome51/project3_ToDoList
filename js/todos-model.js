@@ -106,11 +106,11 @@ function TodosModel(){
     };
 
 
-    this.saveListItem = function(itemText, list){
+    this.saveListItem = function(itemText){
         if (itemText !== this.textBeingEdited){
             this.removeItemFromSavedList(this.textBeingEdited);
         }
-
+        var list = this.getActiveListName();
         var listsBeingModified = this.getUsersLists();
         var listBeingModified = listsBeingModified[list];
         var i = this.indexOfItemBeingModified();

@@ -1,12 +1,13 @@
 
-function ControllerHelper(uim, model){
+function ControllerHelper(uim){
 
-    var apm = new AppearanceManager(uim, model);
+    var model = new TodosModel();
 
+    var cm = new ContentManager(uim, model);
 
 
     this.load = function(){
-        apm.setAppearance();
+        cm.setContent();
     };
 
 
@@ -53,15 +54,14 @@ function ControllerHelper(uim, model){
     this.handleNewListCreation = function(){
         var newListName = uim.getNewListName();
         model.createNewList(newListName);
-        uim.creatingNewList = false;
-        apm.setAppearance();
+        cm.setContent();
     };
 
 
     this.handleNewListItemAddition = function(){
         uim.addNewItemToListOnscreen();
-        model.saveListItem(ui.newListItem);
-        apm.setAppearance();
+        model.saveListItem(uim.getNewItemText());
+        cm.setContent();
     };
 
 
@@ -90,7 +90,7 @@ function ControllerHelper(uim, model){
 
     this.handleLogout = function() {
         model.logout();
-        apm.setAppearance();
+        cm.setContent();
     };
 
 
@@ -99,37 +99,6 @@ function ControllerHelper(uim, model){
         model.createAccount(username, password);
         model.login(username, password);
         redirectToHome();
-    };
-
-
-    this.handleViewingSelectedList = function(listName){
-        model.setActiveList(listName);
-        this.setAppearance();
-    };
-
-
-    this.setlistsMenuItemClickHandler = function(me){
-        ui.listsMenuItem.click(function(){
-            me.handleViewingSelectedList( $(this).text() );
-        });
-    };
-
-
-    this.refreshListsMenu = function(){
-        this.refreshListsMenuContent();
-        this.refreshListsMenuBehavior();
-    };
-
-
-    this.refreshListsMenuContent = function(){
-        var items = model.getUsersListNames();
-        uim.createListsMenuItems(items);
-        uim.setListsMenuItem();
-    };
-
-
-    this.refreshListsMenuBehavior = function(){
-        this.setlistsMenuItemClickHandler(this);
     };
 
 

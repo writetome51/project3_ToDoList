@@ -4,8 +4,7 @@
 
     var ui = new TodosUI();
     var uim = new TodosUIManipulator(ui);
-    var model = new TodosModel();
-    var ctrh = new ControllerHelper(uim, model);
+    var ctrh = new ControllerHelper(uim);
 
 
     $(document).ready(function onReadyHandler(){

@@ -52,6 +52,12 @@ function TodosUIManipulator(ui){
         ui.newItemText = ui.newListItemTextInput.val();
     };
 
+
+    this.getNewItemText = function(){
+        return ui.newItemText;
+    };
+
+
     this.displayNewItemInList = function(){
         ui.todoList.append(ui.newListItem);
     };

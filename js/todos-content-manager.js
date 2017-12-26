@@ -1,11 +1,13 @@
 
-function AppearanceManager(uim, model){
+function ContentManager(uim, model){
+
+    var cmh = new ContentManagerHelper();
 
     this.creatingNewList = false;
     this.creatingNewListItem = false;
 
 
-    this.setAppearance = function(){
+    this.setContent = function(){
         if (model.loggedOut()){
             uim.showLoggedOutContent();
         }
@@ -71,6 +73,7 @@ function AppearanceManager(uim, model){
         this.showNecessaryItemsWhenCreatingList();
         this.collapseUnnecessaryItemsWhenCreatingList();
     };
+
 
 
 }
