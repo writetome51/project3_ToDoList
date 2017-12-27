@@ -1,5 +1,5 @@
 
-function ContentManager(uim, model){
+function Content(uim, model){
 
     var lmc = new ListsMenuController();
 
@@ -15,7 +15,6 @@ function ContentManager(uim, model){
             this.showLoggedInContent();
         }
     };
-
 
 
     this.showLoggedInContent = function(){

@@ -2,15 +2,14 @@
 
 function TodosUIManipulator(ui){
 
-    var classes = new TodosCSSClasses();	
-    
+    var classes = new TodosCSSClasses();
+
     this.rr = new ElementRemoverRevealer(ui, classes);
-    this.eGetterSetter = new ElementTextGetterSetter(ui, classes);
+    var eGetterSetter = new ElementTextGetterSetter(ui, classes);
 
 
     this.createListsMenuItems = function(items){
-        var listItemsHTML = this.createListsMenuItemsHTML(items);
-        ui.listsMenuItems.html(listItemsHTML);
+        eGetterSetter.createListsMenuItems(items);
     };
 
 
@@ -18,13 +17,13 @@ function TodosUIManipulator(ui){
         this.rr.unCollapse(ui.accountCreationUnsuccessful);
     };
 
-  
+
     this.addNewItemToListOnscreen = function(){
-        this.setNewItemText();
+        eGetterSetter.setNewItemText();
         this.displayNewItemInList();
     };
 
-  
+
     this.displayNewItemInList = function(){
         ui.todoList.append(ui.newListItem);
     };
@@ -32,9 +31,9 @@ function TodosUIManipulator(ui){
 
     this.undoClickedItem = function(){
         if (this.thereIsAClickedItem()){
-	    this.turnOffClickedBehavior();
- 	}
-	ui.clickedItem = false;
+	        this.turnOffClickedBehavior();
+ 	    }
+	    ui.clickedItem = false;
     };
 
 
@@ -75,7 +74,7 @@ function TodosUIManipulator(ui){
     };
 
 
-  
+
     this.makeItemEditable = function(obj){
         var currentItemText = obj.children('.' + classes.itemText);
         currentItemText.attr("contenteditable", "true");
@@ -149,6 +148,11 @@ function TodosUIManipulator(ui){
     };
 
 
+    this.setListNameHeader = function(listName){
+        eGetterSetter.setListNameHeader(listName);
+    };
+
+
     this.collapseItemsShownWhenCreatingList = function(){
         this.rr.collapse($('.show-when-creating-list'));
     };
@@ -158,7 +162,7 @@ function TodosUIManipulator(ui){
 
     };
 
-  
+
     this.showNecessaryItemsWhenNotCreatingList = function(){
         this.rr.unCollapse( $('.collapse-when-creating-list') );
         this.rr.makeVisible( $('.invisible-when-creating-list') );
@@ -168,7 +172,7 @@ function TodosUIManipulator(ui){
     this.showNecessaryItemsWhenCreatingList = function () {
         this.rr.unCollapse( $('.show-when-creating-list') );
         this.rr.makeVisible(  $('.show-when-creating-list') );
-        this.emptyNewListNameInput();
+        eGetterSetter.emptyNewListNameInput();
     };
 
 
@@ -210,13 +214,13 @@ function TodosUIManipulator(ui){
 
     this.setLoggedOutHeader = function(){
         ui.appNameHolder.addClass(classes.welcomeToAppName);
-        ui.appNameHeader.text('Welcome to ' + ui.appNameForDisplay);
+        eGetterSetter.setWelcomeAppNameHeader();
     };
 
 
     this.setLoggedInHeader = function(){
         ui.appNameHolder.removeClass(classes.welcomeToAppName);
-        this.eGetterSetter.setAppNameHeader();
+        eGetterSetter.setAppNameHeader();
     };
 
 

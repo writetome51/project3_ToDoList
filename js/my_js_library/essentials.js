@@ -35,7 +35,7 @@ function modifyObject(obj, propertiesAndValuesToModify){
 function convertToObject(jsonString){
     if (typeof jsonString === 'undefined' ||
         jsonString === null){
-        throw new Error('Item not found.');
+        throw new Error('argument jsonString is null or undefined');
     }
     try {
         return JSON.parse(jsonString);

@@ -4,6 +4,7 @@ function ElementTextGetterSetter(ui, classes){
 
     this.noListsFound = 'No Lists';
 
+
     this.emptyNewListNameInput = function(){
         ui.newListName.val('');
     };
@@ -53,19 +54,30 @@ function ElementTextGetterSetter(ui, classes){
 
     this.setAppNameHeader = function(){
         ui.appNameHeader.text(ui.appNameForDisplay);
-    }
+    };
 
 
- this.createListsMenuItemsHTML = function(items){
+    this.setWelcomeAppNameHeader = function(){
+        ui.appNameHeader.text('Welcome to ' + ui.appNameForDisplay);
+    };
+
+
+    this.createListsMenuItems = function(items){
+        var innerHtml = this.createListsMenuItemsHTML(items);
+        ui.listsMenuItems.html(innerHtml);
+    };
+
+
+    this.createListsMenuItemsHTML = function(items){
         if (items === []){
             return '<li id="no-lists-found">' + this.noListsFound  + '</li>';
         }
         for (var item=0, html='';  item < items.length;  ++item){
-            html += '<li><a class="list-menu-item">' + items[item]  + '</a></li>';
+            html += '<li><a class="' + classes.listsMenuItem +
+                '">' + items[item]  + '</a></li>';
         }
         return html;
     };
-
 
 
 

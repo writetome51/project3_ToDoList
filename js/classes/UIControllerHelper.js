@@ -1,9 +1,9 @@
 
-function ControllerHelper(uim){
+function UIControllerHelper(uim){
 
     var model = new TodosModel();
 
-    var cm = new ContentManager(uim, model);
+    var cm = new Content(uim, model);
 
 
     this.load = function(){
