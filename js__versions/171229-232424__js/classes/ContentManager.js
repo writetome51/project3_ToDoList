@@ -5,7 +5,6 @@ function ContentManager(){
     var uim = new UIManipulator(ui);
     var uic = new UIController(ui, uim);
     var model = new Model();
-    var srr = new SectionRemoverRevealer(ui);
 
 
     this.creatingNewList = false;
@@ -35,6 +34,36 @@ function ContentManager(){
     };
 
 
+    this.removeUnnecessaryItemsWhenLoggedOut = function(){
+        uim.collapseItemsToBeCollapsedWhenLoggedOut();
+        uim.makeInvisibleItemsToBeInvisibleWhenLoggedOut();
+    };
+
+
+    this.removeUnnecessaryItemsWhenLoggedIn = function(){
+        uim.removeUnnecessaryItemsWhenLoggedIn();
+
+        if ( ! this.creatingNewList){
+            this.removeUnnecessaryItemsWhenNotCreatingList();
+        }
+        else{
+            this.removeUnnecessaryItemsWhenCreatingList();
+        }
+    };
+
+
+    this.showNecessaryItemsWhenLoggedIn = function(){
+        uim.setLoggedInHeader();
+        uim.showContentNotSeenWhenLoggedOut();
+        this.refreshListsMenu();
+        this.setListNameHeader();
+
+        if (this.creatingNewList || model.userHasNoLists()){
+            this.showNewListForm();
+        }
+    };
+
+
     this.refreshListsMenu = function(){
         this.refreshListsMenuContent();
         this.refreshListsMenuBehavior();
@@ -55,12 +84,28 @@ function ContentManager(){
     };
 
 
+    this.removeUnnecessaryItemsWhenNotCreatingList = function(){
+        uim.collapseItemsShownWhenCreatingList();
+        uim.makeInvisibleItemsVisibleWhenCreatingList();
+    };
+
+
+    this.showNecessaryItemsWhenCreatingList = function(){
+        if (this.creatingNewList){
+            uim.showNecessaryItemsWhenCreatingList();
+        }
+    };
+
 
     this.showNewListForm = function(){
         this.creatingNewList = true;
         this.showNecessaryItemsWhenCreatingList();
         this.collapseUnnecessaryItemsWhenCreatingList();
     };
+
+
+
+
 
 
 

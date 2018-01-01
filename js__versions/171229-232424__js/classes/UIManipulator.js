@@ -132,6 +132,12 @@ function UIManipulator(ui){
     };
 
 
+    this.showContentNotSeenWhenLoggedOut = function(){
+        this.rr.unCollapse( $('.' + classes.collapseWhenLoggedOut) );
+        this.rr.makeVisible( $('.' + classes.invisibleWhenLoggedOut) );
+    };
+
+
     this.showListsMenuItems = function(){
         this.rr.unCollapse( ui.listsMenuItem);
     };
@@ -206,16 +212,6 @@ function UIManipulator(ui){
     };
 
 
-    this.uncollapseItemsToBeUncollapsedWhenLoggedIn = function(){
-        this.rr.unCollapse( $('.' + classes.collapseWhenLoggedOut) );
-    };
-
-
-    this.makeVisibleItemsToBeVisibleWhenLoggedIn = function(){
-        this.rr.makeVisible( $('.' + classes.invisibleWhenLoggedOut) );
-    };
-
-
     this.setLoggedOutHeader = function(){
         ui.appNameHolder.addClass(classes.welcomeToAppName);
         eGetterSetter.setWelcomeAppNameHeader();
@@ -230,6 +226,13 @@ function UIManipulator(ui){
 
     this.removeItem = function(obj){
         obj.remove();
+    };
+
+
+    this.showNecessaryItemsWhenLoggedOut = function(){
+        this.unCollapseItemsToBeUncollapsedWhenLoggedOut();
+        this.makeVisibleItemsToBeVisibleWhenLoggedOut();
+        this.setLoggedOutHeader();
     };
 
 
