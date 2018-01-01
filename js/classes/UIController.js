@@ -3,7 +3,7 @@ function UIController(ui, uim){
 
     var uich = new UIControllerHelper(uim);
 
-    this.load = function(){
+    this.loadEvents = function(){
 
         ui.itemText.click(function clickItemHandler(){
             uich.makeClickedItem($(this));

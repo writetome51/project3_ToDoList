@@ -4,7 +4,8 @@ function ContentManager(){
     var ui = new UI();
     var uim = new UIManipulator(ui);
     var uic = new UIController(ui, uim);
-    var lmc = new ListsMenuController();
+    var model = new Model();
+
 
     this.creatingNewList = false;
     this.creatingNewListItem = false;
@@ -63,6 +64,11 @@ function ContentManager(){
     };
 
 
+    this.refreshListsMenu = function(){
+        this.refreshListsMenuContent();
+        this.refreshListsMenuBehavior();
+    };
+
 
     this.refreshListsMenuContent = function(){
         var items = model.getUsersListNames();
@@ -96,6 +102,10 @@ function ContentManager(){
         this.showNecessaryItemsWhenCreatingList();
         this.collapseUnnecessaryItemsWhenCreatingList();
     };
+
+
+
+
 
 
 

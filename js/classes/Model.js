@@ -1,6 +1,6 @@
 // For background-data manipulation.
 
-function TodosModel(){
+function Model(){
 
     this.appName = 'todosApp';
     this.appData = '';
@@ -17,7 +17,7 @@ function TodosModel(){
 
 
     var bs = new BrowserStorage();
-    var validator = new TodosModelValidator(bs);
+    var validator = new ModelValidator(bs);
 
 
     this.newAccountInfoValid = function(username, password1, password2){

@@ -1,7 +1,7 @@
 
 function UIControllerHelper(uim){
 
-    var model = new TodosModel();
+    var model = new Model();
 
 
     this.makeClickedItem = function(obj){

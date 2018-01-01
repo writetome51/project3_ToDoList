@@ -7,7 +7,8 @@ function Content(){
     var uic = new UIController(ui, uim);
 
     this.load = function(){
-
+        cm.setContent();
+        uic.loadEvents();
     };
 
 

@@ -1,4 +1,4 @@
-function TodosModelValidator(browserStorage){
+function ModelValidator(browserStorage){
 
    this.newAccountInfoValid = function(username, password1, password2){
         return (this.usernameIsProperLength(username) &&
