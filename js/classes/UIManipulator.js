@@ -1,6 +1,6 @@
 
 
-function TodosUIManipulator(ui){
+function UIManipulator(ui){
 
     var classes = new TodosCSSClasses();
 
@@ -10,6 +10,14 @@ function TodosUIManipulator(ui){
 
     this.createListsMenuItems = function(items){
         eGetterSetter.createListsMenuItems(items);
+    };
+
+
+    this.undoClickedItem = function(){
+        if (this.thereIsAClickedItem()){
+            this.turnOffClickedBehavior();
+        }
+        ui.clickedItem = false;
     };
 
 
@@ -29,17 +37,9 @@ function TodosUIManipulator(ui){
     };
 
 
-    this.undoClickedItem = function(){
-        if (this.thereIsAClickedItem()){
-	        this.turnOffClickedBehavior();
- 	    }
-	    ui.clickedItem = false;
-    };
-
-
 	this.turnOffClickedBehavior = function(){
 		this.removeClickedClass();
- 		this.makeGlyphsInvisible();
+ 		this.rr.makeGlyphsInvisible();
  		this.makeItemNotEditable();
 	};
 
@@ -229,23 +229,12 @@ function TodosUIManipulator(ui){
     };
 
 
-    this.removeUnnecessaryItemsWhenLoggedOut = function(){
-        this.collapseItemsToBeCollapsedWhenLoggedOut();
-        this.makeInvisibleItemsToBeInvisibleWhenLoggedOut();
-    };
-
-
     this.showNecessaryItemsWhenLoggedOut = function(){
         this.unCollapseItemsToBeUncollapsedWhenLoggedOut();
         this.makeVisibleItemsToBeVisibleWhenLoggedOut();
         this.setLoggedOutHeader();
     };
 
-
-    this.showLoggedOutContent = function(){
-        this.removeUnnecessaryItemsWhenLoggedOut();
-        this.showNecessaryItemsWhenLoggedOut();
-    };
 
 
 }

@@ -28,17 +28,17 @@ function ElementRemoverRevealer(ui, classes){
 
 
     this.makeRemoveGlyphVisible = function(obj){
-        this.rr.makeVisible( obj.find('.' + classes.removeGlyphicon) );
+        this.makeVisible( obj.find('.' + classes.removeGlyphicon) );
     };
 
 
     this.makeGlyphsInvisible = function(){
         this.makeRemoveGlyphInvisible(ui.clickedItem);
     };
-   
+
 
     this.makeRemoveGlyphInvisible = function(obj){
-        this.rr.makeInvisible( obj.find('.' + classes.removeGlyphicon) );
+        this.makeInvisible( obj.find('.' + classes.removeGlyphicon) );
     };
 
 

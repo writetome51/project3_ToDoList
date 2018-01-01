@@ -1,11 +1,8 @@
 
 (function(){
 
-    var content = new Content();
-
     $(document).ready(function onReadyHandler(){
-        content.load();
+        (new Content()).load();
     });
 
-  
 })();

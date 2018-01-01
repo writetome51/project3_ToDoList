@@ -1,4 +1,4 @@
-function TodosUI(){
+function UI(){
 
     var classes = new TodosCSSClasses();
     var ids = new TodosIDs();

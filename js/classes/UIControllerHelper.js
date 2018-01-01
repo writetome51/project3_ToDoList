@@ -3,13 +3,6 @@ function UIControllerHelper(uim){
 
     var model = new TodosModel();
 
-    var cm = new Content(uim, model);
-
-
-    this.load = function(){
-        cm.setContent();
-    };
-
 
     this.makeClickedItem = function(obj){
         if (uim.listItemIsNotClicked(obj)){
@@ -36,7 +29,6 @@ function UIControllerHelper(uim){
     };
 
 
-
     this.removeListItem = function(removeGlyph){
         var listItem = uim.getEntireListItem(removeGlyph);
         model.removeItemFromSavedList( uim.getItemText(listItem) );
@@ -44,24 +36,20 @@ function UIControllerHelper(uim){
     };
 
 
-
     this.handleNewListAction = function(){
         uim.showNewListForm();
     };
 
 
-
     this.handleNewListCreation = function(){
         var newListName = uim.getNewListName();
         model.createNewList(newListName);
-        cm.setContent();
     };
 
 
     this.handleNewListItemAddition = function(){
         uim.addNewItemToListOnscreen();
         model.saveListItem(uim.getNewItemText());
-        cm.setContent();
     };
 
 
@@ -90,9 +78,7 @@ function UIControllerHelper(uim){
 
     this.handleLogout = function() {
         model.logout();
-        cm.setContent();
     };
-
 
 
     this.createAccountLoginAndRedirectToHome = function(username, password){

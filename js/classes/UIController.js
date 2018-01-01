@@ -1,14 +1,12 @@
 
-function TodosUIController(){
+function UIController(ui, uim){
 
-    var ui = new TodosUI();
-    var uim = new TodosUIManipulator(ui);
-    var ctrh = new ControllerHelper(uim);
+    var uich = new UIControllerHelper(uim);
 
     this.load = function(){
 
         ui.itemText.click(function clickItemHandler(){
-            ctrh.makeClickedItem($(this));
+            uich.makeClickedItem($(this));
         });
 
 
@@ -18,17 +16,17 @@ function TodosUIController(){
 
 
         ui.itemText.hover(function hoverHandler(){
-            ctrh.toggleHover($(this));
+            uich.toggleHover($(this));
         });
 
 
         ui.itemText.dblclick(function doubleClickHandler(){
-            ctrh.handleItemDoubleClick();
+            uich.handleItemDoubleClick();
         });
 
 
         ui.removeGlyph.click(function removeListItemHandler(){
-            ctrh.removeListItem($(this));
+            uich.removeListItem($(this));
         });
 
 
@@ -44,40 +42,59 @@ function TodosUIController(){
 
 
         ui.newListAction.click(function newListActionClickHandler(){
-            ctrh.handleNewListAction();
+            uich.handleNewListAction();
         });
 
 
         ui.createAccountForm.submit(function createAccountSubmitHandler(event){
             event.preventDefault();
-            ctrh.handleAccountCreation();
+            uich.handleAccountCreation();
         });
 
 
         ui.loginForm.submit(function loginSubmitHandler(event){
             event.preventDefault();
-            ctrh.handleLogin();
+            uich.handleLogin();
         });
 
 
         ui.logoutLink.click(function logoutLinkHandler(){
-            ctrh.handleLogout();
+            uich.handleLogout();
         });
 
 
         ui.newListForm.submit(function newListSubmitHandler(event){
             event.preventDefault();
-            ctrh.handleNewListCreation();
+            uich.handleNewListCreation();
         });
 
 
         ui.newListItemForm.submit(function newListItemSubmitHandler(event){
             event.preventDefault();
-            ctrh.handleNewListItemAddition();
+            uich.handleNewListItemAddition();
         });
 
 
+        this.refreshListsMenuBehavior = function(){
+            this.setlistsMenuItemClickHandler();
+        };
+
+
+        this.setlistsMenuItemClickHandler = function(){
+            ui.listsMenuItem.click(function(){
+                uich.handleViewingSelectedList( $(this).text() );
+            });
+        };
+
+
+        this.handleViewingSelectedList = function(listName){
+            model.setActiveList(listName);
+
+        };
+
+
+
     };
-  
+
 
 }
