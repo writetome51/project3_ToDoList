@@ -1,11 +1,12 @@
 
-function UIControllerHelper(uim){
+function UIControllerHelper(ui, uim){
 
     var model = new Model();
+    var state = new UIStyleState(ui);
 
 
     this.makeClickedItem = function(obj){
-        if (uim.listItemIsNotClicked(obj)){
+        if (state.listItemIsNotClicked(obj)){
             uim.undoClickedItem();
             uim.setClickedItem(obj);
         }

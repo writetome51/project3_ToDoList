@@ -2,11 +2,11 @@
 
 function UIManipulator(ui){
 
-    var classes = new TodosCSSClasses();
+    var classes = new CSSClasses();
 
-    this.rr = new ElementRemoverRevealer(ui, classes);
+    var rr = new ElementRemoverRevealer(ui, classes);
     var eGetterSetter = new ElementTextGetterSetter(ui, classes);
-
+    var state = new UIStyleState(ui, classes);
 
     this.createListsMenuItems = function(items){
         eGetterSetter.createListsMenuItems(items);
@@ -14,7 +14,7 @@ function UIManipulator(ui){
 
 
     this.undoClickedItem = function(){
-        if (this.thereIsAClickedItem()){
+        if (state.thereIsAClickedItem()){
             this.turnOffClickedBehavior();
         }
         ui.clickedItem = false;
@@ -22,7 +22,7 @@ function UIManipulator(ui){
 
 
     this.showAccountCreationUnsuccessful = function(){
-        this.rr.unCollapse(ui.accountCreationUnsuccessful);
+        rr.unCollapse(ui.accountCreationUnsuccessful);
     };
 
 
@@ -39,7 +39,7 @@ function UIManipulator(ui){
 
 	this.turnOffClickedBehavior = function(){
 		this.removeClickedClass();
- 		this.rr.makeGlyphsInvisible();
+ 		rr.makeGlyphsInvisible();
  		this.makeItemNotEditable();
 	};
 
@@ -58,23 +58,6 @@ function UIManipulator(ui){
     };
 
 
-    this.listItemIsAlreadyClicked = function(obj){
-        ui.itemToHighlight = obj.parent('.' + classes.highlight);
-        return this.thisItemIsAlreadyClicked(ui.itemToHighlight);
-    };
-
-
-    this.listItemIsNotClicked = function(obj){
-        return  ( ! this.listItemIsAlreadyClicked(obj));
-    };
-
-
-    this.thisItemIsAlreadyClicked = function(obj){
-        return  obj.hasClass(classes.clicked);
-    };
-
-
-
     this.makeItemEditable = function(obj){
         var currentItemText = obj.children('.' + classes.itemText);
         currentItemText.attr("contenteditable", "true");
@@ -84,12 +67,6 @@ function UIManipulator(ui){
     this.makeItemNotEditable = function(){
         ui.clickedItem.children('.' + classes.itemText)
         .removeAttr('contenteditable');
-    };
-
-
-    this.thereIsAClickedItem = function(){
-        if (ui.clickedItem){ return true; }
-        else { return false; }
     };
 
 
@@ -111,29 +88,13 @@ function UIManipulator(ui){
     };
 
 
-    this.hasHoveredClass = function(obj){
-        return (obj.hasClass(classes.hovered));
-    };
-
-
-    this.notHoveredAndNotClicked = function(obj){
-        return ((! obj.hasClass(classes.hovered)) &&
-            (! obj.hasClass(classes.clicked)));
-    };
-
-
-    this.clickedItemCheckboxIsChecked = function(){
-        return ui.clickedItem.children('.' + classes.itemCheckbox).prop('checked');
-    };
-
-
     this.getEntireListItem = function(removeGlyph){
         return removeGlyph.closest('.' + classes.listItem);
     };
 
 
     this.showListsMenuItems = function(){
-        this.rr.unCollapse( ui.listsMenuItem);
+        rr.unCollapse( ui.listsMenuItem);
     };
 
 
@@ -148,7 +109,7 @@ function UIManipulator(ui){
 
 
     this.collapseItemsShownWhenCreatingList = function(){
-        this.rr.collapse($('.show-when-creating-list'));
+        rr.collapse($('.show-when-creating-list'));
     };
 
 
@@ -158,26 +119,26 @@ function UIManipulator(ui){
 
 
     this.showNecessaryItemsWhenNotCreatingList = function(){
-        this.rr.unCollapse( $('.collapse-when-creating-list') );
-        this.rr.makeVisible( $('.invisible-when-creating-list') );
+        rr.unCollapse( $('.collapse-when-creating-list') );
+        rr.makeVisible( $('.invisible-when-creating-list') );
     };
 
 
     this.showNecessaryItemsWhenCreatingList = function () {
-        this.rr.unCollapse( $('.show-when-creating-list') );
-        this.rr.makeVisible(  $('.show-when-creating-list') );
+        rr.unCollapse( $('.show-when-creating-list') );
+        rr.makeVisible(  $('.show-when-creating-list') );
         eGetterSetter.emptyNewListNameInput();
     };
 
 
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
-        this.rr.collapse( $('.' + classes.collapseWhenLoggedIn) );
-        this.rr.makeInvisible( $('.' + classes.invisibleWhenLoggedIn) );
+        rr.collapse( $('.' + classes.collapseWhenLoggedIn) );
+        rr.makeInvisible( $('.' + classes.invisibleWhenLoggedIn) );
     };
 
 
     this.collapseUnnecessaryItemsWhenCreatingList = function(){
-        this.rr.collapse( $('.collapse-when-creating-list') );
+        rr.collapse( $('.collapse-when-creating-list') );
     };
 
 
@@ -187,17 +148,17 @@ function UIManipulator(ui){
 
 
     this.unCollapseLoginAndCreateAccountLinks = function(){
-        this.rr.unCollapse(ui.loginAndCreateAccountLinks);
+        rr.unCollapse(ui.loginAndCreateAccountLinks);
     };
 
 
     this.collapseItemsToBeCollapsedWhenLoggedOut = function(){
-        this.rr.collapse($('.' + classes.collapseWhenLoggedOut));
+        rr.collapse($('.' + classes.collapseWhenLoggedOut));
     };
 
 
     this.makeInvisibleItemsToBeInvisibleWhenLoggedOut = function(){
-        this.rr.makeInvisible($('.' + classes.invisibleWhenLoggedOut));
+        rr.makeInvisible($('.' + classes.invisibleWhenLoggedOut));
     };
 
 
@@ -207,12 +168,12 @@ function UIManipulator(ui){
 
 
     this.uncollapseItemsToBeUncollapsedWhenLoggedIn = function(){
-        this.rr.unCollapse( $('.' + classes.collapseWhenLoggedOut) );
+        rr.unCollapse( $('.' + classes.collapseWhenLoggedOut) );
     };
 
 
     this.makeVisibleItemsToBeVisibleWhenLoggedIn = function(){
-        this.rr.makeVisible( $('.' + classes.invisibleWhenLoggedOut) );
+        rr.makeVisible( $('.' + classes.invisibleWhenLoggedOut) );
     };
 
 

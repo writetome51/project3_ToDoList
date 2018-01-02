@@ -1,5 +1,5 @@
 
-function TodosCSSClasses(){
+function CSSClasses(){
 
     this.hovered = 'list-item-hovered';
     this.highlight = 'highlight-area';

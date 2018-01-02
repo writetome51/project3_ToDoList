@@ -11,5 +11,4 @@ function Content(){
         uic.loadEvents();
     };
 
-
 }
