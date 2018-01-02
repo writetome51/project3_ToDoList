@@ -8,6 +8,7 @@ function UIManipulator(ui){
     var eGetterSetter = new ElementTextGetterSetter(ui, classes);
     var state = new UIStyleState(ui, classes);
 
+
     this.createListsMenuItems = function(items){
         eGetterSetter.createListsMenuItems(items);
     };

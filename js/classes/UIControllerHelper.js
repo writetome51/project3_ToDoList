@@ -14,7 +14,7 @@ function UIControllerHelper(ui, uim){
 
 
     this.toggleHover = function(obj){
-        if (uim.hasHoveredClass(obj)){
+        if (state.hasHoveredClass(obj)){
             uim.removeHoveredClassFromListItem(obj);
         }
         else if (uim.notHoveredAndNotClicked(obj)){
@@ -24,7 +24,7 @@ function UIControllerHelper(ui, uim){
 
 
     this.handleItemDoubleClick = function(obj){
-        if (uim.listItemIsAlreadyClicked(obj)){
+        if (state.listItemIsAlreadyClicked(obj)){
             uim.undoClickedItem();
         }
     };
