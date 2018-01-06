@@ -1,7 +1,7 @@
 
 function UIController(ui, uim){
 
-    var uich = new UIControllerHelper(uim);
+    var uich = new UIControllerHelper(ui, uim);
 
     this.loadEvents = function(){
 
@@ -75,22 +75,21 @@ function UIController(ui, uim){
         });
 
 
-        this.refreshListsMenuBehavior = function(){
-            this.setlistsMenuItemClickHandler();
-        };
+        ui.listsMenu.click(function listsMenuClickHandler(){
+            refreshListsMenuBehavior();
+        });
 
 
-        this.setlistsMenuItemClickHandler = function(){
+        function refreshListsMenuBehavior(){
+            setlistsMenuItemClickHandler();
+        }
+
+
+        function setlistsMenuItemClickHandler(){
             ui.listsMenuItem.click(function(){
                 uich.handleViewingSelectedList( $(this).text() );
             });
-        };
-
-
-        this.handleViewingSelectedList = function(listName){
-            model.setActiveList(listName);
-
-        };
+        }
 
 
 

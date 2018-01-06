@@ -1,7 +1,7 @@
 function UI(){
 
-    var classes = new TodosCSSClasses();
-    var ids = new TodosIDs();
+    var classes = new CSSClasses();
+    var ids = new IDs();
 
     this.appNameForDisplay = 'To-Do\'s';
     this.appNameHeader = $('#' + ids.appNameHeader);

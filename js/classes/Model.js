@@ -69,8 +69,6 @@ function Model(){
     this.editLists = function(){};
 
 
-
-
     this.getUsersListNames = function(){
         var usersLists = this.getUsersLists();
         if (objectEmpty(usersLists)){

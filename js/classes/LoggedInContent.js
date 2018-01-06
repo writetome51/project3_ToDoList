@@ -1,16 +1,16 @@
 
 
-function LoggedInContent(uim, model){
+function LoggedInContent(uim,  model){
 
     this.load = function(){
-        this.removeUnnecessaryItemsWhenLoggedIn();
-        this.showNecessaryItemsWhenLoggedIn();
+        this.removeUnnecessaryItems();
+        this.showNecessaryItems();
     };
 
 
-    this.showNecessaryItemsWhenLoggedIn = function(){
+    this.showNecessaryItems = function(){
         uim.setLoggedInHeader();
-        uim.showContentNotSeenWhenLoggedOut();
+        this.showContentNotSeenWhenLoggedOut();
         this.refreshListsMenu();
         this.setListNameHeader();
 
@@ -20,7 +20,7 @@ function LoggedInContent(uim, model){
     };
 
 
-    this.removeUnnecessaryItemsWhenLoggedIn = function(){
+    this.removeUnnecessaryItems = function(){
         uim.removeUnnecessaryItemsWhenLoggedIn();
 
         if ( ! this.creatingNewList){
@@ -58,14 +58,12 @@ function LoggedInContent(uim, model){
 
     this.refreshListsMenu = function(){
         this.refreshListsMenuContent();
-        this.refreshListsMenuBehavior();
     };
 
 
     this.refreshListsMenuContent = function(){
         var items = model.getUsersListNames();
         uim.createListsMenuItems(items);
-        uim.setListsMenuItem();
     };
 
 
@@ -80,7 +78,7 @@ function LoggedInContent(uim, model){
     this.showNewListForm = function(){
         this.creatingNewList = true;
         this.showNecessaryItemsWhenCreatingList();
-        this.collapseUnnecessaryItemsWhenCreatingList();
+        uim.collapseUnnecessaryItemsWhenCreatingList();
     };
 
 

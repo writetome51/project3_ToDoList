@@ -89,6 +89,11 @@ function UIControllerHelper(ui, uim){
     };
 
 
+    this.handleViewingSelectedList = function(listName){
+        model.setActiveList(listName);
+    };
+
+
     function redirectToHome(){
         location.replace('index.html');
     }

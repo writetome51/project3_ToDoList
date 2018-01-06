@@ -1,5 +1,5 @@
 
-function TodosIDs(){
+function IDs(){
 
     this.appNameHeader = 'app-name';
     this.appNameHolder = 'app-name-holder';

@@ -11,6 +11,12 @@ function UIManipulator(ui){
 
     this.createListsMenuItems = function(items){
         eGetterSetter.createListsMenuItems(items);
+        this.setListsMenuItem();
+    };
+
+
+    this.getLoginValues = function() {
+        return eGetterSetter.getLoginValues();
     };
 
 
@@ -193,7 +199,6 @@ function UIManipulator(ui){
     this.removeItem = function(obj){
         obj.remove();
     };
-
 
 
 }

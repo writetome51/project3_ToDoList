@@ -3,8 +3,8 @@ function Content(){
 
     var ui = new UI();
     var uim = new UIManipulator(ui);
-    var cm = new ContentManager();
     var uic = new UIController(ui, uim);
+    var cm = new ContentManager(ui, uim);
 
     this.load = function(){
         cm.setContent();
