@@ -1,6 +1,9 @@
 
 
-function LoggedInContent(uim,  model){
+function LoggedInContent(ui, uim,  model){
+
+    var lm = new ListsMenu(ui, uim, model);
+
 
     this.load = function(){
         this.removeUnnecessaryItems();
@@ -11,7 +14,7 @@ function LoggedInContent(uim,  model){
     this.showNecessaryItems = function(){
         uim.setLoggedInHeader();
         this.showContentNotSeenWhenLoggedOut();
-        this.refreshListsMenu();
+        lm.refreshListsMenu();
         this.setListNameHeader();
 
         if (this.creatingNewList || model.userHasNoLists()){
@@ -53,17 +56,6 @@ function LoggedInContent(uim,  model){
     this.removeUnnecessaryItemsWhenNotCreatingList = function(){
         uim.collapseItemsShownWhenCreatingList();
         uim.makeInvisibleItemsVisibleWhenCreatingList();
-    };
-
-
-    this.refreshListsMenu = function(){
-        this.refreshListsMenuContent();
-    };
-
-
-    this.refreshListsMenuContent = function(){
-        var items = model.getUsersListNames();
-        uim.createListsMenuItems(items);
     };
 
 

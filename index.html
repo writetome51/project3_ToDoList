@@ -116,30 +116,33 @@
     <!--  Main Body -->
     <div id="todos-body" class="container-fluid">
 
-        <header id="list-name-header" class="collapse-when-logged-out"></header>
+        <div id="list-content"  class="collapse-when-logged-out">
 
-        <ul class="todo-list" id="the-todo-list">
-            <!--  The list items go here  -->
-        </ul>
+            <header id="list-name-header" class="collapse-when-logged-out"></header>
 
-        <form id="new-list-item-form"
-              class="invisible-and-collapsed  collapse-when-logged-out
+            <ul class="todo-list" id="the-todo-list">
+                <!--  The list items go here  -->
+            </ul>
+
+            <form id="new-list-item-form"
+                  class="invisible-and-collapsed  collapse-when-logged-out
                 collapse-when-creating-list">
-            <div class="navbar-div">
-                <div class="navbar-div top-navbar-search-container">
-                    <input type="text" id="new-item-text-input"
-                           class="form-control"
-                           placeholder="Add item to list"
-                           required  minlength="1" >
+                <div class="navbar-div">
+                    <div class="navbar-div top-navbar-search-container">
+                        <input type="text" id="new-item-text-input"
+                               class="form-control"
+                               placeholder="Add item to list"
+                               required  minlength="1" >
+                    </div>
+                    <div class="form-submit  navbar-div  add-item-button">
+                        <input type="submit" value="Add">
+                    </div>
+
                 </div>
-                <div class="form-submit  navbar-div  add-item-button">
-                    <input type="submit" value="Add">
-                </div>
 
-            </div>
+            </form>
 
-        </form>
-
+        </div>
 
 
         <form id="new-list-form"
@@ -179,6 +182,7 @@
 <script src="js/classes/ElementRemoverRevealer.js"></script>
 <script src="js/classes/ElementTextGetterSetter.js"></script>
 <script src="js/classes/UIManipulator.js"></script>
+<script src="js/classes/ListsMenu.js"></script>
 <script src="js/classes/UIControllerHelper.js"></script>
 <script src="js/classes/UIController.js"></script>
 <script src="js/classes/SectionRemoverRevealer.js"></script>

@@ -89,12 +89,6 @@ function UIControllerHelper(ui, uim){
     };
 
 
-    this.handleViewingSelectedList = function(listName){
-        model.setActiveList(listName);
-        (new LoggedInContent(uim, model)).load();
-    };
-
-
     function redirectToHome(){
         location.replace('index.html');
     }

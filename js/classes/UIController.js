@@ -75,22 +75,7 @@ function UIController(ui, uim){
         });
 
 
-        ui.listsMenu.click(function listsMenuClickHandler(){
-            refreshListsMenuBehavior();
-        });
-
-
-        function refreshListsMenuBehavior(){
-            setlistsMenuItemClickHandler();
-        }
-
-
-        function setlistsMenuItemClickHandler(){
-            ui.listsMenuItem.click(function(){
-                uich.handleViewingSelectedList( $(this).text() );
-            });
-        }
-
+        (new ListsMenu(ui, uim)).loadEvents();
 
     };
 

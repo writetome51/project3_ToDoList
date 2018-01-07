@@ -16,7 +16,6 @@ div{
 
 
 
-
 .icon-bar{background-color: black;}
 
 
@@ -183,3 +182,5 @@ div.float-right{display:inline; width:auto;float:right;}
 
 
 #no-script-message-container{padding-left:15px; }
+
+#list-content{ margin:0; padding:0;   position: relative;}
