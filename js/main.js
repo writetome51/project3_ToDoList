@@ -2,7 +2,7 @@
 (function(){
 
     $(document).ready(function onReadyHandler(){
-        (new Content()).load();
+        (new Page()).load();
     });
 
 })();

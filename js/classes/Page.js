@@ -1,5 +1,5 @@
 
-function Content(){
+function Page(){
 
     var ui = new UI();
     var uim = new UIManipulator(ui);
