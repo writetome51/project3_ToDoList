@@ -33,4 +33,9 @@ function LoggedOutUIManipulator(ui){
     };
 
 
+    this.showAccountCreationUnsuccessful = function(){
+        rr.unCollapse(ui.accountCreationUnsuccessful);
+    };
+
+
 }
