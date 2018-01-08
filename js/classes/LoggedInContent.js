@@ -18,7 +18,7 @@ function LoggedInContent(uim,  model){
         lm.refreshContent();
         lc.setListNameHeader();
 
-        if (this.creatingNewList || model.userHasNoLists()){
+        if (model.creatingNewList() || model.userHasNoLists()){
             this.showNewListForm();
         }
     };
@@ -27,7 +27,7 @@ function LoggedInContent(uim,  model){
     this.removeUnnecessaryItems = function(){
         uim.removeUnnecessaryItemsWhenLoggedIn();
 
-        if ( ! this.creatingNewList){
+        if ( ! model.creatingNewList()){
             this.removeUnnecessaryItemsWhenNotCreatingList();
         }
         else{

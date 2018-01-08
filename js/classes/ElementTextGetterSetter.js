@@ -23,21 +23,6 @@ function ElementTextGetterSetter(ui, classes){
     };
 
 
-    this.setNewItemText = function(){
-        ui.newItemText = ui.newListItemTextInput.val();
-    };
-
-
-    this.getNewItemText = function(){
-        return ui.newItemText;
-    };
-
-
-    this.getItemText = function(listItem){
-        return listItem.find('.' + classes.itemText).text();
-    };
-
-
     this.getNewAccountValues = function(){
         var values = {};
         values.username = ui.newUsernameInput.val();
@@ -47,9 +32,7 @@ function ElementTextGetterSetter(ui, classes){
     };
 
 
-    this.setListNameHeader = function(listName){
-        ui.listNameHeader.text(listName);
-    };
+
 
 
     this.setAppNameHeader = function(){
@@ -59,24 +42,6 @@ function ElementTextGetterSetter(ui, classes){
 
     this.setWelcomeAppNameHeader = function(){
         ui.appNameHeader.text('Welcome to ' + ui.appNameForDisplay);
-    };
-
-
-    this.createListsMenuItems = function(items){
-        var innerHtml = this.createListsMenuItemsHTML(items);
-        ui.listsMenuItems.html(innerHtml);
-    };
-
-
-    this.createListsMenuItemsHTML = function(items){
-        if (items === []){
-            return '<li id="no-lists-found">' + this.noListsFound  + '</li>';
-        }
-        for (var item=0, html='';  item < items.length;  ++item){
-            html += '<li><a class="' + classes.listsMenuItem +
-                '">' + items[item]  + '</a></li>';
-        }
-        return html;
     };
 
 

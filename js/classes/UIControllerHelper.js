@@ -38,6 +38,7 @@ function UIControllerHelper(ui, uim){
 
 
     this.handleNewListAction = function(){
+        model.setCreatingNewList(true);
         uim.showNewListForm();
     };
 

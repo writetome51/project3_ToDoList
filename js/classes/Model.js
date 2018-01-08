@@ -12,6 +12,7 @@ function Model(){
 
     this.sessionKeyLoggedInUser = this.appName + '_loggedInUser';
     this.sessionKeyActiveList = this.appName + '_activeList';
+    this.sessionKeyCreatingNewList = this.appName + '_creatingNewList';
     this.sessionKeyActiveListName= this.appName + '_activeListName';
     this.textBeingEdited = false;
 
@@ -142,6 +143,24 @@ function Model(){
     this.setActiveList = function(listName){
         this.activeList = this.getSingleListAsObject(listName);
         bs.addToSessionStorageAsJSON(this.sessionKeyActiveList, this.activeList);
+    };
+
+
+    this.setCreatingNewList = function(trueOrFalse){
+        sessionStorage.setItem(this.sessionKeyCreatingNewList, String(trueOrFalse))
+    };
+
+
+    this.getCreatingNewList = function(){
+        return sessionStorage.getItem(this.sessionKeyCreatingNewList);
+    };
+
+
+    this.creatingNewList = function(){
+        if ( ! this.getCreatingNewList()){
+            return false;
+        }
+        else return true;
     };
 
 

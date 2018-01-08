@@ -19,7 +19,12 @@ function ListContentUIManipulator(uim, model){
     this.setListNameHeader = function(){
         var listName = model.getActiveListName();
         if (!listName) listName = 'Choose a list from the Lists menu';
-        uim.setListNameHeader(listName);
+        this.setListNameHeader_sub(listName);
+    };
+
+
+    this.setListNameHeader_sub = function(listName){
+        ui.listNameHeader.text(listName);
     };
 
 
@@ -75,6 +80,21 @@ function ListContentUIManipulator(uim, model){
     this.addHoveredClassToListItem = function(obj){
         ui.itemToHighlight = obj.parent('.' + classes.highlight);
         ui.itemToHighlight.addClass(classes.hovered);
+    };
+
+
+    this.setNewItemText = function(){
+        ui.newItemText = ui.newListItemTextInput.val();
+    };
+
+
+    this.getNewItemText = function(){
+        return ui.newItemText;
+    };
+
+
+    this.getItemText = function(listItem){
+        return listItem.find('.' + classes.itemText).text();
     };
 
 
