@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="To-Do List Application for productivity">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>To-Do's</title>
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="stylesheet" href="css/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- My own styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<script>
+
+    function TestClass(){
+        this.testFunction = function(){
+            return 'inheritance success.'
+        };
+    }
+
+
+    function Inheritor(){}
+    Inheritor.prototype = new TestClass();
+
+    Inheritor.prototype.writeSomething = function(){
+        document.write(this.testFunction());
+    };
+
+
+    function SecondInheritor(){}
+    SecondInheritor.prototype = new Inheritor();
+
+    SecondInheritor.prototype.writeThis = function(){
+        this.writeSomething();
+    };
+
+    SecondInheritor.prototype.getParent = function(){
+        return String(__super.name);
+    };
+
+    var obj = new SecondInheritor();
+
+    document.write(obj.getParent());
+
+</script>
+
+</body>
+</html>

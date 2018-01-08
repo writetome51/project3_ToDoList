@@ -7,6 +7,7 @@ function ElementTextGetterSetter(ui, classes){
 
     this.emptyNewListNameInput = function(){
         ui.newListName.val('');
+        this.testFunction();
     };
 
 
@@ -32,18 +33,10 @@ function ElementTextGetterSetter(ui, classes){
     };
 
 
-
-
-
     this.setAppNameHeader = function(){
         ui.appNameHeader.text(ui.appNameForDisplay);
     };
 
 
-    this.setWelcomeAppNameHeader = function(){
-        ui.appNameHeader.text('Welcome to ' + ui.appNameForDisplay);
-    };
-
-
-
 }
+

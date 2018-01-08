@@ -1,8 +1,6 @@
 
 function ListsMenuEvents(ui){
 
-    var model = new Model();
-
 
     this.load = function(){
 
@@ -19,8 +17,7 @@ function ListsMenuEvents(ui){
 
 
         function handleViewingSelectedList(listName){
-            model.setActiveList(listName);
-            (new ListContent()).load();
+            (new ListContent(listName)).load();
         }
 
     };

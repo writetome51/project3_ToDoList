@@ -2,6 +2,11 @@
 
 function LoggedInUIManipulator(ui){
 
+    var classes = new CSSClasses();
+
+    var rr = new ElementRemoverRevealer(ui, classes);
+    var egs = new ElementTextGetterSetter(ui, classes);
+
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
         rr.collapse( $('.' + classes.collapseWhenLoggedIn) );
         rr.makeInvisible( $('.' + classes.invisibleWhenLoggedIn) );
@@ -20,7 +25,7 @@ function LoggedInUIManipulator(ui){
 
     this.setLoggedInHeader = function(){
         ui.appNameHolder.removeClass(classes.welcomeToAppName);
-        eGetterSetter.setAppNameHeader();
+        egs.setAppNameHeader();
     };
 
 

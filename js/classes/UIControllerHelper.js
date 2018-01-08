@@ -46,6 +46,7 @@ function UIControllerHelper(ui, uim){
     this.handleNewListCreation = function(){
         var newListName = uim.getNewListName();
         model.createNewList(newListName);
+        model.setCreatingNewList(false);
     };
 
 
@@ -57,8 +58,8 @@ function UIControllerHelper(ui, uim){
 
     this.handleAccountCreation = function(){
         var values = uim.getNewAccountValues();
-        if (model.newAccountInfoValid(
-            values.username, values.password1, values.password2
+        if  (model.newAccountInfoValid(
+                values.username, values.password1, values.password2
             ))
         {
             this.createAccountLoginAndRedirectToHome(
@@ -80,6 +81,7 @@ function UIControllerHelper(ui, uim){
 
     this.handleLogout = function() {
         model.logout();
+        redirectToHome();
     };
 
 

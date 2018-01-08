@@ -52,31 +52,24 @@ function objectEmpty(obj){
 
 
 function generateRandomIntegers(howMany, range){
-    var parts = getRandomIntegerFormulaParts(range);
-    var min = parts[1];
-    var maxMinusMinPlusOne = parts[0];
+    var min = range[0];
+    var max = range[1];
+
+    var x = max - min + 1;
 
 	for (var i=0, arr=[]; i < howMany; ++i){
-		arr.push( Math.floor(Math.random() * maxMinusMinPlusOne + min) );
+		arr.push( Math.floor(Math.random() * x + min) );
 	}
 	return arr;
 }
 
 
 function generateRandomInteger(range){
-    var parts = getRandomIntegerFormulaParts(range);
-    var maxMinusMinPlusOne = parts[0];
-    var min = parts[1];
-
-    return  Math.floor(Math.random() * maxMinusMinPlusOne + min);
-}
-
-
-function getRandomIntegerFormulaParts(range){
     var min = range[0];
     var max = range[1];
 
-    var maxMinusMinPlusOne = max - min + 1;
+    var x = max - min + 1;
 
-    return [maxMinusMinPlusOne, min];
+    return  Math.floor(Math.random() * x + min);
 }
+

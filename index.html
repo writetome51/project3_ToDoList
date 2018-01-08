@@ -116,9 +116,9 @@
     <!--  Main Body -->
     <div id="todos-body" class="container-fluid">
 
-        <div id="list-content"  class="collapse-when-logged-out">
+        <div id="list-content"  class="invisible-and-collapsed  collapse-when-logged-out">
 
-            <header id="list-name-header" class="collapse-when-logged-out"></header>
+            <header id="list-name-header"></header>
 
             <ul class="todo-list" id="the-todo-list">
                 <!--  The list items go here  -->
@@ -181,9 +181,14 @@
 <script src="js/classes/ElementTextGetterSetter.js"></script>
 <script src="js/classes/UIManipulator.js"></script>
 <script src="js/classes/ListsMenu.js"></script>
+<script src="js/classes/ListsMenuEvents.js"></script>
+<script src="js/classes/ListsMenuUIManipulator.js"></script>
+<script src="js/classes/ListContentUIManipulator.js"></script>
+<script src="js/classes/NewListForm.js"></script>
 <script src="js/classes/UIControllerHelper.js"></script>
 <script src="js/classes/UIController.js"></script>
-<script src="js/classes/SectionRemoverRevealer.js"></script>
+<script src="js/classes/LoggedInUIManipulator.js"></script>
+<script src="js/classes/LoggedOutUIManipulator.js"></script>
 <script src="js/classes/LoggedInContent.js"></script>
 <script src="js/classes/LoggedOutContent.js"></script>
 <script src="js/classes/ContentManager.js"></script>

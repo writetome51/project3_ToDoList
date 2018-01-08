@@ -2,9 +2,11 @@
 
 function LoggedOutUIManipulator(ui){
 
+    var egs = new ElementTextGetterSetter();
+
     this.setLoggedOutHeader = function(){
         ui.appNameHolder.addClass(classes.welcomeToAppName);
-        eGetterSetter.setWelcomeAppNameHeader();
+        egs.setAppNameHeader();
     };
 
 
@@ -36,6 +38,8 @@ function LoggedOutUIManipulator(ui){
     this.showAccountCreationUnsuccessful = function(){
         rr.unCollapse(ui.accountCreationUnsuccessful);
     };
+
+
 
 
 }
