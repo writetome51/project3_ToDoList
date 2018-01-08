@@ -75,7 +75,7 @@ function UIController(ui, uim){
         });
 
 
-        (new ListsMenu(ui, uim)).loadEvents();
+        (new ListsMenuEvents(ui)).load();
 
     };
 

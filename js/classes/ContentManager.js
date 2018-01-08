@@ -8,7 +8,7 @@ function ContentManager(ui, uim){
             (new LoggedOutContent(uim)).load();
         }
         else{
-            (new LoggedInContent(ui, uim, model)).load();
+            (new LoggedInContent(uim, model)).load();
         }
     };
 

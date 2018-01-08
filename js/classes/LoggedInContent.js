@@ -1,8 +1,9 @@
 
 
-function LoggedInContent(ui, uim,  model){
+function LoggedInContent(uim,  model){
 
-    var lm = new ListsMenu(ui, uim, model);
+    var lm = new ListsMenu(uim, model);
+    var lc = new ListContent(uim, model);
 
 
     this.load = function(){
@@ -14,8 +15,8 @@ function LoggedInContent(ui, uim,  model){
     this.showNecessaryItems = function(){
         uim.setLoggedInHeader();
         this.showContentNotSeenWhenLoggedOut();
-        lm.refreshListsMenu();
-        this.setListNameHeader();
+        lm.refreshContent();
+        lc.setListNameHeader();
 
         if (this.creatingNewList || model.userHasNoLists()){
             this.showNewListForm();
@@ -41,36 +42,9 @@ function LoggedInContent(ui, uim,  model){
     };
 
 
-    this.showNecessaryItemsWhenCreatingList = function(){
-        if (model.creatingNewList()){
-            uim.showNecessaryItemsWhenCreatingList();
-        }
-    };
-
-
-    this.removeUnnecessaryItemsWhenCreatingList = function(){
-        uim.collapseUnnecessaryItemsWhenCreatingList();
-    };
-
-
     this.removeUnnecessaryItemsWhenNotCreatingList = function(){
         uim.collapseItemsShownWhenCreatingList();
         uim.makeInvisibleItemsVisibleWhenCreatingList();
-    };
-
-
-    this.setListNameHeader = function(){
-        var listName = model.getActiveListName();
-        if (!listName) listName = 'Choose a list from the Lists menu';
-        uim.setListNameHeader(listName);
-    };
-
-
-
-    this.showNewListForm = function(){
-        this.creatingNewList = true;
-        this.showNecessaryItemsWhenCreatingList();
-        uim.collapseUnnecessaryItemsWhenCreatingList();
     };
 
 

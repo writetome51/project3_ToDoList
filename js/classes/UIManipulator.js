@@ -33,12 +33,6 @@ function UIManipulator(ui){
     };
 
 
-    this.addNewItemToListOnscreen = function(){
-        eGetterSetter.setNewItemText();
-        this.displayNewItemInList();
-    };
-
-
     this.displayNewItemInList = function(){
         ui.todoList.append(ui.newListItem);
     };
@@ -131,46 +125,9 @@ function UIManipulator(ui){
     };
 
 
-    this.showNecessaryItemsWhenCreatingList = function () {
-        rr.unCollapse( $('.show-when-creating-list') );
-        rr.makeVisible(  $('.show-when-creating-list') );
-        eGetterSetter.emptyNewListNameInput();
-    };
-
-
     this.removeUnnecessaryItemsWhenLoggedIn = function(){
         rr.collapse( $('.' + classes.collapseWhenLoggedIn) );
         rr.makeInvisible( $('.' + classes.invisibleWhenLoggedIn) );
-    };
-
-
-    this.collapseUnnecessaryItemsWhenCreatingList = function(){
-        rr.collapse( $('.collapse-when-creating-list') );
-    };
-
-
-    this.unCollapseItemsToBeUncollapsedWhenLoggedOut =  function(){
-        this.unCollapseLoginAndCreateAccountLinks();
-    };
-
-
-    this.unCollapseLoginAndCreateAccountLinks = function(){
-        rr.unCollapse(ui.loginAndCreateAccountLinks);
-    };
-
-
-    this.collapseItemsToBeCollapsedWhenLoggedOut = function(){
-        rr.collapse($('.' + classes.collapseWhenLoggedOut));
-    };
-
-
-    this.makeInvisibleItemsToBeInvisibleWhenLoggedOut = function(){
-        rr.makeInvisible($('.' + classes.invisibleWhenLoggedOut));
-    };
-
-
-    this.makeVisibleItemsToBeVisibleWhenLoggedOut = function(){
-
     };
 
 
@@ -181,12 +138,6 @@ function UIManipulator(ui){
 
     this.makeVisibleItemsToBeVisibleWhenLoggedIn = function(){
         rr.makeVisible( $('.' + classes.invisibleWhenLoggedOut) );
-    };
-
-
-    this.setLoggedOutHeader = function(){
-        ui.appNameHolder.addClass(classes.welcomeToAppName);
-        eGetterSetter.setWelcomeAppNameHeader();
     };
 
 

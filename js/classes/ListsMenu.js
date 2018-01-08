@@ -1,37 +1,9 @@
 
-function ListsMenu(ui, uim, model){
+function ListsMenu(uim, model){
 
-
-    this.refreshListsMenu = function(){
-        this.refreshListsMenuContent();
-    };
-
-
-    this.refreshListsMenuContent = function(){
+    this.refreshContent = function(){
         var items = model.getUsersListNames();
         uim.createListsMenuItems(items);
-    };
-
-
-    this.loadEvents = function(){
-
-        ui.listsMenu.click(function listsMenuClickHandler(){
-            setMenuItemClickHandler();
-        });
-
-
-        function setMenuItemClickHandler(){
-            ui.listsMenuItem.click(function(){
-                handleViewingSelectedList( $(this).text() );
-            });
-        }
-
-
-        function handleViewingSelectedList(listName){
-            model.setActiveList(listName);
-            (new ListContent()).load();
-        }
-
     };
 
 
