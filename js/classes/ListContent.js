@@ -6,7 +6,11 @@ function ListContent(listName){
 
     var lcuim = new ListContentUIManipulator(model);
 
+
     this.load = function(){
+
+        lcuim.setListNameHeader();
+
 
     };
 

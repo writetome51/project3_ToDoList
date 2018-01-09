@@ -14,16 +14,6 @@ function UIManipulator(ui){
     };
 
 
-    this.removeClickedClass = function(){
-        ui.clickedItem.removeClass(classes.clicked);
-    };
-
-
-    this.setListNameHeader = function(listName){
-        eGetterSetter.setListNameHeader(listName);
-    };
-
-
     this.removeItem = function(obj){
         obj.remove();
     };

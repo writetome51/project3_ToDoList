@@ -1,6 +1,22 @@
 
 function ListContentUIManipulator(uim, model){
 
+    var classes = new CSSClasses();
+    var state = new UIStyleState(ui);
+
+
+    this.setListNameHeader = function(){
+        var listName = model.getActiveListName();
+        if (!listName) listName = 'Choose a list from the Lists menu';
+        this.setListNameHeader_sub(listName);
+    };
+
+
+    this.setListNameHeader_sub = function(listName){
+        ui.listNameHeader.text(listName);
+    };
+
+
     this.undoClickedItem = function(){
         if (state.thereIsAClickedItem()){
             this.turnOffClickedBehavior();
@@ -16,20 +32,13 @@ function ListContentUIManipulator(uim, model){
     };
 
 
-    this.setListNameHeader = function(){
-        var listName = model.getActiveListName();
-        if (!listName) listName = 'Choose a list from the Lists menu';
-        this.setListNameHeader_sub(listName);
-    };
-
-
-    this.setListNameHeader_sub = function(listName){
-        ui.listNameHeader.text(listName);
+    this.removeClickedClass = function(){
+        ui.clickedItem.removeClass(classes.clicked);
     };
 
 
     this.addNewItemToListOnscreen = function(){
-        eGetterSetter.setNewItemText();
+        this.setNewItemText();
         uim.displayNewItemInList();
     };
 

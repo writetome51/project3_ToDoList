@@ -17,7 +17,7 @@ function UIControllerHelper(ui, uim){
         if (state.hasHoveredClass(obj)){
             uim.removeHoveredClassFromListItem(obj);
         }
-        else if (uim.notHoveredAndNotClicked(obj)){
+        else if (state.notHoveredAndNotClicked(obj)){
             uim.addHoveredClassToListItem(obj);
         }
     };
