@@ -15,11 +15,11 @@ function LoggedInContent(uim,  model){
     this.showNecessaryItems = function(){
         uim.setLoggedInHeader();
         this.showContentNotSeenWhenLoggedOut();
-        lm.refreshContent();
+        lm.load();
         lc.setListNameHeader();
 
         if (model.creatingNewList() || model.userHasNoLists()){
-            this.showNewListForm();
+			(new NewListForm(ui)).load();
         }
     };
 

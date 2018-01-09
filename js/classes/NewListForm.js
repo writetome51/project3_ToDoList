@@ -1,7 +1,7 @@
 
 function NewListForm(ui){
 
-    this.showNewListForm = function(){
+    this.load = function(){
         this.showNecessaryItemsWhenCreatingList();
         uim.collapseUnnecessaryItemsWhenCreatingList();
     };

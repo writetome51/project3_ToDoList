@@ -5,36 +5,13 @@ function UIController(ui, uim){
 
     this.loadEvents = function(){
 
+		(new CreateAccountFormEvents(ui, uim)).load();
 
-        ui.newListAction.click(function newListActionClickHandler(){
-            uich.handleNewListAction();
-        });
-
-
-        ui.createAccountForm.submit(function createAccountSubmitHandler(event){
-            event.preventDefault();
-            uich.handleAccountCreation();
-        });
-
-
-        ui.loginForm.submit(function loginSubmitHandler(event){
-            event.preventDefault();
-            uich.handleLogin();
-        });
-
-
-        ui.logoutLink.click(function logoutLinkHandler(){
-            uich.handleLogout();
-        });
-
-
-        ui.newListForm.submit(function newListSubmitHandler(event){
-            event.preventDefault();
-            uich.handleNewListCreation();
-        });
-
+		(new ActionsMenuEvents(ui,uim)).load();
 
         (new ListsMenuEvents(ui)).load();
+
+		(new ListContentEvents(ui,uim)).load();
 
     };
 

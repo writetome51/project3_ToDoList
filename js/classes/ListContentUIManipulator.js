@@ -107,5 +107,19 @@ function ListContentUIManipulator(uim, model){
     };
 
 
+    this.setNewListItem = function(){
+
+		ui.newListItem = "<li class='" + classes.listItem + "'  draggable='true'>" +
+			"<input type='checkbox' class='" + classes.itemCheckbox + "'  " +
+			"title='Check box to mark item done, or to perform action on item'>" +
+			"<span class='" + classes.highlight + "'> <span class='" +
+			classes.itemText + "'>" + ui.newItemText + "</span><span " +
+			"class='glyphicon " + classes.removeGlyphicon + "  " +
+			classes.invisible + "'></span></span></li>";
+
+	};
+
+
+
 
 }
