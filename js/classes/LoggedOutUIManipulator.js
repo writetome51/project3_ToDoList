@@ -39,7 +39,4 @@ function LoggedOutUIManipulator(ui){
         rr.unCollapse(ui.accountCreationUnsuccessful);
     };
 
-
-
-
 }

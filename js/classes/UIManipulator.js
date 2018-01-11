@@ -14,9 +14,4 @@ function UIManipulator(ui){
     };
 
 
-    this.removeItem = function(obj){
-        obj.remove();
-    };
-
-
 }

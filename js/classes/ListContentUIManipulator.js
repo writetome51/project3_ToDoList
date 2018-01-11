@@ -5,6 +5,11 @@ function ListContentUIManipulator(uim, model){
     var state = new UIStyleState(ui);
 
 
+	this.removeItem = function(obj){
+		obj.remove();
+	};
+
+
     this.setListNameHeader = function(){
         var listName = model.getActiveListName();
         if (!listName) listName = 'Choose a list from the Lists menu';
