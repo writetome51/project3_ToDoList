@@ -1,10 +1,10 @@
 
-function NewListFormEvents(ui){
+function NewListFormEvents(dom){
 
 
-	ui.newListForm.submit(function newListSubmitHandler(event){
+	dom.newListForm.submit(function newListSubmitHandler(event){
 		event.preventDefault();
-		uich.handleNewListCreation();
+		dmch.handleNewListCreation();
 	});
     
 

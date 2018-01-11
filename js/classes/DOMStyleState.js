@@ -1,17 +1,17 @@
 
-function UIStyleState(ui){
+function DOMStyleState(dom){
 
     var classes = new CSSClasses();
 
     this.thereIsAClickedItem = function(){
-        if (ui.clickedItem){ return true; }
+        if (dom.clickedItem){ return true; }
         else { return false; }
     };
 
 
     this.listItemIsAlreadyClicked = function(obj){
-        ui.itemToHighlight = obj.parent('.' + classes.highlight);
-        return this.thisItemIsAlreadyClicked(ui.itemToHighlight);
+        dom.itemToHighlight = obj.parent('.' + classes.highlight);
+        return this.thisItemIsAlreadyClicked(dom.itemToHighlight);
     };
 
 
@@ -37,7 +37,7 @@ function UIStyleState(ui){
 
 
     this.clickedItemCheckboxIsChecked = function(){
-        return ui.clickedItem.children('.' + classes.itemCheckbox).prop('checked');
+        return dom.clickedItem.children('.' + classes.itemCheckbox).prop('checked');
     };
 
 

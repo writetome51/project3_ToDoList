@@ -1,14 +1,14 @@
 
 function Page(){
 
-    var ui = new UI();
-    var uim = new UIManipulator(ui);
-    var uic = new UIController(ui, uim);
-    var cm = new ContentManager(ui, uim);
+    var dom = new DOM();
+    var dm = new DOMManipulator(dom);
+    var dc = new DOMController(dom, dm);
+    var cm = new ContentManager(dom);
 
     this.load = function(){
         cm.setContent();
-        uic.loadEvents();
+        dc.loadEvents();
     };
 
 }

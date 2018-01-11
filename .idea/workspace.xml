@@ -5,13 +5,33 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/create-account.html" afterPath="$PROJECT_DIR$/create-account.html" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/inheritance-test.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/js/classes/ActionsMenu.js" afterPath="$PROJECT_DIR$/js/classes/ActionsMenu.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ActionsMenuEvents.js" afterPath="$PROJECT_DIR$/js/classes/ActionsMenuEvents.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ContentManager.js" afterPath="$PROJECT_DIR$/js/classes/ContentManager.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/CreateAccountForm.js" afterPath="$PROJECT_DIR$/js/classes/CreateAccountForm.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/CreateAccountFormEvents.js" afterPath="$PROJECT_DIR$/js/classes/CreateAccountFormEvents.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ElementRemoverRevealer.js" afterPath="$PROJECT_DIR$/js/classes/ElementRemoverRevealer.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ElementTextGetterSetter.js" afterPath="$PROJECT_DIR$/js/classes/ElementTextGetterSetter.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ListContent.js" afterPath="$PROJECT_DIR$/js/classes/ListContent.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ListContentEvents.js" afterPath="$PROJECT_DIR$/js/classes/ListContentEvents.js" />
       <change beforePath="$PROJECT_DIR$/js/classes/ListContentEventsHelper.js" afterPath="$PROJECT_DIR$/js/classes/ListContentEventsHelper.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/ListContentUIManipulator.js" afterPath="$PROJECT_DIR$/js/classes/ListContentUIManipulator.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/LoggedOutUIManipulator.js" afterPath="$PROJECT_DIR$/js/classes/LoggedOutUIManipulator.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/UIControllerHelper.js" afterPath="$PROJECT_DIR$/js/classes/UIControllerHelper.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/UIManipulator.js" afterPath="$PROJECT_DIR$/js/classes/UIManipulator.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ListContentUIManipulator.js" afterPath="$PROJECT_DIR$/js/classes/ListContentDOMManipulator.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ListsMenu.js" afterPath="$PROJECT_DIR$/js/classes/ListsMenu.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ListsMenuEvents.js" afterPath="$PROJECT_DIR$/js/classes/ListsMenuEvents.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ListsMenuUIManipulator.js" afterPath="$PROJECT_DIR$/js/classes/ListsMenuDOMManipulator.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/LoggedInContent.js" afterPath="$PROJECT_DIR$/js/classes/LoggedInContent.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/LoggedInUIManipulator.js" afterPath="$PROJECT_DIR$/js/classes/LoggedInDOMManipulator.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/LoggedOutContent.js" afterPath="$PROJECT_DIR$/js/classes/LoggedOutContent.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/LoggedOutUIManipulator.js" afterPath="$PROJECT_DIR$/js/classes/LoggedOutDOMManipulator.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/LoginLogoutEvents.js" afterPath="$PROJECT_DIR$/js/classes/LoginLogoutEvents.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/NewListForm.js" afterPath="$PROJECT_DIR$/js/classes/NewListForm.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/NewListFormEvents.js" afterPath="$PROJECT_DIR$/js/classes/NewListFormEvents.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/Page.js" afterPath="$PROJECT_DIR$/js/classes/Page.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/UI.js" afterPath="$PROJECT_DIR$/js/classes/DOM.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/UIController.js" afterPath="$PROJECT_DIR$/js/classes/DOMController.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/UIControllerHelper.js" afterPath="$PROJECT_DIR$/js/classes/DOMControllerHelper.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/UIManipulator.js" afterPath="$PROJECT_DIR$/js/classes/DOMManipulator.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/UIStyleState.js" afterPath="$PROJECT_DIR$/js/classes/DOMStyleState.js" />
       <change beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/login.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,31 +46,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ListsMenu.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/classes/ListsMenu.js">
+      <file leaf-file-name="DOMController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/classes/DOMController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UIController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/classes/UIController.js">
+      <file leaf-file-name="ListContentEvents.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/classes/ListContentEvents.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="486">
+              <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListsMenuEvents.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/classes/ListsMenuEvents.js">
+      <file leaf-file-name="LoggedOutContent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/classes/LoggedOutContent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="375">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,8 +79,28 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="201" column="47" lean-forward="false" selection-start-line="201" selection-start-column="47" selection-end-line="201" selection-end-column="47" />
+            <state relative-caret-position="238">
+              <caret line="187" column="61" lean-forward="true" selection-start-line="187" selection-start-column="61" selection-end-line="187" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoggedOutDOMManipulator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/classes/LoggedOutDOMManipulator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Page.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/classes/Page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,21 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.createlistsmenuitems(</find>
-      <find>this.setlistsmenu</find>
-      <find>uim.setlistnameheader</find>
-      <find>.setlistname</find>
-      <find>.setlistnameheader(</find>
-      <find>.setlistnameheader</find>
-      <find>.refreshlistsmenu(</find>
-      <find>collapse-when-creating-list</find>
-      <find>creating-list</find>
-      <find>list</find>
-      <find>showlistsmenuitems</find>
-      <find>.listsmenuitem</find>
-      <find>this.setlist</find>
-      <find>createlists</find>
-      <find>_sub</find>
       <find>setac</find>
       <find>creatingnewlist</find>
       <find>this.creatingnewlist</find>
@@ -108,19 +133,23 @@
       <find>ui.newlistitem</find>
       <find>listcontent</find>
       <find>uis</find>
+      <find>UI(</find>
+      <find>new UI(</find>
+      <find>ui =</find>
+      <find>ui,</find>
+      <find>(ui)</find>
+      <find>ui.</find>
+      <find>uim</find>
+      <find>UIManipulator</find>
+      <find>ui</find>
+      <find>UI</find>
+      <find>new dom</find>
+      <find>uich</find>
+      <find>.collapseitemstobecol</find>
+      <find>this.collapseitemstobecol</find>
+      <find>dm.</find>
     </findStrings>
     <replaceStrings>
-      <replace>this.newListItemForm</replace>
-      <replace>this.navbarSearchContainer</replace>
-      <replace>this.pencilGlyphiconClass</replace>
-      <replace>this.removeGlyphiconClass</replace>
-      <replace>ui.clickedItem</replace>
-      <replace>ui.clickedClass</replace>
-      <replace>ui.invisibleClass</replace>
-      <replace>ui.itemTextClass</replace>
-      <replace>ui.removeGlyphiconClass</replace>
-      <replace>ui.highlightClass</replace>
-      <replace>ui.hoveredClass</replace>
       <replace>ui.itemToHighlight</replace>
       <replace>ui.listItemClass</replace>
       <replace>ui.invisibleCollapsedClass</replace>
@@ -140,6 +169,17 @@
       <replace />
       <replace>egs</replace>
       <replace>.load(</replace>
+      <replace>DOM(</replace>
+      <replace>dom =</replace>
+      <replace>dom</replace>
+      <replace>dom,</replace>
+      <replace>(dom)</replace>
+      <replace>dom.</replace>
+      <replace>dm</replace>
+      <replace>DOMManipulator</replace>
+      <replace>DOM</replace>
+      <replace>dmch</replace>
+      <replace>lodm.</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/js/classes</dir>
@@ -151,8 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/todos-ui.js" />
-        <option value="$PROJECT_DIR$/js/appearance-manager.js" />
         <option value="$PROJECT_DIR$/js/todos-controller.js" />
         <option value="$PROJECT_DIR$/js/todos-content-management-helper.js" />
         <option value="$PROJECT_DIR$/js/todos-model.js" />
@@ -162,16 +200,12 @@
         <option value="$PROJECT_DIR$/js/todos-ui-manipulator.js" />
         <option value="$PROJECT_DIR$/js/classes/ElementRemoverRevealer.js" />
         <option value="$PROJECT_DIR$/js/classes/ListsMenuController.js" />
-        <option value="$PROJECT_DIR$/js/classes/UIStyleState.js" />
         <option value="$PROJECT_DIR$/js/classes/SectionRemoverRevealer.js" />
         <option value="$PROJECT_DIR$/object-arg-test.html" />
         <option value="$PROJECT_DIR$/js/classes/Content.js" />
-        <option value="$PROJECT_DIR$/js/classes/LoggedOutContent.js" />
         <option value="$PROJECT_DIR$/js/classes/IDs.js" />
-        <option value="$PROJECT_DIR$/js/classes/Page.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/js/classes/ContentManager.js" />
         <option value="$PROJECT_DIR$/js/classes/LoggedOutUIManipulator copy.js" />
         <option value="$PROJECT_DIR$/js/classes/ListsMenuUIManipulator.js" />
         <option value="$PROJECT_DIR$/js/classes/Model.js" />
@@ -190,18 +224,24 @@
         <option value="$PROJECT_DIR$/js/classes/LoggedInContent.js" />
         <option value="$PROJECT_DIR$/js/classes/CreateAccountForm.js" />
         <option value="$PROJECT_DIR$/js/classes/CreateAccountFormEvents.js" />
-        <option value="$PROJECT_DIR$/js/classes/UIController.js" />
         <option value="$PROJECT_DIR$/js/classes/UI.js" />
         <option value="$PROJECT_DIR$/js/classes/ActionsMenu.js" />
         <option value="$PROJECT_DIR$/js/classes/CSSClasses.js" />
         <option value="$PROJECT_DIR$/js/classes/ListContentEventsHelper.js" />
-        <option value="$PROJECT_DIR$/js/classes/UIControllerHelper.js" />
         <option value="$PROJECT_DIR$/js/classes/LoggedOutUIManipulator.js" />
         <option value="$PROJECT_DIR$/js/classes/ListContentUIManipulator.js" />
-        <option value="$PROJECT_DIR$/js/classes/UIManipulator.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/create-account.html" />
         <option value="$PROJECT_DIR$/login.html" />
+        <option value="$PROJECT_DIR$/js/classes/DOM.js" />
+        <option value="$PROJECT_DIR$/js/classes/UIController.js" />
+        <option value="$PROJECT_DIR$/js/classes/UIStyleState.js" />
+        <option value="$PROJECT_DIR$/js/classes/UIManipulator.js" />
+        <option value="$PROJECT_DIR$/js/classes/DOMController.js" />
+        <option value="$PROJECT_DIR$/js/classes/UIControllerHelper.js" />
+        <option value="$PROJECT_DIR$/js/classes/ContentManager.js" />
+        <option value="$PROJECT_DIR$/js/classes/Page.js" />
+        <option value="$PROJECT_DIR$/js/classes/LoggedOutContent.js" />
       </list>
     </option>
   </component>
@@ -220,7 +260,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="9" />
     <option name="y" value="23" />
-    <option name="width" value="1033" />
+    <option name="width" value="1246" />
     <option name="height" value="733" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -476,25 +516,26 @@
       <workItem from="1515598174929" duration="2000" />
       <workItem from="1515648542663" duration="1376000" />
       <workItem from="1515681689719" duration="27000" />
-      <workItem from="1515695264888" duration="657000" />
+      <workItem from="1515695264888" duration="3109000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="369606000" />
+    <option name="totallyTimeSpent" value="372058000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="23" width="1033" height="733" extended-state="0" />
+    <frame x="9" y="23" width="1246" height="733" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26482213" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21877551" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3260188" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32855567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24936171" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56116205" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5611285" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986637" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -502,7 +543,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -538,7 +578,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/classes/LoggedOutUIManipulator.js">
+    <entry file="file://$PROJECT_DIR$/js/classes/LoggedOutDOMManipulator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -552,7 +592,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/UIManipulator.js">
+    <entry file="file://$PROJECT_DIR$/js/classes/DOMManipulator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
@@ -566,7 +606,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/LoggedOutUIManipulator.js">
+    <entry file="file://$PROJECT_DIR$/js/classes/LoggedOutDOMManipulator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="37" column="6" lean-forward="false" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
@@ -587,7 +627,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/UIManipulator.js">
+    <entry file="file://$PROJECT_DIR$/js/classes/DOMManipulator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
@@ -645,20 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/Page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/ContentManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/CreateAccountForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -694,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/ListContentEvents.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/ListContentEventsHelper.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -715,7 +734,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/ListsMenuUIManipulator.js">
+    <entry file="file://$PROJECT_DIR$/js/classes/ListsMenuDOMManipulator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -729,52 +748,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/LoggedInUIManipulator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="51" lean-forward="true" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/LoggedOutContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/LoggedOutUIManipulator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="39" column="6" lean-forward="false" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/LoginLogoutEvents.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/Model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1586">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/ModelValidator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-412">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/NewListForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -792,31 +769,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/UI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/UIManipulator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/ListContentUIManipulator.js">
+    <entry file="file://$PROJECT_DIR$/js/classes/ListContentDOMManipulator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/UIControllerHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -835,26 +791,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/UIStyleState.js">
+    <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/UIController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/ListsMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="601">
+          <caret line="117" column="34" lean-forward="false" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -867,26 +807,138 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/DOM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/DOMStyleState.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/create-account.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
+        <state relative-caret-position="423">
           <caret line="130" column="34" lean-forward="false" selection-start-line="130" selection-start-column="34" selection-end-line="130" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
+    <entry file="file://$PROJECT_DIR$/js/classes/LoggedInDOMManipulator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="117" column="34" lean-forward="false" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
+        <state relative-caret-position="480">
+          <caret line="32" column="51" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/NewListForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/Model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/ModelValidator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/ListsMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/DOMController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/DOMControllerHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/ListContentEvents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/DOMManipulator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/ContentManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="47" lean-forward="true" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/Page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/LoggedOutDOMManipulator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/LoggedOutContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="201" column="47" lean-forward="false" selection-start-line="201" selection-start-column="47" selection-end-line="201" selection-end-column="47" />
+        <state relative-caret-position="238">
+          <caret line="187" column="61" lean-forward="true" selection-start-line="187" selection-start-column="61" selection-end-line="187" selection-end-column="61" />
           <folding />
         </state>
       </provider>

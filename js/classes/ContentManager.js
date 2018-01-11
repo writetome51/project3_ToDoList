@@ -1,14 +1,14 @@
 
-function ContentManager(ui, uim){
+function ContentManager(dom){
 
     var model = new Model();
 
     this.setContent = function(){
         if (model.loggedOut()){
-            (new LoggedOutContent(uim)).load();
+            (new LoggedOutContent(dom)).load();
         }
         else{
-            (new LoggedInContent(uim, model)).load();
+            (new LoggedInContent(dom, model)).load();
         }
     };
 

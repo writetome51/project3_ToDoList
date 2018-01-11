@@ -1,6 +1,6 @@
 
 
-function ElementRemoverRevealer(ui, classes){
+function ElementRemoverRevealer(dom, classes){
 
     this.collapse = function(obj){
         obj.addClass(classes.invisibleCollapsed);
@@ -23,7 +23,7 @@ function ElementRemoverRevealer(ui, classes){
 
 
     this.makeGlyphsVisible = function(){
-        this.makeRemoveGlyphVisible(ui.clickedItem);
+        this.makeRemoveGlyphVisible(dom.clickedItem);
     };
 
 
@@ -33,7 +33,7 @@ function ElementRemoverRevealer(ui, classes){
 
 
     this.makeGlyphsInvisible = function(){
-        this.makeRemoveGlyphInvisible(ui.clickedItem);
+        this.makeRemoveGlyphInvisible(dom.clickedItem);
     };
 
 

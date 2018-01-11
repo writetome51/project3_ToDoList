@@ -1,16 +1,16 @@
 
-function ListsMenuEvents(ui){
+function ListsMenuEvents(dom){
 
 
     this.load = function(){
 
-        ui.listsMenu.click(function listsMenuClickHandler(){
+        dom.listsMenu.click(function listsMenuClickHandler(){
             setMenuItemClickHandler();
         });
 
 
         function setMenuItemClickHandler(){
-            ui.listsMenuItem.click(function(){
+            dom.listsMenuItem.click(function(){
                 handleViewingSelectedList( $(this).text() );
             });
         }

@@ -1,35 +1,35 @@
 
-function ListContentEvents(ui, uim){
+function ListContentEvents(dom, dm){
 
 
 	this.load = function(){
 
-		ui.itemText.click(function clickItemHandler(){
-			uich.makeClickedItem($(this));
+		dom.itemText.click(function clickItemHandler(){
+			dmch.makeClickedItem($(this));
 		});
 
 
-		ui.itemText.blur(function itemBlurHandler(){
-			uim.saveListItem($(this));
+		dom.itemText.blur(function itemBlurHandler(){
+			dm.saveListItem($(this));
 		});
 
 
-		ui.itemText.hover(function hoverHandler(){
-			uich.toggleHover($(this));
+		dom.itemText.hover(function hoverHandler(){
+			dmch.toggleHover($(this));
 		});
 
 
-		ui.itemText.dblclick(function doubleClickHandler(){
-			uich.handleItemDoubleClick();
+		dom.itemText.dblclick(function doubleClickHandler(){
+			dmch.handleItemDoubleClick();
 		});
 
 
-		ui.removeGlyph.click(function removeListItemHandler(){
-			uich.removeListItem($(this));
+		dom.removeGlyph.click(function removeListItemHandler(){
+			dmch.removeListItem($(this));
 		});
 
 
-		ui.todoCheckbox.click(function checkboxClickHandler(){
+		dom.todoCheckbox.click(function checkboxClickHandler(){
 			var deleteButton = $(this).siblings('span.' + removeGlyphiconClass);
 			if ($(this).prop('checked')){
 				deleteButton.removeClass(invisibleClass);
@@ -40,9 +40,9 @@ function ListContentEvents(ui, uim){
 		});
 
 
-		ui.newListItemForm.submit(function newListItemSubmitHandler(event){
+		dom.newListItemForm.submit(function newListItemSubmitHandler(event){
 			event.preventDefault();
-			uich.handleNewListItemAddition();
+			dmch.handleNewListItemAddition();
 		});
 
 

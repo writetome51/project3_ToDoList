@@ -1,40 +1,40 @@
 
 
-function ElementTextGetterSetter(ui, classes){
+function ElementTextGetterSetter(dom, classes){
 
     this.noListsFound = 'No Lists';
 
 
     this.emptyNewListNameInput = function(){
-        ui.newListName.val('');
+        dom.newListName.val('');
         this.testFunction();
     };
 
 
     this.getLoginValues = function(){
         var values = {};
-        values.username = ui.loginUsername.val();
-        values.password = ui.loginPassword.val();
+        values.username = dom.loginUsername.val();
+        values.password = dom.loginPassword.val();
         return values;
     };
 
 
     this.getNewListName = function(){
-        return ui.newListName.val();
+        return dom.newListName.val();
     };
 
 
     this.getNewAccountValues = function(){
         var values = {};
-        values.username = ui.newUsernameInput.val();
-        values.password1 = ui.newPasswordInput.val();
-        values.password2 = ui.newPassword2Input.val();
+        values.username = dom.newUsernameInput.val();
+        values.password1 = dom.newPasswordInput.val();
+        values.password2 = dom.newPassword2Input.val();
         return values;
     };
 
 
     this.setAppNameHeader = function(){
-        ui.appNameHeader.text(ui.appNameForDisplay);
+        dom.appNameHeader.text(dom.appNameForDisplay);
     };
 
 

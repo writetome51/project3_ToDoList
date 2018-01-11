@@ -1,25 +1,25 @@
 
-function UIControllerHelper(ui, uim){
+function DOMControllerHelper(dom, dm){
 
     var model = new Model();
-    var state = new UIStyleState(ui);
+    var state = new DOMStyleState(dom);
 
 
     this.handleNewListAction = function(){
         model.setCreatingNewList(true);
-        uim.showNewListForm();
+        dm.showNewListForm();
     };
 
 
     this.handleNewListCreation = function(){
-        var newListName = uim.getNewListName();
+        var newListName = dm.getNewListName();
         model.createNewList(newListName);
         model.setCreatingNewList(false);
     };
 
 
     this.handleAccountCreation = function(){
-        var values = uim.getNewAccountValues();
+        var values = dm.getNewAccountValues();
         if  (model.newAccountInfoValid(
                 values.username, values.password1, values.password2
             ))
@@ -29,13 +29,13 @@ function UIControllerHelper(ui, uim){
             );
         }
         else{
-            uim.showAccountCreationUnsuccessful();
+            dm.showAccountCreationUnsuccessful();
         }
     };
 
 
     this.handleLogin = function() {
-        var values = uim.getLoginValues();
+        var values = dm.getLoginValues();
         model.login(values.username, values.password);
         redirectToHome();
     };

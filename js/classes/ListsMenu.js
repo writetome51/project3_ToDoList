@@ -1,9 +1,9 @@
 
-function ListsMenu(uim, model){
+function ListsMenu(dm, model){
 
     this.load = function(){
         var items = model.getUsersListNames();
-        uim.createListsMenuItems(items);
+        dm.createListsMenuItems(items);
     };
 
 

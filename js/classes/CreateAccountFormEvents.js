@@ -1,11 +1,11 @@
 
-function CreateAccountFormEvents(ui, uim){
+function CreateAccountFormEvents(dom, dm){
 
 	this.load = function(){
 
-		ui.createAccountForm.submit(function createAccountSubmitHandler(event){
+		dom.createAccountForm.submit(function createAccountSubmitHandler(event){
 			event.preventDefault();
-			uich.handleAccountCreation();
+			dmch.handleAccountCreation();
 		});
 
 	};

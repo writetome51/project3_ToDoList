@@ -1,6 +1,8 @@
 
 
-function LoggedOutContent(uim){
+function LoggedOutContent(dom){
+
+	var lodm = new LoggedOutDOMManipulator(dom);
 
     this.load = function(){
         this.removeUnnecessaryItems();
@@ -9,15 +11,15 @@ function LoggedOutContent(uim){
 
 
     this.removeUnnecessaryItems = function(){
-        uim.collapseItemsToBeCollapsedWhenLoggedOut();
-        uim.makeInvisibleItemsToBeInvisibleWhenLoggedOut();
+        lodm.collapseItemsToBeCollapsedWhenLoggedOut();
+        lodm.makeInvisibleItemsToBeInvisibleWhenLoggedOut();
     };
 
 
     this.showNecessaryItems = function(){
-        uim.unCollapseItemsToBeUncollapsedWhenLoggedOut();
-        uim.makeVisibleItemsToBeVisibleWhenLoggedOut();
-        uim.setLoggedOutHeader();
+        lodm.unCollapseItemsToBeUncollapsedWhenLoggedOut();
+        lodm.makeVisibleItemsToBeVisibleWhenLoggedOut();
+        lodm.setLoggedOutHeader();
     };
 
 }

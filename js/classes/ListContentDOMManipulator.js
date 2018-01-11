@@ -1,8 +1,8 @@
 
-function ListContentUIManipulator(uim, model){
+function ListContentDOMManipulator(dm, model){
 
     var classes = new CSSClasses();
-    var state = new UIStyleState(ui);
+    var state = new DOMStyleState(dom);
 
 
 	this.removeItem = function(obj){
@@ -18,7 +18,7 @@ function ListContentUIManipulator(uim, model){
 
 
     this.setListNameHeader_sub = function(listName){
-        ui.listNameHeader.text(listName);
+        dom.listNameHeader.text(listName);
     };
 
 
@@ -26,7 +26,7 @@ function ListContentUIManipulator(uim, model){
         if (state.thereIsAClickedItem()){
             this.turnOffClickedBehavior();
         }
-        ui.clickedItem = false;
+        dom.clickedItem = false;
     };
 
 
@@ -38,18 +38,18 @@ function ListContentUIManipulator(uim, model){
 
 
     this.removeClickedClass = function(){
-        ui.clickedItem.removeClass(classes.clicked);
+        dom.clickedItem.removeClass(classes.clicked);
     };
 
 
     this.addNewItemToListOnscreen = function(){
         this.setNewItemText();
-        uim.displayNewItemInList();
+        dm.displayNewItemInList();
     };
 
 
     this.displayNewItemInList = function(){
-        ui.todoList.append(ui.newListItem);
+        dom.todoList.append(dom.newListItem);
     };
 
 
@@ -60,7 +60,7 @@ function ListContentUIManipulator(uim, model){
 
 
     this.makeItemNotEditable = function(){
-        ui.clickedItem.children('.' + classes.itemText)
+        dom.clickedItem.children('.' + classes.itemText)
             .removeAttr('contenteditable');
     };
 
@@ -71,11 +71,11 @@ function ListContentUIManipulator(uim, model){
 
 
     this.setClickedItem = function(obj){
-        ui.itemToHighlight = obj.parent('.' + classes.highlight);
-        ui.clickedItem = ui.itemToHighlight;
-        this.removeHoverClassAndAddClickedClass(ui.clickedItem);
+        dom.itemToHighlight = obj.parent('.' + classes.highlight);
+        dom.clickedItem = dom.itemToHighlight;
+        this.removeHoverClassAndAddClickedClass(dom.clickedItem);
         rr.makeGlyphsVisible();
-        this.makeItemEditable(ui.clickedItem);
+        this.makeItemEditable(dom.clickedItem);
     };
 
 
@@ -86,24 +86,24 @@ function ListContentUIManipulator(uim, model){
 
 
     this.removeHoveredClassFromListItem = function(obj){
-        ui.itemToHighlight = obj.parent('.' + classes.highlight);
-        ui.itemToHighlight.removeClass(classes.hovered);
+        dom.itemToHighlight = obj.parent('.' + classes.highlight);
+        dom.itemToHighlight.removeClass(classes.hovered);
     };
 
 
     this.addHoveredClassToListItem = function(obj){
-        ui.itemToHighlight = obj.parent('.' + classes.highlight);
-        ui.itemToHighlight.addClass(classes.hovered);
+        dom.itemToHighlight = obj.parent('.' + classes.highlight);
+        dom.itemToHighlight.addClass(classes.hovered);
     };
 
 
     this.setNewItemText = function(){
-        ui.newItemText = ui.newListItemTextInput.val();
+        dom.newItemText = dom.newListItemTextInput.val();
     };
 
 
     this.getNewItemText = function(){
-        return ui.newItemText;
+        return dom.newItemText;
     };
 
 
@@ -114,11 +114,11 @@ function ListContentUIManipulator(uim, model){
 
     this.setNewListItem = function(){
 
-		ui.newListItem = "<li class='" + classes.listItem + "'  draggable='true'>" +
+		dom.newListItem = "<li class='" + classes.listItem + "'  draggable='true'>" +
 			"<input type='checkbox' class='" + classes.itemCheckbox + "'  " +
 			"title='Check box to mark item done, or to perform action on item'>" +
 			"<span class='" + classes.highlight + "'> <span class='" +
-			classes.itemText + "'>" + ui.newItemText + "</span><span " +
+			classes.itemText + "'>" + dom.newItemText + "</span><span " +
 			"class='glyphicon " + classes.removeGlyphicon + "  " +
 			classes.invisible + "'></span></span></li>";
 

@@ -4,39 +4,39 @@ function ListContentEventsHelper(){
 
 	this.makeClickedItem = function(obj){
 		if (state.listItemIsNotClicked(obj)){
-			uim.undoClickedItem();
-			uim.setClickedItem(obj);
+			dm.undoClickedItem();
+			dm.setClickedItem(obj);
 		}
 	};
 
 
 	this.toggleHover = function(obj){
 		if (state.hasHoveredClass(obj)){
-			uim.removeHoveredClassFromListItem(obj);
+			dm.removeHoveredClassFromListItem(obj);
 		}
 		else if (state.notHoveredAndNotClicked(obj)){
-			uim.addHoveredClassToListItem(obj);
+			dm.addHoveredClassToListItem(obj);
 		}
 	};
 
 
 	this.handleItemDoubleClick = function(obj){
 		if (state.listItemIsAlreadyClicked(obj)){
-			uim.undoClickedItem();
+			dm.undoClickedItem();
 		}
 	};
 
 
 	this.removeListItem = function(removeGlyph){
-		var listItem = uim.getEntireListItem(removeGlyph);
-		model.removeItemFromSavedList( uim.getItemText(listItem) );
-		uim.removeItem(listItem);
+		var listItem = dm.getEntireListItem(removeGlyph);
+		model.removeItemFromSavedList( dm.getItemText(listItem) );
+		dm.removeItem(listItem);
 	};
 
 
 	this.handleNewListItemAddition = function(){
-		uim.addNewItemToListOnscreen();
-		model.saveListItem(uim.getNewItemText());
+		dm.addNewItemToListOnscreen();
+		model.saveListItem(dm.getNewItemText());
 	};
 
 }

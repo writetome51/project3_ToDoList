@@ -1,5 +1,5 @@
 
-function ListsMenuUIManipulator(uim, model){
+function ListsMenuDOMManipulator(dm, model){
 
 
     this.createListsMenuItems = function(items){
@@ -9,18 +9,18 @@ function ListsMenuUIManipulator(uim, model){
 
 
     this.setListsMenuItem = function(){
-        ui.listsMenuItem = $('.' + classes.listsMenuItem);
+        dom.listsMenuItem = $('.' + classes.listsMenuItem);
     };
 
 
     this.showListsMenuItems = function(){
-        rr.unCollapse( ui.listsMenuItem);
+        rr.unCollapse( dom.listsMenuItem);
     };
 
 
     this.createListsMenuItems_sub = function(items){
         var innerHtml = this.createListsMenuItemsHTML(items);
-        ui.listsMenuItems.html(innerHtml);
+        dom.listsMenuItems.html(innerHtml);
     };
 
 

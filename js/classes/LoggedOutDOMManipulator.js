@@ -1,11 +1,11 @@
 
 
-function LoggedOutUIManipulator(ui){
+function LoggedOutDOMManipulator(dom){
 
     var egs = new ElementTextGetterSetter();
 
     this.setLoggedOutHeader = function(){
-        ui.appNameHolder.addClass(classes.welcomeToAppName);
+        dom.appNameHolder.addClass(classes.welcomeToAppName);
         egs.setAppNameHeader();
     };
 
@@ -31,12 +31,12 @@ function LoggedOutUIManipulator(ui){
 
 
     this.unCollapseLoginAndCreateAccountLinks = function(){
-        rr.unCollapse(ui.loginAndCreateAccountLinks);
+        rr.unCollapse(dom.loginAndCreateAccountLinks);
     };
 
 
     this.showAccountCreationUnsuccessful = function(){
-        rr.unCollapse(ui.accountCreationUnsuccessful);
+        rr.unCollapse(dom.accountCreationUnsuccessful);
     };
 
 }

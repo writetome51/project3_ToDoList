@@ -4,12 +4,12 @@ function ListContent(listName){
     var model = new Model();
     model.setActiveList(listName);
 
-    var lcuim = new ListContentUIManipulator(model);
+    var lcdm = new ListContentDOMManipulator(model);
 
 
     this.load = function(){
 
-        lcuim.setListNameHeader();
+        lcdm.setListNameHeader();
 
 
     };

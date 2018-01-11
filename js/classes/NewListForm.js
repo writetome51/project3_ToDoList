@@ -1,14 +1,14 @@
 
-function NewListForm(ui){
+function NewListForm(dom){
 
     this.load = function(){
         this.showNecessaryItemsWhenCreatingList();
-        uim.collapseUnnecessaryItemsWhenCreatingList();
+        dm.collapseUnnecessaryItemsWhenCreatingList();
     };
 
 
     this.removeUnnecessaryItemsWhenCreatingList = function(){
-        uim.collapseUnnecessaryItemsWhenCreatingList();
+        dm.collapseUnnecessaryItemsWhenCreatingList();
     };
 
 

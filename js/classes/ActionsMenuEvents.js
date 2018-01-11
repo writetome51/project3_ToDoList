@@ -1,10 +1,10 @@
 
-function ActionsMenuEvents(ui, uim){
+function ActionsMenuEvents(dom, dm){
 
 	this.load = function(){
 
-		ui.newListAction.click(function newListActionClickHandler(){
-			uich.handleNewListAction();
+		dom.newListAction.click(function newListActionClickHandler(){
+			dmch.handleNewListAction();
 		});
 
 	};

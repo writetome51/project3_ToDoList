@@ -1,4 +1,4 @@
-function UI(){
+function DOM(){
 
     var classes = new CSSClasses();
     var ids = new IDs();

@@ -1,5 +1,5 @@
 
-function ActionsMenu(ui, uim){
+function ActionsMenu(dom, dm){
 
 	this.load = function(){};
 
