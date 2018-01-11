@@ -47,18 +47,6 @@ function Model(){
     };
 
 
-    this.loggedOut = function(){
-        return (!this.loggedIn());
-    };
-
-
-    this.loggedIn = function(){
-        var sessionData = sessionStorage.getItem(this.sessionKeyLoggedInUser);
-        if ( ! sessionData){ return false;}
-        else return true;
-    };
-
-
     this.createNewList = function(listName){
         var listsBeingModified = this.getUsersLists();
         listsBeingModified[listName] = [];
@@ -117,14 +105,6 @@ function Model(){
     };
 
 
-    this.noActiveList = function(){
-        if ( ! this.getActiveList()){
-            return true;
-        }
-        else return false;
-    };
-
-
     this.getActiveListName = function(){
         var obj = this.getActiveList();
         if (!obj){
@@ -153,14 +133,6 @@ function Model(){
 
     this.getCreatingNewList = function(){
         return sessionStorage.getItem(this.sessionKeyCreatingNewList);
-    };
-
-
-    this.creatingNewList = function(){
-        if ( ! this.getCreatingNewList()){
-            return false;
-        }
-        else return true;
     };
 
 

@@ -5,7 +5,7 @@ function LoggedInContent(dom,  model){
 	var lidm = new LoggedInDOMManipulator(dom);
 
     var lm = new ListsMenu(lidm, model);
-    var lc = new ListContent(lidm, model);
+    var lc = new ListContent();
 
 
     this.load = function(){
@@ -18,7 +18,7 @@ function LoggedInContent(dom,  model){
         lidm.setLoggedInHeader();
         this.showContentNotSeenWhenLoggedOut();
         lm.load();
-        lc.setListNameHeader();
+        lc.load();
 
         if (model.creatingNewList() || model.userHasNoLists()){
 			(new NewListForm(dom)).load();

@@ -1,8 +1,6 @@
 
 function DOMController(dom, dm){
 
-    var dmch = new DOMControllerHelper(dom, dm);
-
     this.loadEvents = function(){
 
 		(new CreateAccountFormEvents(dom, dm)).load();
@@ -14,6 +12,5 @@ function DOMController(dom, dm){
 		(new ListContentEvents(dom, dm)).load();
 
     };
-
 
 }
