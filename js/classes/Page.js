@@ -2,8 +2,7 @@
 function Page(){
 
     var dom = new DOM();
-    var dm = new DOMManipulator(dom);
-    var dc = new DOMController(dom, dm);
+    var dc = new DOMController(dom);
     var cm = new ContentManager(dom);
 
     this.load = function(){

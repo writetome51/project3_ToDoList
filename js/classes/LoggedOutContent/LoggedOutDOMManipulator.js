@@ -2,7 +2,10 @@
 
 function LoggedOutDOMManipulator(dom){
 
-    var egs = new ElementTextGetterSetter();
+	var classes = new CSSClasses();
+    var egs = new ElementTextGetterSetter(dom, classes);
+    var rr = new ElementRemoverRevealer(dom, classes);
+
 
     this.setLoggedOutHeader = function(){
         dom.appNameHolder.addClass(classes.welcomeToAppName);

@@ -1,4 +1,4 @@
-function LoginFormDOMManipulator(dom, dm) {
+function LoginLogoutDOMManipulator(dom, dm) {
 
 	this.getLoginValues = function () {
 		return eGetterSetter.getLoginValues();

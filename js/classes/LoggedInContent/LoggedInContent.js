@@ -1,9 +1,9 @@
 
 
-function LoggedInContent(dom,  model){
+function LoggedInContent(dom){
 
 	var lidm = new LoggedInDOMManipulator(dom);
-
+	var model = new Model();
     var lm = new ListsMenu(lidm, model);
     var lc = new ListContent();
 

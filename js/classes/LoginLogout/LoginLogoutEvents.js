@@ -1,5 +1,5 @@
 
-function LoginLogoutEvents(dom, dm){
+function LoginLogoutEvents(dom){
 
     var dmch = new DOMControllerHelper(dom, dm);
 
