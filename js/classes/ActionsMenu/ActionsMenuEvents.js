@@ -3,10 +3,10 @@ function ActionsMenuEvents(dom, dm){
 
 	this.load = function(){
 
-		var dmch = new DOMControllerHelper(dom, dm);
+		var eh = new NewListFormEventsHelper(dom);
 
 		dom.newListAction.click(function newListActionClickHandler(){
-			dmch.handleNewListAction();
+			eh.handleNewListAction();
 		});
 
 	};

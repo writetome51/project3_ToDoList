@@ -1,7 +1,10 @@
-function LoginLogoutDOMManipulator(dom, dm) {
+function LoginLogoutDOMManipulator(dom) {
 
 	this.getLoginValues = function () {
-		return eGetterSetter.getLoginValues();
+		var values = {};
+		values.username = dom.loginUsername.val();
+		values.password = dom.loginPassword.val();
+		return values;
 	};
 
 }

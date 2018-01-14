@@ -1,6 +1,6 @@
 
 
-function ElementTextGetterSetter(dom, classes){
+function ElementTextGetterSetter(dom){
 
     this.noListsFound = 'No Lists';
 
@@ -8,14 +8,6 @@ function ElementTextGetterSetter(dom, classes){
     this.emptyNewListNameInput = function(){
         dom.newListName.val('');
         this.testFunction();
-    };
-
-
-    this.getLoginValues = function(){
-        var values = {};
-        values.username = dom.loginUsername.val();
-        values.password = dom.loginPassword.val();
-        return values;
     };
 
 

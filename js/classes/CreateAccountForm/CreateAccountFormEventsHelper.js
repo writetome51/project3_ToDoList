@@ -1,6 +1,9 @@
 
 function CreateAccountFormEventsHelper(dom, dm){
 
+	var eh = new BaseEventsHelper();
+	var model = new Model();
+
 	this.handleAccountCreation = function(){
 		var values = dm.getNewAccountValues();
 		if  (model.newAccountInfoValid(
@@ -20,13 +23,8 @@ function CreateAccountFormEventsHelper(dom, dm){
 	this.createAccountLoginAndRedirectToHome = function(username, password){
 		model.createAccount(username, password);
 		model.login(username, password);
-		redirectToHome();
+		eh.redirectToHome();
 	};
-
-
-	function redirectToHome(){
-		location.replace('index.html');
-	}
 
 
 }

@@ -1,11 +1,13 @@
 
 function CreateAccountFormEvents(dom, dm){
 
+	var helper = new CreateAccountFormEventsHelper();
+
 	this.load = function(){
 
 		dom.createAccountForm.submit(function createAccountSubmitHandler(event){
 			event.preventDefault();
-			dmch.handleAccountCreation();
+			helper.handleAccountCreation();
 		});
 
 	};

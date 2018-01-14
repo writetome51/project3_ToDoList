@@ -1,15 +1,18 @@
-function LoginLogoutEventsHelper(dom, dm) {
+function LoginLogoutEventsHelper(dom) {
+
+	var dm = new LoginLogoutDOMManipulator();
+	var eh = new BaseEventsHelper();
 
 	this.handleLogin = function() {
 		var values = dm.getLoginValues();
 		model.login(values.username, values.password);
-		redirectToHome();
+		eh.redirectToHome();
 	};
 
 
 	this.handleLogout = function() {
 		model.logout();
-		redirectToHome();
+		eh.redirectToHome();
 	};
 
 }

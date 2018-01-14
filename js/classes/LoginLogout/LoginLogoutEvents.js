@@ -1,18 +1,18 @@
 
 function LoginLogoutEvents(dom){
 
-    var dmch = new DOMControllerHelper(dom, dm);
+    var eh = new LoginLogoutEventsHelper(dom);
 
     this.load = function(){
 
         dom.loginForm.submit(function loginSubmitHandler(event){
             event.preventDefault();
-            dmch.handleLogin();
+            eh.handleLogin();
         });
 
 
         dom.logoutLink.click(function logoutLinkHandler(){
-            dmch.handleLogout();
+            eh.handleLogout();
         });
 
     };
