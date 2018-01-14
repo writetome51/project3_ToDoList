@@ -8,19 +8,19 @@ function ListsMenuDOMManipulator(dm, model){
     };
 
 
-    this.setListsMenuItem = function(){
+	this.createListsMenuItems_sub = function(items){
+		var innerHtml = this.createListsMenuItemsHTML(items);
+		dom.listsMenuItems.html(innerHtml);
+	};
+
+
+	this.setListsMenuItem = function(){
         dom.listsMenuItem = $('.' + classes.listsMenuItem);
     };
 
 
     this.showListsMenuItems = function(){
         rr.unCollapse( dom.listsMenuItem);
-    };
-
-
-    this.createListsMenuItems_sub = function(items){
-        var innerHtml = this.createListsMenuItemsHTML(items);
-        dom.listsMenuItems.html(innerHtml);
     };
 
 

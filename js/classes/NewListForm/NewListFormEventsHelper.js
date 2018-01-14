@@ -1,5 +1,5 @@
 
-function NewListFormEventsHelper(dom){
+function NewListFormEventsHelper(){
 
 	this.handleNewListAction = function(){
 		model.setCreatingNewList(true);

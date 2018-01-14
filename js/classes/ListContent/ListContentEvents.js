@@ -1,6 +1,7 @@
 
-function ListContentEvents(dom, dm){
+function ListContentEvents(){
 
+	var eh = new ListContentEventsHelper();
 
 	this.load = function(){
 

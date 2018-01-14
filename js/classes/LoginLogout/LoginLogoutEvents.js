@@ -1,6 +1,7 @@
 
-function LoginLogoutEvents(dom){
+function LoginLogoutEvents(){
 
+	var dom = new LoginLogoutDOM();
     var eh = new LoginLogoutEventsHelper(dom);
 
     this.load = function(){

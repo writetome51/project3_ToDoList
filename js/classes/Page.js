@@ -1,9 +1,8 @@
 
 function Page(){
 
-    var dom = new DOM();
-    var dc = new DOMController(dom);
-    var cm = new ContentManager(dom);
+    var dc = new DOMController();
+    var cm = new ContentManager();
 
     this.load = function(){
         cm.setContent();

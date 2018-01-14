@@ -1,6 +1,6 @@
 function LoginLogoutEventsHelper(dom) {
 
-	var dm = new LoginLogoutDOMManipulator();
+	var dm = new LoginLogoutDOMManipulator(dom);
 	var eh = new BaseEventsHelper();
 
 	this.handleLogin = function() {

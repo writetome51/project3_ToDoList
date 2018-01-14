@@ -1,5 +1,7 @@
 
-function ListsMenuEvents(dom){
+function ListsMenuEvents(){
+
+	var dom = new ListsMenuDOM();
 
 
     this.load = function(){

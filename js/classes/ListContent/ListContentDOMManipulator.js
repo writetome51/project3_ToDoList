@@ -1,5 +1,5 @@
 
-function ListContentDOMManipulator(dm, model){
+function ListContentDOMManipulator(){
 
     var classes = new CSSClasses();
     var state = new DOMStyleState(dom);
@@ -10,14 +10,7 @@ function ListContentDOMManipulator(dm, model){
 	};
 
 
-    this.setListNameHeader = function(){
-        var listName = model.getActiveListName();
-        if (!listName) listName = 'Choose a list from the Lists menu';
-        this.setListNameHeader_sub(listName);
-    };
-
-
-    this.setListNameHeader_sub = function(listName){
+    this.setListNameHeader = function(listName){
         dom.listNameHeader.text(listName);
     };
 
@@ -44,7 +37,7 @@ function ListContentDOMManipulator(dm, model){
 
     this.addNewItemToListOnscreen = function(){
         this.setNewItemText();
-        dm.displayNewItemInList();
+        this.displayNewItemInList();
     };
 
 
