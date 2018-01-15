@@ -1,7 +1,8 @@
 
-function CreateAccountFormEvents(dom, dm){
+function CreateAccountFormEvents(){
 
-	var helper = new CreateAccountFormEventsHelper();
+	var dom = new CreateAccountFormDOM();
+	var helper = new CreateAccountFormEventsHelper(dom);
 
 	this.load = function(){
 

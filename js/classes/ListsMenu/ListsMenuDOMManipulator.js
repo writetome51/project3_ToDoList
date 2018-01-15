@@ -1,6 +1,8 @@
 
-function ListsMenuDOMManipulator(dm, model){
+function ListsMenuDOMManipulator(dom){
 
+	var classes = new CSSClasses();
+	var ids = new IDs();
 
     this.createListsMenuItems = function(items){
         this.createListsMenuItems_sub(items);
@@ -25,8 +27,8 @@ function ListsMenuDOMManipulator(dm, model){
 
 
     this.createListsMenuItemsHTML = function(items){
-        if (items === []){
-            return '<li id="no-lists-found">' + this.noListsFound  + '</li>';
+        if (items === [] || items.length === 0){
+        	return ('<li id="no-lists-found">' + dom.noListsFound  + '</li>');
         }
         for (var item=0, html='';  item < items.length;  ++item){
             html += '<li><a class="' + classes.listsMenuItem +

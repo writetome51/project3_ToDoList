@@ -1,13 +1,25 @@
 
 
-function LoggedInDOMManipulator(dom){
+function LoggedInDOMManipulator(){
 
     var classes = new CSSClasses();
 
-    var rr = new ElementRemoverRevealer(dom, classes);
-    var egs = new ElementTextGetterSetter(dom, classes);
+    var rr = new ElementRemoverRevealer();
+    var navbar_dm = new NavbarDOMManipulator();
 
-    this.removeUnnecessaryItemsWhenLoggedIn = function(){
+
+    this.setLoggedInHeader = function(){
+    	navbar_dm.setLoggedInHeader();
+	};
+
+
+	this.showContentNotSeenWhenLoggedOut = function(){
+		this.uncollapseItemsToBeUncollapsedWhenLoggedIn();
+		this.makeVisibleItemsToBeVisibleWhenLoggedIn();
+	};
+
+
+	this.removeUnnecessaryItemsWhenLoggedIn = function(){
         rr.collapse( $('.' + classes.collapseWhenLoggedIn) );
         rr.makeInvisible( $('.' + classes.invisibleWhenLoggedIn) );
     };
@@ -20,12 +32,6 @@ function LoggedInDOMManipulator(dom){
 
     this.makeVisibleItemsToBeVisibleWhenLoggedIn = function(){
         rr.makeVisible( $('.' + classes.invisibleWhenLoggedOut) );
-    };
-
-
-    this.setLoggedInHeader = function(){
-        dom.appNameHolder.removeClass(classes.welcomeToAppName);
-        egs.setAppNameHeader();
     };
 
 

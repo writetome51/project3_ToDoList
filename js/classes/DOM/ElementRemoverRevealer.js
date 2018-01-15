@@ -1,6 +1,8 @@
 
 
-function ElementRemoverRevealer(dom, classes){
+function ElementRemoverRevealer(){
+
+	var classes = new CSSClasses();
 
     this.collapse = function(obj){
         obj.addClass(classes.invisibleCollapsed);
@@ -20,27 +22,6 @@ function ElementRemoverRevealer(dom, classes){
     this.makeVisible = function(obj){
         obj.removeClass(classes.invisible);
     };
-
-
-    this.makeGlyphsVisible = function(){
-        this.makeRemoveGlyphVisible(dom.clickedItem);
-    };
-
-
-    this.makeRemoveGlyphVisible = function(obj){
-        this.makeVisible( obj.find('.' + classes.removeGlyphicon) );
-    };
-
-
-    this.makeGlyphsInvisible = function(){
-        this.makeRemoveGlyphInvisible(dom.clickedItem);
-    };
-
-
-    this.makeRemoveGlyphInvisible = function(obj){
-        this.makeInvisible( obj.find('.' + classes.removeGlyphicon) );
-    };
-
 
 
 }

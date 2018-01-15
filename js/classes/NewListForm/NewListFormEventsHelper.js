@@ -1,16 +1,15 @@
 
-function NewListFormEventsHelper(){
+function NewListFormEventsHelper(dom){
 
-	this.handleNewListAction = function(){
-		model.setCreatingNewList(true);
-		dm.showNewListForm();
-	};
+	var model = new Model();
+	var dm = new NewListFormDOMManipulator(dom);
 
 
 	this.handleNewListCreation = function(){
 		var newListName = dm.getNewListName();
 		model.createNewList(newListName);
 		model.setCreatingNewList(false);
+		(new ListContent(newListName)).load();
 	};
     
 

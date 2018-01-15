@@ -1,12 +1,13 @@
 
 function ListContentEvents(){
 
-	var eh = new ListContentEventsHelper();
+	var dom = new ListContentDOM();
+	var eh = new ListContentEventsHelper(dom);
 
 	this.load = function(){
 
 		dom.itemText.click(function clickItemHandler(){
-			dmch.makeClickedItem($(this));
+			eh.makeClickedItem($(this));
 		});
 
 
@@ -16,17 +17,17 @@ function ListContentEvents(){
 
 
 		dom.itemText.hover(function hoverHandler(){
-			dmch.toggleHover($(this));
+			eh.toggleHover($(this));
 		});
 
 
 		dom.itemText.dblclick(function doubleClickHandler(){
-			dmch.handleItemDoubleClick();
+			eh.handleItemDoubleClick();
 		});
 
 
 		dom.removeGlyph.click(function removeListItemHandler(){
-			dmch.removeListItem($(this));
+			eh.removeListItem($(this));
 		});
 
 
@@ -43,7 +44,7 @@ function ListContentEvents(){
 
 		dom.newListItemForm.submit(function newListItemSubmitHandler(event){
 			event.preventDefault();
-			dmch.handleNewListItemAddition();
+			eh.handleNewListItemAddition();
 		});
 
 

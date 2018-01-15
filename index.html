@@ -118,7 +118,8 @@
     <!--  Main Body -->
     <div id="todos-body" class="container-fluid">
 
-        <div id="list-content"  class="invisible-and-collapsed  collapse-when-logged-out">
+        <div id="list-content"  class="invisible-and-collapsed
+        collapse-when-logged-out  collapse-when-creating-list">
 
             <header id="list-name-header"></header>
 
@@ -146,7 +147,7 @@
 
 
         <form id="new-list-form"
-            class="invisible-and-collapsed  collapse-when-logged-out">
+            class="invisible-and-collapsed  show-when-creating-list">
 
             <div class="navbar-div">
                 <input type="text"  id="new-list-name"  class="form-control"
@@ -176,24 +177,32 @@
 <script src="js/classes/Model/ModelValidator.js"></script>
 <script src="js/classes/Model/Model.js"></script>
 <script src="js/classes/Model/AppState.js"></script>
+<script src="js/classes/DOM/CSSClasses.js"></script>
 <script src="js/classes/DOM/IDs.js"></script>
 <script src="js/classes/ActionsMenu/ActionsMenu.js"></script>
+<script src="js/classes/ActionsMenu/ActionsMenuEventsHelper.js"></script>
 <script src="js/classes/ActionsMenu/ActionsMenuEvents.js"></script>
+<script src="js/classes/ActionsMenu/ActionsMenuDOM.js"></script>
+<script src="js/classes/CreateAccountForm/CreateAccountFormDOM.js"></script>
+<script src="js/classes/CreateAccountForm/CreateAccountFormDOMManipulator.js"></script>
 <script src="js/classes/CreateAccountForm/CreateAccountForm.js"></script>
 <script src="js/classes/CreateAccountForm/CreateAccountFormEventsHelper.js"></script>
 <script src="js/classes/CreateAccountForm/CreateAccountFormEvents.js"></script>
-<script src="js/classes/DOM/CSSClasses.js"></script>
-<script src="js/classes/NavbarDOM.js"></script>
-<script src="js/classes/DOM/DOMStyleState.js"></script>
+<script src="js/classes/Navbar/NavbarDOM.js"></script>
+<script src="js/classes/Navbar/NavbarDOMManipulator.js"></script>
+<script src="js/classes/ListContent/ListContentStyleState.js"></script>
 <script src="js/classes/DOM/ElementRemoverRevealer.js"></script>
-<script src="js/classes/DOM/ElementTextGetterSetter.js"></script>
 <script src="js/classes/ListsMenu/ListsMenu.js"></script>
 <script src="js/classes/ListsMenu/ListsMenuEvents.js"></script>
+<script src="js/classes/ListsMenu/ListsMenuDOM.js"></script>
 <script src="js/classes/ListsMenu/ListsMenuDOMManipulator.js"></script>
 <script src="js/classes/ListContent/ListContent.js"></script>
 <script src="js/classes/ListContent/ListContentEvents.js"></script>
 <script src="js/classes/ListContent/ListContentEventsHelper.js"></script>
+<script src="js/classes/ListContent/ListContentDOM.js"></script>
 <script src="js/classes/ListContent/ListContentDOMManipulator.js"></script>
+<script src="js/classes/NewListForm/NewListFormDOM.js"></script>
+<script src="js/classes/NewListForm/NewListFormDOMManipulator.js"></script>
 <script src="js/classes/NewListForm/NewListFormEventsHelper.js"></script>
 <script src="js/classes/NewListForm/NewListFormEvents.js"></script>
 <script src="js/classes/NewListForm/NewListForm.js"></script>

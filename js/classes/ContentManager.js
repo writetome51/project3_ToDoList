@@ -1,14 +1,15 @@
 
-function ContentManager(dom){
+function ContentManager(){
 
-    var appState = new AppState();
+	var model = new Model();
+    var appState = new AppState(model);
 
     this.setContent = function(){
         if (appState.loggedOut()){
-            (new LoggedOutContent(dom)).load();
+            (new LoggedOutContent()).load();
         }
         else{
-            (new LoggedInContent(dom)).load();
+            (new LoggedInContent()).load();
         }
     };
 

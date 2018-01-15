@@ -1,10 +1,11 @@
 
 
-function LoggedInContent(dom){
+function LoggedInContent(){
 
-	var lidm = new LoggedInDOMManipulator(dom);
+	var lidm = new LoggedInDOMManipulator();
 	var model = new Model();
-    var lm = new ListsMenu(lidm, model);
+	var state = new AppState(model);
+    var lm = new ListsMenu(model);
     var lc = new ListContent();
 
 
@@ -15,21 +16,23 @@ function LoggedInContent(dom){
 
 
     this.showNecessaryItems = function(){
-        lidm.setLoggedInHeader();
-        this.showContentNotSeenWhenLoggedOut();
+        lidm.showContentNotSeenWhenLoggedOut();
+		lidm.setLoggedInHeader();
         lm.load();
-        lc.load();
 
-        if (model.creatingNewList() || model.userHasNoLists()){
-			(new NewListForm(dom)).load();
+        if (state.creatingNewList() || model.userHasNoLists()){
+			(new NewListForm()).load();
         }
+        else{
+			lc.load();
+		}
     };
 
 
     this.removeUnnecessaryItems = function(){
         lidm.removeUnnecessaryItemsWhenLoggedIn();
 
-        if ( ! model.creatingNewList()){
+        if ( ! state.creatingNewList()){
             this.removeUnnecessaryItemsWhenNotCreatingList();
         }
         else{
@@ -38,10 +41,6 @@ function LoggedInContent(dom){
     };
 
 
-    this.showContentNotSeenWhenLoggedOut = function(){
-        lidm.uncollapseItemsToBeUncollapsedWhenLoggedIn();
-        lidm.makeVisibleItemsToBeVisibleWhenLoggedIn();
-    };
 
 
     this.removeUnnecessaryItemsWhenNotCreatingList = function(){

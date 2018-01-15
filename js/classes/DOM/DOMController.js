@@ -1,17 +1,19 @@
 
-function DOMController(dom){
+function DOMController(){
 
     this.loadEvents = function(){
 
-		(new LoginLogoutEvents(dom)).load();
+		(new LoginLogoutEvents()).load();
 
-		(new CreateAccountFormEvents(dom)).load();
+		(new CreateAccountFormEvents()).load();
 
-		(new ActionsMenuEvents(dom)).load();
+		(new ActionsMenuEvents()).load();
 
-        (new ListsMenuEvents(dom)).load();
+        (new ListsMenuEvents()).load();
 
-		(new ListContentEvents(dom)).load();
+		(new ListContentEvents()).load();
+
+		(new NewListFormEvents()).load();
 
     };
 

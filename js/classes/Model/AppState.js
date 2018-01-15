@@ -1,7 +1,6 @@
 
-function AppState(){
+function AppState(model){
 
-	var model = new Model();
 
 	this.loggedOut = function(){
 		return (!this.loggedIn());
@@ -24,7 +23,8 @@ function AppState(){
 
 
 	this.creatingNewList = function(){
-		if ( ! model.getCreatingNewList()){
+		if ( model.getCreatingNewList() === 'false' ||
+			! model.getCreatingNewList()){
 			return false;
 		}
 		else return true;

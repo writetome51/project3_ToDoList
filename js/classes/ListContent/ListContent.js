@@ -1,12 +1,15 @@
 
 function ListContent(listName){
 
-	listName = listName || null;
+	var model = new Model();
 
-    var model = new Model();
+	listName = listName || model.getActiveListName();
+
     model.setActiveList(listName);
 
-    var dm = new ListContentDOMManipulator();
+    var dom = new ListContentDOM();
+
+    var dm = new ListContentDOMManipulator(dom);
 
 
     this.load = function(){

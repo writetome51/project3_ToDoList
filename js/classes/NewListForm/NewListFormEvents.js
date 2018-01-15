@@ -1,11 +1,18 @@
 
-function NewListFormEvents(dom){
+function NewListFormEvents(){
+
+	var dom = new NewListFormDOM();
+	var eh = new NewListFormEventsHelper(dom);
 
 
-	dom.newListForm.submit(function newListSubmitHandler(event){
-		event.preventDefault();
-		dmch.handleNewListCreation();
-	});
-    
+	this.load = function(){
+
+		dom.newListForm.submit(function newListSubmitHandler(event){
+			event.preventDefault();
+			eh.handleNewListCreation();
+		});
+
+	};
+
 
 }

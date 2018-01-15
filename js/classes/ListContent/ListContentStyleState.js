@@ -1,5 +1,5 @@
 
-function DOMStyleState(dom){
+function ListContentStyleState(dom){
 
     var classes = new CSSClasses();
 

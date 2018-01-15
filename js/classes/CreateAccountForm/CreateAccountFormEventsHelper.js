@@ -1,6 +1,7 @@
 
-function CreateAccountFormEventsHelper(dom, dm){
+function CreateAccountFormEventsHelper(dom){
 
+	var dm = new CreateAccountFormDOMManipulator(dom);
 	var eh = new BaseEventsHelper();
 	var model = new Model();
 

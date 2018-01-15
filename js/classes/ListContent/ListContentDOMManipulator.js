@@ -1,8 +1,9 @@
 
-function ListContentDOMManipulator(){
+function ListContentDOMManipulator(dom){
 
     var classes = new CSSClasses();
-    var state = new DOMStyleState(dom);
+    var state = new ListContentStyleState(dom);
+    var rr = new ElementRemoverRevealer();
 
 
 	this.removeItem = function(obj){
@@ -25,7 +26,7 @@ function ListContentDOMManipulator(){
 
     this.turnOffClickedBehavior = function(){
         this.removeClickedClass();
-        rr.makeGlyphsInvisible();
+        this.makeGlyphsInvisible();
         this.makeItemNotEditable();
     };
 
@@ -115,6 +116,26 @@ function ListContentDOMManipulator(){
 			"class='glyphicon " + classes.removeGlyphicon + "  " +
 			classes.invisible + "'></span></span></li>";
 
+	};
+
+
+	this.makeGlyphsVisible = function(){
+		this.makeRemoveGlyphVisible(dom.clickedItem);
+	};
+
+
+	this.makeRemoveGlyphVisible = function(obj){
+		rr.makeVisible( obj.find('.' + classes.removeGlyphicon) );
+	};
+
+
+	this.makeGlyphsInvisible = function(){
+		this.makeRemoveGlyphInvisible(dom.clickedItem);
+	};
+
+
+	this.makeRemoveGlyphInvisible = function(obj){
+		rr.makeInvisible( obj.find('.' + classes.removeGlyphicon) );
 	};
 
 

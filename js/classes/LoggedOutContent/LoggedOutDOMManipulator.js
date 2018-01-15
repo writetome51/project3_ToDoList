@@ -3,14 +3,8 @@
 function LoggedOutDOMManipulator(dom){
 
 	var classes = new CSSClasses();
-    var egs = new ElementTextGetterSetter(dom, classes);
     var rr = new ElementRemoverRevealer(dom, classes);
-
-
-    this.setLoggedOutHeader = function(){
-        dom.appNameHolder.addClass(classes.welcomeToAppName);
-        egs.setAppNameHeader();
-    };
+    var navbar = new NavbarDOMManipulator();
 
 
     this.collapseItemsToBeCollapsedWhenLoggedOut = function(){
@@ -19,7 +13,7 @@ function LoggedOutDOMManipulator(dom){
 
 
     this.unCollapseItemsToBeUncollapsedWhenLoggedOut =  function(){
-        this.unCollapseLoginAndCreateAccountLinks();
+        navbar.unCollapseLoginAndCreateAccountLinks();
     };
 
 
@@ -33,13 +27,9 @@ function LoggedOutDOMManipulator(dom){
     };
 
 
-    this.unCollapseLoginAndCreateAccountLinks = function(){
-        rr.unCollapse(dom.loginAndCreateAccountLinks);
-    };
+    this.setLoggedOutHeader = function(){
+		navbar.setLoggedOutHeader();
+	};
 
-
-    this.showAccountCreationUnsuccessful = function(){
-        rr.unCollapse(dom.accountCreationUnsuccessful);
-    };
 
 }

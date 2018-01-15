@@ -5,7 +5,7 @@ function ActionsMenuEvents(){
 
 	this.load = function(){
 
-		var eh = new NewListFormEventsHelper(dom);
+		var eh = new ActionsMenuEventsHelper(dom);
 
 		dom.newListAction.click(function newListActionClickHandler(){
 			eh.handleNewListAction();

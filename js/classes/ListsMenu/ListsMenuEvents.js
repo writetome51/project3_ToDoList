@@ -2,6 +2,7 @@
 function ListsMenuEvents(){
 
 	var dom = new ListsMenuDOM();
+	var dm = new ListsMenuDOMManipulator(dom);
 
 
     this.load = function(){
@@ -12,6 +13,7 @@ function ListsMenuEvents(){
 
 
         function setMenuItemClickHandler(){
+        	dm.setListsMenuItem();
             dom.listsMenuItem.click(function(){
                 handleViewingSelectedList( $(this).text() );
             });
