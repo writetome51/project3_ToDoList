@@ -31,6 +31,13 @@ function ListContentEvents(){
 		});
 
 
+		dom.newListItemForm.submit(function newListItemSubmitHandler(event){
+			event.preventDefault();
+			eh.handleNewListItemAddition();
+		});
+
+
+/**************
 		dom.todoCheckbox.click(function checkboxClickHandler(){
 			var deleteButton = $(this).siblings('span.' + removeGlyphiconClass);
 			if ($(this).prop('checked')){
@@ -40,12 +47,9 @@ function ListContentEvents(){
 				deleteButton.addClass(invisibleClass);
 			}
 		});
+ ************/
 
 
-		dom.newListItemForm.submit(function newListItemSubmitHandler(event){
-			event.preventDefault();
-			eh.handleNewListItemAddition();
-		});
 
 
 	};

@@ -3,6 +3,7 @@ function ListContentEventsHelper(dom){
 
 	var dm = new ListContentDOMManipulator(dom);
 	var model = new Model();
+	var state = new ListContentStyleState(dom);
 
 	this.makeClickedItem = function(obj){
 		if (state.listItemIsNotClicked(obj)){
@@ -38,7 +39,8 @@ function ListContentEventsHelper(dom){
 
 	this.handleNewListItemAddition = function(){
 		dm.addNewItemToListOnscreen();
-		model.saveListItem(dm.getNewItemText());
+		model.saveNewListItem(dm.getNewItemText());
+		dm.displayAllListItems(model.extractListItemArray());
 	};
 
 }

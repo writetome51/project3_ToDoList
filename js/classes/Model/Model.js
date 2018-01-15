@@ -105,6 +105,16 @@ function Model(){
     };
 
 
+    this.saveNewListItem = function(itemText){
+		var list = this.getActiveListName();
+		var listsBeingModified = this.getUsersLists();
+		var listBeingModified = listsBeingModified[list];
+		listBeingModified.push(itemText);
+		listsBeingModified[list] = listBeingModified;
+		this.saveLists(listsBeingModified);
+	};
+
+
     this.getActiveListName = function(){
         var obj = this.getActiveList();
         if (!obj){

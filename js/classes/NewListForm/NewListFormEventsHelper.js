@@ -9,6 +9,7 @@ function NewListFormEventsHelper(dom){
 		var newListName = dm.getNewListName();
 		model.createNewList(newListName);
 		model.setCreatingNewList(false);
+		(new ListsMenu(model)).load();
 		(new ListContent(newListName)).load();
 	};
     

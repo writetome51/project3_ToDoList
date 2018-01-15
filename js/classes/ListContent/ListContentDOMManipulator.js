@@ -106,6 +106,25 @@ function ListContentDOMManipulator(dom){
     };
 
 
+    this.displayAllListItems = function(listItems){
+    	if (listItems){
+			for (var i=0, innerHtml=''; i < listItems.length; ++i){
+
+				innerHtml += "<li class='" + classes.listItem + "'  draggable='true'>" +
+					"<input type='checkbox' class='" + classes.itemCheckbox + "'  " +
+					"title='Check box to mark item done, or to perform action on item'>" +
+					"<span class='" + classes.highlight + "'> <span class='" +
+					classes.itemText + "'>" + listItems[i] + "</span><span " +
+					"class='glyphicon " + classes.removeGlyphicon + "  " +
+					classes.invisible + "'></span></span></li>";
+
+			}
+			$('.' + classes.todoList).html(innerHtml);
+		}
+
+	};
+
+
     this.setNewListItem = function(){
 
 		dom.newListItem = "<li class='" + classes.listItem + "'  draggable='true'>" +
