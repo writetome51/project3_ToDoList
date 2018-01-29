@@ -68,7 +68,7 @@ function ListContentDOMManipulator(dom){
         dom.itemToHighlight = obj.parent('.' + classes.highlight);
         dom.clickedItem = dom.itemToHighlight;
         this.removeHoverClassAndAddClickedClass(dom.clickedItem);
-        rr.makeGlyphsVisible();
+        this.makeGlyphsVisible();
         this.makeItemEditable(dom.clickedItem);
     };
 

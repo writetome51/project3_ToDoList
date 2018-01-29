@@ -1,7 +1,6 @@
+function Behavior() {
 
-function DOMController(){
-
-    this.loadEvents = function(){
+	this.load = function () {
 
 		(new LoginLogoutEvents()).load();
 
@@ -9,12 +8,10 @@ function DOMController(){
 
 		(new ActionsMenuEvents()).load();
 
-        (new ListsMenuEvents()).load();
-
-		(new ListContentEvents()).load();
+		(new ListsMenuEvents()).load();
 
 		(new NewListFormEvents()).load();
 
-    };
+	};
 
 }
