@@ -1,7 +1,8 @@
 
-function ListContentDOMManipulator(dom){
+function ListContentDOMManipulator(){
 
     var classes = new CSSClasses();
+    var dom = new ListContentDOM();
     var state = new ListContentStyleState(dom);
     var rr = new ElementRemoverRevealer();
 

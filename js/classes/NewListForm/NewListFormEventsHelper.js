@@ -11,7 +11,7 @@ function NewListFormEventsHelper(dom){
 		model.createNewList(newListName);
 		state.setCreatingNewList(false);
 		(new ListsMenu(model)).load();
-		(new ListContent(newListName)).reload();
+		(new ListContent()).reload();
 	};
     
 

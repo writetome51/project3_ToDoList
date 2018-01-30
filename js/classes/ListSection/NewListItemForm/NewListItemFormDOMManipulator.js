@@ -1,5 +1,7 @@
 
-function NewListItemFormDOMManipulator(dom){
+function NewListItemFormDOMManipulator(){
+
+	var dom = new NewListItemFormDOM();
 
 	this.emptyNewItemForm = function(){
 		dom.newListItemTextInput.val('');

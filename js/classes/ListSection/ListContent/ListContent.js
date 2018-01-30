@@ -3,12 +3,7 @@ function ListContent(){
 
 	var model = new Model();
 
-	var listName = model.getActiveListName();
-
-    var dom = new ListContentDOM();
-
-    var lcdm = new ListContentDOMManipulator(dom);
-    var fdm = new NewListItemFormDOMManipulator();
+    var lcdm = new ListContentDOMManipulator();
 
     var rr = new ElementRemoverRevealer();
 
@@ -16,9 +11,6 @@ function ListContent(){
     this.load = function(){
     	this.onlyShowNecessaryItemsForViewingList();
     	lcdm.showActiveList(model);
-    	if (listName){
-			fdm.addNewListItemForm();
-		}
     };
 
 
@@ -26,7 +18,6 @@ function ListContent(){
 		this.onlyShowNecessaryItemsForViewingList();
 		lcdm.emptyListContent();
 		lcdm.showActiveList(model);
-		fdm.addNewListItemForm();
 	};
 
 
@@ -46,9 +37,6 @@ function ListContent(){
 		rr.unCollapse( $('.collapse-when-creating-list') );
 		rr.makeVisible( $('.invisible-when-creating-list') );
 	};
-
-
-
 
 
 }
