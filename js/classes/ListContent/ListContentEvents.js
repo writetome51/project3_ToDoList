@@ -34,6 +34,7 @@ function ListContentEvents(){
 		dom.newListItemForm.submit(function newListItemSubmitHandler(event){
 			event.preventDefault();
 			eh.handleNewListItemAddition();
+			$(this).val("");
 		});
 
 

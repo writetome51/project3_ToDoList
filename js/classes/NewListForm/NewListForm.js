@@ -9,4 +9,9 @@ function NewListForm(){
         dm.removeUnnecessaryItemsWhenCreatingList();
     };
 
+
+    this.remove = function(){
+
+	};
+
 }

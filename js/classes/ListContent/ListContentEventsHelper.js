@@ -38,9 +38,10 @@ function ListContentEventsHelper(dom){
 
 
 	this.handleNewListItemAddition = function(){
-		dm.addNewItemToListOnscreen();
+		//dm.addNewItemToListOnscreen();
 		model.saveNewListItem(dm.getNewItemText());
-		dm.displayAllListItems(model.extractListItemArray());
+		console.log(model.extractListItemArray());
+	//	dm.displayAllListItems(model.extractListItemArray());
 	};
 
 }

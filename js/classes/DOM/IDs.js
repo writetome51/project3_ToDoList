@@ -25,4 +25,5 @@ function IDs(){
     this.navbarSearchContainer = 'navbar-search-container';
     this.newListAction = 'new-list-action';
     this.newItemTextInput = "new-item-text-input";
+    this.listContent = 'list-content';
 }

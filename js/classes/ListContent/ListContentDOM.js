@@ -15,6 +15,7 @@ function ListContentDOM(){
 	this.removeGlyph = $('.' + classes.removeGlyphicon);
 	this.todoCheckbox = $('.' + classes.itemCheckbox);
 	this.todoList = $('.' + classes.todoList);
+	this.listContent = $('#' + ids.listContent);
 
 
 }

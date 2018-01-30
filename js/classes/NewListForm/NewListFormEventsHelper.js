@@ -10,7 +10,7 @@ function NewListFormEventsHelper(dom){
 		model.createNewList(newListName);
 		model.setCreatingNewList(false);
 		(new ListsMenu(model)).load();
-		(new ListContent(newListName)).load();
+		(new ListContent(newListName)).reload();
 	};
     
 

@@ -1,11 +1,10 @@
 
-function ListContent(listName){
+function ListContent(){
 
 	var model = new Model();
 
-	listName = listName || model.getActiveListName();
-
-    model.setActiveList(listName);
+	var listName = model.getActiveListName();
+	console.log(listName);
 
     var dom = new ListContentDOM();
 
@@ -15,12 +14,35 @@ function ListContent(listName){
 
 
     this.load = function(){
-    	this.removeUnnecessaryItemsWhenViewingList();
-		this.showNecessaryItemsWhenViewingList();
-    	this.setListNameHeader();
-    	this.displayActiveListItems();
+    	this.onlyShowNecessaryItemsForViewingList();
+    	this.showActiveList();
+    	if (listName){
+			dm.addNewListItemForm();
+		}
 		(new ListContentEvents()).load();
     };
+
+
+	this.reload = function(){
+		this.onlyShowNecessaryItemsForViewingList();
+		dm.emptyListContent();
+		this.showActiveList();
+		dm.addNewListItemForm();
+		(new ListContentEvents()).load();
+	};
+
+
+	this.onlyShowNecessaryItemsForViewingList = function(){
+		this.removeUnnecessaryItemsWhenViewingList();
+		this.showNecessaryItemsWhenViewingList();
+	};
+
+
+    this.showActiveList = function(){
+		dm.setListNameHeader(model);
+		dm.displayActiveListItems(model);
+	};
+
 
 
 	this.removeUnnecessaryItemsWhenViewingList = function(){
@@ -35,17 +57,7 @@ function ListContent(listName){
 	};
 
 
-	this.setListNameHeader = function(){
-		var listName = model.getActiveListName();
-		if (!listName) listName = 'Choose a list from the Lists menu';
-		dm.setListNameHeader(listName);
-	};
 
-
-	this.displayActiveListItems = function(){
-		var listItems = model.extractListItemArray();
-		dm.displayAllListItems(listItems);
-	};
 
 
 }

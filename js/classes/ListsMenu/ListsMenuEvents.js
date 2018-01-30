@@ -3,6 +3,8 @@ function ListsMenuEvents(){
 
 	var dom = new ListsMenuDOM();
 	var dm = new ListsMenuDOMManipulator(dom);
+	var model = new Model();
+	var eh = new BaseEventsHelper();
 
 
     this.load = function(){
@@ -21,7 +23,9 @@ function ListsMenuEvents(){
 
 
         function handleViewingSelectedList(listName){
-            (new ListContent(listName)).load();
+        	model.setCreatingNewList(false);
+			model.setActiveList(listName);
+			(new ListContent()).reload();
         }
 
     };

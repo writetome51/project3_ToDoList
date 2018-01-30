@@ -6,13 +6,21 @@ function ListContentDOMManipulator(dom){
     var rr = new ElementRemoverRevealer();
 
 
+    this.emptyListContent = function(){
+		dom.listContent.html('');
+	};
+
+
 	this.removeItem = function(obj){
 		obj.remove();
 	};
 
 
-    this.setListNameHeader = function(listName){
-        dom.listNameHeader.text(listName);
+    this.setListNameHeader = function(model){
+		var listName = model.getActiveListName();
+		if (!listName) listName = 'Choose a list from the Lists menu';
+		var html = '<header id="list-name-header">' + listName + '</header>';
+        dom.listContent.append(html);
     };
 
 
@@ -97,7 +105,7 @@ function ListContentDOMManipulator(dom){
 
 
     this.getNewItemText = function(){
-        return dom.newItemText;
+        return dom.newListItemTextInput.val();
     };
 
 
@@ -106,7 +114,22 @@ function ListContentDOMManipulator(dom){
     };
 
 
-    this.displayAllListItems = function(listItems){
+    this.addNewListItemForm = function(){
+    	var innerHtml = '<form id="new-list-item-form"><div class="navbar-div"><div class="navbar-div top-navbar-search-container"><input type="text" id="new-item-text-input" class="form-control" placeholder="Add item to list" required  minlength="1" ></div> <div class="form-submit  navbar-div  add-item-button"><input type="submit" value="Add"></div></div></form>';
+
+    	dom.listContent.append(innerHtml);
+	};
+
+
+	this.displayActiveListItems = function(model){
+		var listItems = model.extractListItemArray();
+		this.displayAllListItems(listItems);
+	};
+
+
+
+
+	this.displayAllListItems = function(listItems){
     	if (listItems){
 			for (var i=0, innerHtml=''; i < listItems.length; ++i){
 
@@ -119,7 +142,8 @@ function ListContentDOMManipulator(dom){
 					classes.invisible + "'></span></span></li>";
 
 			}
-			$('.' + classes.todoList).html(innerHtml);
+			innerHtml = '<ul class="todo-list" id="the-todo-list">' + innerHtml + '</ul>';
+			dom.listContent.append(innerHtml);
 		}
 
 	};
