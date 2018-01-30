@@ -76,12 +76,14 @@ function Model(){
 
 
     this.saveNewListItem = function(itemText){
-		var list = this.getActiveListName();
-		var listsBeingModified = this.getUsersLists();
-		var listBeingModified = listsBeingModified[list];
-		listBeingModified.push(itemText);
-		listsBeingModified[list] = listBeingModified;
-		this.saveLists(listsBeingModified);
+		if (itemText.length > 0){
+			var list = this.getActiveListName();
+			var listsBeingModified = this.getUsersLists();
+			var listBeingModified = listsBeingModified[list];
+			listBeingModified.push(itemText);
+			listsBeingModified[list] = listBeingModified;
+			this.saveLists(listsBeingModified);
+		}
 	};
 
 
