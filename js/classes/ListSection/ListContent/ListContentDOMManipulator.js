@@ -6,7 +6,18 @@ function ListContentDOMManipulator(dom){
     var rr = new ElementRemoverRevealer();
 
 
-    this.emptyListContent = function(){
+	this.showActiveList = function(model){
+		this.setListNameHeader(model);
+		this.displayActiveListItems(model);
+	};
+
+
+	this.emptyNewItemForm = function(){
+		dom.newListItemTextInput.val('');
+	};
+
+
+	this.emptyListContent = function(){
 		dom.listContent.html('');
 	};
 
@@ -44,14 +55,28 @@ function ListContentDOMManipulator(dom){
     };
 
 
-    this.addNewItemToListOnscreen = function(){
-        this.setNewItemText();
-        this.displayNewItemInList();
+    this.addNewItemToListOnscreen = function(listItem){
+    	var html = this.setNewListItem(listItem);
+        this.displayNewItemInList(html);
     };
 
 
-    this.displayNewItemInList = function(){
-        dom.todoList.append(dom.newListItem);
+	this.setNewListItem = function(listItem){
+
+		dom.newListItem = "<li class='" + classes.listItem + "'  draggable='true'>" +
+			"<input type='checkbox' class='" + classes.itemCheckbox + "'  " +
+			"title='Check box to mark item done, or to perform action on item'>" +
+			"<span class='" + classes.highlight + "'> <span class='" +
+			classes.itemText + "'>" + listItem + "</span><span " +
+			"class='glyphicon " + classes.removeGlyphicon + "  " +
+			classes.invisible + "'></span></span></li>";
+
+		return dom.newListItem;
+	};
+
+
+    this.displayNewItemInList = function(html){
+        dom.todoList.append(html);
     };
 
 
@@ -109,7 +134,7 @@ function ListContentDOMManipulator(dom){
     };
 
 
-    this.getItemText = function(listItem){
+	this.getItemText = function(listItem){
         return listItem.find('.' + classes.itemText).text();
     };
 
@@ -149,17 +174,6 @@ function ListContentDOMManipulator(dom){
 	};
 
 
-    this.setNewListItem = function(){
-
-		dom.newListItem = "<li class='" + classes.listItem + "'  draggable='true'>" +
-			"<input type='checkbox' class='" + classes.itemCheckbox + "'  " +
-			"title='Check box to mark item done, or to perform action on item'>" +
-			"<span class='" + classes.highlight + "'> <span class='" +
-			classes.itemText + "'>" + dom.newItemText + "</span><span " +
-			"class='glyphicon " + classes.removeGlyphicon + "  " +
-			classes.invisible + "'></span></span></li>";
-
-	};
 
 
 	this.makeGlyphsVisible = function(){

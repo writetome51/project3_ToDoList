@@ -4,7 +4,7 @@ function Model(){
 
     this.appName = 'todosApp';
     this.appData = '';
-
+	this.loggedInUser = false;
     // Each user gets its own localStorage key, which begins with this prefix:
     this.localKeyUserPrefix = this.appName + '_user_';
 	this.sessionKeyLoggedInUser = this.appName + '_loggedInUser';
@@ -107,7 +107,8 @@ function Model(){
 
 
     this.refreshActiveList = function(){
-    	this.setActiveList(this.getActiveList());
+    	var name = this.getActiveListName();
+    	this.setActiveList(name);
 	};
 
 

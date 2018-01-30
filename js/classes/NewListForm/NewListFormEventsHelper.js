@@ -2,13 +2,14 @@
 function NewListFormEventsHelper(dom){
 
 	var model = new Model();
+	var state = new AppState(model);
 	var dm = new NewListFormDOMManipulator(dom);
 
 
 	this.handleNewListCreation = function(){
 		var newListName = dm.getNewListName();
 		model.createNewList(newListName);
-		model.setCreatingNewList(false);
+		state.setCreatingNewList(false);
 		(new ListsMenu(model)).load();
 		(new ListContent(newListName)).reload();
 	};

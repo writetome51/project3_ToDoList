@@ -30,8 +30,8 @@ function AppState(model){
 
 
 	this.creatingNewList = function(){
-		if ( model.getCreatingNewList() === 'false' ||
-			! model.getCreatingNewList()){
+		if ( this.getCreatingNewList() === 'false' ||
+			! this.getCreatingNewList()){
 			return false;
 		}
 		else return true;

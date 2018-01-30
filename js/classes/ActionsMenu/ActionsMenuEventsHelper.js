@@ -2,9 +2,10 @@
 function ActionsMenuEventsHelper(dom){
 
 	var model = new Model();
+	var state = new AppState(model);
 
 	this.handleNewListAction = function(){
-		model.setCreatingNewList(true);
+		state.setCreatingNewList(true);
 		(new NewListForm()).load();
 	};
 

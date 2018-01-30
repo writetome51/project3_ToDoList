@@ -8,7 +8,7 @@ function LoginLogoutModel() {
 
 	this.login = function(username, password){
 		if (validator.loginValid(username, model.userKey(username), password)){
-			sessionStorage.setItem(this.sessionKeyLoggedInUser, username);
+			sessionStorage.setItem(model.sessionKeyLoggedInUser, username);
 		}
 	};
 

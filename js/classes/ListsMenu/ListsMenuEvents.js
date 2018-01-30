@@ -4,6 +4,7 @@ function ListsMenuEvents(){
 	var dom = new ListsMenuDOM();
 	var dm = new ListsMenuDOMManipulator(dom);
 	var model = new Model();
+	var state = new AppState(model);
 	var eh = new BaseEventsHelper();
 
 
@@ -23,7 +24,7 @@ function ListsMenuEvents(){
 
 
         function handleViewingSelectedList(listName){
-        	model.setCreatingNewList(false);
+        	state.setCreatingNewList(false);
 			model.setActiveList(listName);
 			(new ListContent()).reload();
         }

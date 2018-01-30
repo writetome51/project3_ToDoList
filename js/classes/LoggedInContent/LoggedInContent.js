@@ -22,7 +22,7 @@ function LoggedInContent(){
 			(new NewListForm()).load();
         	}
 		else{
-			(new ListContent()).load();
+			(new ListSection()).load();
 		}
 	};
 

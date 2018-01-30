@@ -5,6 +5,7 @@ function ListContentEventsHelper(dom){
 	var model = new Model();
 	var state = new ListContentStyleState(dom);
 
+
 	this.makeClickedItem = function(obj){
 		if (state.listItemIsNotClicked(obj)){
 			dm.undoClickedItem();
@@ -40,10 +41,8 @@ function ListContentEventsHelper(dom){
 	this.handleNewListItemAddition = function(){
 		model.saveNewListItem(dm.getNewItemText());
 		model.refreshActiveList();
-		dm.emptyListContent();
-		this.showActiveList();
-		dm.addNewListItemForm();
-		(new ListContent()).reload();
+		dm.addNewItemToListOnscreen(dm.getNewItemText());
+		dm.emptyNewItemForm();
 	};
 
 }

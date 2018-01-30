@@ -4,7 +4,6 @@ function ListContent(){
 	var model = new Model();
 
 	var listName = model.getActiveListName();
-	console.log(listName);
 
     var dom = new ListContentDOM();
 
@@ -15,7 +14,7 @@ function ListContent(){
 
     this.load = function(){
     	this.onlyShowNecessaryItemsForViewingList();
-    	this.showActiveList();
+    	dm.showActiveList(model);
     	if (listName){
 			dm.addNewListItemForm();
 		}
@@ -26,7 +25,7 @@ function ListContent(){
 	this.reload = function(){
 		this.onlyShowNecessaryItemsForViewingList();
 		dm.emptyListContent();
-		this.showActiveList();
+		dm.showActiveList(model);
 		dm.addNewListItemForm();
 		(new ListContentEvents()).load();
 	};
@@ -36,13 +35,6 @@ function ListContent(){
 		this.removeUnnecessaryItemsWhenViewingList();
 		this.showNecessaryItemsWhenViewingList();
 	};
-
-
-    this.showActiveList = function(){
-		dm.setListNameHeader(model);
-		dm.displayActiveListItems(model);
-	};
-
 
 
 	this.removeUnnecessaryItemsWhenViewingList = function(){

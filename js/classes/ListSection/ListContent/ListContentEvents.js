@@ -31,13 +31,6 @@ function ListContentEvents(){
 		});
 
 
-		dom.newListItemForm.submit(function newListItemSubmitHandler(event){
-			event.preventDefault();
-			eh.handleNewListItemAddition();
-			$(this).val('');
-		});
-
-
 /**************
 		dom.todoCheckbox.click(function checkboxClickHandler(){
 			var deleteButton = $(this).siblings('span.' + removeGlyphiconClass);
@@ -49,7 +42,6 @@ function ListContentEvents(){
 			}
 		});
  ************/
-
 
 
 
