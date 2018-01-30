@@ -27,6 +27,7 @@ function ListsMenuEvents(){
         	state.setCreatingNewList(false);
 			model.setActiveList(listName);
 			(new ListContent()).reload();
+			(new ListContentEvents()).load();
         }
 
     };

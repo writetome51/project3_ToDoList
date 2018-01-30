@@ -20,6 +20,9 @@ function NewListItemFormEvents(){
 		model.saveNewListItem(dm.getNewItemText());
 		model.refreshActiveList();
 		dm.emptyNewItemForm();
+		(new ListContent()).reload();
+		(new ListContentEvents()).load();
+		// Working Perfectly!!!
 	};
 
 

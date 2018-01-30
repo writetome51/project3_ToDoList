@@ -14,7 +14,7 @@ function ListContentDOMManipulator(){
 
 
 	this.emptyListContent = function(){
-		dom.listContent.html('');
+		dom.todoList.html('');
 	};
 
 
@@ -26,8 +26,7 @@ function ListContentDOMManipulator(){
     this.setListNameHeader = function(model){
 		var listName = model.getActiveListName();
 		if (!listName) listName = 'Choose a list from the Lists menu';
-		var html = '<header id="list-name-header">' + listName + '</header>';
-        dom.listContent.append(html);
+        dom.listNameHeader.html(listName);
     };
 
 
@@ -144,8 +143,7 @@ function ListContentDOMManipulator(){
 					classes.invisible + "'></span></span></li>";
 
 			}
-			innerHtml = '<ul class="todo-list" id="the-todo-list">' + innerHtml + '</ul>';
-			dom.listContent.append(innerHtml);
+			dom.todoList.html(innerHtml);
 		}
 
 	};

@@ -5,9 +5,9 @@ function NewListItemForm(){
 
 	this.load = function(){
 		var listName = model.getActiveListName();
-		var fdm = new NewListItemFormDOMManipulator();
 		if (listName){
-			fdm.addNewListItemForm();
+			var fdm = new NewListItemFormDOMManipulator();
+		//	fdm.addNewListItemForm();
 		}
 	};
 

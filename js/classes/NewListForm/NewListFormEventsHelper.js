@@ -12,6 +12,9 @@ function NewListFormEventsHelper(dom){
 		state.setCreatingNewList(false);
 		(new ListsMenu(model)).load();
 		(new ListContent()).reload();
+		(new ListContentEvents()).load();
+		(new NewListItemForm()).load();
+		(new NewListItemFormEvents()).load();
 	};
     
 
