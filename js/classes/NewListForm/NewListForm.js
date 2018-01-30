@@ -10,8 +10,4 @@ function NewListForm(){
     };
 
 
-    this.remove = function(){
-
-	};
-
 }

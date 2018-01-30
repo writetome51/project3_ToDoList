@@ -4,47 +4,17 @@ function Model(){
 
     this.appName = 'todosApp';
     this.appData = '';
-    this.activeList = false;
 
     // Each user gets its own localStorage key, which begins with this prefix:
     this.localKeyUserPrefix = this.appName + '_user_';
-    this.loggedInUser = false;
-
-    this.sessionKeyLoggedInUser = this.appName + '_loggedInUser';
+	this.sessionKeyLoggedInUser = this.appName + '_loggedInUser';
     this.sessionKeyActiveList = this.appName + '_activeList';
-    this.sessionKeyCreatingNewList = this.appName + '_creatingNewList';
     this.sessionKeyActiveListName= this.appName + '_activeListName';
     this.textBeingEdited = false;
 
 
     var bs = new BrowserStorage();
     var validator = new ModelValidator(bs);
-
-
-    this.newAccountInfoValid = function(username, password1, password2){
-        return validator.newAccountInfoValid(username, password1, password2);
-    };
-
-
-    this.createAccount = function(username, password){
-        var newUser = this.userKey(username);
-        bs.addToLocalStorageAsJSON(newUser, initialUserData(password));
-    };
-
-
-    this.login = function(username, password){
-        if (validator.loginValid(username, this.userKey(username), password)){
-            this.loggedInUser = username;
-            sessionStorage.setItem(this.sessionKeyLoggedInUser, this.loggedInUser);
-        }
-    };
-
-
-    this.logout = function(){
-        sessionStorage.clear();
-        this.loggedInUser = false;
-        this.activeList = false;
-    };
 
 
     this.createNewList = function(listName){
@@ -131,19 +101,15 @@ function Model(){
 
 
     this.setActiveList = function(listName){
-        this.activeList = this.getSingleListAsObject(listName);
-        bs.addToSessionStorageAsJSON(this.sessionKeyActiveList, this.activeList);
+        var activeList = this.getSingleListAsObject(listName);
+        bs.addToSessionStorageAsJSON(this.sessionKeyActiveList, activeList);
     };
 
 
-    this.setCreatingNewList = function(trueOrFalse){
-        sessionStorage.setItem(this.sessionKeyCreatingNewList, String(trueOrFalse))
-    };
+    this.refreshActiveList = function(){
+    	this.setActiveList(this.getActiveList());
+	};
 
-
-    this.getCreatingNewList = function(){
-        return sessionStorage.getItem(this.sessionKeyCreatingNewList);
-    };
 
 
     this.indexOfItemBeingModified = function(){
@@ -182,7 +148,7 @@ function Model(){
     };
 
 
-    function initialUserData(password){
+    this.initialUserData = function(password){
        return  {password:password, lists:{}};
     }
 

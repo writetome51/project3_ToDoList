@@ -3,11 +3,12 @@ function CreateAccountFormEventsHelper(dom){
 
 	var dm = new CreateAccountFormDOMManipulator(dom);
 	var eh = new BaseEventsHelper();
-	var model = new Model();
+	var createModel = new CreateAccountModel();
+	var logModel = new LoginLogoutModel();
 
 	this.handleAccountCreation = function(){
 		var values = dm.getNewAccountValues();
-		if  (model.newAccountInfoValid(
+		if  (createModel.newAccountInfoValid(
 				values.username, values.password1, values.password2
 			))
 		{
@@ -22,8 +23,8 @@ function CreateAccountFormEventsHelper(dom){
 
 
 	this.createAccountLoginAndRedirectToHome = function(username, password){
-		model.createAccount(username, password);
-		model.login(username, password);
+		createModel.createAccount(username, password);
+		logModel.login(username, password);
 		eh.redirectToHome();
 	};
 

@@ -11,6 +11,7 @@ function CreateAccountFormDOMManipulator(dom){
 
 
 	this.showAccountCreationUnsuccessful = function(){
+		var rr = new ElementRemoverRevealer();
 		rr.unCollapse(dom.accountCreationUnsuccessful);
 	};
 
