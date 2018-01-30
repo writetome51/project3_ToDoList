@@ -6,7 +6,7 @@ function CreateAccountModel(){
 	var model = new Model();
 
 	this.createAccount = function(username, password){
-		var newUser = this.userKey(username);
+		var newUser = model.userKey(username);
 		bs.addToLocalStorageAsJSON(newUser, model.initialUserData(password));
 	};
 

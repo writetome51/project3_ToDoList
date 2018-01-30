@@ -7,27 +7,26 @@ function ListContent(){
 
     var dom = new ListContentDOM();
 
-    var dm = new ListContentDOMManipulator(dom);
+    var lcdm = new ListContentDOMManipulator(dom);
+    var fdm = new NewListItemFormDOMManipulator();
 
     var rr = new ElementRemoverRevealer();
 
 
     this.load = function(){
     	this.onlyShowNecessaryItemsForViewingList();
-    	dm.showActiveList(model);
+    	lcdm.showActiveList(model);
     	if (listName){
-			dm.addNewListItemForm();
+			fdm.addNewListItemForm();
 		}
-		(new ListContentEvents()).load();
     };
 
 
 	this.reload = function(){
 		this.onlyShowNecessaryItemsForViewingList();
-		dm.emptyListContent();
-		dm.showActiveList(model);
-		dm.addNewListItemForm();
-		(new ListContentEvents()).load();
+		lcdm.emptyListContent();
+		lcdm.showActiveList(model);
+		fdm.addNewListItemForm();
 	};
 
 

@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f957c906-a96b-4c9a-b610-f2fbc0875dc9" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/classes/ListSection/NewListItemForm/NewListItemFormEvents.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/create-account.html" afterPath="$PROJECT_DIR$/create-account.html" />
+      <change beforePath="$PROJECT_DIR$/img/.gitignore" afterPath="$PROJECT_DIR$/js/classes/ListSection/ListDOM.js" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/js/classes/ActionsMenu/ActionsMenuEventsHelper.js" afterPath="$PROJECT_DIR$/js/classes/ActionsMenu/ActionsMenuEventsHelper.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/ListContent/ListContent.js" afterPath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContent.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/ListContent/ListContentDOM.js" afterPath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOM.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/ListContent/ListContentDOMManipulator.js" afterPath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOMManipulator.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/ListContent/ListContentEvents.js" afterPath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentEvents.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/ListContent/ListContentEventsHelper.js" afterPath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentEventsHelper.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/ListContent/ListContentStyleState.js" afterPath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentStyleState.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/ListsMenu/ListsMenuEvents.js" afterPath="$PROJECT_DIR$/js/classes/ListsMenu/ListsMenuEvents.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/CreateAccountForm/CreateAccountModel.js" afterPath="$PROJECT_DIR$/js/classes/CreateAccountForm/CreateAccountModel.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContent.js" afterPath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContent.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOM.js" afterPath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOM.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOMManipulator.js" afterPath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOMManipulator.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentEventsHelper.js" afterPath="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentEventsHelper.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/ListSection/ListItemFormEvents.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/js/classes/LoggedInContent/LoggedInContent.js" afterPath="$PROJECT_DIR$/js/classes/LoggedInContent/LoggedInContent.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutModel.js" afterPath="$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutModel.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/Model/AppState.js" afterPath="$PROJECT_DIR$/js/classes/Model/AppState.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/Model/Model.js" afterPath="$PROJECT_DIR$/js/classes/Model/Model.js" />
-      <change beforePath="$PROJECT_DIR$/js/classes/NewListForm/NewListFormEventsHelper.js" afterPath="$PROJECT_DIR$/js/classes/NewListForm/NewListFormEventsHelper.js" />
+      <change beforePath="$PROJECT_DIR$/js/classes/LoginLogout/LoginForm.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/login.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,41 +29,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LoggedInContent.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/classes/LoggedInContent/LoggedInContent.js">
+      <file leaf-file-name="ListContent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+            <state relative-caret-position="238">
+              <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListContentEvents.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentEvents.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListItemFormEvents.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListItemFormEvents.js">
+      <file leaf-file-name="ListSection.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListSection.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="NewListItemFormEvents.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/classes/ListSection/NewListItemForm/NewListItemFormEvents.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="19" column="51" lean-forward="true" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewListItemFormDOMManipulator.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/classes/ListSection/NewListItemForm/NewListItemFormDOMManipulator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="44" lean-forward="false" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -84,12 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>new ListContent()</find>
-      <find>this.savelists</find>
-      <find>new ListContent(</find>
-      <find>.addnew</find>
-      <find>.remove</find>
-      <find>this.setac</find>
       <find>dom.newitemtext</find>
       <find>creatingnewlist</find>
       <find>empty</find>
@@ -114,9 +105,14 @@
       <find>this.setnewitem</find>
       <find>dom.newlistitem</find>
       <find>.val(</find>
+      <find>this.userkey</find>
+      <find>listsection</find>
+      <find>new Login</find>
+      <find>newlistitemformd</find>
+      <find>dm.</find>
+      <find>dom</find>
     </findStrings>
     <replaceStrings>
-      <replace>ui.invisibleCollapsedClass</replace>
       <replace>classes.highlightClass</replace>
       <replace>classes.listItemClass</replace>
       <replace>classes.itemTextClass</replace>
@@ -146,6 +142,7 @@
       <replace>lodm.</replace>
       <replace>lidm.</replace>
       <replace>navbar_dm</replace>
+      <replace>lcdm.</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/js/classes/ListContent</dir>
@@ -159,17 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/classes/ActionsMenu/ActionsMenuDOM.js" />
-        <option value="$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutEvents.js" />
-        <option value="$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutDOMManipulator.js" />
-        <option value="$PROJECT_DIR$/js/classes/ListsMenu/ListsMenu copy.js" />
-        <option value="$PROJECT_DIR$/js/classes/CreateAccountForm/CreateAccountFormDOM.js" />
-        <option value="$PROJECT_DIR$/js/classes/DOM/DOM.js" />
-        <option value="$PROJECT_DIR$/js/classes/NavbarDOM.js" />
-        <option value="$PROJECT_DIR$/js/classes/NavbarDOMManipulator.js" />
-        <option value="$PROJECT_DIR$/js/classes/DOM/ElementTextGetterSetter.js" />
-        <option value="$PROJECT_DIR$/js/classes/ListsMenu/ListsMenuDOM.js" />
-        <option value="$PROJECT_DIR$/js/classes/DOM/DOMStyleState.js" />
         <option value="$PROJECT_DIR$/js/classes/LoggedOutContent/LoggedOutContent.js" />
         <option value="$PROJECT_DIR$/js/classes/LoggedOutContent/LoggedOutDOMManipulator.js" />
         <option value="$PROJECT_DIR$/js/classes/CreateAccountForm/CreateAccountFormEvents.js" />
@@ -192,12 +178,8 @@
         <option value="$PROJECT_DIR$/js/classes/NewListForm/NewListForm.js" />
         <option value="$PROJECT_DIR$/js/classes/ListContent/ListContentEvents.js" />
         <option value="$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutEventsHelper.js" />
-        <option value="$PROJECT_DIR$/js/classes/CreateAccountForm/CreateAccountModel.js" />
         <option value="$PROJECT_DIR$/js/classes/CreateAccountForm/CreateAccountFormEventsHelper.js" />
         <option value="$PROJECT_DIR$/js/classes/CreateAccountForm/CreateAccountFormDOMManipulator.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/login.html" />
-        <option value="$PROJECT_DIR$/create-account.html" />
         <option value="$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutModel.js" />
         <option value="$PROJECT_DIR$/js/classes/Model/AppState.js" />
         <option value="$PROJECT_DIR$/js/classes/ListsMenu/ListsMenuEvents.js" />
@@ -207,9 +189,24 @@
         <option value="$PROJECT_DIR$/js/classes/Model/Model.js" />
         <option value="$PROJECT_DIR$/js/classes/ListContent/ListContentDOMManipulator.js" />
         <option value="$PROJECT_DIR$/js/classes/ListContent/ListContentEventsHelper.js" />
-        <option value="$PROJECT_DIR$/js/classes/LoggedInContent/LoggedInContent.js" />
-        <option value="$PROJECT_DIR$/js/classes/ListSection/ListItemFormEvents.js" />
         <option value="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentEvents.js" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentEventsHelper.js" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/ListItemFormEvents.js" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOM copy.js" />
+        <option value="$PROJECT_DIR$/js/classes/LoggedInContent/LoggedInContent.js" />
+        <option value="$PROJECT_DIR$/js/classes/CreateAccountForm/CreateAccountModel.js" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/ListItemFormDOM copy.js" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOMManipulator.js" />
+        <option value="$PROJECT_DIR$/login.html" />
+        <option value="$PROJECT_DIR$/create-account.html" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/ListDOM.js" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOM.js" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/NewListItemForm/NewListItemFormDOM.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContent.js" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/ListSection.js" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/NewListItemForm/NewListItemFormDOMManipulator.js" />
+        <option value="$PROJECT_DIR$/js/classes/ListSection/NewListItemForm/NewListItemFormEvents.js" />
       </list>
     </option>
   </component>
@@ -228,8 +225,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="5" />
     <option name="y" value="23" />
-    <option name="width" value="1168" />
-    <option name="height" value="1002" />
+    <option name="width" value="1128" />
+    <option name="height" value="733" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -301,14 +298,15 @@
               <item name="project3_ToDoList" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
-              <item name="LoggedInContent" type="462c0819:PsiDirectoryNode" />
+              <item name="ListSection" type="462c0819:PsiDirectoryNode" />
+              <item name="NewListItemForm" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -325,11 +323,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js/classes/ListSection/NewListItemForm" />
+      <recent name="$PROJECT_DIR$/js/classes/ListSection" />
       <recent name="$PROJECT_DIR$/js/classes/ListSection/ListContent" />
       <recent name="$PROJECT_DIR$/js/classes" />
       <recent name="$PROJECT_DIR$/js/classes/ListContent" />
-      <recent name="$PROJECT_DIR$/js/classes/Model" />
-      <recent name="$PROJECT_DIR$/js/classes/DOM" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -529,25 +527,29 @@
       <workItem from="1517267820035" duration="4392000" />
       <workItem from="1517277457852" duration="4752000" />
       <workItem from="1517283516247" duration="4212000" />
-      <workItem from="1517322498434" duration="648000" />
+      <workItem from="1517322498434" duration="833000" />
+      <workItem from="1517323564049" duration="73000" />
+      <workItem from="1517332084237" duration="711000" />
+      <workItem from="1517340468234" duration="3338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="437843000" />
+    <option name="totallyTimeSpent" value="442150000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="23" width="1168" height="1002" extended-state="0" />
+    <frame x="5" y="23" width="1128" height="733" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31124672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29990965" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3260188" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32855567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24936171" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3448276" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3439912" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39811912" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -555,7 +557,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3260188" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -591,41 +592,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/classes/LoggedOutContent/LoggedOutContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/Navbar/NavbarDOM.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/Navbar/NavbarDOMManipulator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/ListsMenu/ListsMenuDOM.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/LoggedInContent/LoggedInDOMManipulator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/ActionsMenu/ActionsMenuDOM.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -724,13 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutDOMManipulator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/CreateAccountForm/CreateAccountForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -780,50 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/CreateAccountForm/CreateAccountModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="133" column="34" lean-forward="false" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="939">
-          <caret line="146" column="34" lean-forward="false" selection-start-line="146" selection-start-column="34" selection-end-line="146" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/LoginLogout/LoginForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutDOM.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutEvents.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -842,7 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,13 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/Model/AppState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -881,80 +788,183 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutEventsHelper.js">
+    <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentEventsHelper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        <state relative-caret-position="585">
+          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/Model/AppState.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/LoggedInContent/LoggedInContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/Model/Model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="115" column="47" lean-forward="true" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
+        <state relative-caret-position="189">
+          <caret line="138" column="16" lean-forward="false" selection-start-line="138" selection-start-column="4" selection-end-line="138" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOM.js">
+    <entry file="file://$PROJECT_DIR$/js/classes/CreateAccountForm/CreateAccountModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutDOM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutEventsHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutEvents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/LoginLogout/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="134" column="64" lean-forward="false" selection-start-line="134" selection-start-column="64" selection-end-line="134" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="121" column="64" lean-forward="false" selection-start-line="121" selection-start-column="64" selection-end-line="121" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOMManipulator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="1710">
+          <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/LoginLogout/LoginLogoutDOMManipulator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentDOM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListDOM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="118" column="29" lean-forward="true" selection-start-line="118" selection-start-column="29" selection-end-line="118" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentEventsHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/LoggedInContent/LoggedInContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListItemFormEvents.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        <state relative-caret-position="238">
+          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListContent/ListContentEvents.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
+        <state relative-caret-position="433">
           <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/ListSection/NewListItemForm/NewListItemFormDOM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="45" lean-forward="false" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/ListSection/ListSection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/ListSection/NewListItemForm/NewListItemFormEvents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="51" lean-forward="true" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/ListSection/NewListItemForm/NewListItemFormDOMManipulator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="44" lean-forward="false" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
           <folding />
         </state>
       </provider>

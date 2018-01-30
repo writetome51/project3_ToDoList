@@ -12,11 +12,6 @@ function ListContentDOMManipulator(dom){
 	};
 
 
-	this.emptyNewItemForm = function(){
-		dom.newListItemTextInput.val('');
-	};
-
-
 	this.emptyListContent = function(){
 		dom.listContent.html('');
 	};
@@ -124,34 +119,15 @@ function ListContentDOMManipulator(dom){
     };
 
 
-    this.setNewItemText = function(){
-        dom.newItemText = dom.newListItemTextInput.val();
-    };
-
-
-    this.getNewItemText = function(){
-        return dom.newListItemTextInput.val();
-    };
-
-
 	this.getItemText = function(listItem){
         return listItem.find('.' + classes.itemText).text();
     };
-
-
-    this.addNewListItemForm = function(){
-    	var innerHtml = '<form id="new-list-item-form"><div class="navbar-div"><div class="navbar-div top-navbar-search-container"><input type="text" id="new-item-text-input" class="form-control" placeholder="Add item to list" required  minlength="1" ></div> <div class="form-submit  navbar-div  add-item-button"><input type="submit" value="Add"></div></div></form>';
-
-    	dom.listContent.append(innerHtml);
-	};
 
 
 	this.displayActiveListItems = function(model){
 		var listItems = model.extractListItemArray();
 		this.displayAllListItems(listItems);
 	};
-
-
 
 
 	this.displayAllListItems = function(listItems){
@@ -174,8 +150,6 @@ function ListContentDOMManipulator(dom){
 	};
 
 
-
-
 	this.makeGlyphsVisible = function(){
 		this.makeRemoveGlyphVisible(dom.clickedItem);
 	};
@@ -194,7 +168,6 @@ function ListContentDOMManipulator(dom){
 	this.makeRemoveGlyphInvisible = function(obj){
 		rr.makeInvisible( obj.find('.' + classes.removeGlyphicon) );
 	};
-
 
 
 

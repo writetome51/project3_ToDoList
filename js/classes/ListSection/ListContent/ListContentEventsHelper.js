@@ -38,11 +38,5 @@ function ListContentEventsHelper(dom){
 	};
 
 
-	this.handleNewListItemAddition = function(){
-		model.saveNewListItem(dm.getNewItemText());
-		model.refreshActiveList();
-		dm.addNewItemToListOnscreen(dm.getNewItemText());
-		dm.emptyNewItemForm();
-	};
 
 }
